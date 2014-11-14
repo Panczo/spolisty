@@ -2,40 +2,18 @@
 	z-index: auto !important;
 	padding: 260px 0px 320px;
 	text-align: center;
+	height: 100%;
   
-  background: image-url('bg.jpg');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background: image-url('tomek2.jpg') no-repeat center center;
+  background-size: cover;
+
+
   .title {
   	h1 {
+  		max-height: 956px;
   		font-size: 64px;
   		font-weight: 700;
+  		padding-top: 150px;
   	}
   }
-
-  /* .header_tlo {
-  		left: 0px;
-  		top: 0px;
-  		overflow: hidden;
-  		margin: 0px;
-  		padding: 0px;
-  		z-index: -999998;
-  		position: absolute;
-  		width: 1602px;
-  		height: 722px;
-  
-  		img {
-  			border: medium none;
-  			max-height: none;
-  			padding: 0px;
-  			z-index: -999999;
-  			position: absolute;
-  			max-width: none;
-  			margin: 0px;
-  			background: none repeat scroll 0px 0px #F00;
-  
-  			left: 0px;
-  			top: -171.54px;
-  		}
-  } */
 }
