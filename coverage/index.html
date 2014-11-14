@@ -14,26 +14,26 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-11-14T09:30:45+01:00">2014-11-14T09:30:45+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-11-14T09:38:50+01:00">2014-11-14T09:38:50+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">75.0%</span></span>
+    (<span class="covered_percent"><span class="red">64.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.73
+         0.62
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>7</b> files in total.
-    <b>36</b> relevant lines. 
-    <span class="green"><b>27</b> lines covered</span> and
+    <b>3</b> files in total.
+    <b>25</b> relevant lines. 
+    <span class="green"><b>16</b> lines covered</span> and
     <span class="red"><b>9</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -71,51 +71,11 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#f5ba0797a22d8ee04d0840e6864e705e116288a6" class="src_link" title="spec/controllers/pages_controller_spec.rb">spec/controllers/pages_controller_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>12</td>
-        <td>6</td>
-        <td>6</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
-      <tr>
         <td class="strong"><a href="#a1089feab88243f81c6b31d981e8aa1f00dafd4e" class="src_link" title="spec/features/landing_pages_spec.rb">spec/features/landing_pages_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>9</td>
-        <td>5</td>
-        <td>5</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#1a060eafa6f8daa2323fb03d8de7b6425bc4c863" class="src_link" title="spec/helpers/pages_helper_spec.rb">spec/helpers/pages_helper_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>14</td>
-        <td>2</td>
-        <td>2</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#6c6264fb244861a6259cdf3039033c90e0b17c90" class="src_link" title="spec/models/user_spec.rb">spec/models/user_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>4</td>
-        <td>2</td>
-        <td>2</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#dc5c3befdfe71b624e414638e384bb4a1c2b5402" class="src_link" title="spec/views/pages/index.html.erb_spec.rb">spec/views/pages/index.html.erb_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>4</td>
-        <td>2</td>
-        <td>2</td>
+        <td>10</td>
+        <td>6</td>
+        <td>6</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -442,103 +402,13 @@
   </pre>
 </div>
       
-        <div class="source_table" id="f5ba0797a22d8ee04d0840e6864e705e116288a6">
-  <div class="header">
-    <h3>spec/controllers/pages_controller_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;rails_helper&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">RSpec.describe PagesController, :type =&gt; :controller do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &quot;GET index&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;returns http success&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      get :index</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(response).to have_http_status(:success)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
         <div class="source_table" id="a1089feab88243f81c6b31d981e8aa1f00dafd4e">
   <div class="header">
     <h3>spec/features/landing_pages_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -576,211 +446,31 @@
           <code class="ruby">		visit root_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">		within(&quot;h1&quot;) do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">		expect(page).to have_content(&quot;Spolisty&quot;)</code>
+          <code class="ruby">			expect(page).to have_content(&quot;SPOLISTY.COM&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">		end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">	end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="1a060eafa6f8daa2323fb03d8de7b6425bc4c863">
-  <div class="header">
-    <h3>spec/helpers/pages_helper_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;rails_helper&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby"># Specs in this file have access to a helper object that includes</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby"># the PagesHelper. For example:</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">#</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby"># describe PagesHelper do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">#   describe &quot;string concat&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">#     it &quot;concats two strings with spaces&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">#       expect(helper.concat_strings(&quot;this&quot;,&quot;that&quot;)).to eq(&quot;this that&quot;)</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">#   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby"># end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
-          
-          <code class="ruby">RSpec.describe PagesHelper, :type =&gt; :helper do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="6c6264fb244861a6259cdf3039033c90e0b17c90">
-  <div class="header">
-    <h3>spec/models/user_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;rails_helper&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">RSpec.describe User, :type =&gt; :model do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="dc5c3befdfe71b624e414638e384bb4a1c2b5402">
-  <div class="header">
-    <h3>spec/views/pages/index.html.erb_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;rails_helper&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">RSpec.describe &quot;pages/index.html.erb&quot;, :type =&gt; :view do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby">end</code>
