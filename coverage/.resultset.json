@@ -1,0 +1,109 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/pnc/sites/spolisty/spec/controllers/pages_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/pnc/sites/spolisty/app/controllers/pages_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/pnc/sites/spolisty/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/pnc/sites/spolisty/spec/features/landing_pages_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/pnc/sites/spolisty/spec/helpers/pages_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/home/pnc/sites/spolisty/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "/home/pnc/sites/spolisty/spec/views/pages/index.html.erb_spec.rb": [
+        1,
+        null,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1415953845
+  }
+}

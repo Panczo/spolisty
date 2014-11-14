@@ -49,6 +49,7 @@ gem 'validates_formatting_of'
 group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
+  gem 'simplecov', :require => false
 end
 
 group :development do
