@@ -1,11 +1,12 @@
 #header {
 	z-index: auto !important;
-	padding: 260px 0px 320px;
+	padding: 260px 0px 520px;
 	text-align: center;
 	height: 100%;
   
-  background: image-url('tomek2.jpg') no-repeat center center;
+  background: image-url('tomek2.jpg') no-repeat center 0;
   background-size: cover;
+  padding-bottom: -400px;
 
 
   .title {
