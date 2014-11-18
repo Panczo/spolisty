@@ -1,3 +1,17 @@
+@import "bootstrap_configuration";
+
+.btn {
+  color: $text-color;
+  background-color: transparent;
+  border-radius: 0;
+  border-color: $brand-primary;
+  &:hover {
+    background-color: transparent;
+    border-color: $brand-light;
+  }
+}
+
+
 #header {
 	z-index: auto !important;
 	padding: 260px 0px 520px;
@@ -16,5 +30,29 @@
   		font-weight: 700;
   		padding-top: 150px;
   	}
+  }
+}
+
+#cta {
+  background-color: $body-bg-dark;
+  .join {
+    position: relative;
+    font-family: $main-font;
+    padding: 30px 120px 30px 120px !important;
+    p {
+      position: absolute;
+      top: 20px;
+      font-size: 30px;
+      color: $text-color;
+      margin: 0;
+      padding: 10px 0;
+    }
+    .btn-cta {
+      border-style: solid;
+      border-width: 2px;
+      padding: 10px 50px 10px 50px;
+      margin-left: 60%;
+    }
+    
   }
 }
