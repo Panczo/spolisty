@@ -59,24 +59,39 @@
 }
 
 #features {
+  padding: $padding-standard;
   font-family: $main-font;
   background-color: $body-bg;
 
   img {
-    border: 3px solid $brand-light !important;
+    border: 3px solid $brand-primary !important;
     &:hover {
-      border: 3px solid $brand-primary !important;
+      border: 3px solid $brand-light !important;
     }
   }
 
   .text-center {
    color: $text-color;
-    margin-top: 90px;
   }
 
   p {
     font-size: 15px;
-    margin: 15px 0;
+    margin: 15px 0 0 0;
   }
 
+}
+
+
+#description {
+  padding: $padding-standard;
+  h2 {
+    font-family: $main-font;
+    padding-bottom: 15px;
+  }
+
+  .description-text {
+    p {
+      font-size: 15px;
+    }
+  }
 }
