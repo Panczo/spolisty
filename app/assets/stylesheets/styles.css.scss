@@ -114,3 +114,15 @@
     padding: 20px 50px 20px 50px;
   }
 }
+
+#sub {
+  color: $text-color;
+  background-color: $body-bg-dark;
+  padding: $padding-standard;
+  font-family: $main-font;
+
+  #email {
+    margin: 10px 0;
+  }
+
+}

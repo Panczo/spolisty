@@ -112,15 +112,23 @@ Poznawaj ludzi o zbliżonym guście
 <section id="sub">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
-			<h1>Get My Awesome News Letter</h1>
-			<p>Give me your email and keep up to date on my cat's thoughts.</p>
-			<%= form_tag('/emailapi/subscribe', method: "post", id: "subscribe", remote: "true") do -%>
-			   <%= email_field(:email, :address, {id: "email", placeholder: "email address"}) %>
-			   <%= submit_tag("Sign me up!") %>
-			<% end %>
-			
+			<div class="col-md-6">
+				<h2>Join our newsletter.</h2>
+				<p>Be the first to hear about new product features </p>
+			</div>
+			<div class="col-md-6">
+				<%= form_tag('/emailapi/subscribe', method: "post", id: "subscribe", remote: "true") do -%>
+				<div class="form-group">
 
+					 <%= email_field(:email, :address, 
+					 {
+						id: "email",
+						placeholder: "Write your email",
+						class: 'form-control'
+						 }) %>
+					 <%= submit_tag "Subscribe", class: "btn btn-primary btn-block" %>
+				</div>
+				<% end %>
 			</div>
 		</div>
 	</div>
