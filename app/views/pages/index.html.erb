@@ -91,32 +91,37 @@ Poznawaj ludzi o zbliżonym guście
 	</div>
 		
 </section>
-
+<!-- CALL TO ACTION Center -->
+<section id="cta2">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="text-center">
+				<h2>Explore your music</h2>
+				<%= link_to "CONNECT WITH SPOTIFY", '#', class: "btn btn-primary btn-cta" %>
+			</div>
+		</div>
+	</div>
+</div>
+	
+</section>
 
 
 <!-- Subskrypcja -->
 
 <section id="sub">
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			<h1>Get My Awesome News Letter</h1>
+			<p>Give me your email and keep up to date on my cat's thoughts.</p>
+			<%= form_tag('/emailapi/subscribe', method: "post", id: "subscribe", remote: "true") do -%>
+			   <%= email_field(:email, :address, {id: "email", placeholder: "email address"}) %>
+			   <%= submit_tag("Sign me up!") %>
+			<% end %>
+			
 
-		<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-
-			<div id="mc_embed_signup">
-				<form action="//spolisty.us9.list-manage.com/subscribe/post?u=179c243faac3d800278ecd66e&amp;id=46acdc6891" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-				    <div id="mc_embed_signup_scroll">
-					
-					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-				    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-				    <div style="position: absolute; left: -5000px;"><input type="text" name="b_179c243faac3d800278ecd66e_46acdc6891" tabindex="-1" value=""></div>
-				    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary btn-block"></div>
-				    </div>
-				</form>
 			</div>
-
 		</div>
 	</div>
-</div>
-
 </section>

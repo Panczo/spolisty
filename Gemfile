@@ -27,6 +27,7 @@ gem 'omniauth-facebook'
 gem 'google-analytics-rails'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
+gem 'gibbon'
 
 group :development, :test do
   gem 'rspec-rails'

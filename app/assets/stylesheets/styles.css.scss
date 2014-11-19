@@ -84,6 +84,8 @@
 
 #description {
   padding: $padding-standard;
+  font-family: $main-font;
+  background-color: $text-color;
   h2 {
     font-family: $main-font;
     padding-bottom: 15px;
@@ -93,5 +95,22 @@
     p {
       font-size: 15px;
     }
+  }
+}
+
+#cta2 {
+  background-color: $body-bg;
+  padding: $padding-standard;
+  font-family: $main-font;
+
+  h2 {
+    color: $text-color;
+    padding-bottom: 15px;
+  }
+  .btn-cta {
+    font-weight: bold;
+    border-style: solid;
+    border-width: 2px;
+    padding: 20px 50px 20px 50px;
   }
 }
