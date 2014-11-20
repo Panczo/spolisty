@@ -1,8 +1,12 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Maven+Pro);
 
 
-$brand-primary: #230E2F;
+$brand-primary-dark: #230E2F;
 $brand-light: #77377E;
+
+$btn-link-disabled-color: $brand-primary-dark;
 
 $body-bg: #404040; //jasny szary
 $body-bg-dark: #262626; //ciemno szary

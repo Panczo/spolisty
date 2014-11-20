@@ -4,10 +4,29 @@
   color: $text-color;
   background-color: transparent;
   border-radius: 0;
-  border-color: $brand-primary;
+  border-color: $brand-primary-dark;
   &:hover {
     background-color: transparent;
     border-color: $brand-light;
+  }
+
+  &:focus {
+    background-color: $brand-light;
+  }
+
+  &:active {
+    background-color: $brand-light;
+    border-color: $brand-light;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    pointer-events: none; // Future-proof disabling of clicks
+    @include opacity(.65);
+    @include box-shadow(none);
+    background-color: $brand-primary-dark !important;
+    border-color: $brand-primary-dark !important;
   }
 }
 
@@ -64,7 +83,7 @@
   background-color: $body-bg;
 
   img {
-    border: 3px solid $brand-primary !important;
+    border: 3px solid $brand-primary-dark !important;
     &:hover {
       border: 3px solid $brand-light !important;
     }
