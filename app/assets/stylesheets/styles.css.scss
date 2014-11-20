@@ -118,7 +118,8 @@
 }
 
 #cta2 {
-  background-color: $body-bg;
+  background: image-url('bg12.png') repeat scroll center top/cover transparent;;
+  background-repeat: repeat-y;
   padding: $padding-standard;
   font-family: $main-font;
 
