@@ -18,7 +18,7 @@
 	text-align: center;
 	height: 100%;
   
-  background: image-url('tomek2.jpg') no-repeat center 0;
+  background: image-url('bg3.jpg') no-repeat center 0;
   background-size: cover;
   padding-bottom: -400px;
 
@@ -123,6 +123,20 @@
 
   #email {
     margin: 10px 0;
+  }
+
+  .form-control {
+    &:focus {
+      border-color: $brand-light;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.075) inset, 0 0 18px rgba(0, 63, 131, 0.6);
+      
+    }
+  }
+
+  .btn-cta {
+    font-weight: bold;
+    border-style: solid;
+    border-width: 2px;
   }
 
 }
