@@ -1,14 +1,16 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/pnc/sites/spolisty/spec/features/landing_pages_spec.rb": [
+      "/home/pnc/sites/spolisty/spec/controllers/pages_controller_spec.rb": [
+        1,
+        null,
         1,
         null,
         1,
         1,
         1,
         1,
-        1,
+        null,
         null,
         null,
         null
@@ -61,8 +63,91 @@
         null,
         null,
         null
+      ],
+      "/home/pnc/sites/spolisty/spec/controllers/subscribers_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/pnc/sites/spolisty/app/controllers/subscribers_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/pnc/sites/spolisty/spec/features/landing_pages_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/pnc/sites/spolisty/spec/helpers/pages_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/home/pnc/sites/spolisty/spec/helpers/subscribers_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/pnc/sites/spolisty/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "/home/pnc/sites/spolisty/spec/views/pages/index.html.erb_spec.rb": [
+        1,
+        null,
+        1,
+        null
       ]
     },
-    "timestamp": 1415954330
+    "timestamp": 1416489367
   }
 }
