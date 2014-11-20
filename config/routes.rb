@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get 'pages/index'
-
+  
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
-
-  root 'pages#index'
 
   devise_scope :user do
     get    "login"   => "users/sessions#new",         as: :new_user_session
@@ -16,4 +13,6 @@ Rails.application.routes.draw do
     get    "account" => "users/registrations#edit",   as: :edit_user_registration
   end
 
+  root 'pages#index'
+  post '/subscribers/create' => 'subscribers#create'
 end

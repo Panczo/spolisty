@@ -34,6 +34,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'better_errors'
+  gem 'pry'
+  gem 'pry-byebug'
 end
 
 group :test do

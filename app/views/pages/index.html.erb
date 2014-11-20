@@ -117,17 +117,20 @@ Poznawaj ludzi o zbliżonym guście
 				<p>Be the first to hear about new product features </p>
 			</div>
 			<div class="col-md-6 col-sm-12">
-				<%= form_tag('/emailapi/subscribe', method: "post", id: "subscribe", remote: "true") do -%>
-				<div class="form-group">
+				<%= form_tag(subscribers_create_path, method: "post", id: "subscribe", remote: "true") do -%>
 
-					 <%= email_field(:email, :address, 
-					 {
-						id: "email",
-						placeholder: "Write your email",
-						class: 'form-control'
-						 }) %>
-					 <%= submit_tag "SUBSCRIBE", class: "btn btn-primary btn-block btn-cta" %>
-				</div>
+					<div class="form-group">
+
+						 <%= email_field(:email, :address, 
+						 {
+							id: "email",
+							placeholder: "Write your email",
+							class: 'form-control'
+							 }) %>
+							 
+						 <%= submit_tag "SUBSCRIBE", class: "btn btn-primary btn-block btn-cta" %>
+					</div>
+
 				<% end %>
 			</div>
 		</div>
