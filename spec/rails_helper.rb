@@ -5,6 +5,9 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
+require 'capybara/webkit/matchers'
+
+Capybara.javascript_driver = :webkit
 
 require 'simplecov'
 SimpleCov.start
@@ -52,4 +55,6 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+  config.include(Capybara::Webkit::RspecMatchers, :type => :feature)
+  config.raise_errors_for_deprecations!
 end
