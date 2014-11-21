@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.8.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.8.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.8.0/favicon_red.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.8.0/favicon_yellow.png" />
     <link rel="icon" type="image/png" href="./assets/0.8.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-11-21T10:22:07+01:00">2014-11-21T10:22:07+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-11-21T14:30:58+01:00">2014-11-21T14:30:58+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">78.43%</span></span>
+    (<span class="covered_percent"><span class="yellow">83.33%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.85
+         0.88
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>5</b> files in total.
-    <b>51</b> relevant lines. 
-    <span class="green"><b>40</b> lines covered</span> and
-    <span class="red"><b>11</b> lines missed </span>
+    <b>11</b> files in total.
+    <b>84</b> relevant lines. 
+    <span class="green"><b>70</b> lines covered</span> and
+    <span class="red"><b>14</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -63,39 +63,99 @@
       <tr>
         <td class="strong"><a href="#f2e4845ecd12ee34fd27711823d479d3031ffe20" class="src_link" title="app/controllers/pages_controller.rb">app/controllers/pages_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>7</td>
+        <td>8</td>
+        <td>4</td>
+        <td>4</td>
+        <td>0</td>
+        <td>1.5</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#c83897b5c5f214464e0a5b300f34be3ee1c8474c" class="src_link" title="app/controllers/subscribes_controller.rb">app/controllers/subscribes_controller.rb</a></td>
+        <td class="red strong">80.0 %</td>
+        <td>21</td>
+        <td>10</td>
+        <td>8</td>
+        <td>2</td>
+        <td>0.8</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#1a17ec5b09f6e868f56ca6849ebd08045eacdee7" class="src_link" title="app/models/subscribe.rb">app/models/subscribe.rb</a></td>
+        <td class="red strong">62.5 %</td>
+        <td>20</td>
+        <td>8</td>
+        <td>5</td>
         <td>3</td>
-        <td>3</td>
+        <td>0.6</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#f5ba0797a22d8ee04d0840e6864e705e116288a6" class="src_link" title="spec/controllers/pages_controller_spec.rb">spec/controllers/pages_controller_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>12</td>
+        <td>6</td>
+        <td>6</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
       
       <tr>
-        <td class="strong"><a href="#62f9792d2e483686e8195027706a56b0f7d0956a" class="src_link" title="app/controllers/subscribers_controller.rb">app/controllers/subscribers_controller.rb</a></td>
-        <td class="red strong">71.43 %</td>
-        <td>17</td>
-        <td>7</td>
+        <td class="strong"><a href="#bd9fe43582d5c64240484885f729858e67fba690" class="src_link" title="spec/controllers/subscribes_controller_spec.rb">spec/controllers/subscribes_controller_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
         <td>5</td>
         <td>2</td>
-        <td>1.1</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#fca1a9ac1f3eb77777540e8f09771732dd64e4cd" class="src_link" title="spec/features/create_subscribe_spec.rb">spec/features/create_subscribe_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>19</td>
+        <td>10</td>
+        <td>10</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#a1089feab88243f81c6b31d981e8aa1f00dafd4e" class="src_link" title="spec/features/landing_pages_spec.rb">spec/features/landing_pages_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>21</td>
-        <td>11</td>
-        <td>11</td>
+        <td>17</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
-        <td>1.1</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
-        <td class="strong"><a href="#a275e27a5ac647f0df2c959c342ba76e2b28a710" class="src_link" title="spec/features/subscribe_spec.rb">spec/features/subscribe_spec.rb</a></td>
+        <td class="strong"><a href="#cf8f970800d7f5b1b434beb9a4456af1bdf5a281" class="src_link" title="spec/models/subscribe_spec.rb">spec/models/subscribe_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>27</td>
-        <td>14</td>
-        <td>14</td>
+        <td>32</td>
+        <td>15</td>
+        <td>15</td>
+        <td>0</td>
+        <td>1.2</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#6c6264fb244861a6259cdf3039033c90e0b17c90" class="src_link" title="spec/models/user_spec.rb">spec/models/user_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>4</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#241f8b86ea53fa0f4144d50fa14e0d69973eb51c" class="src_link" title="spec/support/factory_girl.rb">spec/support/factory_girl.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>3</td>
+        <td>2</td>
+        <td>2</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -367,8 +427,8 @@
     <h3>app/controllers/pages_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -400,19 +460,25 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">  	@subscribe = Subscribe.new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">end</code>
@@ -422,13 +488,13 @@
   </pre>
 </div>
       
-        <div class="source_table" id="62f9792d2e483686e8195027706a56b0f7d0956a">
+        <div class="source_table" id="c83897b5c5f214464e0a5b300f34be3ee1c8474c">
   <div class="header">
-    <h3>app/controllers/subscribers_controller.rb</h3>
-    <h4><span class="red">71.43 %</span> covered</h4>
+    <h3>app/controllers/subscribes_controller.rb</h3>
+    <h4><span class="red">80.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>10</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
@@ -439,7 +505,7 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class SubscribersController &lt; ApplicationController</code>
+          <code class="ruby">class SubscribesController &lt; ApplicationController</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
@@ -454,76 +520,76 @@
           <code class="ruby">	def create</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
           
-          <code class="ruby">		begin</code>
+          <code class="ruby">		@sub = Subscribe.new(subscribe_params)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="5">
           
-          <code class="ruby">			@result = Gibbon::API.new(ENV[&#39;MAILCHIMP&#39;]).lists.subscribe(</code>
+          
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">				{</code>
+          <code class="ruby">		respond_to do |format|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">					:id =&gt; ENV[&#39;MAILCHIMP_LIST&#39;], </code>
+          <code class="ruby">	    if @sub.save</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="missed" data-hits="0" data-linenumber="8">
           
           
-          <code class="ruby">					:email =&gt; {:email =&gt; params[:email][:address]}, </code>
+          <code class="ruby">	      format.js</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">					:double_optin =&gt; false</code>
+          <code class="ruby">	    else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="missed" data-hits="0" data-linenumber="10">
           
           
-          <code class="ruby">				})</code>
+          <code class="ruby">	      format.js</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="11">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="11">
           
-          <code class="ruby">				flash[:success] = &quot;#{@result}&quot;</code>
+          
+          <code class="ruby">	    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">		rescue Gibbon::MailChimpError =&gt; e</code>
+          <code class="ruby">  	end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">	  	flash[:error] = &quot;#{e.message}&quot;</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">		end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">	end</code>
+          <code class="ruby">  private</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
@@ -532,7 +598,31 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def subscribe_params</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  	params.require(:subscribe).permit(:email)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>
@@ -542,13 +632,151 @@
   </pre>
 </div>
       
-        <div class="source_table" id="a1089feab88243f81c6b31d981e8aa1f00dafd4e">
+        <div class="source_table" id="1a17ec5b09f6e868f56ca6849ebd08045eacdee7">
   <div class="header">
-    <h3>spec/features/landing_pages_spec.rb</h3>
+    <h3>app/models/subscribe.rb</h3>
+    <h4><span class="red">62.5 %</span> covered</h4>
+    <div>
+      <b>8</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Subscribe &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	validates :email, presence: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	validates :email, :email_format =&gt; { :message =&gt; &#39;incorrect email format&#39;}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	after_create :join_to_newsletter</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	def join_to_newsletter</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="10">
+          
+          
+          <code class="ruby">		return true if (Rails.env.test?) </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">		result = Gibbon::API.new(ENV[&#39;MAILCHIMP&#39;]).lists.subscribe(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">			{</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">				:id =&gt; ENV[&#39;MAILCHIMP_LIST&#39;], </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">				:email =&gt; { :email =&gt; self.email }, </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">				:double_optin =&gt; false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">			})</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
+          
+          <code class="ruby">		return result</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">	end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="f5ba0797a22d8ee04d0840e6864e705e116288a6">
+  <div class="header">
+    <h3>spec/controllers/pages_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>11</b> relevant lines. 
-      <span class="green"><b>11</b> lines covered</span> and
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -571,43 +799,43 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">feature &#39;Landing page&#39; do</code>
+          <code class="ruby">RSpec.describe PagesController, :type =&gt; :controller do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">	before(:each) do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
-          
-          <code class="ruby">		visit root_path</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby">	end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby"></code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;GET index&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;returns http success&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      get :index</code>
+        </li>
+      
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">	it &#39;should not have JavaScript errors&#39;, :js =&gt; true do</code>
+          <code class="ruby">      expect(response).to have_http_status(:success)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="9">
           
-          <code class="ruby">    expect(page).not_to be_falsey</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -622,61 +850,7 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
-          
-          <code class="ruby">	scenario &#39;have name of application&#39; do	</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
-          
-          <code class="ruby">		within(&quot;.lead&quot;) do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">			expect(page).to have_content(&quot;Explore your music with friends&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">		end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
-          
-          <code class="ruby">		within(&quot;.btn-cta&quot;, match: :first) do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
-          
-          <code class="ruby">			expect(page).to have_content(&quot;CONNECT WITH SPOTIFY&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">		end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">	end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">end</code>
@@ -686,13 +860,61 @@
   </pre>
 </div>
       
-        <div class="source_table" id="a275e27a5ac647f0df2c959c342ba76e2b28a710">
+        <div class="source_table" id="bd9fe43582d5c64240484885f729858e67fba690">
   <div class="header">
-    <h3>spec/features/subscribe_spec.rb</h3>
+    <h3>spec/controllers/subscribes_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>14</b> relevant lines. 
-      <span class="green"><b>14</b> lines covered</span> and
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;rails_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.describe SubscribesController, :type =&gt; :controller do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="fca1a9ac1f3eb77777540e8f09771732dd64e4cd">
+  <div class="header">
+    <h3>spec/features/create_subscribe_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>10</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -733,130 +955,490 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">	scenario &#39;successfull join to landing page&#39; do</code>
+          <code class="ruby">	scenario &#39;successfull join to landing page&#39;, :js =&gt; true do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
+          <code class="ruby">		pending &quot;In test msg dont show&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
           <code class="ruby">		visit root_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
-          
-          <code class="ruby">		within(&quot;#subscribe&quot;) do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">			fill_in(&quot;email&quot;, with: &quot;test@test.com&quot;)</code>
+          <code class="ruby">		within(&quot;#new_subscribe&quot;) do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">			click_button &quot;SUBSCRIBE&quot;</code>
+          <code class="ruby">			fill_in(&quot;email&quot;, with: &quot;test12@test.com&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">		end</code>
+          <code class="ruby">			click_button &quot;SUBSCRIBE&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
+          <code class="ruby">		end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">		find(&quot;#success-sub&quot;, visible: false)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">		expect(page).to have_content(&quot;Successfully added to our mailing list.&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">	end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="19">
           
-          <code class="ruby">	scenario &#39;wrong email format&#39; do</code>
+          
+          <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="a1089feab88243f81c6b31d981e8aa1f00dafd4e">
+  <div class="header">
+    <h3>spec/features/landing_pages_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>9</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;rails_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">feature &#39;Landing page&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	before(:each) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
           <code class="ruby">		visit root_path</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
-          
-          <code class="ruby">		within(&quot;#subscribe&quot;) do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
-          
-          <code class="ruby">			fill_in(&quot;email&quot;, with: &quot;test_test.com&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
-          
-          <code class="ruby">			click_button &quot;SUBSCRIBE&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">		end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
-          
-          <code class="ruby">		expect(page).to have_content(&quot;incorrect email format&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby">	end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby"></code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	scenario &#39;have name of application&#39; do	</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">		within(&quot;.lead&quot;) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">			expect(page).to have_content(&quot;Explore your music with friends&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">		end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">		within(&quot;.btn-cta&quot;, match: :first) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">			expect(page).to have_content(&quot;CONNECT WITH SPOTIFY&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">		end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">	end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="cf8f970800d7f5b1b434beb9a4456af1bdf5a281">
+  <div class="header">
+    <h3>spec/models/subscribe_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>15</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;rails_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.describe Subscribe, :type =&gt; :model do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">	</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	it &#39;its valid with email present&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">		sub = Subscribe.new(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">				email: &quot;test@test.com&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">			)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">		expect(sub).to be_valid</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">	end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	it &#39;its invalid without email&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">		sub = Subscribe.new(email: &#39;&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">		expect(sub).to_not be_valid</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">	end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	it &#39;incorrect emails&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">		addresses = %w[test@test,com test_test.com test.test@test. test@te+st.com]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">		addresses.each do |wrong_email|</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="23">
+          <span class="hits">4</span>
+          
+          <code class="ruby">			@email = Subscribe.new(email: wrong_email)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">		end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">		expect(@email).to_not be_valid</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">	end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	 describe &quot;#join_to_newsletter&quot; do </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">			pending &quot;Write spec for test method join_to&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">	 end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="6c6264fb244861a6259cdf3039033c90e0b17c90">
+  <div class="header">
+    <h3>spec/models/user_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;rails_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.describe User, :type =&gt; :model do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="241f8b86ea53fa0f4144d50fa14e0d69973eb51c">
+  <div class="header">
+    <h3>spec/support/factory_girl.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.configure do |config|</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  config.include FactoryGirl::Syntax::Methods</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
           
           
           <code class="ruby">end</code>

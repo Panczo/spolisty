@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get    "account" => "users/registrations#edit",   as: :edit_user_registration
   end
 
+  resources :subscribes, only: [:create]
+
   root 'pages#index'
-  post '/subscribers/create' => 'subscribers#create'
 end

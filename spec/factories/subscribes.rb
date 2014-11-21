@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :subscribe do
-    email "MyString"
+    email "test123@gmail.com"
   end
 
 end
