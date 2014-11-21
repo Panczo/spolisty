@@ -36,6 +36,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'pry'
   gem 'pry-byebug'
+  gem 'validates_email_format_of'
 end
 
 group :test do

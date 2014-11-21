@@ -1,16 +1,21 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/pnc/sites/spolisty/spec/controllers/pages_controller_spec.rb": [
+      "/home/pnc/sites/spolisty/spec/features/subscribe_spec.rb": [
         1,
+        null,
         null,
         1,
         null,
         1,
         1,
+        null,
+        1,
         1,
         1,
         null,
+        null,
+        1,
         null,
         null,
         null
@@ -64,13 +69,6 @@
         null,
         null
       ],
-      "/home/pnc/sites/spolisty/spec/controllers/subscribers_controller_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
       "/home/pnc/sites/spolisty/app/controllers/subscribers_controller.rb": [
         1,
         null,
@@ -89,44 +87,8 @@
         null,
         null,
         null
-      ],
-      "/home/pnc/sites/spolisty/spec/features/landing_pages_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        2,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/pnc/sites/spolisty/spec/models/user_spec.rb": [
-        1,
-        null,
-        1,
-        null
       ]
     },
-    "timestamp": 1416490879
+    "timestamp": 1416556685
   }
 }

@@ -10,7 +10,7 @@ class SubscribersController < ApplicationController
 				})
 				flash[:success] = "#{@result}"
 		rescue Gibbon::MailChimpError => e
-	  	return :flash => { error: e.message }
+	  	flash[:error] = "#{e.message}"
 		end
 	end
 
