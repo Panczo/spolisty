@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   
-  devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
+  devise_for :users, controllers: {
+      registrations: "users/registrations", 
+      sessions: "users/sessions", 
+      passwords: "users/passwords",
+      omniauth_callbacks: "users/omniauth_callbacks" 
+    }, skip: [:sessions, :registrations]
 
   devise_scope :user do
     get    "login"   => "users/sessions#new",         as: :new_user_session
