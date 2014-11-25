@@ -24,10 +24,12 @@ gem 'font-awesome-rails'
 gem 'devise', github: 'plataformatec/devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-spotify'
 gem 'google-analytics-rails'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
 gem 'gibbon'
+
 
 group :development, :test do
   gem 'rspec-rails'
