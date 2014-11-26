@@ -41,6 +41,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'validates_email_format_of'
+  gem 'annotate', '~> 2.6.5'
 end
 
 group :test do
