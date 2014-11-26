@@ -36,7 +36,4 @@ RSpec.describe Subscribe, :type => :model do
 		expect(@email).to_not be_valid
 	end
 
-	 describe "#join_to_newsletter" do 
-			pending "Write spec for test method join_to"
-	 end 
 end
