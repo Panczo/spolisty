@@ -28,8 +28,8 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:spotify]
-  attr_accessor :login
   
+  attr_accessor :login
 
 
   def self.from_omniauth(auth)
@@ -46,7 +46,6 @@ class User < ActiveRecord::Base
 
   def self.new_with_session(params, session)
     super.tap do |user|
-      binding.pry
       if data = session["devise.spotify_data"] && session["devise.spotify_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
       end
