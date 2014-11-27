@@ -5,7 +5,13 @@
   background-color: transparent;
   border-radius: 0;
   border-color: $brand-primary-dark;
+  @include transition(0.6s);
+
   &:hover {
+    @include transition(0.6s);
+    -webkit-box-shadow: 0px 1px 1px red;
+    -moz-box-shadow: 0px 1px 1px red;
+    box-shadow: 0px 1px 1px red;
     background-color: transparent;
     border-color: $brand-light;
   }
