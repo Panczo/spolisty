@@ -30,6 +30,33 @@
   }
 }
 
+/**** MENU ****/
+#menu {
+  .navbar {
+
+    padding: 15px 0;
+    border: none;
+    font-weight: 450;
+    background: -webkit-linear-gradient(90deg, $brand-primary-dark 10%, $brand-light 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(90deg, $brand-primary-dark 10%, $brand-light 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg, $brand-primary-dark 10%, $brand-light 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg, $brand-primary-dark 10%, $brand-light 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg, $brand-primary-dark 10%, $brand-light 90%); /* W3C */       
+    
+    a {
+      color: $text-color;
+      &:hover {
+        color: $brand-primary-dark;
+      }
+    }
+
+    .navbar-brand {
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }  
+}
 
 #header {
 	z-index: auto !important;

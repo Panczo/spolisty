@@ -14,7 +14,7 @@ $(document).ready(function(){
 
 	$(document).scroll(function(){
 		var y = $(this).scrollTop();
-		if (y > 800) {
+		if (y > 640) {
 			$('#menu').fadeIn();
 		} else {
 			$('#menu').fadeOut();
