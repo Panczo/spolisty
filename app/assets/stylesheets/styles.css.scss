@@ -32,24 +32,32 @@
 
 /**** MENU ****/
 #menu {
-  .navbar {
 
+  .navbar {
     padding: 15px 0;
     border: none;
 
     @include backround-transparent($brand-primary-dark, $brand-light, 0.8, 0.8);
     
-    
-    a {
-      color: $text-color;
-      &:hover {
-        color: $brand-primary-dark;
+    #menu-navbar {
+      a {
+        padding-bottom: 10px;
+        color: $text-color;
+        font-weight: 600;
+        &:hover {
+          border-bottom: 2px solid $brand-primary-dark;
+          margin-bottom: -2px;
+        }
       }
     }
 
     .navbar-brand {
+      color: $text-color;
+      font-weight: 600;
+      @include transition(1s);
       &:hover {
-        color: $text-color;
+        @include transition(1s);
+        color: lighten($brand-light, 40%);
       }
     }
   }  

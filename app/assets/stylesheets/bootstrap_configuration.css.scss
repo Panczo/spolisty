@@ -2,7 +2,7 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Maven+Pro);
 
-
+/* Primary color */
 $brand-primary-dark: #230E2F;
 $brand-light: #77377E;
 
@@ -27,3 +27,8 @@ $padding-standard: 75px;
 }
 
 
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
