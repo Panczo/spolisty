@@ -18,4 +18,12 @@ $main-font: 'Maven Pro', sans-serif;
 $padding-standard: 75px;
 
 
+@mixin backround-transparent($color1, $color2, $opacity1, $opacity2) {
+    background: -webkit-linear-gradient(90deg, rgba($color1, $opacity1) 10%, rgba($color2, $opacity2) 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(90deg, rgba($color1, $opacity1) 10%, rgba($color2, $opacity2) 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg, rgba($color1, $opacity1) 10%, rgba($color2, $opacity2) 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg, rgba($color1, $opacity1) 10%, rgba($color2, $opacity2) 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg, rgba($color1, $opacity1) 10%, rgba($color2, $opacity2) 90%); /* W3C */ 
+}
+
 
