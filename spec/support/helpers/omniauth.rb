@@ -50,7 +50,7 @@ module Omniauth
       visit root_path
       expect(page).to have_content("CONNECT WITH SPOTIFY")
       auth_mock
-      click_link "CONNECT WITH SPOTIFY"
+      click_link "CONNECT WITH SPOTIFY", match: :first
     end
   end
   
