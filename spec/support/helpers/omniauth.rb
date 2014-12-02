@@ -10,7 +10,13 @@ module Omniauth
             'country'=>'GB',
             'display_name'=>'Mario Poli',
             'email'=>'mariopoli@google.com',
-            'external_urls'=>{'spotify'=>'https://open.spotify.com/user/mariopoli'}
+            'external_urls'=>{'spotify'=>'https://open.spotify.com/user/mariopoli'},
+            'images'=>
+              [{'height'=>nil,
+                'url'=>
+                'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/t1.0-1/s320x320/301234_1962753760624_625151598_n.jpg',
+                'width'=>nil
+              }]
           },
         'credentials' => 
           {
@@ -30,12 +36,6 @@ module Omniauth
                 'followers'=>{'href'=>nil, 'total'=>0},
                 'href'=>'https://api.spotify.com/v1/users/mariopoli',
                 'id'=>'mariopoli',
-                'images'=>
-                  [{'height'=>nil,
-                    'url'=>
-                    'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/t1.0-1/s320x320/301234_1962753760624_625151598_n.jpg',
-                    'width'=>nil
-                  }],
                 'product'=>'open',
                 'type'=>'user',
                 'uri'=>'spotify:user:mariopoli'

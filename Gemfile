@@ -31,6 +31,10 @@ gem 'tzinfo-data'
 gem 'validates_formatting_of'
 gem 'gibbon'
 
+group :development do
+  gem 'web-console'
+end
+
 
 group :development, :test do
   gem 'rspec-rails'
@@ -42,7 +46,6 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'validates_email_format_of'
   gem 'annotate', '~> 2.6.5'
-  gem 'web-console', '~> 2.0'
 end
 
 group :test do

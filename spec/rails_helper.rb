@@ -71,6 +71,6 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
   config.include(Capybara::Webkit::RspecMatchers, :type => :feature)
+  config.include RSpec::Rails::RequestExampleGroup, type: :request
   config.raise_errors_for_deprecations!
 end
-
