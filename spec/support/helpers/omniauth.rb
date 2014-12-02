@@ -47,7 +47,7 @@ module Omniauth
 
   module SessionHelpers
     def signin
-      visit root_path
+      visit pages_path
       expect(page).to have_content("CONNECT WITH SPOTIFY")
       auth_mock
       click_link "CONNECT WITH SPOTIFY", match: :first

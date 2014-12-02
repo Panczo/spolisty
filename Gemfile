@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.0.rc1'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
@@ -10,12 +9,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
 gem 'bundler'
-
-gem "figaro"
+gem 'figaro'
 gem 'simple_form'
 gem 'binding_of_caller'
 gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
@@ -33,8 +28,8 @@ gem 'gibbon'
 
 group :development do
   gem 'web-console'
+  gem 'spring'
 end
-
 
 group :development, :test do
   gem 'rspec-rails'

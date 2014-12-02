@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+
   devise_for :users, controllers: {
       registrations: "users/registrations", 
       sessions: "users/sessions", 
@@ -18,7 +19,11 @@ Rails.application.routes.draw do
     get    "account" => "users/registrations#edit",   as: :edit_user_registration
   end
 
+
+  resources :users, only: [:show]
   resources :subscribes, only: [:create]
+  resources :pages, only: [:index]
 
   root 'pages#index'
+
 end

@@ -24,7 +24,10 @@
 
 FactoryGirl.define do
   factory :user do
-    
+  	provider '1234560'
+  	uid '1234560'
+  	name 'Marko Polo'
+  	email 'mpolo@gmail.com'
   end
 
 end

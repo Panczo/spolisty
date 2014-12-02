@@ -1,0 +1,16 @@
+require 'rails_helper'
+
+feature 'User profile page' do
+
+	scenario 'after success login user see own info', :omniauth do
+		signin
+
+		expect(page).to have_content("Successfully authenticated from Spotify account.")
+		expect(current_path).to eq('/users/1')
+		expect(page).to have_content("Mario Poli")
+
+		click_link "Logout"
+		expect(current_path).to eq('/')
+	end
+
+end
