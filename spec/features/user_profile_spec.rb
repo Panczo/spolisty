@@ -9,7 +9,9 @@ feature 'User profile page' do
 		expect(current_path).to eq('/users/1')
 		expect(page).to have_content("Mario Poli")
 
-		click_link "Logout"
+
+		click_link "logout"
+
 		expect(current_path).to eq('/')
 	end
 

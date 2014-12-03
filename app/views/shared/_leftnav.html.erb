@@ -33,12 +33,20 @@
       <% end %>
     </li>
     <li>
-      <%= link_to root_path(anchor: "contact") do %>
-        <span clss="profile-img"><%= image_tag @user.image, class: 'img-circle' %></span>   <i class="fa glyphicon glyphicon-cog"></i> 
+         
+
+      <%= link_to current_user do %>
+        <span clss="profile-img"><%= image_tag @user.image, class: 'img-circle' %></span>
       <% end %>
+
+      <%= link_to destroy_user_session_path, id: 'logout', method: :delete do %>
+        <i class="fa glyphicon glyphicon-log-out"></i>
+      <% end %>
+
     </li>
   </ul>
-  
+
+            <%#= link_to "Logout", destroy_user_session_path, method: :delete %>
   <!-- Copyright 
   <span class="copyright hidden-md">© <%#= Time.now.year %> <b>Tomasz Panek</b>.</span>
   -->

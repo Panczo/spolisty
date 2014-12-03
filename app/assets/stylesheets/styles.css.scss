@@ -240,6 +240,7 @@ header {
         position: absolute;
         bottom: 0;
         padding: 10px 15px;
+        width: 100%;
 
         .fa {
           margin-top: 10px;
@@ -294,9 +295,9 @@ header {
   } 
 }
 
-
-
+/* --- MAIN CONTENT --- */
 
 .main-field {
   padding-left: 160px;
+  margin: 0;
 }
