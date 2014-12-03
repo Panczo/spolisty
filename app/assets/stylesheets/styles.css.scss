@@ -223,20 +223,57 @@ header {
 
   .my-logo {
      padding: 10px 0;
+     font-weight: 600;
     a {
-      color: lighten($brand-light, 40%);
+      color: lighten($brand-light, 20%);
       text-decoration: none;
     }
   }
 
   .me-nav {
     li {
+      img {
+        max-width: 50px;
+        max-height: 50px;
+      }
+      &:last-child {
+        position: absolute;
+        bottom: 0;
+        padding: 10px 15px;
+
+        .fa {
+          margin-top: 10px;
+          font-size: 17px;
+        }
+
+        a {
+          &:hover {
+            background: none;
+            color: $text-color;
+            border-left: none;
+            margin-left: 0;
+          }
+        }
+        &:hover {
+          border-left: none;
+          margin-left: 0;
+        }
+      }
+
+      &:hover {
+        border-left: 4px solid lighten($brand-light, 20%);
+      }
+
       a {
+        font-size: 12px;
         color: $body-bg-light;
+
         &:hover {
           background: none;
           color: $text-color;
+          margin-left: -4px;
         }
+
         &:focus {
           background: none;
         }
@@ -244,7 +281,6 @@ header {
         .fa {
           font-size: 25px;
         }
-
 
         .nav-text {
           display: block;
@@ -259,24 +295,7 @@ header {
 }
 
 
-.copyright {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding-bottom: 30px;
-  padding-right: 15px;
-  font-size: 10px;
-  
-  &:before {
-    position: absolute;
-    top: -30px;
-    right: 15px;
-    height: 2px;
-    width: 30px;
-    display: block;
-    content: " ";
-  }
-}
+
 
 .main-field {
   padding-left: 160px;
