@@ -30,5 +30,16 @@ $(document).ready(function(){
 	    return false;
 	});
 
+  $('.navbar-nav [data-toggle="tooltip"]').tooltip();
+  $('.navbar-twitch-toggle').on('click', function(event) {
+      event.preventDefault();
+      $('.navbar-twitch').toggleClass('open');
+  });
+  
+
+
 
 });
+
+
+
