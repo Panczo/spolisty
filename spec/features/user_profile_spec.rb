@@ -15,4 +15,10 @@ feature 'User profile page' do
 		expect(current_path).to eq('/')
 	end
 
+	scenario 'user see profile other user' do
+		signin
+		user2 = create(:user)
+
+	end
+
 end

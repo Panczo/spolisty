@@ -25,4 +25,15 @@
 require 'rails_helper'
 
 RSpec.describe User, :type => :model do
+
+	it "is has a valid factory" do
+		expect(create(:user)).to be_valid
+	end
+
+	it "it invalid without provider" do
+		user = build(:user, provider: nil, uid: nil, name: nil)
+		user.valid?
+		expect(user.errors.size).to eq(3)
+	end
+
 end

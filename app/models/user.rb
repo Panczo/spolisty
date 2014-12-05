@@ -30,6 +30,9 @@ class User < ActiveRecord::Base
   
   attr_accessor :login
 
+  validates :provider, :uid, :name, presence: true
+
+
   def self.from_omniauth(auth)
     spotify_user = RSpotify::User.new(auth)
     where(provider: auth["provider"], uid: auth["uid"]).first_or_create do |user|

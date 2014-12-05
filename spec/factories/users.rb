@@ -24,10 +24,10 @@
 
 FactoryGirl.define do
   factory :user do
-  	provider '1234560'
-  	uid '1234560'
-  	name 'Marko Polo'
-  	email 'mpolo@gmail.com'
+  	sequence(:provider) { |n| "123456" + "#{n}"}
+		sequence(:uid) { |n| "123451" + "#{n}"}
+		sequence(:name) { |n| "User-#{n}"}
+		sequence(:email) { |n| "User-#{n}@example.com"}
+		password "12345678"
   end
-
 end
