@@ -1,7 +1,7 @@
 <header id="nav-content" class="vertical-nav nav-black">
 
   <div class="my-logo">
-    <a href="#profile">SPOLISTY</a>
+    <a href="<%= root_path %>">SPOLISTY</a>
   </div>
 
   <ul class="menu nav me-nav">
@@ -40,7 +40,6 @@
       <%= link_to destroy_user_session_path, id: 'logout', method: :delete do %>
         <i class="fa glyphicon glyphicon-log-out"></i>
       <% end %>
-
     </li>
   </ul>
 

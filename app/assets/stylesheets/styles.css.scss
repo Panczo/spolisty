@@ -37,8 +37,16 @@
   }
 }
 
+/* --- flash messages --- */
 
-
+.alert {
+  margin: 20px 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: $text-color;
+  border-width: 4px;
+  border-color: $brand-light;
+}
 
 /**** MENU ****/
 #menu {
