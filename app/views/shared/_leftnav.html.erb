@@ -33,9 +33,7 @@
       <% end %>
     </li>
     <li>
-         
-
-      <%= link_to current_user do %>
+      <%= link_to current_user, id: "current_user_link" do %>
         <span clss="profile-img"><%= image_tag @user.image, class: 'img-circle' %></span>
       <% end %>
 

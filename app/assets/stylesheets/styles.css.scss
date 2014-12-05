@@ -36,6 +36,8 @@
   }
 }
 
+
+
 /**** MENU ****/
 #menu {
 
@@ -300,4 +302,78 @@ header {
 .main-field {
   padding-left: 160px;
   margin: 0;
+}
+
+/* --- USER PROFILE PAGE --- */
+
+
+.main-field {
+  background: image-url('bg12.png') repeat scroll center top/cover transparent;
+  padding-left: 120px;
+  color: $text-color;
+  
+  #user_profile {
+    .main_user {
+      padding: $padding-standard 0;
+
+      .profile-text {
+        padding: 15px 15px 0 0;
+        font-size: 25px;
+        font-weight: 550;
+
+        .btn {
+
+          color: $text-color;
+          background-color: transparent;
+          border-width: 2px;
+          border-radius: 0;
+          border-color: $brand-primary-dark;
+          @include transition(0.6s);
+
+          &:hover {
+            @include transition(0.6s);
+            background-color: transparent;
+            border-color: $brand-light;
+            box-shadow: none;
+          }
+
+          &:focus {
+            background-color: $brand-light;
+          }
+
+          &:active {
+            background-color: $brand-light;
+            border-color: $brand-light;
+          }
+
+          &.disabled,
+          &[disabled],
+          fieldset[disabled] & {
+            pointer-events: none; // Future-proof disabling of clicks
+            @include opacity(.65);
+            @include box-shadow(none);
+            background-color: $brand-primary-dark !important;
+            border-color: $brand-primary-dark !important;
+          }
+        }
+        .traveler {
+          font-size: 15px;
+          font-weight: 300;
+          padding-top: 55px;
+        }
+      }
+    }
+  }
+
+  .img-thumbnail {
+    background-color: $body-bg;
+    border: none;
+    @include transition(1s);
+
+    &:hover {
+      @include box-shadow(0px 0px 10px rgba($brand-light,1));
+      @include transition(1s);
+      background-color: $brand-light;
+    }
+  }
 }

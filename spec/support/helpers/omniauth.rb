@@ -53,6 +53,5 @@ module Omniauth
       click_link "CONNECT WITH SPOTIFY", match: :first
     end
   end
-  
 end
 

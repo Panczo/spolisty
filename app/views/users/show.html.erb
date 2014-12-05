@@ -1,18 +1,15 @@
-<div class="col-md-10">
-			<h1><%= @user.name %></h1>
-			
-</div>
-<div class="col-md-10">
-			<h1><%= @user.name %></h1>
-			
-</div>
-<div class="col-md-10">
-			<h1><%= @user.name %></h1>
-	
-			
-</div>
-<div class="col-md-10">
-			<h1><%= @user.name %></h1>
-	
+<section id="user_profile">
+	<div class="row">
+		<div class="main_user col-md-8 col-md-offset-2">
+				<div class="pull-left">
+					<%= image_tag @user.image, class: 'img-circle img-thumbnail' %>
+				</div>
+				<div class="profile-text pull-right">
+					<%= @user.name %>
+					<p class="traveler text-center"><span>Trance Explorer</span></p>
+					<p><%= link_to "Follow", '#', class: 'btn btn-primary btn-small btn-block' %></p>
+				</div>
 
-</div>
+		</div>
+	</div>
+</section>

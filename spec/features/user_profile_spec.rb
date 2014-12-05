@@ -15,9 +15,19 @@ feature 'User profile page' do
 		expect(current_path).to eq('/')
 	end
 
-	scenario 'user see profile other user' do
+	scenario 'user see profile other user', :omniauth do
+		user2 = create(:user, name: "Mona Lisa")
 		signin
-		user2 = create(:user)
+
+		visit user_path(user2)
+
+		within("#user_profile") do
+			expect(page).to have_content("Mona Lisa")
+		end 
+
+		within('#nav-content') do
+			expect(page).to have_css('a#current_user_link')
+		end
 
 	end
 
