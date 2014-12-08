@@ -41,6 +41,8 @@ $(document).ready(function(){
     $(this).parent().addClass('active').siblings().removeClass('active');           
 	});
 
+	$('[data-toggle="tooltip"]').tooltip();
+
 });
 
 

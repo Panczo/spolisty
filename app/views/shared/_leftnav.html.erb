@@ -16,7 +16,7 @@
     </li>
 
     <li>
-      <%= link_to root_path(anchor: "blog"), class: 'standard-menu-item' do %>
+      <%= link_to root_path(anchor: "blog"), "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Logout", class: 'standard-menu-item' do %>
         <i class="fa fa-comment"></i> <span class="nav-text">Ostatnie posty</span>
       <% end %>
     </li>
@@ -37,7 +37,7 @@
         <span clss="profile-img"><%= image_tag @user.image, class: 'img-circle' %></span>
       <% end %>
 
-      <%= link_to destroy_user_session_path, id: 'logout', method: :delete do %>
+      <%= link_to destroy_user_session_path, id: 'logout', "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Logout", method: :delete do %>
         <i class="fa glyphicon glyphicon-log-out"></i>
       <% end %>
     </li>
