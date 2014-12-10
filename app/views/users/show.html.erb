@@ -13,24 +13,17 @@
 				</div>
 		</div>
 
-			<% if user_signed_in? %>
-				<h1>hoho</h1>
-			<% else %>
-				<h1>Nie ma current usera</h1>
-			<% end %>
-
+		<div class="genre-profile col-md-8 col-md-offset-2 text-center">
 			<% if @user.playlists.blank? %>
-				<%= link_to "Import your playlists from spotify", '#' %>
+				<%= link_to "Import your playlists from spotify", '#', class: 'btn btn-primary btn-block btn-lg' %>
 			<% else %>
-
-				<div class="genre-profile col-md-8 col-md-offset-2 text-center">
 					<ul class="nav nav-pills nav-justified">
 					  <li role="presentation" class="<%= is_active?(current_user) %>"><a href="<%= current_user %>"><i class="fa fa-comment"></i> Genre Diagram</a></li>
 					  <li role="presentation"><a href="#"><i class="fa fa-comment"></i> Playlists</a></li>
 					  <li role="presentation"><a href="#"><i class="fa fa-comment"></i> Track</a></li>
 					  <li role="presentation"><a href="#"><i class="fa fa-comment"></i> Messages</a></li>
 					</ul>
-				</div>
 			<% end %>
+		</div>
 	</div>
 </section>

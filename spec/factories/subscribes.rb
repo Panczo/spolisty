@@ -3,7 +3,7 @@
 # Table name: subscribes
 #
 #  id         :integer          not null, primary key
-#  email      :string(255)
+#  email      :string
 #  created_at :datetime
 #  updated_at :datetime
 #
