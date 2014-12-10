@@ -4,7 +4,10 @@ Rails.application.routes.draw do
       omniauth_callbacks: "users/omniauth_callbacks" 
     }
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+  	resources :playlists, only: [:index]
+  end
+
   resources :subscribes, only: [:create]
   resources :pages, only: [:index]
 

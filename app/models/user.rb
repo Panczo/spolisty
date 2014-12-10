@@ -34,6 +34,17 @@ class User < ActiveRecord::Base
 
   validates :provider, :uid, presence: true
 
+  def import_playlist
+    begin
+      spotify_user = RSpotify::User.new(spotify_hash)
+      pl = spotify_user.playlists
+      pl.each do |p|
+        playlists.create(name: p.name, id_spotify: p.id, spotify_type: p.type)
+      end
+    rescue
+      false
+    end
+  end
 
   def self.from_omniauth(auth)
     spotify_user = RSpotify::User.new(auth)

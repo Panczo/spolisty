@@ -25,6 +25,7 @@
 require 'rails_helper'
 
 RSpec.describe User, :type => :model do
+	it { should serialize(:spotify_hash) }
 
 	it "is has a valid factory" do
 		expect(create(:user)).to be_valid
@@ -35,5 +36,8 @@ RSpec.describe User, :type => :model do
 		user.valid?
 		expect(user.errors.size).to eq(2)
 	end
+
+	it '#import_playlist'
+
 
 end
