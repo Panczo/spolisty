@@ -32,12 +32,14 @@
         <i class="fa fa-phone"></i> <span class="nav-text">Kontakt</span>
       <% end %>
     </li>
+    hqeuifhpi
     <li>
       <%= link_to current_user, id: "current_user_link" do %>
-        <span clss="profile-img"><%= image_tag @user.image, class: 'img-circle' %></span>
+        <% if current_user.image %>
+          <span clss="profile-img"><%= image_tag current_user.image, class: 'img-circle' %></span>
+        <% end %>
       <% end %>
-
-      <%= link_to destroy_user_session_path, id: 'logout', "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Logout", method: :delete do %>
+      <%= link_to cancel_user_registration_path(@user), id: 'logout', "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Logout" do %>
         <i class="fa glyphicon glyphicon-log-out"></i>
       <% end %>
     </li>

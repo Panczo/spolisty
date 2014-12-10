@@ -1,22 +1,36 @@
 <section id="user_profile">
 	<div class="row">
 		<div class="main_user col-md-8 col-md-offset-2">
-				<div class="pull-left">
-					<%= image_tag @user.image, class: 'img-circle img-thumbnail' %>
-				</div>
+				<% if @user.image %>
+					<div class="pull-left">
+						<%= image_tag @user.image, class: 'img-circle img-thumbnail' %>  
+					</div>
+				<% end %>
 				<div class="profile-text pull-right">
 					<%= @user.name %>
 					<p class="traveler text-center"><span>Trance Explorer</span></p>
 					<p><%= link_to "Follow", '#', class: 'btn btn-primary btn-small btn-block' %></p>
 				</div>
 		</div>
-		<div class="genre-profile col-md-8 col-md-offset-2 text-center">
-			<ul class="nav nav-pills nav-justified">
-			  <li role="presentation" class="<%= is_active?(current_user) %>"><a href="<%= current_user %>"><i class="fa fa-comment"></i> Genre Diagram</a></li>
-			  <li role="presentation"><a href="#"><i class="fa fa-comment"></i> Playlists</a></li>
-			  <li role="presentation"><a href="#"><i class="fa fa-comment"></i> Track</a></li>
-			  <li role="presentation"><a href="#"><i class="fa fa-comment"></i> Messages</a></li>
-			</ul>
-		</div>
+
+			<% if user_signed_in? %>
+				<h1>hoho</h1>
+			<% else %>
+				<h1>Nie ma current usera</h1>
+			<% end %>
+
+			<% if @user.playlists.blank? %>
+				<%= link_to "Import your playlists from spotify", '#' %>
+			<% else %>
+
+				<div class="genre-profile col-md-8 col-md-offset-2 text-center">
+					<ul class="nav nav-pills nav-justified">
+					  <li role="presentation" class="<%= is_active?(current_user) %>"><a href="<%= current_user %>"><i class="fa fa-comment"></i> Genre Diagram</a></li>
+					  <li role="presentation"><a href="#"><i class="fa fa-comment"></i> Playlists</a></li>
+					  <li role="presentation"><a href="#"><i class="fa fa-comment"></i> Track</a></li>
+					  <li role="presentation"><a href="#"><i class="fa fa-comment"></i> Messages</a></li>
+					</ul>
+				</div>
+			<% end %>
 	</div>
 </section>

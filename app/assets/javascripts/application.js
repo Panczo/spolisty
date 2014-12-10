@@ -21,7 +21,7 @@ $(document).ready(function(){
 		}
 	});
 
-	/*	smooth section moves */
+	/****	smooth section moves ****/
 	var $root = $('html, body');
 	$('a').click(function() {
 	    $root.animate({

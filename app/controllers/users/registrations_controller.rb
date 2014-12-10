@@ -12,4 +12,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def edit
     super
   end
+
+  def cancel
+    super
+  end
 end

@@ -30,7 +30,9 @@ class User < ActiveRecord::Base
   
   attr_accessor :login
 
-  validates :provider, :uid, :name, presence: true
+  has_many :playlists, dependent: :destroy
+
+  validates :provider, :uid, presence: true
 
 
   def self.from_omniauth(auth)
@@ -38,19 +40,12 @@ class User < ActiveRecord::Base
     where(provider: auth["provider"], uid: auth["uid"]).first_or_create do |user|
           user.email = auth["info"]["email"]
           user.password = Devise.friendly_token[0,20]
-          user.name = auth["info"]["display_name"]   
-          user.image = auth["info"]["images"][0]["url"]
+          user.name = auth["info"]["display_name"] unless auth["info"]["display_name"].nil?
+          user.image = auth["info"]["images"][0]["url"] unless auth["info"]["images"].blank?
           user.spotify_hash = spotify_user.to_hash
       end
   end
 
-  def self.new_with_session(params, session)
-    super.tap do |user|
-      if data = session["devise.spotify_data"] && session["devise.spotify_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
-      end
-    end
-  end
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup

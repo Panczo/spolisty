@@ -33,7 +33,7 @@ RSpec.describe User, :type => :model do
 	it "it invalid without provider" do
 		user = build(:user, provider: nil, uid: nil, name: nil)
 		user.valid?
-		expect(user.errors.size).to eq(3)
+		expect(user.errors.size).to eq(2)
 	end
 
 end
