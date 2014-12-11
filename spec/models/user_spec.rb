@@ -25,6 +25,7 @@
 require 'rails_helper'
 
 RSpec.describe User, :type => :model do
+
 	it { should serialize(:spotify_hash) }
 
 	it "is has a valid factory" do
@@ -37,7 +38,25 @@ RSpec.describe User, :type => :model do
 		expect(user.errors.size).to eq(2)
 	end
 
-	it '#import_playlist'
+	describe '#import_playlist', :vcr => true do
+		before(:each) do	
+			@user = VCR.use_cassette('user_spotify_hash') do
+				RSpotify::User.find('testsanczo')
+			end
+		end
 
+		it 'should find user with correct playlists' do
+		  client_id = '5ac1cda2ad354aeaa1ad2693d33bb98c'
+			client_secret = '155fc038a85840679b55a1822ef36b9b'
+			VCR.use_cassette('authenticate:client') do
+				RSpotify.authenticate(client_id, client_secret)
+			end
+      playlists = VCR.use_cassette('user:testsanczo:playlists:limit:20:offset:0') do
+        @user.playlists
+      end
 
+      expect(playlists)             .to be_an Array
+      expect(playlists.size)        .to eq 0
+    end
+	end
 end

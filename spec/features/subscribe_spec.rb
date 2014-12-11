@@ -1,16 +1,18 @@
 require 'rails_helper'
 
-feature 'Subscribe' do
+feature 'Subscribe', :vcr => true do
 
 	scenario 'successfull join to landing page', :js => true do
-		visit root_path
 
-		within("#sub") do
-			fill_in("email", with: "test@test.com")
-			click_button "SUBSCRIBE"
+		VCR.use_cassette('subscribe_to_list') do
+			visit root_path
+			within("#sub") do
+				fill_in("email", with: "test@test.com")
+				click_button "SUBSCRIBE"
+			end
+			expect(page).to have_content("Successfully added to our mailing list.")
 		end
 
-		expect(page).to have_content("Successfully added to our mailing list.")
 	end
 
 	scenario 'wrong email format', :js => true do

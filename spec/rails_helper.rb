@@ -6,6 +6,8 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
 require 'capybara/webkit/matchers'
+require 'vcr'
+require 'webmock/rspec'
 
 Capybara.javascript_driver = :webkit
 
@@ -74,4 +76,11 @@ RSpec.configure do |config|
   config.include(Capybara::Webkit::RspecMatchers, :type => :feature)
   config.include RSpec::Rails::RequestExampleGroup, type: :request
   config.raise_errors_for_deprecations!
+end
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/vcr_cassettes'
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+  c.ignore_localhost = true
 end
