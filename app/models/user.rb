@@ -34,6 +34,10 @@ class User < ActiveRecord::Base
 
   validates :provider, :uid, presence: true
 
+  def image?
+    !image.nil?
+  end
+
   def import_playlist
     begin
       spotify_user = RSpotify::User.new(spotify_hash)

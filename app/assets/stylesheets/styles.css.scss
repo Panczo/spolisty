@@ -259,6 +259,11 @@ header {
           font-size: 17px;
         }
 
+        .fa-user {
+          padding: 4px 10px;
+          background: $body-bg-dark;
+        }
+
         a {
           &:hover {
             background: none;
@@ -305,6 +310,7 @@ header {
       }
     }
   } 
+
 }
 
 /* --- MAIN CONTENT --- */
@@ -326,6 +332,12 @@ header {
     .main_user {
       padding: $padding-standard 0;
       border-bottom: 1px solid $brand-light;
+      .fa {
+        font-size: 125px;
+      }
+      .fa.img-thumbnail {
+        padding: 0 40px;
+      }
 
       .profile-text {
         padding: 15px 15px 0 0;

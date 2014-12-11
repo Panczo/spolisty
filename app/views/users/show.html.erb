@@ -1,11 +1,9 @@
 <section id="user_profile">
 	<div class="row">
 		<div class="main_user col-md-8 col-md-offset-2">
-				<% if @user.image %>
-					<div class="pull-left">
-						<%= image_tag @user.image, class: 'img-circle img-thumbnail' %>  
-					</div>
-				<% end %>
+				<div class="pull-left hidden-xs hidden-sm">
+					<%= foto(@user) %>
+				</div>
 				<div class="profile-text pull-right">
 					<%= @user.name %>
 					<p class="traveler text-center"><span>Trance Explorer</span></p>

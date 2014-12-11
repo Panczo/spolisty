@@ -34,9 +34,7 @@
     </li>
     <li>
       <%= link_to current_user, id: "current_user_link" do %>
-        <% if current_user && current_user.image %>
-          <span clss="profile-img"><%= image_tag current_user.image, class: 'img-circle' %></span>
-        <% end %>
+        <span clss="profile-img"><%= foto(current_user) %></span>
       <% end %>
       <%= link_to destroy_user_session_path, id: 'logout', "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Logout", method: :delete do %>
         <i class="fa glyphicon glyphicon-log-out"></i>
