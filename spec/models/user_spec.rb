@@ -38,6 +38,18 @@ RSpec.describe User, :type => :model do
 		expect(user.errors.size).to eq(2)
 	end
 
+  describe '#image?' do
+    let(:user) { build(:user, image: 'http://dummyimage.com/600x400/000/fff')}
+    it "return true" do
+      expect(user.image?).to be_truthy
+    end
+
+    it "return false" do
+      user.image = nil
+      expect(user.image?).to be_falsey
+    end
+  end
+
 	describe '#import_playlist', :vcr => true do
 		before(:each) do	
 			@user = VCR.use_cassette('user_spotify_hash') do
