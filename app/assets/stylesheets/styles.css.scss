@@ -239,7 +239,18 @@ header {
 .nav-black {
   background: $body-bg-dark;
   color: $body-bg-light;
-
+  
+  #current_user_link {
+    img {
+      border-color: $body-bg-light;
+      background: $body-bg-light;
+      padding: 1px;
+      &:hover {
+        border-color: $text-color;
+        background: $text-color;
+      }
+    }
+  }
   .my-logo {
      padding: 10px 0;
      font-weight: 600;
