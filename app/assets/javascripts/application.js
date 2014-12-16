@@ -1,9 +1,7 @@
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require turbolinks
-//= require bootstrap
-//= require custom
-
 //= require_tree .
 
 
@@ -41,7 +39,22 @@ $(document).ready(function(){
     $(this).parent().addClass('active').siblings().removeClass('active');           
 	});
 
+  /*  tooltip   */
 	$('[data-toggle="tooltip"]').tooltip();
+
+  /*  User navbar menu in provile page  */
+
+  $('#usernav a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  });
+/*
+  $('#usernav a').click(function (e) {
+    $(this).parents
+    e.preventDefault()
+    $(this).parent().addClass("active")
+    $(this).tab('show')
+  })*/
 
 });
 

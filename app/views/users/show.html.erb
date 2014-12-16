@@ -12,15 +12,31 @@
     </div>
 
     <div class="genre-profile col-md-8 col-md-offset-2 text-center">
+
       <% if current_user && @user.playlists.blank? %>
-        <%= link_to "Import your playlists from spotify", user_playlists_path(current_user), class: 'btn btn-primary btn-block btn-lg' %>
+
+        <%= 
+          link_to "Import your playlists from spotify", 
+          user_playlists_path(current_user), 
+          class: 'btn btn-primary btn-block btn-lg' 
+        %>
+
       <% else %>
-        <ul class="nav nav-pills nav-justified">
-          <li role="presentation" class="<%= is_active?(current_user) %>"><a href="<%= current_user %>"><i class="fa fa-comment"></i> Genre Diagram</a></li>
-          <li role="presentation"><a href="#"><i class="fa fa-comment"></i> Playlists</a></li>
-          <li role="presentation"><a href="#"><i class="fa fa-comment"></i> Track</a></li>
-          <li role="presentation"><a href="#"><i class="fa fa-comment"></i> Messages</a></li>
+
+        <ul class="nav nav-tabs" role="tablist" id="usernav">
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
         </ul>
+
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="home">...</div>
+          <div role="tabpanel" class="tab-pane" id="profile">.2e1..</div>
+          <div role="tabpanel" class="tab-pane" id="messages">.2edd1..</div>
+          <div role="tabpanel" class="tab-pane" id="settings">..1221.</div>
+        </div>
+
       <% end %>
     </div>
   </div>
