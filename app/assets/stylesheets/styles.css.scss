@@ -2,6 +2,7 @@
 
 /* --- Button --- */
 .btn {
+  outline:none;
   color: $text-color;
   background-color: transparent;
   border-radius: 0;
@@ -390,7 +391,7 @@ header {
           &.disabled,
           &[disabled],
           fieldset[disabled] & {
-            pointer-events: none; // Future-proof disabling of clicks
+            pointer-events: none; 
             @include opacity(.65);
             @include box-shadow(none);
             background-color: $brand-primary-dark !important;
@@ -407,11 +408,16 @@ header {
     .genre-profile {
       padding: $padding-standard 0;
       .nav {
+        ul {
+          width: 100%;
+          justify-content: center;
+        }
         li {
+          padding: 0;
           a {
             padding: 20px 0;
             color: $body-bg-light;
-            border-radius: 0px;
+            border: none;
             text-transform: uppercase;
             font-weight: normal;
             @include transition(0.6s);
@@ -423,7 +429,8 @@ header {
             }
 
             &:focus {
-              background-color: transparent;
+              border: none;
+              background-color: $brand-light;
               color: $brand-primary-dark;
             }
 
@@ -437,6 +444,7 @@ header {
             color: $text-color;
             background-color: $brand-primary-dark;
             border-width: 0;
+            outline:none
           }
         }
       }    
