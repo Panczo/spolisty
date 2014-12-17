@@ -406,6 +406,7 @@ header {
       }
     }
     .genre-profile {
+      background-color: $body-bg;
       padding: $padding-standard 0;
       .nav {
           border: none;
@@ -453,7 +454,7 @@ header {
   }
 
   .tab-content {
-    padding: $padding-standard;
+    padding: $padding-standard 0;
   }
 
   .img-thumbnail {
@@ -467,4 +468,25 @@ header {
       background-color: $brand-light;
     }
   }
+
+  #user_playlists {
+    ul {
+      padding-right: 40px;
+      list-style-type: none;
+      li {
+        color: $body-bg-light;
+        border-bottom: 1px solid $body-bg-dark;
+        padding: 10px 2px;
+        
+        &:hover {
+          color: $text-color;
+          background-color: $brand-primary-dark;
+        }
+      }
+    }
+    @media (min-width: $screen-xs-min) and (max-width: $screen-sm-max) { 
+      background-color: red;
+    }
+  }
 }
+

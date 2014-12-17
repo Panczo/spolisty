@@ -1,0 +1,15 @@
+<div id="user_playlists">
+  <ul class="row">
+    <% current_user.playlists.each do |p| %>
+      <li class="col-md-12"> 
+        <span class="pull-left">
+          <%= p.name %>
+        </span>
+        <span class="pull-right">
+          show
+        </span>
+
+      </li>
+    <% end %>
+  </ul>
+</div>

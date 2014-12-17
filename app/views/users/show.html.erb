@@ -24,13 +24,13 @@
       <% else %>
 
         <ul class="nav nav-tabs" role="tablist" id="usernav">
-          <li role="presentation" class="active col-md-3">
+          <li role="presentation" class="col-md-3">
             <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
             <i class="fa fa-user"></i> Home</a>
           </li>
-          <li role="presentation" class="col-md-3">
-            <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
-            <i class="fa fa-user"></i> Profile</a>
+          <li role="presentation" class="active col-md-3">
+            <a href="#user_playlists" aria-controls="user_playlists" role="tab" data-toggle="tab">
+            <i class="fa fa-user"></i> Playlists</a>
           </li>
           <li role="presentation" class="col-md-3">
             <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
@@ -43,10 +43,18 @@
         </ul>
 
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="home">...</div>
-          <div role="tabpanel" class="tab-pane" id="profile">.2e1..</div>
-          <div role="tabpanel" class="tab-pane" id="messages">.2edd1..</div>
-          <div role="tabpanel" class="tab-pane" id="settings">..1221.</div>
+          <div role="tabpanel" class="tab-pane" id="home">
+           user genre spider 
+          </div>
+          <div role="tabpanel" class="tab-pane active" id="user_playlists">
+            <%= render partial: "playlists" %>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="messages">
+            tracks
+          </div>
+          <div role="tabpanel" class="tab-pane" id="settings">
+          ..1221.
+          </div>
         </div>
 
       <% end %>
