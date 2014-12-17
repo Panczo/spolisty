@@ -408,6 +408,8 @@ header {
     .genre-profile {
       background-color: $body-bg;
       padding: $padding-standard 0;
+      margin-bottom: 100px;
+      height: 100%;
       .nav {
           border: none;
         ul {
@@ -469,7 +471,7 @@ header {
     }
   }
 
-  #user_playlists {
+  #userplaylists {
     ul {
       padding-right: 40px;
       list-style-type: none;
@@ -482,10 +484,19 @@ header {
           color: $text-color;
           background-color: $brand-primary-dark;
         }
+
+        p {
+          margin: 0;
+        }
       }
     }
     @media (min-width: $screen-xs-min) and (max-width: $screen-sm-max) { 
-      background-color: red;
+      ul {
+        li {
+          padding-bottom: 30px;
+        }
+      }
+      
     }
   }
 }

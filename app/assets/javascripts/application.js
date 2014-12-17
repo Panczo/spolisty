@@ -56,6 +56,13 @@ $(document).ready(function(){
     $(this).tab('show')
   })*/
 
+  $("#userplaylists").on("click", "p", function() {
+    
+    alert("hello");
+  });
+
+
+
 });
 
 

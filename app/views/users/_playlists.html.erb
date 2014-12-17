@@ -1,14 +1,14 @@
-<div id="user_playlists">
+<div id="userplaylists">
   <ul class="row">
-    <% current_user.playlists.each do |p| %>
+    <%= div_for(current_user.playlists) do |p| %>
       <li class="col-md-12"> 
         <span class="pull-left">
           <%= p.name %>
         </span>
-        <span class="pull-right">
-          show
-        </span>
 
+        <p class="pull-right">
+            tracks
+        </p>
       </li>
     <% end %>
   </ul>
