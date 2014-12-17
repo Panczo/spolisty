@@ -471,11 +471,23 @@ header {
     }
   }
 
+  #usernav {
+    background-color: $text-color;
+    a {
+      border-radius: 0 0 0 0;
+    }
+
+    a:last-child {
+      margin-right: 0px;
+    }
+  }
+
   #userplaylists {
     ul {
       padding-right: 40px;
       list-style-type: none;
       li {
+
         color: $body-bg-light;
         border-bottom: 1px solid $body-bg-dark;
         padding: 10px 2px;
