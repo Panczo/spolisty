@@ -350,7 +350,7 @@ header {
   #user_profile {
     .main_user {
       padding: $padding-standard 0;
-      border-bottom: 1px solid $brand-light;
+      /* border-bottom: 1px solid $brand-light; */
       .fa {
         font-size: 125px;
       }
@@ -408,6 +408,7 @@ header {
     .genre-profile {
       padding: $padding-standard 0;
       .nav {
+          border: none;
         ul {
           width: 100%;
           justify-content: center;
@@ -419,7 +420,7 @@ header {
             color: $body-bg-light;
             border: none;
             text-transform: uppercase;
-            font-weight: normal;
+            font-weight: 600;
             @include transition(0.6s);
 
             &:hover {
@@ -449,6 +450,10 @@ header {
         }
       }    
     }
+  }
+
+  .tab-content {
+    padding: $padding-standard;
   }
 
   .img-thumbnail {
