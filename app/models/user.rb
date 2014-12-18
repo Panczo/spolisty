@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
 
   has_many :playlists, dependent: :destroy
+  has_many :tracks, through: :playlists
 
   validates :provider, :uid, presence: true
 
@@ -39,15 +40,17 @@ class User < ActiveRecord::Base
   end
 
   def import_playlist
-    begin
       spotify_user = RSpotify::User.new(spotify_hash)
       pl = spotify_user.playlists
       pl.each do |p|
-        playlists.create(name: p.name, id_spotify: p.id, spotify_type: p.type)
+        play = playlists.create(name: p.name, id_spotify: p.id, spotify_type: p.type)
+        if p.owner.display_name == spotify_user.display_name
+          p.tracks.each do |tr|
+            play.tracks.create(name: tr.name)
+          end
+        end
       end
-    rescue
-      false
-    end
+  
   end
 
   def self.from_omniauth(auth)

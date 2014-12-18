@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-	feature 'user playlist', :omniauth do 
+	feature 'user', :omniauth do 
 		before(:each) do
 			@user = create(:user)
 			signin
@@ -11,7 +11,7 @@ require 'rails_helper'
 		end
 
 
-		scenario 'can import all his list' do
+		scenario 'can import all his playlists' do
 			click_link "Import your playlists from spotify"
 
 			expect(page).to have_content("Successfully imported playlists")
