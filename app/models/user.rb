@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
     pl = spotify_user.playlists
     pl.each do |p|
       #create Playlist
-      play = playlists.create(name: p.name, id_spotify: p.id, spotify_type: p.type)
+      play = playlists.create(name: p.name, id_spotify: p.id, spotify_type: p.type, ownerlist: p.owner.display_name)
       #If current user is a owner of playlist - import tracks
       if p.owner.display_name == spotify_user.display_name
         #Import tracks from particular playlists through RSpotify
@@ -57,13 +57,11 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-    spotify_user = RSpotify::User.new(auth)
     where(provider: auth["provider"], uid: auth["uid"]).first_or_create do |user|
           user.email = auth["info"]["email"]
           user.password = Devise.friendly_token[0,20]
           user.name = auth["info"]["display_name"] unless auth["info"]["display_name"].nil?
           user.image = auth["info"]["images"][0]["url"] unless auth["info"]["images"].blank?
-          user.spotify_hash = spotify_user.to_hash
       end
   end
 

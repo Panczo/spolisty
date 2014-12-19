@@ -509,6 +509,36 @@ header {
         }
       }
     }
+
+    .usrplay {
+      &:hover {
+        .ownerlist{
+          background-color: $text-color;
+          i {
+            color: $body-bg-dark;
+          }
+        }
+      }
+      .count_of_tracks {
+        float: left;
+        color: $body-bg-light;
+        font-weight: 600;
+        background-color: $text-color;
+        width: 50px;
+        margin: 0px 0px;
+      }
+
+      .ownerlist {
+        background-color: $body-bg-dark;
+        width: 25px;
+        margin: 0px 10px;
+        padding: 0px;
+        float: left;
+        i {
+          color: $body-bg-light;
+        }
+      }
+    }
     .ulliststyle {
       padding: 0;
       margin: 0;
@@ -523,6 +553,7 @@ header {
       li:last-child {
         border-bottom: none;
       }
+
     }
   }
 }

@@ -7,10 +7,11 @@
 #  description     :text
 #  followers_count :integer
 #  id_spotify      :string
-#  type            :string
+#  spotify_type    :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  user_id         :integer
+#  count_of_tracks :integer          default("0"), not null
 #
 
 class Playlist < ActiveRecord::Base

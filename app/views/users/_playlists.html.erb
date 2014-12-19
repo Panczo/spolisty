@@ -3,8 +3,21 @@
     <%= div_for(current_user.playlists) do |p| %>
       <li class="col-md-12 usrplay"> 
         <span class="pull-left">
-          <%= p.name %>
+          <span class="count_of_tracks">
+              <%= p.count_of_tracks %>
+          </span>
+          <% if p.ownerlist == @user.name %>
+            <span class="ownerlist">
+              <i class='fa fa-user'></i>
+            </span>
+          <% else %>
+            <span class="ownerlist">
+              <i class='fa fa-pencil'></i>
+            </span>           
+          <% end %>
+            <%= p.name %>
         </span>
+
 
         <p class="pull-right">
             tracks
