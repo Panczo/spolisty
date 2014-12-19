@@ -511,6 +511,9 @@ header {
     }
 
     .usrplay {
+      .showlist {
+        visibility: hidden;
+      }
       &:hover {
         .ownerlist{
           background-color: $text-color;
@@ -520,6 +523,9 @@ header {
         }
         .count_of_tracks {
           color: $body-bg-dark;
+        }
+        .showlist {
+          visibility: visible;
         }
       }
 
