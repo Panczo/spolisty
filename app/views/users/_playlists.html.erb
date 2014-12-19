@@ -6,13 +6,13 @@
           <span class="count_of_tracks">
               <%= p.count_of_tracks %>
           </span>
-          <% if p.ownerlist == @user.name %>
+          <% if p.ownerlist == p.user.name %>
             <span class="ownerlist">
               <i class='fa fa-user'></i>
             </span>
           <% else %>
             <span class="ownerlist">
-              <i class='fa fa-pencil'></i>
+             <i class="fa fa-bell-slash"></i>
             </span>           
           <% end %>
             <%= p.name %>

@@ -12,11 +12,6 @@
     </div>
 
     <div class="genre-profile col-md-8 col-md-offset-2 text-center">
-        <%= 
-          link_to "Import your playlists from spotify", 
-          user_playlists_path(current_user), 
-          class: 'btn btn-primary btn-block btn-lg' 
-        %>
       <% if current_user && @user.playlists.blank? %>
 
         <%= 

@@ -518,6 +518,17 @@ header {
             color: $body-bg-dark;
           }
         }
+        .count_of_tracks {
+          color: $body-bg-dark;
+        }
+      }
+
+      .pull-left {
+        margin-left: 5px;
+      }
+
+      .pull-right {
+        margin-right: 5px;
       }
       .count_of_tracks {
         float: left;
