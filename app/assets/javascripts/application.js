@@ -54,8 +54,8 @@ $(document).ready(function(){
   $('.ulliststyle').hide();
   $('.usrplay').on("click", 'p', function() {
     $(this).parent('.usrplay').find('.ulliststyle').fadeToggle("slow");
+    $(this).find('i').toggleClass("fa-chevron-down fa-chevron-up");
   });
-
 
 
 });
