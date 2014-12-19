@@ -1,14 +1,27 @@
 <div id="userplaylists">
   <ul class="row">
     <%= div_for(current_user.playlists) do |p| %>
-      <li class="col-md-12"> 
+      <li class="col-md-12 usrplay"> 
         <span class="pull-left">
           <%= p.name %>
         </span>
 
         <p class="pull-right">
-            <%= link_to "tracks", '#', class: 'tracks' %>
+            tracks
         </p>
+        <% unless p.tracks.blank? %>
+          <div class="row" class="playlisttracks" >
+            <ul class='ulliststyle'>
+              <span>
+                <% p.tracks.each do |tr| %>
+                  <li class="col-md-12">
+                    <%= tr.name %>
+                  </li>
+                <% end %>
+              </span>
+            </ul>
+          </div>
+        <% end %>
       </li>
     <% end %>
   </ul>

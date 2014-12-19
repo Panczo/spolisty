@@ -40,17 +40,20 @@ class User < ActiveRecord::Base
   end
 
   def import_playlist
-      spotify_user = RSpotify::User.new(spotify_hash)
-      pl = spotify_user.playlists
-      pl.each do |p|
-        play = playlists.create(name: p.name, id_spotify: p.id, spotify_type: p.type)
-        if p.owner.display_name == spotify_user.display_name
-          p.tracks.each do |tr|
-            play.tracks.create(name: tr.name)
-          end
+    spotify_user = RSpotify::User.new(spotify_hash)
+    #Import playlists through RSpotify
+    pl = spotify_user.playlists
+    pl.each do |p|
+      #create Playlist
+      play = playlists.create(name: p.name, id_spotify: p.id, spotify_type: p.type)
+      #If current user is a owner of playlist - import tracks
+      if p.owner.display_name == spotify_user.display_name
+        #Import tracks from particular playlists through RSpotify
+        p.tracks.each do |tr|
+          play.tracks.create(name: tr.name)
         end
       end
-  
+    end
   end
 
   def self.from_omniauth(auth)

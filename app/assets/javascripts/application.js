@@ -48,17 +48,13 @@ $(document).ready(function(){
     e.preventDefault()
     $(this).tab('show')
   });
-/*
-  $('#usernav a').click(function (e) {
-    $(this).parents
-    e.preventDefault()
-    $(this).parent().addClass("active")
-    $(this).tab('show')
-  })*/
+  
+  /*  Playlist Tracks   */
 
-  $("#userplaylists").on("click", "p", function() {
-    
-    alert("hello");
+  
+  $('.ulliststyle').hide();
+  $('.usrplay').on("click", 'p', function() {
+    $(this).parent('.usrplay').find('.ulliststyle').fadeToggle("slow", "linear");
   });
 
 
