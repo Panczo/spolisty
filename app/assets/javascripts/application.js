@@ -51,10 +51,9 @@ $(document).ready(function(){
   
   /*  Playlist Tracks   */
 
-  
   $('.ulliststyle').hide();
   $('.usrplay').on("click", 'p', function() {
-    $(this).parent('.usrplay').find('.ulliststyle').fadeToggle("slow", "linear");
+    $(this).parent('.usrplay').find('.ulliststyle').fadeToggle("slow");
   });
 
 

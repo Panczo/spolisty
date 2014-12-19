@@ -3,6 +3,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def spotify
     @user = User.from_omniauth(omnia_hash)
     if @user.persisted?
+      spotify_user = RSpotify::User.new(omnia_hash)
+      @user.spotify_hash = spotify_user.to_hash
       sign_in_and_redirect @user, :event => :authentication 
       set_flash_message(:notice, :success, :kind => "Spotify") if is_navigational_format?
     else
@@ -24,5 +26,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     sign_in(scope, resource, options)
     redirect_to current_user
   end
+
 
 end

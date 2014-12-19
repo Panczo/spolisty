@@ -10,17 +10,13 @@
             tracks
         </p>
         <% unless p.tracks.blank? %>
-          <div class="row" class="playlisttracks" >
-            <ul class='ulliststyle'>
-              <span>
-                <% p.tracks.each do |tr| %>
-                  <li class="col-md-12">
-                    <%= tr.name %>
-                  </li>
-                <% end %>
-              </span>
-            </ul>
-          </div>
+          <ul class='row ulliststyle'>
+            <% p.tracks.each do |tr| %>
+              <li class='col-md-12'>
+                <%= tr.name %>
+              </li>
+            <% end %>
+          </ul>
         <% end %>
       </li>
     <% end %>

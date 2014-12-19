@@ -494,7 +494,7 @@ header {
         
         &:hover {
           color: $text-color;
-          background-color: $brand-primary-dark;
+          background-color: $body-bg-dark;
         }
 
         p {
@@ -508,7 +508,21 @@ header {
           padding-bottom: 30px;
         }
       }
-      
+    }
+    .ulliststyle {
+      padding: 0;
+      margin: 0;
+      li {
+        
+      }
+
+      li:first-child {
+        margin-top: 10px;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
     }
   }
 }
