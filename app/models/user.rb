@@ -42,15 +42,24 @@ class User < ActiveRecord::Base
   def import_playlist
     spotify_user = RSpotify::User.new(spotify_hash)
     #Import playlists through RSpotify
-    pl = spotify_user.playlists
-    pl.each do |p|
+    spotify_playlists = spotify_user.playlists
+    spotify_playlists.each do |p|
       #create Playlist
       play = playlists.create(name: p.name, id_spotify: p.id, spotify_type: p.type, ownerlist: p.owner.display_name)
-      #If current user is a owner of playlist - import tracks
+      #If current user is a owner of playlist ==> import tracks
       if p.owner.display_name == spotify_user.display_name
         #Import tracks from particular playlists through RSpotify
-        p.tracks.each do |tr|
-          play.tracks.create(name: tr.name)
+
+        songs = p.tracks
+          songs.each do |tr|
+            play.tracks.create(name: tr.name)
+          end
+
+        if songs.size == 100
+          songs2 = p.tracks(limit: 100, offset: 1)
+          songs2.each do |tr|
+            play.tracks.create(name: tr.name)
+          end
         end
       end
     end
