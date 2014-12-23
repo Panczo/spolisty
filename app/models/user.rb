@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
 
   validates :provider, :uid, presence: true
 
+
   def image?
     !image.nil?
   end
@@ -49,19 +50,25 @@ class User < ActiveRecord::Base
       #If current user is a owner of playlist ==> import tracks
       if p.owner.display_name == spotify_user.display_name
         #Import tracks from particular playlists through RSpotify
+        @finaltracks = []
+        @offsety = []
 
-        songs = p.tracks
-          songs.each do |tr|
-            play.tracks.create(name: tr.name)
-          end
+        parse_songs(p)
 
-        if songs.size == 100
-          songs2 = p.tracks(limit: 100, offset: 1)
-          songs2.each do |tr|
-            play.tracks.create(name: tr.name)
-          end
+        @finaltracks.each do |tr|
+          play.tracks.create(name: tr.name)
         end
       end
+    end
+  end
+
+  def parse_songs(playlist, offset=0)
+    songs = playlist.tracks(limit: 100, offset: offset)
+    @finaltracks += songs
+    @offsety << offset
+
+    if songs.size == 100 
+      parse_songs(playlist, @offsety.last + 100)
     end
   end
 
