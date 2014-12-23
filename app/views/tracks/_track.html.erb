@@ -1,0 +1,14 @@
+<ul class='row ulliststyle'>
+  <% p.tracks.each do |tr| %>
+    <li class='col-md-12'>
+      <div class="row">
+          <span class="col-md-5 play_track">
+            <iframe src="https://embed.spotify.com/?uri=spotify:track:<%= tr.track_number %>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+          </span>
+          <span class="col-md-7">
+            <%= tr.name %>
+          </span>
+      </div>
+    </li>
+  <% end %>
+</ul>

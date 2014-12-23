@@ -12,6 +12,7 @@
 #  updated_at      :datetime         not null
 #  user_id         :integer
 #  count_of_tracks :integer          default("0"), not null
+#  ownerlist       :string
 #
 
 class Playlist < ActiveRecord::Base

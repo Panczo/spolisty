@@ -24,13 +24,7 @@
           <% end %>
         </p>
         <% unless p.tracks.blank? %>
-          <ul class='row ulliststyle'>
-            <% p.tracks.each do |tr| %>
-              <li class='col-md-12'>
-                <%= tr.name %>
-              </li>
-            <% end %>
-          </ul>
+          <%= render partial: "tracks/track", locals: {p: p} %>
         <% end %>
       </li>
     <% end %>

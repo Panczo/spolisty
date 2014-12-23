@@ -2,11 +2,12 @@
 #
 # Table name: tracks
 #
-#  id          :integer          not null, primary key
-#  name        :string
-#  playlist_id :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id           :integer          not null, primary key
+#  name         :string
+#  playlist_id  :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  track_number :string
 #
 
 require 'rails_helper'
