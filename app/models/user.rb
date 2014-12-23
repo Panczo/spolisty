@@ -50,8 +50,7 @@ class User < ActiveRecord::Base
       #If current user is a owner of playlist ==> import tracks
       if p.owner.display_name == spotify_user.display_name
         #Import tracks from particular playlists through RSpotify
-        @finaltracks = []
-        @offsety = []
+        @finaltracks = @offsety = []
 
         parse_songs(p)
 
@@ -59,16 +58,6 @@ class User < ActiveRecord::Base
           play.tracks.create(name: tr.name)
         end
       end
-    end
-  end
-
-  def parse_songs(playlist, offset=0)
-    songs = playlist.tracks(limit: 100, offset: offset)
-    @finaltracks += songs
-    @offsety << offset
-
-    if songs.size == 100 
-      parse_songs(playlist, @offsety.last + 100)
     end
   end
 
@@ -81,7 +70,6 @@ class User < ActiveRecord::Base
       end
   end
 
-
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
@@ -93,5 +81,17 @@ class User < ActiveRecord::Base
 
 
   devise authentication_keys: [:login]
+
+  private
+
+  def parse_songs(playlist, offset=0)
+    songs = playlist.tracks(limit: 100, offset: offset)
+    @finaltracks += songs
+    @offsety << offset
+
+    if songs.size == 100 
+      parse_songs(playlist, @offsety.last + 100)
+    end
+  end
 
 end
