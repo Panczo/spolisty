@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 	feature 'user', :omniauth do 
-		before(:each) do
+		before(:each) 
+
 			@user = create(:user)
 			signin
 		end

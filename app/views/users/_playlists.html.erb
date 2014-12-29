@@ -1,6 +1,6 @@
 <div id="userplaylists">
   <ul class="row">
-    <%= div_for(current_user.playlists) do |p| %>
+    <%= div_for(@user.playlists) do |p| %>
       <li class="col-md-12 usrplay"> 
         <span class="pull-left">
           <span class="count_of_tracks">

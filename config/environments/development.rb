@@ -37,6 +37,5 @@ Rails.application.configure do
 
   #->Prelang
   GA.tracker = ""
-
 end
 
