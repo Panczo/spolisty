@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     }
 
   resources :users, only: [:show] do
-  	resources :playlists, only: [:index]
+  	resources :playlists do
+      collection do
+        get 'import'
+      end
+    end
   end
 
   resources :subscribes, only: [:create]

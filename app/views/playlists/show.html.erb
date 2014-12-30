@@ -1,0 +1,6 @@
+<h2>Playlist <%= @playlist.id %></h2>
+<% @playlist.tracks.each do |tr| %>
+
+  <p><%= tr.name %></p>
+
+<% end %>

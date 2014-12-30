@@ -52,5 +52,5 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.configure_rspec_metadata!
   c.ignore_localhost = true
-WebMock.allow_net_connect!
+  WebMock.allow_net_connect!
 end

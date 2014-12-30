@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
         parse_songs(p)
 
         @finaltracks.each do |tr|
-          tr.complete!
+          next if play.tracks.include? tr
           play.tracks.create(name: tr.name, track_number: tr.id)
         end
       end

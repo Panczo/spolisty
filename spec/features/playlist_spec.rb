@@ -13,11 +13,10 @@ feature 'user', :omniauth do
 		expect(page).to have_content("Import your playlists from spotify")
 	end
 
+	scenario 'visit playlist show page' do
+		click_link "show playlist"
 
-	scenario 'can import all his playlists' do
-		VCR.use_cassette('import_playlist') do
-			click_link "Import your playlists from spotify", match: :first
-			expect(page).to have_content("Successfully imported playlists")
-		end
+		expect(page).to have_content("Playlist")
 	end
+
 end

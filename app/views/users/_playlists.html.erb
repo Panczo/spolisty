@@ -19,6 +19,7 @@
         </span>
           
         <p class="pull-right showlist">
+          <%= link_to "Show playlist", [p.user, p] %>
           <% if p.ownerlist == p.user.name %>
             <i class="fa fa-chevron-down"></i>
           <% end %>

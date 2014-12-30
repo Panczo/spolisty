@@ -5,24 +5,19 @@
           <%= foto(@user) %>
         </div>
         <div class="profile-text pull-right">
-          <%= @user.name %>
+          <%= @user.name? ? @user.name : @user.email %>
           <p class="traveler text-center"><span>Trance Explorer</span></p>
           <p><%= link_to "Follow", '#', class: 'btn btn-primary btn-small btn-block' %></p>
         </div>
     </div>
 
     <div class="genre-profile col-md-8 col-md-offset-2 text-center">
-    
-        <%= 
-          link_to "Import your playlists from spotify", 
-          user_playlists_path(current_user), 
-          class: 'btn btn-primary btn-block btn-lg' 
-        %>
-      <% if current_user && @user.playlists.blank? %>
+
+      <% if current_user == @user && @user.playlists.blank? %>
 
         <%= 
           link_to "Import your playlists from spotify", 
-          user_playlists_path(current_user), 
+          import_user_playlists_path(current_user), 
           class: 'btn btn-primary btn-block btn-lg' 
         %>
 
