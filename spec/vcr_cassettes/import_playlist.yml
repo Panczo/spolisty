@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.spotify.com/v1/users/testsanczo/playlists?limit=20&offset=0
+    uri: https://api.spotify.com/v1/users//playlists?limit=20&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -12,30 +12,31 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer BQBLaAPmFG-sSThu2ew7HtDHaHWQbRyBZQLSP2CAA_trlOrg6R6AAIZ7Qzv8NaCGjx5Dzu9kiny8PlOBpoIY6Q
+      - Bearer xxxx
+      Content-Type:
+      - application/json
       User-Agent:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 401
+      message: Unauthorized
     headers:
       Server:
       - nginx
       Date:
-      - Tue, 30 Dec 2014 06:12:54 GMT
+      - Tue, 30 Dec 2014 06:11:46 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
       Keep-Alive:
       - timeout=600
-      Cache-Control:
-      - public, max-age=0
-      Etag:
-      - '"AAAAAqlmkdB/L/A0Ck92vhtFpLhgamNR"'
+      Www-Authenticate:
+      - Bearer realm="spotify", error="invalid_token", error_description="Invalid
+        access token"
       Access-Control-Allow-Headers:
       - Accept, Authorization, Origin, Content-Type
       Access-Control-Allow-Origin:
@@ -48,17 +49,12 @@ http_interactions:
       - 'true'
       Content-Encoding:
       - gzip
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=31536000;
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAFSMvQrDMAwG9zyF8dCpxG7GQOiDlA4myFTgPywlJC1998bK
-        1E13Or5Pp5R+VfBajcfBXGg0xhXsqWRGv/dzjma9mYWgkmEgJpfmdzYluD3g
-        gffsPQFP9hIwIk+D1de2igyR2uxDPUXIu4nBCifYBNMSgohzqKkzKBVWzAv9
-        RZzZBWm67w8AAP//AwCQK4BkvgAAAA==
+        H4sIAAAAAAAAAKrmUlBQSi0qyi9SslKoBnKA3OKSxJLSYiDfxMBQByKUm1pc
+        nJieChRT8swrS8zJTFFITE4GCiqU5Gen5ikBVdVy1QIAAAD//wMAntuyvk0A
+        AAA=
     http_version: 
-  recorded_at: Tue, 30 Dec 2014 06:12:54 GMT
+  recorded_at: Tue, 30 Dec 2014 06:11:46 GMT
 recorded_with: VCR 2.9.3

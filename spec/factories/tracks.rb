@@ -13,7 +13,7 @@
 FactoryGirl.define do
   factory :track do
     name "MyString"
-playlist nil
+    playlist nil
   end
 
 end

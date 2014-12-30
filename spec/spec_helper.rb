@@ -16,13 +16,6 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 
-  config.before(:each) do
-    stub_request(:post, "https://30c077def34c4d648b17c54130220734:a78fa39b272f4122aa39eb1e9c36ee97@accounts.spotify.com/api/token").
-  with(:body => {"grant_type"=>"client_credentials"},
-       :headers => {'Accept'=>'*/*; q=0.5, application/xml', 'Accept-Encoding'=>'gzip, deflate', 'Content-Length'=>'29', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Ruby'}).
-  to_return(:status => 200, :body => "", :headers => {})
-
-  end
   #<-- Prelang[testing_framework]
 
 
