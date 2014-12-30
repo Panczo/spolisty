@@ -5,6 +5,7 @@ class PlaylistsController < ApplicationController
   respond_to :html
 
 	def index
+    redirect_to current_user
 	end
 
   def show

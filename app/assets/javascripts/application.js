@@ -53,7 +53,7 @@ $(document).ready(function(){
   /*  Playlist Tracks   */
 
   $('.ulliststyle').hide();
-  $('.usrplay').on("click", 'p', function() {
+  $('.usrplay').on("click", 'p.playlist_option', function() {
     $(this).parent('.usrplay').find('.ulliststyle').fadeToggle("slow");
     $(this).find('i').toggleClass("fa-chevron-down fa-chevron-up");
   });

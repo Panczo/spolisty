@@ -555,6 +555,19 @@ header {
           color: $body-bg-light;
         }
       }
+
+      .ownerplaylist {
+        background-color: $body-bg-dark;
+        width: 25px;
+        margin-right: 0;
+        margin-left: 10px;
+        padding: 0px;
+        float: left;
+        i {
+          color: $body-bg-light;
+        }
+      }
+
     }
     .ulliststyle {
       padding: 0;
