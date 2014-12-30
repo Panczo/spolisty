@@ -3,14 +3,18 @@
     <%= div_for(@user.playlists) do |p| %>
       <li class="col-md-12 usrplay"> 
         <span class="pull-left">
-          <span class="count_of_tracks">
+          <!-- Count playlist tracks -->
+          <span class="count_of_tracks" data-toggle="tooltip", data-placement="top", title="Total count of playlist tracks">
               <%= p.count_of_tracks %>
           </span>
+
+          <!-- Link to playlist show page -->
           <%= link_to [p.user, p] do %>
             <span class="ownerlist ownerplaylist">
              <i class="fa fa-list" data-toggle="tooltip", data-placement="top", title="Show playlist"></i>
             </span>
           <% end %>
+          <!-- Owner of playlist -->
           <% if p.ownerlist == p.user.name %>
             <span class="ownerlist">
               <i class='fa fa-user' data-toggle="tooltip", data-placement="top", title="<%= p.user.name %> playlist"></i>
@@ -32,7 +36,7 @@
           <% end %>
         </p>
         <% unless p.tracks.blank? %>
-          <%= render partial: "tracks/track", locals: {p: p} %>
+          <%#= render partial: "tracks/track", locals: {p: p} %>
         <% end %>
       </li>
     <% end %>
