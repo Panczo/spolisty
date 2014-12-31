@@ -55,8 +55,17 @@ class User < ActiveRecord::Base
         parse_songs(p)
 
         @finaltracks.each do |tr|
+          #Ommit track when is on playlist
           next if play.tracks.include? tr
+
+          #create playlist tracks
           play.tracks.create(name: tr.name, track_number: tr.id)
+
+          #Add image to playlist
+          if play.image.nil?
+            play.image = tr.album.images[1]["url"]
+            play.save
+          end
         end
       end
     end

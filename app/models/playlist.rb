@@ -17,7 +17,7 @@
 
 class Playlist < ActiveRecord::Base
 	belongs_to :user
-  has_many :tracks
+  has_many :tracks, dependent: :destroy
 
 	validates :user, :name, :id_spotify, :spotify_type, presence: true
 	validates :spotify_type, acceptance: { accept: 'playlist', message: "wrong spotify type" }

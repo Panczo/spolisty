@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-md-2">
-  ZDJECIE PLAYLISTY
-    
+    <%= image_tag @playlist.image, class: "img-responsive" %>
   </div>
+
   <div class="col-md-10">
     <p>PLAYLIST</p>
     <%= @playlist.name %>
@@ -16,3 +16,4 @@
   <% end %>
 
   <%= link_to "Back", :back, class: 'btn btn-primary' %>
+  <%= link_to "Destroy", user_playlist_path, method: :delete, data: { confirm: "are You sure?"} %>

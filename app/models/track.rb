@@ -11,7 +11,7 @@
 #
 
 class Track < ActiveRecord::Base
-  belongs_to :playlist, dependent: :destroy, counter_cache: :count_of_tracks
+  belongs_to :playlist, counter_cache: :count_of_tracks
 
   validates :playlist, :name, :track_number, presence: true
 end
