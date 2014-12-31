@@ -604,3 +604,31 @@ header {
   }
 }
 
+/*** PLAYLIST SHOW PAGE ***/
+
+.playlist_wrapper {
+  margin: 25px 0;
+  color: $text-color;
+  font-family: $main-font;
+  .table-hover {
+    > tbody > tr:hover {
+      background-color: $body-bg-dark;
+    }
+  }
+  .table {
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th,
+        > td {
+          padding: $table-cell-padding;
+          line-height: $line-height-base;
+          vertical-align: top;
+          border-top: 1px solid red;
+        }
+      }
+    }
+    
+  }
+}
