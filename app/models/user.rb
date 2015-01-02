@@ -61,9 +61,8 @@ class User < ActiveRecord::Base
         @finaltracks.each do |tr|
           #Ommit track when is on playlist
           next if play.tracks.include? tr
-
           #create playlist tracks
-          play.tracks.create(name: tr.name, track_number: tr.id)
+          play.tracks.create(name: tr.name, track_number: tr.id, duration: tr.duration_ms)
 
           #Add image to playlist
           if play.image.nil?

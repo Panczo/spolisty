@@ -6,12 +6,22 @@
 
     <div class="col-md-8">
       <p>PLAYLIST</p>
-      <%= @playlist.name %>
+      <div class="playlist_name">
+        <%= @playlist.name %>
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-      <h3 class="createdby">Playlist created by: <%= @playlist.ownerlist %></h3>
+      <div class="playlist_info">
+        <h3 class="createdby">
+          Playlist created by: <%= link_to @playlist.user.nick, @playlist.user %> 
+          <i class="fa fa-music"></i>
+          <%= pluralize(@playlist.tracks.size, "song") %>
+          <i class="fa fa-music"></i>
+          <%= @playlist.total_tracks_duration %>
+        </h3>
+      </div>
 
       <table class="table table-hover">
         <thead>
@@ -35,7 +45,7 @@
       </table>
 
       <% if current_user == @playlist.user %>
-        <%= link_to "Destroy", user_playlist_path, method: :delete, data: { confirm: "are You sure?" }, class: 'btn btn-primary' %>
+        <%= link_to "Destroy", user_playlist_path, method: :delete, data: { confirm: "Do you want deleted this playlist? This action don't deleted this playlist from spotify app" }, class: 'btn btn-primary' %>
       <% end %>
       <%= link_to "Back", :back, class: 'btn btn-primary' %>
       

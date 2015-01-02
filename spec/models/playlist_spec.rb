@@ -13,6 +13,7 @@
 #  user_id         :integer
 #  count_of_tracks :integer          default("0"), not null
 #  ownerlist       :string
+#  image           :string
 #
 
 require 'rails_helper'
@@ -39,6 +40,15 @@ RSpec.describe Playlist, :type => :model do
 
 		expect(play).to_not be_valid
 		expect(play.errors[:spotify_type]).to include("wrong spotify type")
+	end
+
+	it '#total_tracks_duration' do
+		play = build(:playlist)
+		3.times do
+			create(:track, playlist: play)
+		end
+
+		expect(play.total_tracks_duration).to eq("00:03:00")
 	end
 
 end

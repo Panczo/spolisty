@@ -13,6 +13,7 @@
 #  user_id         :integer
 #  count_of_tracks :integer          default("0"), not null
 #  ownerlist       :string
+#  image           :string
 #
 
 class Playlist < ActiveRecord::Base
@@ -21,4 +22,9 @@ class Playlist < ActiveRecord::Base
 
 	validates :user, :name, :id_spotify, :spotify_type, presence: true
 	validates :spotify_type, acceptance: { accept: 'playlist', message: "wrong spotify type" }
+
+  def total_tracks_duration
+    seconds = tracks.sum(:duration) / 1000
+    Time.at(seconds).strftime("%H:%M:%S")
+  end
 end

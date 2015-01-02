@@ -8,12 +8,15 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  track_number :string
+#  duration     :integer
 #
 
 FactoryGirl.define do
   factory :track do
-    name "MyString"
-    playlist nil
+    sequence(:name) { |n| "Track name-#{n}"}
+    sequence(:track_number) { |n| "12345" + "#{n}"}
+
+    duration 60000
   end
 
 end

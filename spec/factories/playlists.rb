@@ -13,6 +13,7 @@
 #  user_id         :integer
 #  count_of_tracks :integer          default("0"), not null
 #  ownerlist       :string
+#  image           :string
 #
 
 FactoryGirl.define do

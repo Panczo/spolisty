@@ -8,10 +8,15 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  track_number :string
+#  duration     :integer
 #
 
 require 'rails_helper'
 
 RSpec.describe Track, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:track) { build(:track) }
+
+  it '#track_duration' do
+    expect(track.track_duration).to eq("01:00")
+  end
 end

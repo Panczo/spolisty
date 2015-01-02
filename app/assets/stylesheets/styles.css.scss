@@ -631,4 +631,19 @@ header {
     }
     
   }
+
+  .playlist_name {
+    font-size: 60px;
+
+  }
+  .createdby {
+    color: $body-bg-light;
+    font-size: 17px;
+    font-weight: 100;
+    padding: 10px 0;
+    margin: 25px 0;
+    border-top: solid $body-bg-dark 2px;
+    border-bottom: solid $body-bg-dark 2px;
+  }
+
 }
