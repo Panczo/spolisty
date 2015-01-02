@@ -625,7 +625,7 @@ header {
           padding: $table-cell-padding;
           line-height: $line-height-base;
           vertical-align: top;
-          border-top: 1px solid red;
+          border-top: 1px solid $brand-light;
         }
       }
     }

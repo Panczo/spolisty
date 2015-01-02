@@ -14,9 +14,10 @@ feature 'user', :omniauth do
 	end
 
 	scenario 'visit playlist show page' do
-		click_link "show playlist"
+		click_link "Import your playlists from spotify"
 
 		expect(page).to have_content("Playlist")
+		expect(page).to_not have_link("Import your playlists from spotify")
 	end
 
 end

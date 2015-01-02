@@ -38,7 +38,7 @@ RSpec.describe User, :type => :model do
 		expect(user.errors.size).to eq(2)
 	end
 
-  describe '#image?' do
+  it '#image?' do
     let(:user) { build(:user, image: 'http://dummyimage.com/600x400/000/fff')}
     it "return true" do
       expect(user.image?).to be_truthy
@@ -50,7 +50,14 @@ RSpec.describe User, :type => :model do
     end
   end
 
-	describe '#import_playlist', :vcr => true do
+  it '#nick_from_email' do
+    user = build(:user, email: 'test@example.com', name: nil)
+    user2 = build(:user, email: 'test1@example.com', name: 'Frank')
+    expect(user.nick).to eq('test')
+    expect(user2.nick).to eq('Frank')
+  end
+
+	it '#import_playlist', :vcr => true do
 		before(:each) do	
 			@user = VCR.use_cassette('user_spotify_hash') do
 				RSpotify::User.find('testsanczo')

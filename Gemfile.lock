@@ -80,6 +80,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-screenshot (1.0.3)
+      capybara (>= 1.0, < 3)
+      colored
+      launchy
     capybara-webkit (1.3.1)
       capybara (>= 2.0.2, < 2.5.0)
       json
@@ -91,6 +95,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    colored (1.2)
     columnize (0.9.0)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
@@ -136,6 +141,8 @@ GEM
       turbolinks
     json (1.8.1)
     jwt (1.2.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -302,6 +309,7 @@ DEPENDENCIES
   bootstrap-sass-extras
   bundler
   capybara
+  capybara-screenshot (~> 1.0.3)
   capybara-webkit
   coffee-rails (~> 4.0.0)
   database_cleaner

@@ -40,6 +40,10 @@ class User < ActiveRecord::Base
     !image.nil?
   end
 
+  def nick
+    name.blank? ? nick_from_email : name
+  end
+
   def import_playlist
     spotify_user = RSpotify::User.new(spotify_hash)
     #Import playlists through RSpotify
@@ -102,6 +106,10 @@ class User < ActiveRecord::Base
     if songs.size == 100 
       parse_songs(playlist, @offsety.last + 100)
     end
+  end
+
+  def nick_from_email
+    email.split("@").first
   end
 
 end
