@@ -58,6 +58,13 @@ $(document).ready(function(){
     $(this).find('i').toggleClass("fa-chevron-down fa-chevron-up");
   });
 
+  $( ".trackline" ).click(function() {
+    var src = $('iframe').attr('src');
+    var newsrc = $(this).attr('data-tracknumber');
+    $('iframe').attr("src", newsrc);
+    $('iframe').click();
+  });
+
 
 });
 
