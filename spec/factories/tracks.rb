@@ -9,6 +9,8 @@
 #  updated_at   :datetime         not null
 #  track_number :string
 #  duration     :integer
+#  artist_id    :integer
+#  album_id     :integer
 #
 
 FactoryGirl.define do

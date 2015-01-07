@@ -27,4 +27,9 @@ class Playlist < ActiveRecord::Base
     seconds = tracks.sum(:duration) / 1000
     Time.at(seconds).utc.strftime("%H:%M:%S")
   end
+
+  def tracks_ids
+    tracks.pluck(:track_number).join(',')
+  end
+
 end

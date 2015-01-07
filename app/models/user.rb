@@ -62,8 +62,13 @@ class User < ActiveRecord::Base
           #Ommit track when is on playlist
           next if play.tracks.include? tr
           #create playlist tracks
-          play.tracks.create(name: tr.name, track_number: tr.id, duration: tr.duration_ms)
-
+          track = play.tracks.create(name: tr.name, 
+                             track_number: tr.id, 
+                             duration: tr.duration_ms)
+          #Add artist and album for track
+          parse_artist(track, tr)
+          parse_album(track, tr)
+         
           #Add image to playlist
           if play.image.nil?
             play.image = tr.album.images[1]["url"]
@@ -111,4 +116,19 @@ class User < ActiveRecord::Base
     email.split("@").first
   end
 
+  def parse_artist(track, spotify_track)
+    artist = Artist.find_or_create_by(name: spotify_track.artists.first.name)
+    if track.artist.blank?
+      track.artist = artist
+      track.save
+    end
+  end
+
+  def parse_album(track, spotify_track)
+    album = Album.find_or_create_by(name: spotify_track.album.name)
+    if track.album.blank?
+      track.album = album
+      track.save
+    end
+  end
 end

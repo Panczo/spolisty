@@ -9,16 +9,20 @@
 #  updated_at   :datetime         not null
 #  track_number :string
 #  duration     :integer
+#  artist_id    :integer
+#  album_id     :integer
 #
 
 class Track < ActiveRecord::Base
   belongs_to :playlist, counter_cache: :count_of_tracks
+  belongs_to :artist
+  belongs_to :album
 
   validates :playlist, :name, :track_number, presence: true
 
   def track_duration
     seconds = duration / 1000
-    Time.at(seconds).strftime("%M:%S")
+    Time.at(seconds).utc.strftime("%M:%S")
   end
 
 end

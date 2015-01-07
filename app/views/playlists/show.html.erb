@@ -9,6 +9,9 @@
       <div class="playlist_name">
         <%= @playlist.name %>
       </div>
+      <p>
+      <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= @playlist.tracks_ids %>" frameborder="0" allowtransparency="true"></iframe>
+      </p>
     </div>
   </div>
   <div class="row">
@@ -18,7 +21,7 @@
           Playlist created by: <%= link_to @playlist.user.nick, @playlist.user %> 
           <i class="fa fa-music"></i>
           <%= pluralize(@playlist.tracks.size, "song") %>
-          <i class="fa fa-music"></i>
+          <i class="fa fa-clock-o"></i>
           <%= @playlist.total_tracks_duration %>
         </h3>
       </div>
@@ -27,18 +30,18 @@
         <thead>
           <tr>
             <td>Track Name</td>
-            <td>Cos</td>
-            <td>cos</td>
-            <td>cos</td>
+            <td>Artist</td>
+            <td>Album</td>
+            <td>Time</td>
           </tr>
         </thead>
         <tbody>
           <% @playlist.tracks.each do |tr| %>
             <tr>
               <td><%= tr.name %></td>
-              <td><%= tr.id %></td>
-              <td><%= tr.created_at %></td>
-              <td><%= tr.track_number %></td>
+              <td><%= tr.artist.name %></td>
+              <td><%= tr.album.name %></td>
+              <td><%= tr.track_duration %></td>
             </tr>
           <% end %>
         </tbody>

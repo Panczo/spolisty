@@ -12,7 +12,9 @@ class PlaylistsController < ApplicationController
   end
 
   def destroy 
-    @playlist.destroy
+    if current_user == @playlist.user
+      @playlist.destroy
+    end
     redirect_to @user
   end
 
