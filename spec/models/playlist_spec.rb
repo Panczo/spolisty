@@ -43,7 +43,7 @@ RSpec.describe Playlist, :type => :model do
 	end
 
 	it '#total_tracks_duration' do
-		play = build(:playlist)
+		play = create(:playlist, user: create(:user))
 		3.times do
 			create(:track, playlist: play)
 		end

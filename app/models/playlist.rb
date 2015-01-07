@@ -25,6 +25,6 @@ class Playlist < ActiveRecord::Base
 
   def total_tracks_duration
     seconds = tracks.sum(:duration) / 1000
-    Time.at(seconds).strftime("%H:%M:%S")
+    Time.at(seconds).utc.strftime("%H:%M:%S")
   end
 end
