@@ -16,13 +16,13 @@
     <div clas="col-md-12">
         <div class="container">
       <nav class="navbar navbar-default navbar-fixed-bottom text-center">
-          <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= @playlist.tracks.first.track_number %>" style="width: 640px" frameborder="0" allowtransparency="true"></iframe>        
+          <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= @playlist.tracks.first.track_number %>" frameborder="0" allowtransparency="true"></iframe>        
       </nav>
         </div>
     </div>    
   </div>
   <div class="row">
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-xs-10 col-md-10 col-md-offset-1">
       <div class="playlist_info">
         <h3 class="createdby">
           Playlist created by: <%= link_to @playlist.user.nick, @playlist.user %> 
