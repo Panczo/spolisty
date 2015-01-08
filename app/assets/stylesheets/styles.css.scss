@@ -608,6 +608,7 @@ header {
 
 .playlist_wrapper {
   margin: 25px 0;
+  margin-bottom: 100px;
   color: $text-color;
   font-family: $main-font;
   .table-hover {
@@ -644,6 +645,16 @@ header {
     margin: 25px 0;
     border-top: solid $body-bg-dark 2px;
     border-bottom: solid $body-bg-dark 2px;
+  }
+
+  .container {
+    position: absolute;
+    .navbar {
+      height: 70px;
+      position: fixed;
+      background: none;
+      border: none;
+    }
   }
 
 }

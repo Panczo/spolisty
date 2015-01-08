@@ -9,10 +9,17 @@
       <div class="playlist_name">
         <%= @playlist.name %>
       </div>
-      <p>
-      <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= @playlist.tracks.first.track_number %>" frameborder="0" allowtransparency="true"></iframe>
-      </p>
     </div>
+  </div>
+
+  <div class="row">
+    <div clas="col-md-12">
+        <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-bottom text-center">
+          <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= @playlist.tracks.first.track_number %>" style="width: 640px" frameborder="0" allowtransparency="true"></iframe>        
+      </nav>
+        </div>
+    </div>    
   </div>
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
