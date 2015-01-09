@@ -14,6 +14,8 @@
 #
 
 class Track < ActiveRecord::Base
+  default_scope { order('updated_at DESC') }
+
   belongs_to :playlist, counter_cache: :count_of_tracks
   belongs_to :artist
   belongs_to :album
