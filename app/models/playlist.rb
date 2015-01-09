@@ -29,7 +29,19 @@ class Playlist < ActiveRecord::Base
   end
 
   def tracks_ids
-    tracks.pluck(:track_number).join(',')
+    tracks.pluck(:track_number)
+  end
+
+  def owner
+    self.user
+  end
+
+  def upload_tracks
+    spotify_user = RSpotify::User.new(user.spotify_hash)
+    playlist = spotify_user.create_playlist!(self.name)
+    ids = tracks_ids
+    playlist_tracks = RSpotify::Base.find(ids, 'track')
+    playlist.add_tracks!(playlist_tracks)
   end
 
 end

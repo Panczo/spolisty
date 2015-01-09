@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       collection do
         get 'import'
       end
+      member do
+        get 'export'
+      end
     end
     resources :tracks, only: [:addtrack] do
       member do

@@ -24,6 +24,15 @@ class PlaylistsController < ApplicationController
     redirect_to current_user
   end
 
+  def export
+    playlist = Playlist.find(params[:id])
+    if current_user == playlist.user
+      playlist.upload_tracks
+    end
+    redirect_to :back
+    flash[:success] = "Successfully exported playlist to Spotify"
+  end
+
 
   private
 
