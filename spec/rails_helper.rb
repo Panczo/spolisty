@@ -14,6 +14,15 @@ require 'simplecov'
 SimpleCov.start
 
 
+if ENV['coverage'] == "on"
+  require 'simplecov'
+  SimpleCov.start do
+    add_filter "/spec/"
+  end
+end
+
+Dir[Rails.root.join("app/models/**/*.rb")].each { |f| require f }
+Dir[Rails.root.join("app/controllers/**/*.rb")].each { |f| require f }
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
