@@ -10,6 +10,11 @@ Rails.application.routes.draw do
         get 'import'
       end
     end
+    resources :tracks, only: [:addtrack] do
+      member do
+        post 'addtrack'
+      end
+    end
   end
 
   resources :subscribes, only: [:create]

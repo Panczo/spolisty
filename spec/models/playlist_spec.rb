@@ -29,10 +29,10 @@ RSpec.describe Playlist, :type => :model do
 		expect(build(:playlist)).to_not be_valid
 	end
 
-	it 'is invalid without name, id_spotify, spotify_type' do
-		play = build(:playlist, user: create(:user), name: '', id_spotify: '', spotify_type: '')
+	it 'is invalid without name,  spotify_type' do
+		play = build(:playlist, user: create(:user), name: '', spotify_type: '')
 		expect(play).to_not be_valid
-		expect(play.errors.size).to eq 4
+		expect(play.errors.size).to eq 3
 	end
 
 	it 'is invalid with wrong spotify_type' do

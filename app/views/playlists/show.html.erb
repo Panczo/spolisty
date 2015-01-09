@@ -40,6 +40,7 @@
             <td>Artist</td>
             <td>Album</td>
             <td>Time</td>
+            <td></td>
           </tr>
         </thead>
         <tbody>
@@ -49,6 +50,12 @@
               <td><%= tr.artist.name %></td>
               <td><%= tr.album.name %></td>
               <td><%= tr.track_duration %></td>
+
+              <td>
+                <%= link_to addtrack_user_track_path(current_user, tr), method: :post do %>
+                  <i class="fa fa-plus"></i>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>
@@ -57,8 +64,7 @@
       <% if current_user == @playlist.user %>
         <%= link_to "Destroy", user_playlist_path, method: :delete, data: { confirm: "Do you want deleted this playlist? This action don't deleted this playlist from spotify app" }, class: 'btn btn-primary' %>
       <% end %>
-      <%= link_to "Back", :back, class: 'btn btn-primary' %>
-      
+      <%= link_to "Back",  user_playlists_path(current_user) , class: 'btn btn-primary' %>
     </div>
   </div>  
 </div>
