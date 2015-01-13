@@ -10,7 +10,7 @@ module Omniauth
           {
             "country"=>"PL",
             "display_name"=>nil,
-            "email"=>"tomekkpanek@gmail.com",
+            "email"=>"testsanczo@gmail.com",
             "external_urls"=>
               {"spotify"=>"https://open.spotify.com/user/testsanczo"},
             "followers"=>{"href"=>nil, "total"=>0}, 
@@ -20,7 +20,7 @@ module Omniauth
             "product"=>"open", 
             "type"=>"user", 
             "uri"=>"spotify:user:testsanczo", 
-            "name"=>"tomekkpanek@gmail.com"
+            "name"=>"testsanczo@gmail.com"
           }, 
         "credentials"=>
           {
@@ -34,7 +34,7 @@ module Omniauth
               {
                 "country"=>"PL",
                 "display_name"=>nil,
-                "email"=>"tomekkpanek@gmail.com",
+                "email"=>"testsancz@gmail.com",
                 "external_urls"=>
                   {"spotify"=>"https://open.spotify.com/user/testsanczo"},
                 "followers"=>{"href"=>nil, "total"=>0},

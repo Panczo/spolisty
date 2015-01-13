@@ -7,7 +7,7 @@ feature 'User profile page' do
 
 		expect(page).to have_content("Successfully authenticated from Spotify account.")
 		expect(current_path).to eq('/users/1')
-		expect(page).to have_content("Mario Poli")
+		expect(page).to have_content("testsanczo@gmail.com")
 	end
 
 	scenario 'after logout user see landing page', :omniauth do

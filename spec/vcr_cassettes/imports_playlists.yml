@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/users/testsanczo/playlists?limit=20&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer BQColySz79b0dlZ2JoE7IMCEWCeQZRehgnETMar3wlBWriRgDHDJvZ-HvnE_dwTn29cK26tEuBparjFVTNnBqAk_kz5goejtrmGRszlVV1L2Ip6yMLqw8JdggorX6tOnektKdSUrvruxbEtY61Kp_5d9My6cR4ElKNN7UAPWTN8Ktpumxazeo70rvgG9spMTM96bYptTTwi-Eqc_TFSyasD31saLs2cTp7vMsQED0J2-R5kpwWA
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 13 Jan 2015 13:32:29 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Cache-Control:
+      - public, max-age=0
+      Etag:
+      - '"AAAAJaWY15xuFC6EOsoN1muXXkWcb0k0"'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '604800'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000;
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAOxWTU/CMBi++yuWHTwRNkYUsoR4wCARCBq5GGNMGR1UurW2
+        HTAJ/91164YzjCWIcuG2vl/P8348ydYXmqbPGHR1zY4+hKDcNgxAUZVTIpAb
+        Vh3iGYuaEXDIuCEgFxz4zicxKAYhRtHzhrguh6JlXmLkIdGyTL0iqyIBPS7L
+        vmjr6B1ZHIIxGBMGBFpA6XEB5rCSOOFKQOYD/BYwHKclSZFHMckYRgQJhX6O
+        oaS3i51hrQYPPcDQsnvbbAIw619170dDPa69UdC/678IQhVHk7h0SZAHplAN
+        61XZfODFQ5L9S6AwDSZLH7LchApnd9j0dJWt5nPghPQsW41gl0uENGlSZm/N
+        AUNp6xLCll77J8F0fTQYY+TIeMGC9JwEA848f0d/smZDAW07IgJgCVOr51hm
+        naYV03WW9Gqn8XbxKW8qp5RY3Wp/XDemjWmt32mT4fMA9KjZO6rECiDyEisJ
+        2iexDnECftZXmb6+H9PxBbZ7f/8osOJDPq3AGt0Btebm5O7dmYfkqT1sPzYn
+        taMKrAAiL7CSoH0CG7EIEZ4VdlqF7V5gscKsIwus+JA3ycno8S9kDG3Gbz86
+        DPn0A4xjQ/KzKU1JAGVwgUjAc0FZA/WLzRcAAAD//wMA7M5ZA+IKAAA=
+    http_version: 
+  recorded_at: Tue, 13 Jan 2015 13:32:29 GMT
+recorded_with: VCR 2.9.3

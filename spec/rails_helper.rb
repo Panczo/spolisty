@@ -63,5 +63,4 @@ VCR.configure do |c|
   c.configure_rspec_metadata!
   c.ignore_localhost = true
   WebMock.allow_net_connect!
-  c.debug_logger = File.open(ARGV.first, 'w')
 end
