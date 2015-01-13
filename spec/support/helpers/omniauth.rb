@@ -2,43 +2,48 @@ module Omniauth
 
   module Mock
     def auth_mock
-      OmniAuth.config.mock_auth[:spotify] = {
-        'provider' => 'spotify',
-        'uid' => '123545',
-        'info'=>
+      OmniAuth.config.mock_auth[:spotify] = 
+      {
+        "provider"=>"spotify", 
+        "uid"=>"testsanczo", 
+        "info"=>
           {
-            'country'=>'GB',
-            'display_name'=>'Mario Poli',
-            'email'=>'mariopoli@google.com',
-            'external_urls'=>{'spotify'=>'https://open.spotify.com/user/mariopoli'},
-            'images'=>
-              [{'height'=>nil,
-                'url'=>
-                'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/t1.0-1/s320x320/301234_1962753760624_625151598_n.jpg',
-                'width'=>nil
-              }]
-          },
-        'credentials' => 
+            "country"=>"PL",
+            "display_name"=>nil,
+            "email"=>"tomekkpanek@gmail.com",
+            "external_urls"=>
+              {"spotify"=>"https://open.spotify.com/user/testsanczo"},
+            "followers"=>{"href"=>nil, "total"=>0}, 
+            "href"=>"https://api.spotify.com/v1/users/testsanczo",
+            "id"=>"testsanczo",
+            "images"=>[], 
+            "product"=>"open", 
+            "type"=>"user", 
+            "uri"=>"spotify:user:testsanczo", 
+            "name"=>"tomekkpanek@gmail.com"
+          }, 
+        "credentials"=>
           {
-            'token' => 'xxxx',
-            'refresh_token' => 'xxxx',
-            'expires_at' => Time.now + 1.week,
-            'expires' => true
-          },
-        'extra' =>
+            "token"=>"BQColySz79b0dlZ2JoE7IMCEWCeQZRehgnETMar3wlBWriRgDHDJvZ-HvnE_dwTn29cK26tEuBparjFVTNnBqAk_kz5goejtrmGRszlVV1L2Ip6yMLqw8JdggorX6tOnektKdSUrvruxbEtY61Kp_5d9My6cR4ElKNN7UAPWTN8Ktpumxazeo70rvgG9spMTM96bYptTTwi-Eqc_TFSyasD31saLs2cTp7vMsQED0J2-R5kpwWA", "refresh_token"=>"AQA1wCBKvlwEZqDbrKi1Xa76eKpm7EIeBw2wKv9u0Deegx8N60X-wBQIOjUPw8aATCqlr6VQdIxhr0sMxkiuDugdTqbD12mCTU2Gbr2TiLbvw1EPnc7LguZe9xp444kHi4o", 
+            "expires_at"=>1421157078, 
+            "expires"=>true
+          }, 
+        "extra"=>
           {
-            'raw_info'=>
+            "raw_info"=>
               {
-                'country'=>'GB',
-                'display_name'=>'Mario Poli',
-                'email'=>'mariopoli@google.com',
-                'external_urls'=>{'spotify'=>'https://open.spotify.com/user/mariopoli'},
-                'followers'=>{'href'=>nil, 'total'=>0},
-                'href'=>'https://api.spotify.com/v1/users/mariopoli',
-                'id'=>'mariopoli',
-                'product'=>'open',
-                'type'=>'user',
-                'uri'=>'spotify:user:mariopoli'
+                "country"=>"PL",
+                "display_name"=>nil,
+                "email"=>"tomekkpanek@gmail.com",
+                "external_urls"=>
+                  {"spotify"=>"https://open.spotify.com/user/testsanczo"},
+                "followers"=>{"href"=>nil, "total"=>0},
+                "href"=>"https://api.spotify.com/v1/users/testsanczo",
+                "id"=>"testsanczo", 
+                "images"=>[], 
+                "product"=>"open", 
+                "type"=>"user", 
+                "uri"=>"spotify:user:testsanczo"
               }
           }
       }
