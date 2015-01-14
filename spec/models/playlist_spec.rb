@@ -51,4 +51,13 @@ RSpec.describe Playlist, :type => :model do
 		expect(play.total_tracks_duration).to eq("00:03:00")
 	end
 
+	it '#tracks_ids' do
+		play = create(:playlist, user: create(:user))
+		3.times do |n|
+			create(:track, track_number: "#{n}", playlist: play)
+		end
+
+		expect(play.tracks_ids).to eq(['2','1','0']) 
+	end
+
 end
