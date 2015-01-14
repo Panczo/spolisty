@@ -14,6 +14,7 @@ class PlaylistsController < ApplicationController
   def destroy 
     if current_user == @playlist.user
       @playlist.destroy
+      flash[:success] = "Playlist deleted"
     end
     redirect_to @user
   end
