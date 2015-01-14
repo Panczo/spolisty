@@ -24,7 +24,7 @@
              <i class="fa fa-bell-slash" data-toggle="tooltip", data-placement="top", title="You can see only playlist and his tracks created by <%= p.user.name %>"></i>
             </span>           
           <% end %>
-            <%= p.name %>
+            <%= link_to p.name, [p.user, p] %>
         </span>
           
         <p class="pull-right showlist">
