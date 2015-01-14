@@ -16,7 +16,9 @@
     <div clas="col-md-12">
         <div class="container">
       <nav class="navbar navbar-default navbar-fixed-bottom text-center">
-          <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= @playlist.tracks.first.track_number %>" frameborder="0" allowtransparency="true"></iframe>        
+        <% unless @playlist.tracks.blank? %>
+          <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= @playlist.tracks.first.track_number %>" frameborder="0" allowtransparency="true"></iframe> 
+        <% end %>      
       </nav>
         </div>
     </div>    
@@ -27,7 +29,7 @@
         <h3 class="createdby">
           Playlist created by: <%= link_to @playlist.user.nick, @playlist.user %> 
           <i class="fa fa-music"></i>
-          <%= pluralize(@playlist.tracks.size, "song") %>
+          <%= @playlist.tracks.any? ? pluralize(@playlist.tracks.size, "song") : 0 %>
           <i class="fa fa-clock-o"></i>
           <%= @playlist.total_tracks_duration %>
         </h3>

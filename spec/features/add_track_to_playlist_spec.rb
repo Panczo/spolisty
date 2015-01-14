@@ -31,4 +31,18 @@ feature 'add track to playlist', :omniauth do
     expect(page).to_not have_link "Focus"
   end
 
+  scenario 'other user cant delete playlist' do
+    other_user = create(:user, name: "Mona Lisa")
+    
+    4.times do |n|
+      Playlist.create(name: "Test#{n}", spotify_type: 'playlist', user: other_user)
+    end
+
+    expect(other_user.playlists.size).to eq(4)
+
+    visit user_path(other_user)
+    click_link "Test1"
+    expect(page).to_not have_link("Destroy")
+  end
+
 end
