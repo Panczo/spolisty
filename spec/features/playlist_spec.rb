@@ -19,7 +19,6 @@ feature 'user', :omniauth do
 		@playlist = VCR.use_cassette('imports_playlists') do
 			@userrr.playlists
 		end
-
 		expect(page).to have_content("Playlist")
 		expect(page).to_not have_link("Import your playlists from spotify")
 	end

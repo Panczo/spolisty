@@ -1,3 +1,13 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+
+if ENV['coverage'] == "on"
+  require 'simplecov'
+  SimpleCov.start do
+    add_filter "/app/models/"
+  end
+end
+
 ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
@@ -8,18 +18,8 @@ require 'capybara/webkit/matchers'
 require 'capybara-screenshot/rspec'
 require 'vcr'
 require 'webmock/rspec'
-
 Capybara.javascript_driver = :webkit
-require 'simplecov'
-SimpleCov.start
 
-
-if ENV['coverage'] == "on"
-  require 'simplecov'
-  SimpleCov.start do
-    add_filter "/spec/"
-  end
-end
 
 Dir[Rails.root.join("app/models/**/*.rb")].each { |f| require f }
 Dir[Rails.root.join("app/controllers/**/*.rb")].each { |f| require f }
