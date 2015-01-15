@@ -1,0 +1,10 @@
+<div class="users_wrapper">
+  <h2>Below we are present all our user</h2>
+  <% @users.each do |user| %>
+    <div class="user">
+      <p><%= link_to user.nick, user %></p>
+      <p><%= user.created_at %></p>
+
+    </div>
+  <% end %>
+</div>

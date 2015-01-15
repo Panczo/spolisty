@@ -52,11 +52,11 @@
           <% @playlist.tracks.each do |tr| %>
             <tr class="trackline" data-tracknumber="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= tr.track_number %>">
               <td><%= tr.name %></td>
-              <td><%= tr.artist.name %></td>
-              <td><%= tr.album.name %></td>
-              <td><%= tr.track_duration %></td>
+              <td><%= tr.try(:artist).try(:name) %></td>
+              <td><%= tr.try(:album).try(:name) %></td>
+              <td><%= tr.try(:track_duration) %></td>
 
-              <td>
+              <td class="<%= tr.name %>">
                 <%= link_to addtrack_user_track_path(current_user, tr), method: :post do %>
                   <i class="fa fa-plus"></i>
                 <% end %>
