@@ -60,3 +60,6 @@ module Omniauth
   end
 end
 
+RSpec.configure do |c|
+  c.include Omniauth, type: :feature
+end

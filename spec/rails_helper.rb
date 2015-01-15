@@ -19,6 +19,10 @@ require 'capybara-screenshot/rspec'
 require 'vcr'
 require 'webmock/rspec'
 Capybara.javascript_driver = :webkit
+require 'devise'
+
+
+  
 
 
 Dir[Rails.root.join("app/models/**/*.rb")].each { |f| require f }
@@ -54,6 +58,8 @@ RSpec.configure do |config|
   config.include RSpec::Rails::RequestExampleGroup, type: :request
   config.include(Capybara::Webkit::RspecMatchers, :type => :feature)
   config.raise_errors_for_deprecations!
+  config.include Devise::TestHelpers, :type => :controller
+  config.extend ControllerMacros, :type => :controller
 end
 
 
