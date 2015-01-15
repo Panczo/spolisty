@@ -15,8 +15,10 @@ class PlaylistsController < ApplicationController
     if current_user == @playlist.user
       @playlist.destroy
       flash[:success] = "Playlist deleted"
+    else
+      flash[:error] = "You can't delete this playlist" 
     end
-    redirect_to @user
+      redirect_to @user
   end
 
   def import
