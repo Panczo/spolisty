@@ -1,5 +1,6 @@
 class TracksController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_track, only: [:destroy]
 
   def addtrack
     user = User.find(params[:user_id])
@@ -22,5 +23,20 @@ class TracksController < ApplicationController
         redirect_to :back
       end
     end
+  end
+
+  def destroy
+    playlist = @track.playlist
+    if current_user == @track.playlist.user
+      @track.destroy
+      flash[:success] = "Your track was deleted"
+      redirect_to [current_user, playlist]
+    end
+  end
+
+  private
+
+  def find_track
+    @track = current_user.tracks.find(params[:id])
   end
 end

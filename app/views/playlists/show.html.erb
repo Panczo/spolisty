@@ -55,13 +55,16 @@
               <td><%= tr.try(:artist).try(:name) %></td>
               <td><%= tr.try(:album).try(:name) %></td>
               <td><%= tr.try(:track_duration) %></td>
-
-              <td class="<%= tr.name %>">
-                <%= link_to  addtrack_user_track_path(current_user, tr), method: :post do %>
-                  add_track
-                 <!--  <i class="fa fa-plus"></i> -->
-                <% end %>
-              </td>
+              <% if current_user == @playlist.user %>
+                <td><%= link_to 'remove track', user_track_path(current_user, tr), method: :delete, data: { confirm: "Do you want delete this track?" } %></td>
+              <% else %>
+                <td class="<%= tr.name %>">
+                  <%= link_to  addtrack_user_track_path(current_user, tr), method: :post do %>
+                    add_track
+                   <!--  <i class="fa fa-plus"></i> -->
+                  <% end %>
+                </td>
+              <% end %>
             </tr>
           <% end %>
         </tbody>

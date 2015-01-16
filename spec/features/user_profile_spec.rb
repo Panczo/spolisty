@@ -6,7 +6,6 @@ feature 'User profile page' do
 		signin
 
 		expect(page).to have_content("Successfully authenticated from Spotify account.")
-		expect(current_path).to eq('/users/1')
 		expect(page).to have_content("testsanczo@gmail.com")
 	end
 

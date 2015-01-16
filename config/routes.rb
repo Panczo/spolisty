@@ -13,7 +13,7 @@ Rails.application.routes.draw do
         get 'export'
       end
     end
-    resources :tracks, only: [:addtrack] do
+    resources :tracks, only: [:destroy] do
       member do
         post 'addtrack'
       end
