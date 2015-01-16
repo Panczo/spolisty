@@ -73,6 +73,6 @@ feature 'add track to playlist', :omniauth do
     within(".track-1") do
       click_link 'add_track'
     end
+    expect(page).to have_content("Successfully added track - track-1 to playlist - spolisty")
   end
-
 end
