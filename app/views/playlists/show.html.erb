@@ -70,7 +70,7 @@
       <% if current_user == @playlist.user %>
         <%= link_to "Destroy", user_playlist_path, method: :delete, data: { confirm: "Do you want deleted this playlist? This action don't deleted this playlist from spotify app" }, class: 'btn btn-primary' %>
       <% end %>
-      <%= link_to "Back",  user_playlists_path(current_user) , class: 'btn btn-primary' %>
+      <%= link_to "Back", :back, class: 'btn btn-primary' %>
     </div>
   </div>  
 </div>

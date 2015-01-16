@@ -3,7 +3,8 @@ class TracksController < ApplicationController
 
   def addtrack
     user = User.find(params[:user_id])
-    track = Track.find(params[:id]).dup
+    orginal_track = Track.find(params[:id])
+    track = orginal_track.dup
     
     if current_user == user 
       @playlist = Playlist.find_or_initialize_by(name: 'spolisty', user: user) do |playlist|
@@ -11,15 +12,13 @@ class TracksController < ApplicationController
         playlist.spotify_type = "playlist"
       end
 
-      unless @playlist.tracks.include? track
+      unless @playlist.tracks.find_by(track_number: orginal_track.track_number)
         @playlist.tracks << track
-      end
-      
-      if @playlist.save
+        @playlist.save
         flash[:success] = "Successfully added track - #{track.name} to playlist - #{@playlist.name}"
         redirect_to :back
       else
-        flash[:error] = 'error'
+        flash[:error] = "You have this song allready in playlist"
         redirect_to :back
       end
     end

@@ -17,6 +17,12 @@ feature 'add track to playlist', :omniauth do
     VCR.use_cassette('user:import:playlists:through') do
       click_link "Import your playlists from spotify", match: :first 
     end
+
+    @other_user = create(:user, name: "Mona Lisa")
+    @play = create(:playlist, name: "Test", spotify_type: 'playlist', user: @other_user)
+    4.times do |n|
+      @play.tracks.create(name: "track-#{n}", track_number: "#{n}", duration: 10000)
+    end
   end
       
   scenario 'visit playlist show page' do
@@ -33,29 +39,19 @@ feature 'add track to playlist', :omniauth do
   end
 
   scenario 'other user cant delete playlist' do
-    other_user = create(:user, name: "Mona Lisa")
-    
     4.times do |n|
-      Playlist.create(name: "Test#{n}", spotify_type: 'playlist', user: other_user)
+      Playlist.create(name: "Test#{n}", spotify_type: 'playlist', user: @other_user)
     end
 
-    expect(other_user.playlists.size).to eq(4)
+    expect(@other_user.playlists.size).to eq(5)
 
-    visit user_path(other_user)
+    visit user_path(@other_user)
     click_link "Test1"
     expect(page).to_not have_link("Destroy")
   end
 
   scenario 'add track to own playlist' do
-    other_user = create(:user, name: "Mona Lisa")
-    @play = create(:playlist, name: "Test", spotify_type: 'playlist', user: other_user)
-    4.times do |n|
-      @play.tracks.create(name: "track-#{n}", track_number: "#{n}", duration: 10000)
-    end
-
     expect(@play.tracks.size).to eq(4)
-
-
     click_link "Users"
 
     expect(page.current_path).to eq users_path
@@ -64,7 +60,7 @@ feature 'add track to playlist', :omniauth do
 
     click_link "Mona Lisa"
 
-    expect(page.current_path).to eq user_path(other_user)
+    expect(page.current_path).to eq user_path(@other_user)
     expect(page).to have_link("Test")
 
     click_link "Test"
@@ -74,5 +70,23 @@ feature 'add track to playlist', :omniauth do
       click_link 'add_track'
     end
     expect(page).to have_content("Successfully added track - track-1 to playlist - spolisty")
+  end
+
+  scenario 'cant add second time the same track to playlist' do
+    click_link "Users"
+    expect(page).to have_content "Mona Lisa"
+
+    click_link "Mona Lisa"
+    click_link "Test"
+
+    within(".track-0") do
+      click_link 'add_track'
+    end
+    expect(page).to have_content("Successfully added track - track-0 to playlist - spolisty")
+
+    within(".track-0") do
+      click_link 'add_track'
+    end
+    expect(page).to have_content("You have this song allready in playlist")
   end
 end
