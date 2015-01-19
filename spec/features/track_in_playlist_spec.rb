@@ -87,7 +87,7 @@ feature 'track in playlist', :omniauth do
     within(".track-0") do
       click_link 'add_track'
     end
-    expect(page).to have_content("You have this song allready in playlist")
+    expect(page).to have_content("You have this song already in playlist")
   end
 
   scenario 'delete track from playlist' do

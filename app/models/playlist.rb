@@ -51,10 +51,9 @@ class Playlist < ActiveRecord::Base
       #else add tracks to this playlist
       finalTracks.empty? ? replace_playlists(tracks_ids, playlistInSpotify) : addsTracks(finalTracks, playlistInSpotify)
     else
-    # Else - create new playlist with name spolisty and add tracks
+    # Else - create new playlist with name spolisty and add tracks 
       spotify_user = RSpotify::User.new(user.spotify_hash)
       playlist = spotify_user.create_playlist!(self.name)
-      ids = tracks_ids
       addsTracks(tracks_ids, playlist)
     end
   end
