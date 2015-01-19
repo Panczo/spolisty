@@ -36,6 +36,10 @@ class Playlist < ActiveRecord::Base
     self.user
   end
 
+  def special?
+    special == true
+  end
+
   def upload_tracks
     #Parse playlist spotify_id
     if id_spotify.blank?

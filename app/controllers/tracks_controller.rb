@@ -11,6 +11,7 @@ class TracksController < ApplicationController
       @playlist = Playlist.find_or_initialize_by(name: 'spolisty', user: user) do |playlist|
         playlist.user = current_user
         playlist.spotify_type = "playlist"
+        playlist.special = true
       end
 
       unless @playlist.tracks.find_by(track_number: orginal_track.track_number)

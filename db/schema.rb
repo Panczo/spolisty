@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119111738) do
+ActiveRecord::Schema.define(version: 20150119132846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,12 +34,13 @@ ActiveRecord::Schema.define(version: 20150119111738) do
     t.integer  "followers_count"
     t.string   "id_spotify"
     t.string   "spotify_type"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "user_id"
-    t.integer  "count_of_tracks", default: 0, null: false
+    t.integer  "count_of_tracks", default: 0,     null: false
     t.string   "ownerlist"
     t.string   "image"
+    t.boolean  "special",         default: false
   end
 
   add_index "playlists", ["user_id"], name: "index_playlists_on_user_id", using: :btree
