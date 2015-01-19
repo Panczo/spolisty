@@ -20,6 +20,7 @@
 #  image                  :text
 #  name                   :string
 #  spotify_hash           :text
+#  spotify_id             :string
 #
 
 FactoryGirl.define do

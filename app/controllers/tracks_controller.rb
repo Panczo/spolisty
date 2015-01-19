@@ -19,7 +19,7 @@ class TracksController < ApplicationController
         flash[:success] = "Successfully added track - #{track.name} to playlist - #{@playlist.name}"
         redirect_to :back
       else
-        flash[:error] = "You have this song allready in playlist"
+        flash[:error] = "You have this song already in playlist"
         redirect_to :back
       end
     end
@@ -39,4 +39,5 @@ class TracksController < ApplicationController
   def find_track
     @track = current_user.tracks.find(params[:id])
   end
+
 end

@@ -37,11 +37,34 @@ class Playlist < ActiveRecord::Base
   end
 
   def upload_tracks
+    if id_spotify.blank?
+      describe_playlist
+    end
+
+    if spolistyOnSpotifyPlaylist = RSpotify::Playlist.find(user.spotify_id, id_spotify)
+      spolistyTracksIds = spolistyOnSpotifyPlaylist.tracks.map(&:id)
+      finalTracks = tracks_ids - spolistyTracksIds
+      playlist_tracks = RSpotify::Base.find(finalTracks, 'track')
+      spolistyOnSpotifyPlaylist.add_tracks!(playlist_tracks)
+    else
+      spotify_user = RSpotify::User.new(user.spotify_hash)
+      playlist = spotify_user.create_playlist!(self.name)
+      ids = tracks_ids
+      playlist_tracks = RSpotify::Base.find(ids, 'track')
+      playlist.add_tracks!(playlist_tracks) 
+    end
+  end
+
+  private 
+
+  def describe_playlist
     spotify_user = RSpotify::User.new(user.spotify_hash)
-    playlist = spotify_user.create_playlist!(self.name)
-    ids = tracks_ids
-    playlist_tracks = RSpotify::Base.find(ids, 'track')
-    playlist.add_tracks!(playlist_tracks)
+    playlists = spotify_user.playlists
+    spolistyplaylist = playlists.select{|p| p.name == 'spolisty'}
+    unless spolistyplaylist.blank?
+      self.id_spotify = spolistyplaylist[0].id
+      save
+    end
   end
 
 end

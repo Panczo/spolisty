@@ -20,6 +20,7 @@
 #  image                  :text
 #  name                   :string
 #  spotify_hash           :text
+#  spotify_id             :string
 #
 
 class User < ActiveRecord::Base
@@ -85,6 +86,7 @@ class User < ActiveRecord::Base
           user.password = Devise.friendly_token[0,20]
           user.name = auth["info"]["display_name"] unless auth["info"]["display_name"].nil?
           user.image = auth["info"]["images"][0]["url"] unless auth["info"]["images"].blank?
+          user.spotify_id = auth["info"]["id"]
       end
   end
 

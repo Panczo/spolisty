@@ -2,6 +2,7 @@ class PlaylistsController < ApplicationController
 	before_action :authenticate_user!
   before_action :find_user, only: [:show, :destroy]
   before_action :find_playlist, only: [:show, :destroy]
+
   respond_to :html
 
 	def index
@@ -18,7 +19,7 @@ class PlaylistsController < ApplicationController
     else
       flash[:error] = "You can't delete this playlist" 
     end
-      redirect_to @user
+    redirect_to @user
   end
 
   def import
