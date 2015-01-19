@@ -37,21 +37,25 @@ class Playlist < ActiveRecord::Base
   end
 
   def upload_tracks
+    #Parse playlist spotify_id
     if id_spotify.blank?
       describe_playlist
     end
 
-    if spolistyOnSpotifyPlaylist = RSpotify::Playlist.find(user.spotify_id, id_spotify)
-      spolistyTracksIds = spolistyOnSpotifyPlaylist.tracks.map(&:id)
+    # If playlist "spolisty" exist
+    if playlistInSpotify = RSpotify::Playlist.find(user.spotify_id, id_spotify)
+      spolistyTracksIds = playlistInSpotify.tracks.map(&:id)
       finalTracks = tracks_ids - spolistyTracksIds
-      playlist_tracks = RSpotify::Base.find(finalTracks, 'track')
-      spolistyOnSpotifyPlaylist.add_tracks!(playlist_tracks)
+
+      #If finalTracks empty(track from playlist was deleted) - replece all playlist
+      #else add tracks to this playlist
+      finalTracks.empty? ? replace_playlists(tracks_ids, playlistInSpotify) : addsTracks(finalTracks, playlistInSpotify)
     else
+    # Else - create new playlist with name spolisty and add tracks
       spotify_user = RSpotify::User.new(user.spotify_hash)
       playlist = spotify_user.create_playlist!(self.name)
       ids = tracks_ids
-      playlist_tracks = RSpotify::Base.find(ids, 'track')
-      playlist.add_tracks!(playlist_tracks) 
+      addsTracks(tracks_ids, playlist)
     end
   end
 
@@ -67,4 +71,13 @@ class Playlist < ActiveRecord::Base
     end
   end
 
+  def addsTracks(ids, playlistInSpotify)
+    playlist_tracks = RSpotify::Base.find(ids, 'track')
+    playlistInSpotify.add_tracks!(playlist_tracks)
+  end
+
+  def replace_playlists(ids, playlistInSpotify)
+    tracks = RSpotify::Base.find(ids, 'track')
+    playlistInSpotify.replace_tracks!(tracks)
+  end
 end
