@@ -47,7 +47,8 @@ class Playlist < ActiveRecord::Base
     end
 
     # If playlist "spolisty" exist
-    if playlistInSpotify = RSpotify::Playlist.find(user.spotify_id, id_spotify)
+    if user.playlists.include? (self)
+      playlistInSpotify = RSpotify::Playlist.find(user.spotify_id, id_spotify)
       spolistyTracksIds = playlistInSpotify.tracks.map(&:id)
       finalTracks = tracks_ids - spolistyTracksIds
 
@@ -68,10 +69,20 @@ class Playlist < ActiveRecord::Base
     spotify_user = RSpotify::User.new(user.spotify_hash)
     playlists = spotify_user.playlists
     spolistyplaylist = playlists.select{|p| p.name == 'spolisty'}
-    unless spolistyplaylist.blank?
-      self.id_spotify = spolistyplaylist[0].id
-      save
-    end
+    raise :test
+    spolistyplaylist.blank? ? createSpolistyPlaylist(user) : addSpotifyId(spolistyplaylist)
+  end
+
+  def createSpolistyPlaylist(user)
+    spotify_user = RSpotify::User.new(user.spotify_hash)
+    spolistylist = spotify_user.create_playlist!('spolisty')
+
+    addSpotifyId(spolistylist)
+  end
+
+  def addSpotifyId(playlist)
+    self.id_spotify = playlist[0].id
+    save
   end
 
   def addsTracks(ids, playlistInSpotify)

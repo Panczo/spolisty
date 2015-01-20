@@ -34,7 +34,7 @@
           <%= @playlist.total_tracks_duration %>
         </h3>
         <% if current_user == @playlist.user && @playlist.special? %>
-          <p><%= link_to "Send your playlist to spotify",  export_user_playlist_path(current_user, @playlist), class: 'btn btn-primary' %></p>
+          <p><%= link_to "Send your playlist to Spotify",  export_user_playlist_path(current_user, @playlist), class: 'btn btn-primary' %></p>
         <% end %>
       </div>
 
