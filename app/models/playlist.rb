@@ -69,14 +69,12 @@ class Playlist < ActiveRecord::Base
     spotify_user = RSpotify::User.new(user.spotify_hash)
     playlists = spotify_user.playlists
     spolistyplaylist = playlists.select{|p| p.name == 'spolisty'}
-    raise :test
     spolistyplaylist.blank? ? createSpolistyPlaylist(user) : addSpotifyId(spolistyplaylist)
   end
 
   def createSpolistyPlaylist(user)
     spotify_user = RSpotify::User.new(user.spotify_hash)
     spolistylist = spotify_user.create_playlist!('spolisty')
-
     addSpotifyId(spolistylist)
   end
 
