@@ -4,6 +4,10 @@ Rails.application.routes.draw do
       omniauth_callbacks: "users/omniauth_callbacks" 
     }
 
+  devise_scope :user do
+    get "/login" => "devise/sessions#new"
+  end
+
   resources :users, only: [:index, :show] do
   	resources :playlists do
       collection do

@@ -20,13 +20,20 @@
 </head>
 <body>
 
-	<%= render partial: "shared/leftnav" %>
-	<div class="row main-field">
-		<div class="col-md-12">
+	<% if user_signed_in? %>
+		<%= render partial: "shared/leftnav" %>
+		<div class="row main-field">
+			<div class="col-md-12">
+				<%= bootstrap_flash %>
+				<%= yield %>
+			</div>
+		</div>
+	<% else %>
+		<div class="container">
 			<%= bootstrap_flash %>
 			<%= yield %>
 		</div>
-	</div>
+	<% end %>
 
 </body>
 </html>

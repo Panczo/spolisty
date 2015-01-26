@@ -674,3 +674,23 @@ header {
     }
   }
 }
+
+.signupwraper {
+  border: 5px solid #230E2F;
+  margin: 120px;
+  h2 {
+    color: $text-color;
+    padding-bottom: 40px;
+  }
+  .fa {
+    color: $text-color;
+    font-size: 240px;
+    padding-bottom: 40px;
+    @include transition(0.9s);
+
+    &:hover {
+      @include transition(0.9s);
+      color: $brand-primary-dark;
+    }
+  }
+}

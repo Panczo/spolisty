@@ -91,13 +91,10 @@ feature 'track in playlist', :omniauth do
   end
 
   scenario 'upload tracks to spotify playlist' do
-    @spolistypl = @user.playlists.where(name: 'spolisty').first
-
-    expect(@spolistypl.tracks.size).to eq(13)
     visit users_path
-    click_link @user.name
-    click_link @spolistypl.name
-    expect(page).to have_link("Send your playlist to Spotify")
+    click_link "testsanczo"
+    click_link "spolisty"
+    expect(page).to have_link("Sensd your playlist to Spotify")
     
     VCR::use_cassette('Export:playlist:with:tracks:to:spotify') do
       click_link "Send your playlist to Spotify"

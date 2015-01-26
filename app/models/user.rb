@@ -26,7 +26,7 @@
 class User < ActiveRecord::Base
   serialize :spotify_hash
 
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable,
         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:spotify]
   
   attr_accessor :login
@@ -93,7 +93,7 @@ class User < ActiveRecord::Base
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
-      where(conditions).where(["lower(username) = :value OR lower(email) = :value", {value: login.downcase}]).first
+      where(conditions).where(["lower(email) = :value", {value: login.downcase}]).first
     else
       where(conditions).first
     end
