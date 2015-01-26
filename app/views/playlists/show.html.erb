@@ -33,7 +33,7 @@
           <i class="fa fa-clock-o"></i>
           <%= @playlist.total_tracks_duration %>
         </h3>
-        <% if current_user == @playlist.user && @playlist.special? %>
+        <% if current_user == @playlist.user %>
           <p><%= link_to "Send your playlist to Spotify",  export_user_playlist_path(current_user, @playlist), class: 'btn btn-primary' %></p>
         <% end %>
       </div>

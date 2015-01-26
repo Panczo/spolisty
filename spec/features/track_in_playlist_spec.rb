@@ -90,19 +90,6 @@ feature 'track in playlist', :omniauth do
     expect(page).to have_content("You have this song already in playlist")
   end
 
-  scenario 'upload tracks to spotify playlist' do
-    visit users_path
-    click_link "testsanczo"
-    click_link "spolisty"
-    expect(page).to have_link("Sensd your playlist to Spotify")
-    
-    VCR::use_cassette('Export:playlist:with:tracks:to:spotify') do
-      click_link "Send your playlist to Spotify"
-    end
-
-    expect(page).to have_content("Successfully exported playlist to Spotify")
-  end
-
   scenario 'delete track from playlist' do
     visit user_playlists_path(@user, @playlist)
 

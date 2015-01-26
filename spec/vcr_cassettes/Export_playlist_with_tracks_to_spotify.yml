@@ -1,0 +1,346 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/users/testsanczo/playlists/2xMPKariwHD88aahL5HJTO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer BQD6UrUGTS0_Y9eXQxyN8TCWRDqAd-ZPUt0Hb_paxVq6lDfruPje40sfEMo0GTFh5Fe6Lji62BfzFVU51_8Df43LfIz08Qe9_2-wtfh78W_nLJZ4DFlAR-rc_qXLo-bJgOg7LShyZ3QX5_pChX44T7kRqp6zhn3aPMWhHC2QX1vLKko7f3zvJPLVf6AANhp8ikfFFSXdfNBcg0VR3bY43N8InvQ2_PEX4JBmQwBorGx-2C6iVqP9LWjnZKH2s4bZBgw
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 26 Jan 2015 12:33:53 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Www-Authenticate:
+      - Bearer realm="spotify", error="invalid_token", error_description="The access
+        token expired"
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '604800'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKrmUlBQSi0qyi9SslKoBnKA3OKSxJLSYiDfxMBQByKUm1pc
+        nJieChRTCslIVUhMTgYKKJTkZ6fmKaRWFGQWpaYoAVXWctUCAAAA//8DAFAZ
+        BolRAAAA
+    http_version: 
+  recorded_at: Mon, 26 Jan 2015 12:33:53 GMT
+- request:
+    method: post
+    uri: https://30c077def34c4d648b17c54130220734:a78fa39b272f4122aa39eb1e9c36ee97@accounts.spotify.com/api/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=refresh_token&refresh_token=AQA1wCBKvlwEZqDbrKi1Xa76eKpm7EIeBw2wKv9u0Deegx8N60X-wBQIOjUPw8aATCqlr6VQdIxhr0sMxkiuDugdTqbD12mCTU2Gbr2TiLbvw1EPnc7LguZe9xp444kHi4o
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '170'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 26 Jan 2015 12:33:54 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=10
+      Vary:
+      - Accept-Encoding
+      X-Ua-Compatible:
+      - IE=edge
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - 'default-src ''self''; script-src ''self'' https://d2d1dxiu3v1f2i.cloudfront.net
+        https://www.google-analytics.com; img-src ''self'' https://d2d1dxiu3v1f2i.cloudfront.net
+        https://i.imgur.com https://d2mv8tnci56s9d.cloudfront.net https://aci.scdn.co
+        https://graph.facebook.com https://fbcdn-profile-a.akamaihd.net https://www.google-analytics.com
+        https://stats.g.doubleclick.net data: d2d1dxiu3v1f2i.cloudfront.net; font-src
+        ''self'' https://d2d1dxiu3v1f2i.cloudfront.net https://d3nkxvtkt5c8vi.cloudfront.net;
+        style-src ''self'' ''unsafe-inline'' https://d2d1dxiu3v1f2i.cloudfront.net;
+        frame-src ''self'' https://www.spotify.com;'
+      Cache-Control:
+      - ": no-cache, no-store, must-revalidate"
+      Pragma:
+      - ": no-cache"
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000;
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAx3Q3ZZCQAAA4Hdxvc4ZP1PsHUtEIULczNHsEBLNSKWz777t
+        3n6X34srMCaMobFvyYX75PSdFnbF+hZ76Xlp1fKt6YLQp6tTuDZjS7xoR6r5
+        tTHDWPqa0E4EwnHpRwlEK3QWszaCbqoMUojFIp/rQS15h0c51PrAcawkTPUx
+        1huU5qb2mAS/3EuwZM01ZhTLSlTbydbtXCnWxz2YnA36hrNy6g2t6uTbQuzU
+        1OiUVNaud2Ius2quRLbNy4N+vELBqGmQbmdFbVrPK72G8tlO7TcLHkUC8DL5
+        3uZPjAMzsVmP7x4MvBUoIxg2lWUEUwHc3jaIKB/si8J9cP8baHwO5K+EFJTQ
+        t5LHUFPCUP2OkhYA/PwC9oJlQj4BAAA=
+    http_version: 
+  recorded_at: Mon, 26 Jan 2015 12:33:54 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/users/testsanczo/playlists/2xMPKariwHD88aahL5HJTO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer BQARmaIuUNWl7Gi4ujmPROrFhRIEUG2nAbrAOiDz5U3Cv_Q201b7OSV5_F_l2YkS5KW8p3Rc2aZzip9f-J-_Z5AoPJJGVRWBtUBj_WZEAxv1OfT35fsjqUsrc48SiHVMKmK3UBtT0vJL_d5z8hoDAgm4u62m9WDm8W4AqweE7Ygzg2sMZfXBbq51DirPWMz89jkNNfNjr-YQ9oL6-_S10NY4wkZyccPEVHsocwN5PNF0fS5RjgGDPva0KoHDe24XHn8
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 26 Jan 2015 12:33:54 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Cache-Control:
+      - public, max-age=0
+      Etag:
+      - '"AAAABL4kU5CLWxCm2nMeE5vs63F3zJYF"'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '604800'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000;
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAOyd6W/bOrbAv9+/QsiHeTNAe8OdVIHBQ+ysTewstrMNBgXF
+        JVYrW44lZxvc//3RSuo4idfavsl9w6IlUunoiOJyzvmFPNJ/fguCNZUmiYzS
+        rszjG7MWfAmsTDLzqX9Km0x1404ep+3+iXYvSYrj5i433bZMvvW6SdY/8x93
+        1B3POmke2/v+kbVmnne+rK+nHdP+/en47yptrfcy013PTZZnsq0e0vVOIu+T
+        OMvX0V3laF9249vdTSGkbB7Q3a/1wzWn+Y/iptbVM7013eEbNrvGDtfMHcrT
+        XCb9Y2Bw5U+pok6Zq5TsxC/qdAOLamWj6pWNq1ihOtaF4okiLXllikr/K/h3
+        caQtW0VD99urf4v7R8H0tm26Qw83ppV/rZ3Ximv/+PSy3eZpkbWna58e+e2J
+        /L7z+Fj9K38e7HXjn4/aV/6lf+7Ly2o9dlKnFyWxejn+srbsZM00//Z0z8OI
+        JPs73VKSGtk5PjtqtI5be/a8fcfq+dZVc7e7frDbJqe90kOrazq2Em62tsXD
+        QyU7/i4tP/7+2M55V6ofo0bRUsfH+uNt/je1NjP5P8HfkrgV5/+EAAwaMjet
+        p3Ex6FmptdHfZP44qgCknwH8DMM6xF/cX8wuny4eiEb3wyNj0qhZbOQMjZ5F
+        R9DEUTR2JM06ml5U9LGvX7WQTKJe603LFEe/De78KPTphcSNjJ2lTMy3luz+
+        MPlT361tbK59cuVJUdaLstEvS1tFuVOUh0VZyJQ3inK3KA+Ksjhbfjx7UZSX
+        /XKz0LC5X5SFzFa5KIvjW7V+ub1XlMW1O6WifPy5qMluce1utSiLWu0V1+4V
+        1+4VMgeFhoPHnwuZg9N+WSnuVSmOV86LsqhbtZCvFjWvFrWqFrU9Kp7rqNB/
+        VDzdUSFzVGg4Kq49KeRrhUytaJlaoa1W1LNW3Lde1L9+1i8bRT0bF2uPpnO2
+        UT5inGejBnrRx+v8Jq42WpeX4iFvo0aJnJfw972DtSF9f7y49Swjv9CcjVP9
+        Qt3TRJhJdMiTvHrepomvmoXVYAR8ennONdGL+rraKt12VV0vFK5zoSMBBGCS
+        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
+        rnoNCKTbAAA=
+    http_version: 
+  recorded_at: Mon, 26 Jan 2015 12:33:54 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/tracks?ids=3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 26 Jan 2015 12:33:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Cache-Control:
+      - public, max-age=7200
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '604800'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000;
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKrmUlBQKilKTM4uVlKwUohWyCvNyVGI5aoFAAAA//8DAI1W
+        TuwZAAAA
+    http_version: 
+  recorded_at: Mon, 26 Jan 2015 12:33:55 GMT
+recorded_with: VCR 2.9.3
