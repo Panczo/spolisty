@@ -87,7 +87,7 @@ class User < ActiveRecord::Base
           user.name = auth["info"]["display_name"] unless auth["info"]["display_name"].nil?
           user.image = auth["info"]["images"][0]["url"] unless auth["info"]["images"].blank?
           user.spotify_id = auth["info"]["id"]
-      end
+    end
   end
 
   def self.find_first_by_auth_conditions(warden_conditions)
@@ -122,7 +122,8 @@ class User < ActiveRecord::Base
     artist = Artist.find_or_create_by(name: spotify_track.artists.first.name)
     if track.artist.blank?
       track.artist = artist
-      track.save
+      track.artist.spotify_id = spotify_track.artists.first.id
+      track.save!
     end
   end
 
@@ -130,7 +131,7 @@ class User < ActiveRecord::Base
     album = Album.find_or_create_by(name: spotify_track.album.name)
     if track.album.blank?
       track.album = album
-      track.save
+      track.save!
     end
   end
 end

@@ -17,11 +17,11 @@
 #
 
 class Playlist < ActiveRecord::Base
-	belongs_to :user
+  belongs_to :user
   has_many :tracks, dependent: :destroy
 
-	validates :user, :name, :spotify_type, presence: true
-	validates :spotify_type, acceptance: { accept: 'playlist', message: "wrong spotify type" }
+  validates :user, :name, :spotify_type, presence: true
+  validates :spotify_type, acceptance: { accept: 'playlist', message: "wrong spotify type" }
 
   def total_tracks_duration
     seconds = tracks.sum(:duration) / 1000
@@ -42,9 +42,7 @@ class Playlist < ActiveRecord::Base
 
   def upload_tracks
     #Parse playlist spotify_id
-    if id_spotify.blank?
-      describe_playlist
-    end
+    describe_playlist if id_spotify.blank?
 
     # If playlist "spolisty" exist
     if user.playlists.include? (self)

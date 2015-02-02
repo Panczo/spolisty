@@ -1,8 +1,8 @@
 class PagesController < ApplicationController
-	layout "landing"
+  layout "landing"
 
   def index
-  	@subscribe = Subscribe.new
+    @subscribe = Subscribe.new
   end
   
 end

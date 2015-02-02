@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
-	before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @users = User.all.order("created_at DESC")
   end
 
   def show
-		@user = User.find(params[:id])
-	end
-	
+    @user = User.find(params[:id])
+  end
+  
 end
