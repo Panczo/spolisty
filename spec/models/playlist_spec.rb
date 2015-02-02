@@ -60,4 +60,12 @@ RSpec.describe Playlist, :type => :model do
 		expect(play.tracks_ids).to eq(['2','1','0']) 
 	end
 
+	it '#special?' do
+		expect(build(:playlist)).to_not be_special
+
+		play = build(:playlist, special: true)
+		expect(play).to be_special
+		expect(play.special?).to be_truthy
+	end
+
 end
