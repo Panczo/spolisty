@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150202092735) do
+ActiveRecord::Schema.define(version: 20150203110302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,19 @@ ActiveRecord::Schema.define(version: 20150202092735) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "spotify_id"
+  end
+
+  create_table "charts", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genres", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "playlists", force: true do |t|
@@ -61,6 +74,7 @@ ActiveRecord::Schema.define(version: 20150202092735) do
     t.integer  "duration"
     t.integer  "artist_id"
     t.integer  "album_id"
+    t.integer  "genre_id"
   end
 
   add_index "tracks", ["album_id"], name: "index_tracks_on_album_id", using: :btree
@@ -86,6 +100,8 @@ ActiveRecord::Schema.define(version: 20150202092735) do
     t.string   "name"
     t.text     "spotify_hash"
     t.string   "spotify_id"
+    t.integer  "chartgeneratecount",     default: 0
+    t.datetime "chartgeneratetime"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -22,10 +22,12 @@ Rails.application.routes.draw do
         post 'addtrack'
       end
     end
+    resources :chart
   end
 
   resources :subscribes, only: [:create]
   resources :pages, only: [:index]
+
 
   root 'pages#index'
 

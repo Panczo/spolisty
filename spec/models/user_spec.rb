@@ -21,6 +21,8 @@
 #  name                   :string
 #  spotify_hash           :text
 #  spotify_id             :string
+#  chartgeneratecount     :integer          default("0")
+#  chartgeneratetime      :datetime
 #
 
 require 'rails_helper'

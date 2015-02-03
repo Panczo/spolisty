@@ -21,6 +21,8 @@
 #  name                   :string
 #  spotify_hash           :text
 #  spotify_id             :string
+#  chartgeneratecount     :integer          default("0")
+#  chartgeneratetime      :datetime
 #
 
 class User < ActiveRecord::Base
@@ -33,6 +35,7 @@ class User < ActiveRecord::Base
 
   has_many :playlists, dependent: :destroy
   has_many :tracks, through: :playlists
+  has_one :chart
 
   validates :provider, :uid, presence: true
 
@@ -80,6 +83,17 @@ class User < ActiveRecord::Base
     end
   end
 
+  def generateChart
+    tracks.each do |tr|
+      next if !tr.genre.nil?
+      spotify_artist = RSpotify::Artist.find(tr.artist.spotify_id)
+      next if spotify_artist.genres.blank?
+      spotify_genre = Genre.find_or_create_by(name: spotify_artist.genres.first)
+      tr.genre = spotify_genre
+      tr.save
+    end
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth["provider"], uid: auth["uid"]).first_or_create do |user|
           user.email = auth["info"]["email"]
@@ -122,8 +136,9 @@ class User < ActiveRecord::Base
     artist = Artist.find_or_create_by(name: spotify_track.artists.first.name)
     if track.artist.blank?
       track.artist = artist
-      track.artist.spotify_id = spotify_track.artists.first.id
-      track.save!
+      artist.spotify_id = spotify_track.artists.first.id
+      artist.save
+      track.save
     end
   end
 
@@ -131,7 +146,7 @@ class User < ActiveRecord::Base
     album = Album.find_or_create_by(name: spotify_track.album.name)
     if track.album.blank?
       track.album = album
-      track.save!
+      track.save
     end
   end
 end

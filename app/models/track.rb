@@ -11,6 +11,7 @@
 #  duration     :integer
 #  artist_id    :integer
 #  album_id     :integer
+#  genre_id     :integer
 #
 
 class Track < ActiveRecord::Base
@@ -19,6 +20,7 @@ class Track < ActiveRecord::Base
   belongs_to :playlist, counter_cache: :count_of_tracks
   belongs_to :artist
   belongs_to :album
+  belongs_to :genre
 
   validates :playlist, :name, :track_number, presence: true
 

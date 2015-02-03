@@ -14,6 +14,7 @@
 #  count_of_tracks :integer          default("0"), not null
 #  ownerlist       :string
 #  image           :string
+#  special         :boolean          default("false")
 #
 
 FactoryGirl.define do

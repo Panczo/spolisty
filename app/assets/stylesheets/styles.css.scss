@@ -694,3 +694,15 @@ header {
     }
   }
 }
+
+/* bootstrap hack: fix content width inside hidden tabs */
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+    display: block !important;     /* undo display:none          */
+    height: 0 !important;          /* height:0 is also invisible */ 
+    overflow-y: hidden !important; /* no-overflow                */
+}
+.tab-content > .active,
+.pill-content > .active {
+    height: auto !important;       /* let the content decide it  */
+} /* bootstrap hack end */

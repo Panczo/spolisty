@@ -44,7 +44,11 @@
 
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane" id="home">
-           user genre spider 
+            <% if current_user && @user.chart.blank? %>
+              <%= link_to "Generate Music Chart", user_chart_index_path([current_user, @chart]), method: :post %>
+            <% else %>
+              <div id="genrechart" style="width:100%; height:400px;"></div>
+            <% end %>
           </div>
           <div role="tabpanel" class="tab-pane active" id="user_pl">
             <%= render partial: "playlists" %>
@@ -61,3 +65,79 @@
     </div>
   </div>
 </section>
+<% genrecat = Genre.pluck(:name) %>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script>
+$(function () {
+
+    $('#genrechart').highcharts({
+
+        chart: {
+            polar: true,
+            type: 'line',
+            margin: 0
+        },
+
+        exporting: {
+            enabled: false,
+            buttons: {
+                enabled: false
+            }
+        },
+
+        title: {
+            text: "<%= @user.nick %>",
+            useHTML: true
+        },
+
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: <%= raw genrecat %>,
+            tickmarkPlacement: 'on',
+            lineWidth: 0,
+            labels: {
+                align: 'center',
+                distance: 2
+            }
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 1,
+            min: 0,
+            max: 60,
+            endOnTick: true,
+            showLastLabel: true,
+            tickPositions: <%= (0..55).step(5).to_a %>
+        },
+
+        tooltip: {
+            shared: true,
+            headerFormat: '<span style="font-size: 12px">{point.key}:</span>&nbsp;&nbsp;<b>{point.y:,.2f}</b>',
+            pointFormat: '',
+            useHTML: true
+        },
+
+        legend: {
+            enabled: false,
+            align: 'right',
+            verticalAlign: 'top',
+            y: 70,
+            layout: 'vertical'
+        },
+
+        series: [{
+            name: '',
+            data: <%= Genre.all.map {|ge| @user.tracks.where(genre: ge).count }.reject! {|c| c < 1} %>,
+            pointPlacement: 'on'
+        }]
+
+    });
+});
+</script>

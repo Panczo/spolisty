@@ -11,6 +11,7 @@
 #  duration     :integer
 #  artist_id    :integer
 #  album_id     :integer
+#  genre_id     :integer
 #
 
 require 'rails_helper'
