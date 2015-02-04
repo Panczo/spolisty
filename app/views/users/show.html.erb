@@ -65,7 +65,6 @@
     </div>
   </div>
 </section>
-<% genrecat = Genre.pluck(:name) %>
 
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="http://code.highcharts.com/highcharts-more.js"></script>
@@ -98,7 +97,7 @@ $(function () {
         },
 
         xAxis: {
-            categories: <%= raw genrecat %>,
+            categories: <%= raw Genre.pluck(:name) %>,
             tickmarkPlacement: 'on',
             lineWidth: 0,
             labels: {
@@ -111,7 +110,7 @@ $(function () {
             gridLineInterpolation: 'polygon',
             lineWidth: 1,
             min: 0,
-            max: 60,
+            max: 160,
             endOnTick: true,
             showLastLabel: true,
             tickPositions: <%= (0..55).step(5).to_a %>
@@ -134,7 +133,7 @@ $(function () {
 
         series: [{
             name: '',
-            data: <%= Genre.all.map {|ge| @user.tracks.where(genre: ge).count }.reject! {|c| c < 1} %>,
+            data: <%= Genre.all.map {|ge| @user.tracks.where(genre: ge).count }.reject! {|c| c < 3} %>,
             pointPlacement: 'on'
         }]
 
