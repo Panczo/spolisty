@@ -84,6 +84,9 @@ class User < ActiveRecord::Base
   end
 
   def generateChart
+    g = GenreClassifier.new(tracks_with_artist)
+    g.spotify_artists
+=begin
     tracks.each do |tr|
       next if !tr.genre.nil?
       spotify_artist = RSpotify::Artist.find(tr.artist.spotify_id)
@@ -92,6 +95,11 @@ class User < ActiveRecord::Base
       tr.genre = spotify_genre
       tr.save
     end
+=end
+  end
+
+  def tracks_with_artist
+    tracks.includes(:artist)
   end
 
   def self.from_omniauth(auth)

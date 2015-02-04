@@ -12,6 +12,7 @@
 FactoryGirl.define do
   factory :artist do
     name "MyString"
+    spotify_id "1"
   end
 
 end

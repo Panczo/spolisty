@@ -44,7 +44,7 @@
 
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane" id="home">
-            <% if current_user && @user.chart.blank? %>
+            <% if current_user #&& @user.chart.blank? %>
               <%= link_to "Generate Music Chart", user_chart_index_path([current_user, @chart]), method: :post %>
             <% else %>
               <div id="genrechart" style="width:100%; height:400px;"></div>
