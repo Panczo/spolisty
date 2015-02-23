@@ -68,7 +68,8 @@ class User < ActiveRecord::Base
           #create playlist tracks
           track = play.tracks.create(name: tr.name, 
                              track_number: tr.id, 
-                             duration: tr.duration_ms)
+                             duration: tr.duration_ms,
+                             user: self)
           #Add artist and album for track
           parse_artist(track, tr)
           parse_album(track, tr)
@@ -84,8 +85,8 @@ class User < ActiveRecord::Base
   end
 
   def generateChart
-    g = GenreClassifier.new(tracks_with_artist)
-    g.spotify_artists
+    g = GenreClassifier.new(tracks_with_artist, self)
+    g.run
 =begin
     tracks.each do |tr|
       next if !tr.genre.nil?

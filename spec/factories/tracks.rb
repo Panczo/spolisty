@@ -12,6 +12,7 @@
 #  artist_id    :integer
 #  album_id     :integer
 #  genre_id     :integer
+#  user_id      :integer
 #
 
 FactoryGirl.define do
