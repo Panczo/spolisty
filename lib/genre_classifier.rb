@@ -59,9 +59,12 @@ class GenreClassifier
           genre = Hash[*selected.first].keys.join
           spolisty_genre = Genre.find_or_create_by(name: genre)
           
-          tr = @tracks.joins(:artist).merge(Artist.where(spotify_id: artist.id)).first
-
-        raise :test
+          tracks_from_playlist = @tracks.select{|tr| tr.artist.spotify_id == artist.id}
+          tracks_from_playlist.each do |tr|
+            spotify_genre = Genre.find_or_create_by(name: genre)
+            tr.genre = spotify_genre
+            tr.save
+          end
         end
       end
     end
