@@ -30,6 +30,7 @@ gem 'gibbon'
 group :development do
   gem 'web-console'
   gem 'spring'
+  gem 'hirb'
 end
 
 group :development, :test do

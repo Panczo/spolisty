@@ -85,7 +85,7 @@ class User < ActiveRecord::Base
   end
 
   def generateChart
-    g = GenreClassifier.new(tracks_with_artist, self)
+    g = GenreClassifier.new(tracks_with_artist)
     g.run
 =begin
     tracks.each do |tr|

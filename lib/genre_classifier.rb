@@ -31,9 +31,8 @@ class GenreClassifier
     "World" => "Africa Afro-Beat Afro-Pop Asia Australia Cajun Calypso Caribbean Celtic Celtic Folk Contemporary Celtic Dangdut Drinking Songs Drone Europe France Hawaii Indian-Ghazal Indian-Pop Japan Japanese-Pop Klezmer Middle East North America Ode Polka Soca South Africa South America Traditional Celtic Worldbeat Zydeco"
   }
 
-  def initialize(tracks, user)
+  def initialize(tracks)
     @tracks = tracks
-    @user = user
   end
 
   def artist_spotify_ids
@@ -57,7 +56,7 @@ class GenreClassifier
         spotify_genre = artist.genres.join.first
         if selected = GENRESHASH.select { |k,v| v.include? spotify_genre }
           genre = Hash[*selected.first].keys.join
-          spolisty_genre = Genre.find_or_create_by(name: genre)
+          raise :test
           
           tracks_from_playlist = @tracks.select{|tr| tr.artist.spotify_id == artist.id}
           tracks_from_playlist.each do |tr|
