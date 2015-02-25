@@ -11,38 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204112318) do
+ActiveRecord::Schema.define(version: 20150225103419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "albums", force: true do |t|
+  create_table "albums", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "artists", force: true do |t|
+  create_table "artists", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "spotify_id"
   end
 
-  create_table "charts", force: true do |t|
+  create_table "charts", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "genres", force: true do |t|
+  create_table "classifiers", force: :cascade do |t|
+    t.text     "music_classifier"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "name"
+  end
+
+  create_table "genres", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "playlists", force: true do |t|
+  create_table "playlists", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "followers_count"
@@ -59,13 +66,13 @@ ActiveRecord::Schema.define(version: 20150204112318) do
 
   add_index "playlists", ["user_id"], name: "index_playlists_on_user_id", using: :btree
 
-  create_table "subscribes", force: true do |t|
+  create_table "subscribes", force: :cascade do |t|
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tracks", force: true do |t|
+  create_table "tracks", force: :cascade do |t|
     t.string   "name"
     t.integer  "playlist_id"
     t.datetime "created_at",   null: false
@@ -82,7 +89,7 @@ ActiveRecord::Schema.define(version: 20150204112318) do
   add_index "tracks", ["artist_id"], name: "index_tracks_on_artist_id", using: :btree
   add_index "tracks", ["playlist_id"], name: "index_tracks_on_playlist_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
