@@ -86,17 +86,12 @@ class User < ActiveRecord::Base
 
   def generateChart
     g = GenreClassifier.new(tracks_with_artist)
-    g.run
-=begin
-    tracks.each do |tr|
-      next if !tr.genre.nil?
-      spotify_artist = RSpotify::Artist.find(tr.artist.spotify_id)
-      next if spotify_artist.genres.blank?
-      spotify_genre = Genre.find_or_create_by(name: spotify_artist.genres.first)
-      tr.genre = spotify_genre
-      tr.save
+    
+    if g.run
+      charts = chart || build_chart
+      charts.generated_at = Time.now
+      charts.save
     end
-=end
   end
 
   def tracks_with_artist
