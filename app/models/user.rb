@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
 
   has_many :playlists, dependent: :destroy
   has_many :tracks, through: :playlists
-  has_one :chart
+  has_many :charts
 
   validates :provider, :uid, presence: true
 
@@ -85,13 +85,8 @@ class User < ActiveRecord::Base
   end
 
   def generateChart
-    g = GenreClassifier.new(tracks_with_artist)
-    
-    if g.run
-      charts = chart || build_chart
-      charts.generated_at = Time.now
-      charts.save
-    end
+    g = GenreClassifier.new(tracks_with_artist)   
+    g.run
   end
 
   def tracks_with_artist
