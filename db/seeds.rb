@@ -1,7 +1,8 @@
 genres = [
-  'alternative', 'country' ,'dance', 'anime', 'easy_listening', 'disney', "electronic", 'commercial', 'hip_hop', 'comedy',
-  'inspirational_gospel', 'holiday', 'children_music', 'j_pop', 'jazz', 'classical', 'blues', 'latin', 
-  'new_age', 'pop', 'rb_soul'
+  'blues', 'classical', 'country', 'electronic',
+  'international', 'jazz',
+  'latin', 'pop', 'soul', 'hip-hop',
+  'reggae', 'rock', 'comedy'
 ]
 
 genres.each do |g|

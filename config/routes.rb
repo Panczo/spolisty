@@ -22,13 +22,14 @@ Rails.application.routes.draw do
         post 'addtrack'
       end
     end
-    resources :chart
+    resources :charts
   end
 
   resources :subscribes, only: [:create]
   resources :pages, only: [:index]
 
-
+  get 'spotify_genres/index'
+  
   root 'pages#index'
 
 end

@@ -27,7 +27,7 @@
             <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
             <i class="fa fa-user"></i> Home</a>
           </li>
-          <li role="presentation" class="active col-md-3 col-sm-3 col-xs-3 playlist">
+          <li role="prese3ntation" class="active col-md-3 col-sm-3 col-xs-3 playlist">
             <a href="#user_pl" aria-controls="user_pl" role="tab" data-toggle="tab">
             <i class="fa fa-user"></i> Playlists</a>
           </li>
@@ -44,17 +44,38 @@
 
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane" id="home">
-            <% if current_user && @user.chart.nil? %>
-              <%= link_to "Generate Music Chart", user_chart_index_path([current_user, @chart]), method: :post %>
+            <% if current_user.charts.empty? %>
+              <%= link_to "Generate Music Chart", user_charts_path([current_user, current_user.charts.build]), method: :post %>
             <% else %>
               <div id="genrechart" style="width:100%; height:400px;"></div>
+  
+              <h2>Your tracks without genre</h2>
+
+              <table class="table">
+                <thead>
+                  <tr>w
+                    <th>Track name</th>
+                    <th>Category</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <% current_user.tracks.select{|tr| tr.genre.nil? }.each do |tr| %>
+                    <tr>
+                      <td><%= tr.name %></td>
+                      <td>Brak kategorii</td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
             <% end %>
+
           </div>
           <div role="tabpanel" class="tab-pane active" id="user_pl">
             <%= render partial: "playlists" %>
           </div>
           <div role="tabpanel" class="tab-pane" id="messages">
-            tracks
+
           </div>
           <div role="tabpanel" class="tab-pane" id="settings">
           ..1221.
@@ -72,71 +93,127 @@
 <script>
 $(function () {
 
-    $('#genrechart').highcharts({
 
+  $('#genrechart').highcharts({
         chart: {
-            polar: true,
-            type: 'line',
-            margin: 0
+            type: 'column'
         },
-
-        exporting: {
-            enabled: false,
-            buttons: {
-                enabled: false
-            }
-        },
-
         title: {
-            text: "<%= @user.nick %>",
-            useHTML: true
+            text: 'Basic drilldown'
         },
-
-        pane: {
-            size: '80%'
-        },
-
         xAxis: {
-            categories: <%= raw Genre.pluck(:name) %>,
-            tickmarkPlacement: 'on',
-            lineWidth: 0,
-            labels: {
-                align: 'center',
-                distance: 2
-            }
-        },
-
-        yAxis: {
-            gridLineInterpolation: 'polygon',
-            lineWidth: 1,
-            min: 0,
-            max: 160,
-            endOnTick: true,
-            showLastLabel: true,
-            tickPositions: <%= (0..55).step(5).to_a %>
-        },
-
-        tooltip: {
-            shared: true,
-            headerFormat: '<span style="font-size: 12px">{point.key}:</span>&nbsp;&nbsp;<b>{point.y:,.2f}</b>',
-            pointFormat: '',
-            useHTML: true
+            type: 'category'
         },
 
         legend: {
-            enabled: false,
-            align: 'right',
-            verticalAlign: 'top',
-            y: 70,
-            layout: 'vertical'
+            enabled: false
+        },
+
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true
+                }
+            }
         },
 
         series: [{
-            name: '',
-            data: <%= Genre.all.map {|ge| @user.tracks.where(genre: ge).count } %>,
-            pointPlacement: 'on'
-        }]
-
+            name: 'Things',
+            colorByPoint: true,
+            data: <%= Genre.all.map {|ge| @user.tracks.where(genre: ge).count } %>
+        }],
+        drilldown: {
+            series: [{
+                id: 'animals',
+                data: [
+                    ['Cats', 4],
+                    ['Dogs', 2],
+                    ['Cows', 1],
+                    ['Sheep', 2],
+                    ['Pigs', 1]
+                ]
+            }, {
+                id: 'fruits',
+                data: [
+                    ['Apples', 4],
+                    ['Oranges', 2]
+                ]
+            }, {
+                id: 'cars',
+                data: [
+                    ['Toyota', 4],
+                    ['Opel', 2],
+                    ['Volkswagen', 2]
+                ]
+            }]
+        }
     });
 });
 </script>
+   <!--  $('#genrechart').highcharts({
+   
+       chart: {
+           polar: true,
+           type: 'line',
+           margin: 0
+       },
+   
+       exporting: {
+           enabled: false,
+           buttons: {
+               enabled: false
+           }
+       },
+   
+       title: {
+           text: "<%= @user.nick %>",
+           useHTML: true
+       },
+   
+       pane: {
+           size: '80%'
+       },
+   
+       xAxis: {
+           categories: <%#= raw Genre.pluck(:name) %>,
+           tickmarkPlacement: 'on',
+           lineWidth: 0,
+           labels: {
+               align: 'center',
+               distance: 2
+           }
+       },
+   
+       yAxis: {
+           gridLineInterpolation: 'polygon',
+           lineWidth: 1,
+           min: 0,
+           max: 160,
+           endOnTick: true,
+           showLastLabel: true,
+           tickPositions: <%#= (0..100).step(5).to_a %>
+       },
+   
+       tooltip: {
+           shared: true,
+           headerFormat: '<span style="font-size: 12px">{point.key}:</span>&nbsp;&nbsp;<b>{point.y:,.2f}</b>',
+           pointFormat: '',
+           useHTML: true
+       },
+   
+       legend: {
+           enabled: false,
+           align: 'right',
+           verticalAlign: 'top',
+           y: 70,
+           layout: 'vertical'
+       },
+   
+       series: [{
+           name: '',
+           data: <%#= Genre.all.map {|ge| @user.tracks.where(genre: ge).count } %>,
+           pointPlacement: 'on'
+       }]
+   
+   }); -->
