@@ -28,7 +28,8 @@ Rails.application.routes.draw do
   resources :subscribes, only: [:create]
   resources :pages, only: [:index]
 
-
+  get 'spotify_genres/index'
+  
   root 'pages#index'
 
 end

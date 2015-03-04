@@ -18,6 +18,65 @@ class GenreClassifier
     all_spotify_artsits
   end
 
+  def run
+    spotify_artists.each do |artists|
+      artists.each do |artist|
+        next if artist.genres.blank?
+        SpotifyGenre.create(name: artist.genres.join)
+        spotify_genres = artist.genres
+        spolisty_genre = classify(spotify_genres)
+
+        tracks_from_playlist = @tracks.select{|tr| tr.artist.spotify_id == artist.id}
+        tracks_from_playlist.each do |tr|
+          unless spolisty_genre == "Brak"
+            spolisty_classify_genre = Genre.find_by(name: spolisty_genre)
+            tr.genre = spolisty_classify_genre
+            tr.save
+          end
+        end
+      end
+    end
+  end
+
+
+  private
+
+  def classify(genres)
+    if genres.any? {|w| w.include? "boogie blues" }
+      return "blues"
+    elsif genres.any? {|w| w.include? "classical orchestral" }
+      return "classical"
+    elsif genres.any? {|w| w.include? "country" }
+      return "country"
+    elsif genres.any? {|w| w.include? "uplifting ambient dubstep house lounge electronic trance progressive" }
+      return "electronic"
+    elsif genres.any? {|w| w.include? "international rumba" }
+      return "international"
+    elsif genres.any? {|w| w.include? "jazz" }
+      return "jazz"
+    elsif genres.any? {|w| w.include? "latin" }
+      return "latin"
+    elsif genres.any? {|w| w.include? "pop disco" }
+      return "pop"
+    elsif genres.any? {|w| w.include? "indie freestyle soul r&b rb funk hi nrg" }
+      return "soul"
+    elsif genres.any? {|w| w.include? "rap hip hop" }
+      return "hip-hop"
+    elsif genres.any? {|w| w.include? "reggae rag" }
+      return "reggae"
+    elsif genres.any? {|w| w.include? "rock punk metal" }
+      return "rock"
+    elsif genres.any? {|w| w.include? "comedy" }
+      return "comedy"
+    else
+      return "Brak"
+    end
+  end
+
+end
+
+=begin
+
   def classifier
     Classifier.find_or_create_by(name: "Music Classifier") do |cls|
       cls.music_classifier_will_change!
@@ -54,24 +113,5 @@ class GenreClassifier
     end
 
   end
-
-  def run
-    spotify_artists.each do |artists|
-      artists.each do |artist|
-        next if artist.genres.blank?
-        spotify_genre = artist.genres.join.first
-        
-        spolisty_genre = classifier.music_classifier.classify spotify_genre
-        if spolisty_genre
-          tracks_from_playlist = @tracks.select{|tr| tr.artist.spotify_id == artist.id}
-          tracks_from_playlist.each do |tr|
-            spotify_genre = Genre.find_by(name: spolisty_genre.to_s)
-            tr.genre = spotify_genre
-            tr.save
-          end
-        end
-      end
-    end
-  end
-end
-
+spolisty_genre = classifier.music_classifier.classify spotify_genre=end
+=end
