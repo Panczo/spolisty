@@ -7,10 +7,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-<<<<<<< HEAD
-=======
+
     @chart = @user.charts.build
->>>>>>> spotify_genre
   end
   
 end

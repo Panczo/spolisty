@@ -1,8 +1,8 @@
 <h1>SpotifyGenres#index</h1>
 <p>Find me in app/views/spotify_genres/index.html.erb</p>
 <ul>
-  <% SpotifyGenre.select(:name).map(&:name).uniq.each do |genre| %>
+  <% SpotifyGenre.select(:name, :created_at).uniq.each do |genre| %>
  
-    <li><%= genre %></li>
+    <li><%= genre.name %> </li><%= genre.try(:created_at).inspect %></li>
   <% end %>
 </ul>

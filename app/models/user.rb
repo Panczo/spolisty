@@ -85,11 +85,7 @@ class User < ActiveRecord::Base
   end
 
   def generateChart
-<<<<<<< HEAD
-    g = GenreClassifier.new(tracks_with_artist)   
-=======
     g = GenreClassifier.new(tracks_with_artist)
->>>>>>> spotify_genre
     g.run
   end
 

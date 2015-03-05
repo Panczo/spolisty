@@ -420,6 +420,7 @@ header {
     .genre-profile {
       background-color: $body-bg;
       padding: $padding-standard 0;
+      padding-top: 0;
       margin-bottom: 100px;
       height: 100%;
       .nav {
@@ -498,6 +499,7 @@ header {
     ul {
       padding-right: 40px;
       list-style-type: none;
+      margin: 0;
       li {
 
         color: $body-bg-light;
@@ -523,6 +525,10 @@ header {
     }
 
     .usrplay {
+      a {
+        color: $text-color;
+        text-decoration: none;
+      }
       .showlist {
         visibility: hidden;
       }

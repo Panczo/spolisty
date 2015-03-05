@@ -9,9 +9,7 @@
           <p class="traveler text-center"><span>Trance Explorer</span></p>
           <p><%= link_to "Follow", '#', class: 'btn btn-primary btn-small btn-block' %></p>
         </div>
-    </div>        <%= link_to "Import your playlists from spotify", 
-            import_user_playlists_path(current_user), 
-            class: 'btn btn-primary btn-block btn-lg' %>
+    </div>
 
     <div class="genre-profile col-md-8 col-md-offset-2 text-center">
       <% if current_user == @user && @user.playlists.blank? %>
@@ -53,11 +51,7 @@
 
               <table class="table">
                 <thead>
-<<<<<<< HEAD
-                  <tr>
-=======
                   <tr>w
->>>>>>> spotify_genre
                     <th>Track name</th>
                     <th>Category</th>
                   </tr>
@@ -97,36 +91,27 @@
 <script>
 $(function () {
 
+      Highcharts.setOptions({
+        colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']
+    });
+
 
   $('#genrechart').highcharts({
         chart: {
             type: 'column'
         },
+        color: {
+            linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+            stops: [
+                [0, '#003399'],
+                [1, '#3366AA']
+            ]
+        },
         title: {
             text: 'Basic drilldown'
         },
         xAxis: {
-<<<<<<< HEAD
-            categories: <%= raw Genre.pluck(:name) %>,
-            tickmarkPlacement: 'on',
-            lineWidth: 0,
-            labels: {
-                align: 'center',
-                distance: 2
-            }
-        },
-
-        yAxis: {
-            gridLineInterpolation: 'polygon',
-            lineWidth: 1,
-            min: 0,
-            max: 160,
-            endOnTick: true,
-            showLastLabel: true,
-            tickPositions: <%= (0..355).step(5).to_a %>
-=======
             type: 'category'
->>>>>>> spotify_genre
         },
 
         legend: {
