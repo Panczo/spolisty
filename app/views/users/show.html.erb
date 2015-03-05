@@ -47,6 +47,28 @@
             <% else %>
               <div id="genrechart" style="width:100%; height:400px;"></div>
   
+              <h2>Your tracks with genre</h2>
+
+              <table class="table">
+                <thead>
+                  <tr>w
+                    <th>Track name</th>
+                    <th>Category</th>
+                    <th>spotify Category</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <% current_user.tracks.select{|tr| !tr.genre.nil? }.each do |tr| %>
+                    <tr>
+                      <td><%= tr.name %></td>
+                      <td><%= tr.genre.name %></td>
+                      <td><%= tr.spotify_genre %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>              
+
               <h2>Your tracks without genre</h2>
 
               <table class="table">
@@ -54,6 +76,7 @@
                   <tr>w
                     <th>Track name</th>
                     <th>Category</th>
+                    <th>spotify category</th>
                   </tr>
                 </thead>
 
@@ -62,6 +85,7 @@
                     <tr>
                       <td><%= tr.name %></td>
                       <td>Brak kategorii</td>
+                      <td><%= tr.try(:spotify_genre) %></td>
                     </tr>
                   <% end %>
                 </tbody>

@@ -3,8 +3,10 @@
     <div class="col-md-6 col-md-offset-3 text-center">
       
       <h2>Dołącz do nas poprzez Spotify</h2>
-
-      <i class="fa fa-sign-in"></i>
+      
+      <%= link_to user_omniauth_authorize_path(:spotify) do %>  
+        <i class="fa fa-sign-in">dwdw</i>
+      <% end %>
 
       <%= render "devise/shared/links" %>
     </div>
