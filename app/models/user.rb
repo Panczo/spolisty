@@ -36,9 +36,21 @@ class User < ActiveRecord::Base
   has_many :playlists, dependent: :destroy
   has_many :tracks, through: :playlists
   has_many :charts
+  has_many :genres, through: :tracks
 
   validates :provider, :uid, presence: true
 
+
+  def sorted_tracks
+    sorted_genre = []
+    genres.uniq.each do |g|
+      counted_tracks = tracks.where(genre: g).count
+      gs = []
+      gs << g.name << counted_tracks
+      sorted_genre << gs
+    end
+    sorted_genre.sort_by!{|x| x[1]}.reverse!
+  end
 
   def image?
     !image.nil?

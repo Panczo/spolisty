@@ -40,6 +40,9 @@
           </li>
         </ul>
 
+
+<%= @user.sorted_tracks %>
+
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane" id="home">
             <% if current_user.charts.empty? %>
@@ -100,7 +103,16 @@
 
           </div>
           <div role="tabpanel" class="tab-pane" id="settings">
-          ..1221.
+            <div role="tabpanel" class="tab-pane" id="settings">
+              <p>
+                <%= @user.sorted_tracks %>
+              </p> 
+              <%= @user.sorted_tracks.class %>
+                <% @user.sorted_tracks.each do |tr| %>
+                  <p>Genre: <%= tr[0] %></p>
+                  <p>Count: <%= tr[1] %></p><hr />
+                <% end %>
+            </div>
           </div>
         </div>
 
@@ -108,4 +120,34 @@
     </div>
   </div>
 </section>
+<script>
+$(document).ready(function(){
+  $('#genrechart').highcharts({
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Basic drilldown'
+    },
+    xAxis: {
+        type: 'category'
+    },
 
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        series: {
+            borderWidth: 0,
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    series: [{
+        colorByPoint: true,
+        data: <%= raw @user.sorted_tracks %>
+    }]
+  });
+});
+</script>
