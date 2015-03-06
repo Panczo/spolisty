@@ -41,8 +41,6 @@
         </ul>
 
 
-<%= @user.sorted_tracks %>
-
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane" id="home">
             <% if current_user.charts.empty? %>
@@ -104,14 +102,6 @@
           </div>
           <div role="tabpanel" class="tab-pane" id="settings">
             <div role="tabpanel" class="tab-pane" id="settings">
-              <p>
-                <%= @user.sorted_tracks %>
-              </p> 
-              <%= @user.sorted_tracks.class %>
-                <% @user.sorted_tracks.each do |tr| %>
-                  <p>Genre: <%= tr[0] %></p>
-                  <p>Count: <%= tr[1] %></p><hr />
-                <% end %>
             </div>
           </div>
         </div>
