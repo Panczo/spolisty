@@ -45,111 +45,113 @@ class GenreClassifier
   def classify(genres)
     if genres.any? {|w| 
       [
-         "harmonica blues", "louisiana blues",
-          "memphis blues", "swamp blues", "texas blues",
-         "punk blues", "memphis blues", "texas blues", "traditional blues", 
-         "electric blues", "modern blues", "soul blues", "texas blues",
-         "traditional blues", "bluegrass", "boogie",
-          "blues", "blueselectric",
-         "bluesmodern", "bluessoul", "bluestexas",
-          "bluestraditional"
-        ].include? w }
+        "harmonica blues", "louisiana blues",
+        "memphis blues", "swamp blues", "texas blues",
+        "punk blues", "memphis blues", "texas blues", "traditional blues", 
+        "electric blues", "modern blues", "soul blues", "texas blues",
+        "traditional blues", "bluegrass", "boogie",
+        "blues", "blueselectric",
+        "bluesmodern", "bluessoul", "bluestexas",
+        "bluestraditional"
+      ].include? w }
       return "blues"
     elsif genres.any? {|w| 
       [
         "classical", "orchestral", "opera", "classical performance",
         "classical christmas", "deep orchestral"
-        ].include? w }
+      ].include? w }
       return "classical"
     elsif genres.any? {|w| 
       [
         "outlaw country", "traditional country", "country christmas",
-         "alternative country", "country rock", "cowpunk",
-         "roots rock", "country", "countryroots"
-        ].include? w }
+        "alternative country", "country rock", "cowpunk",
+        "roots rock", "country", "countryroots"
+      ].include? w }
       return "country"
     elsif genres.any? {|w| 
       [
         "doo-wop", "opm", "cubaton", "singer-songwriter", "brazilian indie",
-         "freak folk", "new weird america", "soundtrack", "international",
-          "rumba", "freak",
-         "folknew", "weird", "america", "british",
-          "folksinger-songwriter", "songwriter" 
-          ].include? w }
+        "freak folk", "new weird america", "soundtrack", "international",
+        "rumba", "freak",
+        "folknew", "weird", "america", "british",
+        "folksinger-songwriter", "songwriter" 
+      ].include? w }
       return "international"
     elsif genres.any? {|w| 
       [
         "hard bop", "piano blues", "stride", "boogie-woogie",
-         "contemporary post-bop", "latin jazz", "big band", "swing",
-          "new orleans jazz", "jazz christmas", "vocal jazz",
-           "contemporary", "post-bopjazz", "christmasjazz", "funkjazz",
-         "fusion", "bebopcontemporary", "post-bopcool", "jazzhard",
-          "bopjazz", "jazz", "jam", "band", "big",
-           "bandswing", "bebopcool", "jazzhard", "bopjazzsoul",
-            "jazz" ].include? w }
+        "contemporary post-bop", "latin jazz", "big band", "swing",
+        "new orleans jazz", "jazz christmas", "vocal jazz",
+        "contemporary", "post-bopjazz", "christmasjazz", "funkjazz",
+        "fusion", "bebopcontemporary", "post-bopcool", "jazzhard",
+        "bopjazz", "jazz", "jam", "band", "big",
+        "bandswing", "bebopcool", "jazzhard", "bopjazzsoul",
+        "jazz" 
+      ].include? w }
       return "jazz"
     elsif genres.any? {|w| 
       [
         "latin", "new romantic", "latin alternative"
-        ].include? w }
+      ].include? w }
       return "latin"
     elsif genres.any? {|w| 
       [
         "brill building pop", "spanish pop", "polish pop", "chamber pop",
-         "bebop", "hard bop", "classic russian pop", "pop punk", "punk christmas",
-          "freestyle", "garage pop", "pop", "disco", "teen pop", "synthpop", "teen pop",
+        "bebop", "hard bop", "classic russian pop", "pop punk", "punk christmas",
+        "freestyle", "garage pop", "pop", "disco", "teen pop", "synthpop", "teen pop",
         "shimmer pop", "stomp pop", "pop rap", "pop christmas"
-        ].include? w }
+      ].include? w }
       return "pop"
     elsif genres.any? {|w| 
       [
-         "soul christmas", "brill building pop", "motown", "soul",
-         "soul christmas", "chicago soul", "christmas", "chicago", "soulmotownnorthern", "soulsoul",
-         "christmassoul", "indie", "freestyle", "soul", "r&b",
-          "rb", "funk", "hi", "nrg", "soulmotownsoul", "motownsoulsoul" 
-          ].include? w }
+        "soul christmas", "brill building pop", "motown", "soul",
+        "soul christmas", "chicago soul", "christmas", "chicago", "soulmotownnorthern", "soulsoul",
+        "christmassoul", "indie", "freestyle", "soul", "r&b",
+        "rb", "funk", "hi", "nrg", "soulmotownsoul", "motownsoulsoul" 
+      ].include? w }
       return "soul"
     elsif genres.any? {|w| 
       [
         "new jack smooth", "juggalo", "detroit hip hop", "g funk", "west coast rap", 
-       "underground hip hop", "hip hop","old school hip hop",
+        "underground hip hop", "hip hop","old school hip hop",
         "dirty south rap", "pop rap", "southern hip hop",
-         "trap music", "gangster", "rap", "hip", "hop", "coast",
-       "funkgangster", "rapwest", "skaska", "punk", "dutch hip hop"
-       ].include? w }
+        "trap music", "gangster", "rap", "hip", "hop", "coast",
+        "funkgangster", "rapwest", "skaska", "punk", "dutch hip hop"
+      ].include? w }
       return "hip-hop"
     elsif genres.any? {|w| 
       [
         "reggae", "rag"
-        ].include? w }
+      ].include? w }
       return "reggae"
     elsif genres.any? {|w| 
       [
         "rock-and-roll", "rockabilly", 
         "lovers rock", "german metal", "permanent wave", "ska",
-         "ska punk", "grunge",
-         "alternative rock", "venezuelan rock", "colombian rock",
+        "ska punk", "grunge",
+        "alternative rock", "venezuelan rock", "colombian rock",
         "industrial", "industrial metal", "industrial rock",
         "dance rock", "psychedelic rock", "soft rock",
         "folk rock", "roots rock", "album rock",
-          "classic funk rock", "glam rock", "funk rock",
-         "hard rock", "heavy christmas", "blues-rock",
+        "classic funk rock", "glam rock", "funk rock",
+        "hard rock", "heavy christmas", "blues-rock",
         "british blues", "classic rock",
-         "rock", "punk", "metal", "hard", "rockpermanent",
-          "art rock"
-        ].include? w }
+        "rock", "punk", "metal", "hard", "rockpermanent",
+        "art rock"
+      ].include? w }
       return "rock"
     elsif genres.any? {|w| 
       [
         "comic", "comedy", "deep comedy"
-        ].include? w }
+      ].include? w }
       return "comedy"
     elsif genres.any? {|w| 
       [
-        "deep uplifting trance", "ambient trance", "edm", "houseprogressive", "trancetranceuplifting",
-         "uplifting", "ambient", "dubstep", "house", "lounge",
-          "trance", "progressive", "tranceprogressive", "electronic"
-          ].include? w }
+        "electronic", "deep uplifting trance", "ambient trance",
+        "edm", "houseprogressive", "trancetranceuplifting",
+        "uplifting", "ambient", "dubstep", "house", "lounge",
+        "trance", "progressive", "tranceprogressive", "electronic"
+      ].include? w }
       return "electronic"
     else
       return "Brak"
