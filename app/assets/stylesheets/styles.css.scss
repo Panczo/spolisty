@@ -701,6 +701,44 @@ header {
   }
 }
 
+
+
+/** CHART **/
+.musicchart_heading {
+  padding-bottom: 38px;
+}
+
+.unclassifytracks {
+  padding: 70px 0px;
+}
+
+#highcharts-0 {
+  padding-bottom: 50px;
+  g.highcharts-axis-labels {
+    text {
+      fill: $text-color !important;
+      font-size: 13px !important;
+      text-transform: uppercase;
+      padding-top: 25px;
+    }
+  }
+  .highcharts-background {
+    fill: $body-bg !important;
+  }
+  .highcharts-button {
+    display: none;
+  }
+  .highcharts-yaxis-title {
+    display: none;
+  }
+  .highcharts-title {
+    tspan {
+      fill: $text-color;
+    }
+  }
+
+}
+
 /* bootstrap hack: fix content width inside hidden tabs */
 .tab-content > .tab-pane,
 .pill-content > .pill-pane {

@@ -46,54 +46,56 @@
             <% if current_user.charts.empty? %>
               <%= link_to "Generate Music Chart", user_charts_path([current_user, current_user.charts.build]), method: :post %>
             <% else %>
+              <h3 class="musicchart_heading"><%= @user.nick %> music chart</h3>
               <div id="genrechart" style="width:100%; height:400px;"></div>
   
-              <h2>Your tracks with genre</h2>
+              <div class="unclassifytracks">
+                <h2>Your tracks with genre</h2>
 
-              <table class="table">
-                <thead>
-                  <tr>w
-                    <th>Track name</th>
-                    <th>Category</th>
-                    <th>spotify Category</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <% current_user.tracks.select{|tr| !tr.genre.nil? }.each do |tr| %>
-                    <tr>
-                      <td><%= tr.name %></td>
-                      <td><%= tr.genre.name %></td>
-                      <td><%= tr.spotify_genre %></td>
+                <table class="table">
+                  <thead>
+                    <tr>w
+                      <th>Track name</th>
+                      <th>Category</th>
+                      <th>spotify Category</th>
                     </tr>
-                  <% end %>
-                </tbody>
-              </table>              
+                  </thead>
 
-              <h2>Your tracks without genre</h2>
+                  <tbody>
+                    <% current_user.tracks.select{|tr| !tr.genre.nil? }.each do |tr| %>
+                      <tr>
+                        <td><%= tr.name %></td>
+                        <td><%= tr.genre.name %></td>
+                        <td><%= tr.spotify_genre %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>              
 
-              <table class="table">
-                <thead>
-                  <tr>w
-                    <th>Track name</th>
-                    <th>Category</th>
-                    <th>spotify category</th>
-                  </tr>
-                </thead>
+                <h2>Your tracks without genre</h2>
 
-                <tbody>
-                  <% current_user.tracks.select{|tr| tr.genre.nil? }.each do |tr| %>
-                    <tr>
-                      <td><%= tr.name %></td>
-                      <td>Brak kategorii</td>
-                      <td><%= tr.try(:spotify_genre) %></td>
+                <table class="table">
+                  <thead>
+                    <tr>w
+                      <th>Track name</th>
+                      <th>Category</th>
+                      <th>spotify category</th>
                     </tr>
-                  <% end %>
-                </tbody>
-              </table>
-            <% end %>
+                  </thead>
 
-          </div>
+                  <tbody>
+                    <% current_user.tracks.select{|tr| tr.genre.nil? }.each do |tr| %>
+                      <tr>
+                        <td><%= tr.name %></td>
+                        <td>Brak kategorii</td>
+                        <td><%= tr.try(:spotify_genre) %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              <% end %>
+              </div>
+            </div>
           <div role="tabpanel" class="tab-pane active" id="user_pl">
             <%= render partial: "playlists" %>
           </div>
@@ -117,17 +119,19 @@ $(document).ready(function(){
         type: 'column'
     },
     title: {
-        text: 'Basic drilldown'
+        text: ' '
     },
     xAxis: {
         type: 'category'
     },
 
     legend: {
-        enabled: false
+      enabled: false
     },
     plotOptions: {
         series: {
+            pointWidth: 130,
+            groupPadding: 0,
             borderWidth: 0,
             dataLabels: {
                 enabled: true
@@ -137,7 +141,12 @@ $(document).ready(function(){
     series: [{
         colorByPoint: true,
         data: <%= raw @user.sorted_tracks %>
-    }]
+    }],
+    labels: {
+      style: {
+        color: '#111111'
+      }
+    }
   });
 });
 </script>

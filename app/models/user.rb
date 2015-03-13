@@ -129,6 +129,10 @@ class User < ActiveRecord::Base
 
   private
 
+  def nick_from_email
+    email.split("@").first
+  end
+
   def parse_songs(playlist, offset=0)
     songs = playlist.tracks(limit: 100, offset: offset)
     @finaltracks += songs
@@ -137,10 +141,6 @@ class User < ActiveRecord::Base
     if songs.size == 100 
       parse_songs(playlist, @offsety.last + 100)
     end
-  end
-
-  def nick_from_email
-    email.split("@").first
   end
 
   def parse_artist(track, spotify_track)
