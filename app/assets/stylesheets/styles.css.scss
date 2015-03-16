@@ -359,7 +359,7 @@ header {
   padding-left: 120px;
   color: $text-color;
   
-  #user_profile {
+  .user_profile {
     .main_user {
       padding: $padding-standard 0;
       /* border-bottom: 1px solid $brand-light; */
@@ -484,7 +484,7 @@ header {
     }
   }
 
-  #usernav {
+  .usernav {
     background-color: $text-color;
     a {
       border-radius: 0 0 0 0;
@@ -495,7 +495,7 @@ header {
     }
   }
 
-  #userplaylists {
+  .userplaylists {
     ul {
       padding-right: 40px;
       list-style-type: none;

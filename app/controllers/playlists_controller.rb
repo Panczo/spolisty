@@ -1,12 +1,13 @@
 class PlaylistsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_user, only: [:show, :destroy]
+  before_action :find_user, only: [:index, :show, :destroy]
   before_action :find_playlist, only: [:show, :destroy]
 
   respond_to :html
 
   def index
-    redirect_to current_user
+    @playlists = @user.playlists
+    #redirect_to current_user
   end
 
   def show

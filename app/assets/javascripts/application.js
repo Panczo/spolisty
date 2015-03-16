@@ -47,7 +47,7 @@ $(document).ready(function(){
 
   /*  User navbar menu in provile page  */
 
-  $('#usernav a').click(function (e) {
+  $('.usernav a').click(function (e) {
     e.preventDefault();
     $(this).tab('show');
   });

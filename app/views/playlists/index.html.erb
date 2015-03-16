@@ -1,0 +1,53 @@
+
+
+
+<div class="user_profile">
+  <%= render partial: 'shared/user_heading', locals: { user: @user } %>
+<div class="genre-profile col-md-8 col-md-offset-2 text-center">
+  <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
+  <div class="userplaylists">
+    <ul class="row">
+      <%= div_for(@user.playlists) do |p| %>
+        <li class="col-md-12 usrplay"> 
+          <span class="pull-left">
+            <!-- Count playlist tracks -->
+            <span class="count_of_tracks" data-toggle="tooltip", data-placement="top", title="Total count of playlist tracks">
+                <%= p.count_of_tracks %>
+            </span>
+
+            <!-- Link to playlist show page -->
+            <%= link_to [p.user, p], class: 'link_to_playlist ' do %>
+              <span class="ownerlist ownerplaylist">
+               <i class="fa fa-list" data-toggle="tooltip", data-placement="top", title="Show playlist"></i>
+              </span>
+            <% end %>
+            <!-- Owner of playlist -->
+            <% if p.ownerlist == p.user.name %>
+              <span class="ownerlist">
+                <i class='fa fa-user' data-toggle="tooltip", data-placement="top", title="<%= p.user.name %> playlist"></i>
+              </span>
+            <% else %>
+              <span class="ownerlist">
+               <i class="fa fa-bell-slash" data-toggle="tooltip", data-placement="top", title="You can see only playlist and his tracks created by <%= p.user.name %>"></i>
+              </span>           
+            <% end %>
+              <%= link_to p.name, [p.user, p] %>
+          </span>
+            
+          <p class="pull-right showlist">
+
+            <% if p.ownerlist == p.user.name %>
+              <p class="pull-right playlist_option">
+                <i class="fa fa-chevron-down"></i>
+              </p>
+            <% end %>
+          </p>
+          <% unless p.tracks.blank? %>
+            <%#= render partial: "tracks/track", locals: {p: p} %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>  
+</div>
+</div>

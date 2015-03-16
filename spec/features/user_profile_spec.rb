@@ -24,7 +24,7 @@ feature 'User profile page' do
 
 		visit user_path(user2)
 
-		within("#user_profile") do
+		within(".user_profile") do
 			expect(page).to have_content("Mona Lisa")
 		end 
 

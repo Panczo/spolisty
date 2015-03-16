@@ -1,0 +1,24 @@
+<ul class="nav nav-tabs usernav" role="tablist">
+  <li role="presentation" class="active col-md-3 col-sm-3 col-xs-3 genre">
+    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+    <i class="fa fa-user"></i> Home</a>
+  </li>
+<!--   <li role="prese3ntation" class="col-md-3 col-sm-3 col-xs-3 playlist">
+  <a href="#user_pl" aria-controls="user_pl" role="tab" data-toggle="tab">
+  <i class="fa fa-user"></i> Playlists</a>
+</li> -->
+  <li class="col-md-3 col-sm-3 col-xs-3 playlist">
+    <%= link_to user_playlists_path(user) do %>
+       <i class="fa fa-user"></i> Playlists</a>
+    <% end %>
+  </li>
+  <li role="presentation" class="col-md-3 col-sm-3 col-xs-3 messages">
+    <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+    <i class="fa fa-user"></i> Messages</a>
+  </li>
+  
+  <li role="presentation" class="col-md-3 col-sm-3 col-xs-3 settings">
+    <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
+    <i class="fa fa-user"></i> Settings</a>
+  </li>
+</ul>

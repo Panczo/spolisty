@@ -1,55 +1,67 @@
-<section id="user_profile">
+<script>
+$(document).ready(function(){
+
+  $('#genrechart').highcharts({
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: ' '
+      },
+      xAxis: {
+          type: 'category'
+      },
+
+      legend: {
+        enabled: false
+      },
+      plotOptions: {
+          series: {
+              pointWidth: 130,
+              groupPadding: 0,
+              borderWidth: 0,
+              dataLabels: {
+                  enabled: true
+              }
+          }
+      },
+      series: [{
+          colorByPoint: true,
+          data: <%= raw @user.sorted_tracks %>
+      }],
+      labels: {
+        style: {
+          color: '#111111'
+        }
+      }
+    });
+});
+</script>
+
+<section class="user_profile">
   <div class="row">
-    <div class="main_user col-md-8 col-md-offset-2">
-        <div class="pull-left hidden-xs hidden-sm">
-          <%= foto(@user) %>
-        </div>
-        <div class="profile-text pull-right">
-          <%= @user.name? ? @user.name : @user.email %>
-          <p class="traveler text-center"><span>Trance Explorer</span></p>
-          <p><%= link_to "Follow", '#', class: 'btn btn-primary btn-small btn-block' %></p>
-        </div>
-    </div>
+  <%= render partial: 'shared/user_heading', locals: { user: @user } %>
 
     <div class="genre-profile col-md-8 col-md-offset-2 text-center">
       <% if current_user == @user && @user.playlists.blank? %>
         <%= link_to "Import your playlists from spotify", 
             import_user_playlists_path(current_user), 
             class: 'btn btn-primary btn-block btn-lg' %>
-
       <% else %>
 
         <div class="clearfix visible-sm-block visible-xs-block"></div>
-        <ul class="nav nav-tabs" role="tablist" id="usernav">
-          <li role="presentation" class="col-md-3 col-sm-3 col-xs-3 genre">
-            <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
-            <i class="fa fa-user"></i> Home</a>
-          </li>
-          <li role="prese3ntation" class="active col-md-3 col-sm-3 col-xs-3 playlist">
-            <a href="#user_pl" aria-controls="user_pl" role="tab" data-toggle="tab">
-            <i class="fa fa-user"></i> Playlists</a>
-          </li>
-          <li role="presentation" class="col-md-3 col-sm-3 col-xs-3 messages">
-            <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
-            <i class="fa fa-user"></i> Messages</a>
-          </li>
-          
-          <li role="presentation" class="col-md-3 col-sm-3 col-xs-3 settings">
-            <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
-            <i class="fa fa-user"></i> Settings</a>
-          </li>
-        </ul>
 
+        <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
 
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane" id="home">
+          <div role="tabpanel" class="tab-pane active" id="home">
             <% if current_user.charts.empty? %>
               <%= link_to "Generate Music Chart", user_charts_path([current_user, current_user.charts.build]), method: :post %>
             <% else %>
               <h3 class="musicchart_heading"><%= @user.nick %> music chart</h3>
               <div id="genrechart" style="width:100%; height:400px;"></div>
   
-              <div class="unclassifytracks">
+              <div class="unclassify tracks">
                 <h2>Your tracks with genre</h2>
 
                 <table class="table">
@@ -96,7 +108,7 @@
               <% end %>
               </div>
             </div>
-          <div role="tabpanel" class="tab-pane active" id="user_pl">
+          <div role="tabpanel" class="tab-pane" id="user_pl">
             <%= render partial: "playlists" %>
           </div>
           <div role="tabpanel" class="tab-pane" id="messages">
@@ -112,41 +124,3 @@
     </div>
   </div>
 </section>
-<script>
-$(document).ready(function(){
-  $('#genrechart').highcharts({
-    chart: {
-        type: 'column'
-    },
-    title: {
-        text: ' '
-    },
-    xAxis: {
-        type: 'category'
-    },
-
-    legend: {
-      enabled: false
-    },
-    plotOptions: {
-        series: {
-            pointWidth: 130,
-            groupPadding: 0,
-            borderWidth: 0,
-            dataLabels: {
-                enabled: true
-            }
-        }
-    },
-    series: [{
-        colorByPoint: true,
-        data: <%= raw @user.sorted_tracks %>
-    }],
-    labels: {
-      style: {
-        color: '#111111'
-      }
-    }
-  });
-});
-</script>
