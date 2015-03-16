@@ -1,7 +1,8 @@
 <ul class="nav nav-tabs usernav" role="tablist">
-  <li role="presentation" class="active col-md-3 col-sm-3 col-xs-3 genre">
-    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
-    <i class="fa fa-user"></i> Home</a>
+  <li role="presentation" class="col-md-3 col-sm-3 col-xs-3 genre">
+    <%= link_to user_path(user) do %>
+       <i class="fa fa-user"></i> User</a>
+    <% end %>
   </li>
 <!--   <li role="prese3ntation" class="col-md-3 col-sm-3 col-xs-3 playlist">
   <a href="#user_pl" aria-controls="user_pl" role="tab" data-toggle="tab">

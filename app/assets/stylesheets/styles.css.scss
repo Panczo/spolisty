@@ -346,6 +346,10 @@ header {
   max-height: 100%;
   width: 100%;
   height: 100%;
+
+  .col-md-12 {
+    padding: 0px;
+  }
 }
 
 .page-wrapper {
@@ -360,6 +364,9 @@ header {
   color: $text-color;
   
   .user_profile {
+    .row {
+      margin: 0;
+    }
     .main_user {
       padding: $padding-standard 0;
       /* border-bottom: 1px solid $brand-light; */
@@ -496,7 +503,7 @@ header {
   }
 
   .userplaylists {
-    padding: 70px;
+    padding: 70px 0px;
     ul {
       padding-right: 40px;
       list-style-type: none;
