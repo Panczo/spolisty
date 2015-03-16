@@ -40,7 +40,7 @@ $(document).ready(function(){
 
 <section class="user_profile">
   <div class="row">
-  <%= render partial: 'shared/user_heading', locals: { user: @user } %>
+    <%= render partial: 'shared/user_heading', locals: { user: @user } %>
 
     <div class="genre-profile col-md-8 col-md-offset-2 text-center">
       <% if current_user == @user && @user.playlists.blank? %>
@@ -54,74 +54,60 @@ $(document).ready(function(){
 
         <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
 
-<!--         <div class="tab-content">
-  <div role="tabpanel" class="tab-pane active" id="home">
-    <%# if current_user.charts.empty? %>
-      <%#= link_to "Generate Music Chart", user_charts_path([current_user, current_user.charts.build]), method: :post %>
-    <%# else %>
-      <h3 class="musicchart_heading"><%= @user.nick %> music chart</h3>
-      <div id="genrechart" style="width:100%; height:400px;"></div>
+
+        <% if current_user.charts.empty? %>
+          <%= link_to "Generate Music Chart", user_charts_path([current_user, current_user.charts.build]), method: :post %>
+        <% else %>
+          <h3 class="musicchart_heading"><%= @user.nick %> music chart</h3>
+          <div id="genrechart" style="width:100%; height:400px;"></div>
   
-      <div class="unclassify tracks">
-        <h2>Your tracks with genre</h2>
+          <div class="unclassify tracks">
+            <h2>Your tracks with genre</h2>
 
-        <table class="table">
-          <thead>
-            <tr>w
-              <th>Track name</th>
-              <th>Category</th>
-              <th>spotify Category</th>
-            </tr>
-          </thead>
+            <table class="table">
+              <thead>
+                <tr>w
+                  <th>Track name</th>
+                  <th>Category</th>
+                  <th>spotify Category</th>
+                </tr>
+              </thead>
 
-          <tbody>
-            <%# current_user.tracks.select{|tr| !tr.genre.nil? }.each do |tr| %>
-              <tr>
-                <td><%#= tr.name %></td>
-                <td><%#= tr.genre.name %></td>
-                <td><%#= tr.spotify_genre %></td>
-              </tr>
-            <%# end %>
-          </tbody>
-        </table>              
+              <tbody>
+                <%# current_user.tracks.select{|tr| !tr.genre.nil? }.each do |tr| %>
+                  <tr>
+                    <td><%#= tr.name %></td>
+                    <td><%#= tr.genre.name %></td>
+                    <td><%#= tr.spotify_genre %></td>
+                  </tr>
+                <%# end %>
+              </tbody>
+            </table>              
 
-        <h2>Your tracks without genre</h2>
+            <h2>Your tracks without genre</h2>
 
-        <table class="table">
-          <thead>
-            <tr>w
-              <th>Track name</th>
-              <th>Category</th>
-              <th>spotify category</th>
-            </tr>
-          </thead>
+            <table class="table">
+              <thead>
+                <tr>w
+                  <th>Track name</th>
+                  <th>Category</th>
+                  <th>spotify category</th>
+                </tr>
+              </thead>
 
-          <tbody>
-            <%# current_user.tracks.select{|tr| tr.genre.nil? }.each do |tr| %>
-              <tr>
-                <td><%#= tr.name %></td>
-                <td>Brak kategorii</td>
-                <td><%##= tr.try(:spotify_genre) %></td>
-              </tr>
-            <%# end %>
-          </tbody>
-        </table>
-      <%# end %>
+              <tbody>
+                <% current_user.tracks.select{|tr| tr.genre.nil? }.each do |tr| %>
+                  <tr>
+                    <td><%= tr.name %></td>
+                    <td>Brak kategorii</td>
+                    <td><%= tr.try(:spotify_genre) %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          <% end %>
+          </div>
+      <% end %>
       </div>
     </div>
-  <div role="tabpanel" class="tab-pane" id="user_pl">
-    <%#= render partial: "playlists" %>
-  </div>
-  <div role="tabpanel" class="tab-pane" id="messages">
-
-  </div>
-  <div role="tabpanel" class="tab-pane" id="settings">
-    <div role="tabpanel" class="tab-pane" id="settings">
-    </div>
-  </div>
-</div>
- <-->Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta odio culpa explicabo, necessitatibus dolore nisi, voluptatem, debitis minima sit minus quia omnis placeat officia. Culpa eveniet iste, dolorem laboriosam a, aspernatur harum dolor, nisi quasi ullam maxime! Delectus, nesciunt illum, iusto hic fugiat voluptatem facilis quos incidunt fugit enim maxime quaerat voluptate eos alias est neque placeat in eius, reprehenderit obcaecati, ea eligendi nam nihil ipsum. Veritatis harum cupiditate, nisi quisquam. Debitis similique sit quos fuga enim, hic, ab deserunt perferendis asperiores corporis tempora ullam eos optio dolorem quibusdam numquam rem nihil aliquid saepe pariatur incidunt eveniet ut. Explicabo, officia, eaque. Tempora corporis, amet provident ex pariatur alias quidem cupiditate dolor aut porro dolorem ea deserunt, temporibus consectetur nostrum? Dolor, eveniet dolore rerum optio! Necessitatibus facere, culpa, quis ut repudiandae iure possimus? Delectus perferendis officiis praesentium commodi reprehenderit architecto mollitia, placeat vero alias distinctio similique asperiores quos consequatur, dolor aliquid. Veritatis quasi sit natus non nisi maxime illo nemo labore beatae consectetur possimus magnam, est voluptatem rerum iste culpa nam ad tempora. Dolorum porro quisquam, rerum. Minima labore quaerat in et, inventore veniam animi repellendus nesciunt a officiis, unde, libero delectus reiciendis voluptatibus voluptate repellat doloribus explicabo aspernatur impedit ipsum! Totam quo, labore aliquid magnam debitis, fugiat itaque nobis doloribus minima tempora libero omnis voluptate obcaecati tempore quam molestiae dolor repellendus! Corrupti, fugit, consectetur. Vero ex, natus officia aperiam delectus totam fugiat nesciunt officiis ad, magnam corporis id. Reiciendis exercitationem nostrum ut maxime officiis voluptatem commodi impedit doloribus ea iure eius aut magnam debitis neque a possimus numquam consequuntur labore, similique nisi, adipisci ipsum. Temporibus earum, sint. Fugit obcaecati repellat eaque quibusdam consequuntur sed eligendi animi hic ut ipsum, voluptas quas officiis amet placeat dolor, adipisci libero aliquam quos dignissimos delectus culpa aperiam blanditiis nulla! Error, dignissimos quod, animi suscipit consequuntur quasi. Temporibus tempore amet, esse ex rerum itaque perspiciatis aliquam, odit assumenda non consequatur? Veniam incidunt magnam nesciunt reprehenderit sapiente id autem possimus repellendus, dolores ut, sequi placeat, sit asperiores sed ipsum sunt praesentium distinctio voluptates. Sed in reiciendis nemo laborum doloribus necessitatibus nobis, voluptatem iure repellat itaque iste explicabo voluptate nesciunt minima expedita aut eum. Ex quo maxime assumenda quae, vel obcaecati, enim aliquid natus expedita autem optio eos blanditiis rem voluptatem! Facere ad saepe optio, vel eum voluptates molestias sequi praesentium, molestiae ullam inventore natus. Quo atque, mollitia quos distinctio sed fuga nemo ratione eligendi delectus, maxime doloribus tenetur possimus culpa ipsa voluptate dolorem sequi quia ab animi itaque quisquam maiores consequuntur sapiente. Minima ducimus culpa illum similique reprehenderit quasi consectetur omnis soluta quod minus, distinctio velit corporis inventore sint vitae expedita, earum quidem amet porro ipsum fugiat, ex vero cum? Quas necessitatibus consequuntur fugit similique in consectetur excepturi neque tenetur quidem vitae voluptatem, labore, sequi officia odio quasi suscipit ad illum molestiae ex error obcaecati praesentium magnam laudantium. Fugiat exercitationem, ab incidunt fuga harum, quam at autem aut eos consectetur neque repellendus voluptas inventore, officiis odio pariatur, necessitatibus quas perspiciatis optio quos? Et illum assumenda provident, natus doloremque voluptatum facere placeat animi officia sapiente odit quae, reprehenderit repellendus dolore recusandae repellat ad exercitationem accusantium. Amet suscipit optio harum, quos cumque libero, nemo, quibusdam aliquid, ipsa natus aliquam quia officiis voluptate excepturi. Nulla quidem similique, vero fugiat, beatae aliquid voluptate. Quaerat accusamus quos quae explicabo saepe, delectus suscipit dignissimos accusantium quisquam minus cupiditate odio iste sint, numquam vel, repudiandae dolores aperiam. Aspernatur enim saepe repellendus quidem fugit velit excepturi, nihil, voluptatem voluptatum consequuntur rerum nobis obcaecati veritatis nulla officiis iure commodi. Maxime optio nam modi vitae illum earum, expedita laborum aspernatur quam asperiores sunt distinctio obcaecati cum eos atque iste, saepe beatae ut culpa doloremque assumenda, architecto! Aut amet quae doloribus impedit quidem sint eveniet itaque beatae nisi totam consequuntur vitae, soluta, corporis voluptate eum, excepturi aliquid sunt tenetur molestias praesentium esse dolore. Aperiam molestias quas, quae minima temporibus! Explicabo laborum, voluptatum cumque consequatur quod odit ullam fuga necessitatibus dolores ratione corporis debitis reiciendis voluptatem cupiditate neque architecto incidunt maxime quas? Dolor voluptatibus nostrum repellendus soluta sint animi ipsam eos ducimus dolorem quas ea dolores, voluptates, qui repudiandae voluptatem accusantium natus sequi! Omnis maiores explicabo quos, ad ipsa illum maxime, laboriosam, est officia provident ullam quisquam odit sint modi quae vero impedit expedita temporibus enim recusandae sit ea doloremque! Cumque ipsum sit magnam, officiis ipsam? Iusto labore vel doloremque provident odio nobis officia praesentium deserunt eaque officiis quidem porro, rerum ratione numquam soluta ea voluptate fuga maxime alias neque necessitatibus nemo cum ipsum. Incidunt id cupiditate repellat, modi quaerat repudiandae rem iure quae soluta ipsam corporis, laboriosam ratione provident voluptatem assumenda nihil consequuntur culpa maxime officia explicabo distinctio? Nostrum sint nam, consectetur nemo ad voluptas ex, tempore sit quod quasi eius enim perferendis porro ea vel. Aliquam, atque. Itaque aliquid aliquam architecto, voluptatum, eligendi modi. Nostrum consequatur libero excepturi autem possimus nesciunt delectus neque consequuntur corporis accusamus, minus ratione dolorem animi culpa voluptatem saepe provident officiis quisquam eum. Quae repellat beatae ea, error. Ducimus voluptate debitis nobis ullam, voluptates odit. Aperiam laudantium distinctio delectus, quod accusantium, ipsum cumque saepe assumenda deleniti fugit voluptatum provident, dicta consequuntur adipisci corrupti quidem a quae vel facilis mollitia id similique? Rem, consequuntur nostrum! Deleniti similique officia voluptas rerum doloribus cumque soluta vero in velit quis tempora laboriosam iusto assumenda, commodi fuga nisi quod pariatur. Iste odit, tempore culpa a optio dignissimos aliquam doloremque nulla necessitatibus magni harum sit fugiat suscipit, omnis dolorem est, quas facere officiis placeat! Dignissimos, dolorum perspiciatis nostrum blanditiis nesciunt libero saepe natus quo placeat aperiam quam, modi sequi quidem. Corporis, reiciendis aliquid fugiat veniam saepe? Eveniet cupiditate dolor distinctio sed, minus libero natus obcaecati excepturi iure aliquam quod mollitia repellendus corrupti labore, molestiae saepe ea? Saepe odit itaque ad, nisi dolore culpa? Quod molestiae accusantium recusandae voluptatum aliquam ipsam enim quae quis ipsum similique dolor cumque saepe ab cum odio, sit quam doloribus eos, at id. Porro blanditiis dolorum amet! Itaque facilis, eius est cumque numquam sequi nobis repellendus architecto nostrum, perferendis cum, dolores fugiat odio illo.</-->
-      <% end %>
-    </div>
-  </div>
 </section>
