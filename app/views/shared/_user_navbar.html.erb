@@ -1,14 +1,10 @@
 <ul class="nav nav-tabs usernav" role="tablist">
-  <li role="presentation" class="col-md-3 col-sm-3 col-xs-3 genre">
+  <li role="presentation" class="<%= is_active?(user_path(user)) %> col-md-3 col-sm-3 col-xs-3 genre">
     <%= link_to user_path(user), data: { no_turbolink: true } do %>
        <i class="fa fa-user"></i> User</a>
     <% end %>
   </li>
-<!--   <li role="prese3ntation" class="col-md-3 col-sm-3 col-xs-3 playlist">
-  <a href="#user_pl" aria-controls="user_pl" role="tab" data-toggle="tab">
-  <i class="fa fa-user"></i> Playlists</a>
-</li> -->
-  <li class="col-md-3 col-sm-3 col-xs-3 playlist">
+  <li class="<%= is_active?(user_playlists_path(user)) %> col-md-3 col-sm-3 col-xs-3 playlist">
     <%= link_to user_playlists_path(user) do %>
        <i class="fa fa-user"></i> Playlists</a>
     <% end %>
