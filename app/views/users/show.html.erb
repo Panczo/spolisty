@@ -72,59 +72,60 @@ $(document).on('page:load', ready);
         <% end %>
       <% end %>
 
-      <% if current_user == @user %>
-        <div class="unclassify tracks">
-          <h2>Your tracks with genre</h2>
+<!--       <%# if current_user == @user %>
+  <div class="unclassify tracks">
+    <h2>Your tracks with genre</h2>
 
-          <table class="table">
-            <thead>
-              <tr>w
-                <th>Track name</th>
-                <th>Category</th>
-                <th>spotify Category</th>
-              </tr>
-            </thead>
+    <table class="table">
+      <thead>
+        <tr>w
+          <th>Track name</th>
+          <th>Category</th>
+          <th>spotify Category</th>
+        </tr>
+      </thead>
 
-            <tbody>
-              <%# current_user.tracks.select{|tr| !tr.genre.nil? }.each do |tr| %>
-                <tr>
-                  <td><%#= tr.name %></td>
-                  <td><%#= tr.genre.name %></td>
-                  <td><%#= tr.spotify_genre %></td>
-                </tr>
-              <%# end %>
-            </tbody>
-          </table>              
+      <tbody>
+        <%# current_user.tracks.select{|tr| !tr.genre.nil? }.each do |tr| %>
+          <tr>
+            <td><%#= tr.name %></td>
+            <td><%#= tr.genre.name %></td>
+            <td><%#= tr.spotify_genre %></td>
+          </tr>
+        <%# end %>
+      </tbody>
+    </table>              
 
-          <h2>Your tracks without genre</h2>
+    <h2>Your tracks without genre</h2>
 
-          <table class="table">
-            <thead>
-              <tr>w
-                <th>Track name</th>
-                <th>Category</th>
-                <th>spotify category</th>
-              </tr>
-            </thead>
+    <table class="table">
+      <thead>
+        <tr>w
+          <th>Track name</th>
+          <th>Category</th>
+          <th>spotify category</th>
+        </tr>
+      </thead>
 
-            <tbody>
-              <% current_user.tracks.select{|tr| tr.genre.nil? }.each do |tr| %>
-                <tr>
-                  <td><%= tr.name %></td>
-                  <td>Brak kategorii</td>
-                  <td><%= tr.try(:spotify_genre) %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
+      <tbody>
+        <%# current_user.tracks.select{|tr| tr.genre.nil? }.each do |tr| %>
+          <tr>
+            <td><%#= tr.name %></td>
+            <td>Brak kategorii</td>
+            <td><%#= tr.try(:spotify_genre) %></td>
+          </tr>
+        <%# end %>
+      </tbody>
+    </table>
 
-        </div><!-- /unclassify tracks -->
-      <% end %><!-- /if current_user == @user -->
+  </div>/unclassify tracks
+<%# end %>/if current_user == @user -->
       
       <% @user.genres.uniq.each do |genre| %>
-        <%= link_to genre.name,  genre_path(genre) %>
+        <%= link_to genre.name,  genre_path(genre, user: @user) %>
       <% end %>
-
+      
+      <%= render template: 'genres/show' %>
     </div>
   </div>
 </section>

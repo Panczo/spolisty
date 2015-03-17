@@ -3,6 +3,7 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require jquery.turbolinks
+//= require filterable
 //= require_tree .
 
 
