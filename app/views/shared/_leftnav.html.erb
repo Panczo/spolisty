@@ -33,7 +33,7 @@
       <% end %>
     </li>
     <li>
-      <%= link_to current_user, id: "current_user_link" do %>
+      <%= link_to current_user, id: "current_user_link", data: { no_turbolink: true } do %>
         <span clss="profile-img"><%= foto(current_user) %></span>
       <% end %>
       <%= link_to destroy_user_session_path, id: 'logout', "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Logout", method: :delete do %>

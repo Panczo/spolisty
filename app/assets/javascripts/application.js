@@ -38,19 +38,19 @@ $(document).ready(function(){
   });
   
 
-  $('ul.nav.nav-pills li a').click(function() {           
+/*  $('ul.nav.nav-pills li a').click(function() {           
     $(this).parent().addClass('active').siblings().removeClass('active');           
-	});
+	});*/
 
   /*  tooltip   */
 	$('[data-toggle="tooltip"]').tooltip();
 
   /*  User navbar menu in provile page  */
 
-  $('.usernav a').click(function (e) {
+/*  $('.usernav a').click(function (e) {
     e.preventDefault();
     $(this).tab('show');
-  });
+  });*/
   
   /*  Playlist Tracks   */
 

@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs usernav" role="tablist">
   <li role="presentation" class="col-md-3 col-sm-3 col-xs-3 genre">
-    <%= link_to user_path(user) do %>
+    <%= link_to user_path(user), data: { no_turbolink: true } do %>
        <i class="fa fa-user"></i> User</a>
     <% end %>
   </li>

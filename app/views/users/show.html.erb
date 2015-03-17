@@ -1,5 +1,7 @@
 <script>
-$(document).ready(function(){
+
+var ready;
+ready = function() {
 
   $('#genrechart').highcharts({
       chart: {
@@ -34,8 +36,14 @@ $(document).ready(function(){
           color: '#111111'
         }
       }
-    });
-});
+  });
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
+  
 </script>
 
 <section class="user_profile">
