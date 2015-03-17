@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :charts
   end
 
+  resources :genres, only: [:show]
   resources :subscribes, only: [:create]
   resources :pages, only: [:index]
 

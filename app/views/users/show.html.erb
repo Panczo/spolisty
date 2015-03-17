@@ -19,7 +19,6 @@ ready = function() {
       },
       plotOptions: {
           series: {
-              pointWidth: 130,
               groupPadding: 0,
               borderWidth: 0,
               dataLabels: {
@@ -27,7 +26,8 @@ ready = function() {
               }
           }
       },
-      series: [{
+      series: [{ 
+          name: 'Total track',
           colorByPoint: true,
           data: <%= raw @user.sorted_tracks %>
       }],
@@ -42,6 +42,7 @@ ready = function() {
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
+
 
   
 </script>
@@ -68,54 +69,62 @@ $(document).on('page:load', ready);
         <% else %>
           <h3 class="musicchart_heading"><%= @user.nick %> music chart</h3>
           <div id="genrechart" style="width:100%; height:400px;"></div>
-  
-          <div class="unclassify tracks">
-            <h2>Your tracks with genre</h2>
-
-            <table class="table">
-              <thead>
-                <tr>w
-                  <th>Track name</th>
-                  <th>Category</th>
-                  <th>spotify Category</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <%# current_user.tracks.select{|tr| !tr.genre.nil? }.each do |tr| %>
-                  <tr>
-                    <td><%#= tr.name %></td>
-                    <td><%#= tr.genre.name %></td>
-                    <td><%#= tr.spotify_genre %></td>
-                  </tr>
-                <%# end %>
-              </tbody>
-            </table>              
-
-            <h2>Your tracks without genre</h2>
-
-            <table class="table">
-              <thead>
-                <tr>w
-                  <th>Track name</th>
-                  <th>Category</th>
-                  <th>spotify category</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <% current_user.tracks.select{|tr| tr.genre.nil? }.each do |tr| %>
-                  <tr>
-                    <td><%= tr.name %></td>
-                    <td>Brak kategorii</td>
-                    <td><%= tr.try(:spotify_genre) %></td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-          <% end %>
-          </div>
+        <% end %>
       <% end %>
-      </div>
+
+      <% if current_user == @user %>
+        <div class="unclassify tracks">
+          <h2>Your tracks with genre</h2>
+
+          <table class="table">
+            <thead>
+              <tr>w
+                <th>Track name</th>
+                <th>Category</th>
+                <th>spotify Category</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <%# current_user.tracks.select{|tr| !tr.genre.nil? }.each do |tr| %>
+                <tr>
+                  <td><%#= tr.name %></td>
+                  <td><%#= tr.genre.name %></td>
+                  <td><%#= tr.spotify_genre %></td>
+                </tr>
+              <%# end %>
+            </tbody>
+          </table>              
+
+          <h2>Your tracks without genre</h2>
+
+          <table class="table">
+            <thead>
+              <tr>w
+                <th>Track name</th>
+                <th>Category</th>
+                <th>spotify category</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% current_user.tracks.select{|tr| tr.genre.nil? }.each do |tr| %>
+                <tr>
+                  <td><%= tr.name %></td>
+                  <td>Brak kategorii</td>
+                  <td><%= tr.try(:spotify_genre) %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+        </div><!-- /unclassify tracks -->
+      <% end %><!-- /if current_user == @user -->
+      
+      <% @user.genres.uniq.each do |genre| %>
+        <%= link_to genre.name,  genre_path(genre) %>
+      <% end %>
+
     </div>
+  </div>
 </section>
