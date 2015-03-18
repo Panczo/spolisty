@@ -49,7 +49,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @playlist.tracks.each do |tr| %>
+          <% @playlist.tracks.includes(:artist, :album).each do |tr| %>
             <tr class="trackline" data-tracknumber="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= tr.track_number %>">
               <td><%= tr.name %></td>
               <td><%= tr.try(:artist).try(:name) %></td>

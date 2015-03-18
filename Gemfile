@@ -27,6 +27,7 @@ gem 'tzinfo-data'
 gem 'validates_formatting_of'
 gem 'gibbon'
 gem 'stuff-classifier', :git => 'git@github.com:JoaquinSantana/stuff-classifier.git'
+gem 'bullet'
 
 group :development do
   gem 'web-console'

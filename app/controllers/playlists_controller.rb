@@ -6,7 +6,7 @@ class PlaylistsController < ApplicationController
   respond_to :html
 
   def index
-    @playlists = @user.playlists
+    @playlists = @user.playlists.includes(:tracks)
     #redirect_to current_user
   end
 

@@ -7,7 +7,7 @@
   <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
   <div class="userplaylists">
     <ul class="row">
-      <%= div_for(@user.playlists) do |p| %>
+      <%= div_for(@user.playlists.includes(:tracks)) do |p| %>
         <li class="col-md-12 usrplay"> 
           <span class="pull-left">
             <!-- Count playlist tracks -->
