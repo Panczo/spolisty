@@ -33,7 +33,7 @@
           <i class="fa fa-clock-o"></i>
           <%= @playlist.total_tracks_duration %>
         </h3>
-        <% if current_user == @playlist.user %>
+        <% if current_user == @playlist.user && @playlist.special? %>
           <p><%= link_to "Send your playlist to Spotify",  export_user_playlist_path(current_user, @playlist), class: 'btn btn-primary' %></p>
         <% end %>
       </div>
@@ -49,7 +49,10 @@
           </tr>
         </thead>
         <tbody>
-          <% @playlist.tracks.includes(:artist, :album).each do |tr| %>
+        <div class="paginacja text-center">
+          <%= will_paginate @tracks, renderer: BootstrapPagination::Rails %>
+        </div>
+          <% @tracks.each do |tr| %>
             <tr class="trackline" data-tracknumber="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= tr.track_number %>">
               <td><%= tr.name %></td>
               <td><%= tr.try(:artist).try(:name) %></td>
@@ -73,7 +76,9 @@
           <% end %>
         </tbody>
       </table>
-
+      <div class="paginacja text-center">
+        <%= will_paginate @tracks, renderer: BootstrapPagination::Rails %>
+      </div>
       <% if current_user == @playlist.user %>
         <%= link_to "Destroy", user_playlist_path, method: :delete, data: { confirm: "Do you want deleted this playlist? This action don't deleted this playlist from spotify app" }, class: 'btn btn-primary' %>
       <% end %>

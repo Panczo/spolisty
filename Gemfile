@@ -28,6 +28,7 @@ gem 'validates_formatting_of'
 gem 'gibbon'
 gem 'stuff-classifier', :git => 'git@github.com:JoaquinSantana/stuff-classifier.git'
 gem 'bullet'
+gem 'will_paginate-bootstrap'
 
 group :development do
   gem 'web-console'

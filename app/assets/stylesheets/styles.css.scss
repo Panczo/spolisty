@@ -689,6 +689,52 @@ header {
   }
 }
 
+.paginacja {
+  padding: 25px 0px;
+
+  li {
+    a {
+      background: $body-bg-dark !important;
+      border-color: $body-bg-dark !important;
+      color: $text-color !important;
+    }
+  }
+
+  li.prev, li.next {
+    a {
+      color: $text-color !important;
+      border-color: $brand-light;
+      background: $brand-light;
+
+      &:focus, &:hover {
+        color: $brand-light !important; 
+      }
+    }
+  }
+
+  li.active {
+    span {
+      padding: inherit 30px !important;
+      border-color: $brand-primary-dark;
+      background-color: $brand-primary-dark;
+  
+      &:focus, &:hover {
+        border-color: $brand-primary-dark;
+        background-color: $brand-primary-dark;
+      }
+    }
+  }
+
+  li.disabled {
+    span {
+      background: darken($body-bg-dark, 3%) !important;
+      border-color: $body-bg-dark !important;
+      color: $text-color !important;      
+    }
+  }
+
+}
+
 .signupwraper {
   border: 5px solid #230E2F;
   margin: 120px;
