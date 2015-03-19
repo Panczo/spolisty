@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
+    @tracks = @user.tracks.classified
     @chart = @user.charts.build
   end
   

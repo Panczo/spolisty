@@ -68,6 +68,9 @@ $(document).ready(function(){
     $('iframe').click();
   });
 
+  /* Filer track by genre on user show page */
+  $("#portfolio-list").filterable();
+
 
 });
 

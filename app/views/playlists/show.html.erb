@@ -27,7 +27,7 @@
     <div class="col-xs-10 col-md-10 col-md-offset-1">
       <div class="playlist_info">
         <h3 class="createdby">
-          Playlist created by: <%= link_to @playlist.user.nick, @playlist.user %> 
+          Playlist created by: <%= link_to @playlist.user.nick, @playlist.user, data: { no_turbolink: true } %> 
           <i class="fa fa-music"></i>
           <%= @playlist.tracks.any? ? pluralize(@playlist.tracks.size, "song") : 0 %>
           <i class="fa fa-clock-o"></i>
@@ -49,9 +49,9 @@
           </tr>
         </thead>
         <tbody>
-        <div class="paginacja text-center">
-          <%= will_paginate @tracks, renderer: BootstrapPagination::Rails %>
-        </div>
+          <div class="paginacja text-center">
+            <%= will_paginate @tracks, renderer: BootstrapPagination::Rails %>
+          </div>
           <% @tracks.each do |tr| %>
             <tr class="trackline" data-tracknumber="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= tr.track_number %>">
               <td><%= tr.name %></td>
@@ -67,7 +67,7 @@
               <% else %>
                 <td class="<%= tr.name %>">
                   <%= link_to  addtrack_user_track_path(current_user, tr), method: :post do %>
-               <!--      add_track -->
+                     <!--      add_track -->
                     <i class="fa fa-plus"></i>
                   <% end %>
                 </td>
