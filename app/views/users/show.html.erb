@@ -120,20 +120,19 @@ $(document).on('page:load', ready);
 
   </div>/unclassify tracks
 <%# end %>/if current_user == @user -->
-      <ul id="portfolio-filter">
-        <% @user.genres.uniq.each do |genre| %>
-          <li><a href="#<%= genre.name %>"><%= genre.name %></a><li>
-        <% end %>
 
-      </ul>
-      <ul id="portfolio-list">
-        <% @tracks.each do |tr| %>
-          <li class="<%= tr.genre.name %>"><%= tr.name %></li>
-        <% end %>
-      </ul>
+        <div class="filer-tracks">
+          <ul id="portfolio-filter" class="nav nav-pills nav-justified">
+            <% @user.genres.uniq.each do |genre| %>
+              <li><a href="#<%= genre.name %>"><%= genre.name %></a><li>
+            <% end %>
+          </ul>
 
-      
-      <%= render template: 'genres/show' %>
-    </div>
-  </div>
+        <ul id="portfolio-list">
+          <% @tracks.each do |tr| %>
+            <li class="<%= tr.genre.name %>"><%= tr.name %></li>
+          <% end %>
+        </ul>      
+      </div>
+
 </section>
