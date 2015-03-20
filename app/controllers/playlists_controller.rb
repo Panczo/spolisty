@@ -11,7 +11,11 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    @tracks = @playlist.tracks.includes(:artist, :album).paginate(page: params[:page], per_page: 50)
+    if params[:track]
+      @tracks = @playlist.tracks.includes(:artist, :album).where(id: params[:track]).paginate(page: params[:page], per_page: 50)
+    else
+      @tracks = @playlist.tracks.includes(:artist, :album).paginate(page: params[:page], per_page: 50)
+    end
   end
 
   def destroy 

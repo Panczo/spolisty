@@ -128,13 +128,21 @@ $(document).on('page:load', ready);
             <% end %>
           </ul>
 
-          <ul id="portfolio-list" class="">
+          <ul id="portfolio-list" class="row">
             <% @tracks.each do |tr| %>
-              <li class="<%= tr.genre.name %> ">
-                  <%= truncate(tr.name, length: 15) %>
-                  <%= truncate(tr.try(:artist).try(:name), length: 25) %>
-                  <%= truncate(tr.try(:album).try(:name), length: 15) %>
-                <div class="track_duration">
+              <li class="<%= tr.genre.name %> col-md-12">
+                <div class="track_name pull-left">
+                  <%= truncate(tr.name, length: 25) %>
+                  
+                </div>
+                <div class="track_info pull-left">
+                  <%= tr.try(:artist).try(:name) %>
+                  <%= tr.try(:album).try(:name) %>
+                </div>
+                <div class="track_duration pull-right">
+                  <%= link_to [@user, tr.playlist, track: tr], "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Listen this track on his playlist" do %>
+                    <i class="fa fa-play">  </i>    
+                  <% end %>
                   <%= tr.try(:track_duration) %>
                 </div>
               </li>

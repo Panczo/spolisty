@@ -735,7 +735,6 @@ header {
 }
 
 .filer-tracks{
-  
   #portfolio-filter {
     margin: 70px 0px;
     background: $body-bg-dark;
@@ -750,23 +749,33 @@ header {
 
   #portfolio-list {
     padding: 0px 25px;
-    list-style: none;
-    text-align: left;
-
+      
     li {
+      margin-top: 15px;
+      padding-bottom: 5px;
+      list-style-type: none;
       color: $text-color;
-      line-height: 0;
-      padding-top: 25px;
-      padding-bottom: 11px;
       border-bottom: 1px solid $body-bg-dark;
-    }
-
-    .track_duration {
-      text-align: right;
-    }    
-
-    .track_name {
-      padding-right: 50px;
+      
+      .track_name {
+        width: 200px;
+        display: inline-block;
+        text-align: left;
+      }
+      .track_info {
+        display: inline-block;
+      }
+      .track_duration {
+        display: inline-block;
+        a {
+          color: $text-color;
+          margin-right: 20px;
+          &:hover {
+            @include transition(0.9s);
+            color: $brand-primary-dark;
+          }
+        }
+      }
     }
   }
 }
