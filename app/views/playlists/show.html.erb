@@ -15,11 +15,11 @@
   <div class="row">
     <div clas="col-md-12">
         <div class="container">
-      <nav class="navbar navbar-default navbar-fixed-bottom text-center">
-        <% unless @playlist.tracks.blank? %>
-          <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= @playlist.tracks.first.track_number %>" frameborder="0" allowtransparency="true"></iframe> 
-        <% end %>      
-      </nav>
+          <nav class="navbar navbar-default navbar-fixed-bottom text-center">
+            <% unless @playlist.tracks.blank? %>
+              <iframe src="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= @playlist.tracks.first.track_number %>" frameborder="0" allowtransparency="true"></iframe> 
+            <% end %>      
+          </nav>
         </div>
     </div>    
   </div>
@@ -39,6 +39,7 @@
       </div>
 
       <table class="table table-hover">
+
         <thead>
           <tr>
             <td>Track Name</td>
@@ -49,40 +50,51 @@
           </tr>
         </thead>
         <tbody>
+
           <div class="paginacja text-center">
             <%= will_paginate @tracks, renderer: BootstrapPagination::Rails %>
           </div>
+          
           <% @tracks.each do |tr| %>
+
             <tr class="trackline" data-tracknumber="https://embed.spotify.com/?uri=spotify:trackset:<%= @playlist.name %>:<%= tr.track_number %>">
               <td><%= tr.name %></td>
               <td><%= tr.try(:artist).try(:name) %></td>
               <td><%= tr.try(:album).try(:name) %></td>
               <td><%= tr.try(:track_duration) %></td>
+
               <% if current_user == @playlist.user %>
+
                 <td>
                   <%= link_to user_track_path(current_user, tr), method: :delete, data: { confirm: "Do you want delete this track?" } do %>
                     <i class="fa fa-trash"></i>
                   <% end %>
                 </td>
               <% else %>
+
                 <td class="<%= tr.name %>">
                   <%= link_to  addtrack_user_track_path(current_user, tr), method: :post do %>
                      <!--      add_track -->
                     <i class="fa fa-plus"></i>
                   <% end %>
                 </td>
+
               <% end %>
             </tr>
           <% end %>
         </tbody>
       </table>
+
       <div class="paginacja text-center">
         <%= will_paginate @tracks, renderer: BootstrapPagination::Rails %>
       </div>
+
       <% if current_user == @playlist.user %>
         <%= link_to "Destroy", user_playlist_path, method: :delete, data: { confirm: "Do you want deleted this playlist? This action don't deleted this playlist from spotify app" }, class: 'btn btn-primary' %>
       <% end %>
+
       <%= link_to "Back", :back, class: 'btn btn-primary' %>
+
     </div>
   </div>  
 </div>

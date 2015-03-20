@@ -30,6 +30,10 @@ Rails.application.routes.draw do
   resources :pages, only: [:index]
 
   get 'spotify_genres/index'
+
+  authenticated :user do
+    root to: "users#show", :as => "profile", via: :get
+  end
   
   root 'pages#index'
 

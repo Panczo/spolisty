@@ -734,15 +734,39 @@ header {
   }
 }
 
-#portfolio-filter {
-  margin: 70px 0px;
-  background: $body-bg-dark;
+.filer-tracks{
+  
+  #portfolio-filter {
+    margin: 70px 0px;
+    background: $body-bg-dark;
 
-  a {
-    
-    &:focus {
-    background: darken($body-bg-dark, 3%);
-      color: white;
+    a {
+      &:focus {
+      background: darken($body-bg-dark, 3%);
+        color: white;
+      }
+    }
+  }
+
+  #portfolio-list {
+    padding: 0px 25px;
+    list-style: none;
+    text-align: left;
+
+    li {
+      color: $text-color;
+      line-height: 0;
+      padding-top: 25px;
+      padding-bottom: 11px;
+      border-bottom: 1px solid $body-bg-dark;
+    }
+
+    .track_duration {
+      text-align: right;
+    }    
+
+    .track_name {
+      padding-right: 50px;
     }
   }
 }

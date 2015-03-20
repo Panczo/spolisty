@@ -128,11 +128,18 @@ $(document).on('page:load', ready);
             <% end %>
           </ul>
 
-        <ul id="portfolio-list">
-          <% @tracks.each do |tr| %>
-            <li class="<%= tr.genre.name %>"><%= tr.name %></li>
-          <% end %>
-        </ul>      
+          <ul id="portfolio-list" class="">
+            <% @tracks.each do |tr| %>
+              <li class="<%= tr.genre.name %> ">
+                  <%= truncate(tr.name, length: 15) %>
+                  <%= truncate(tr.try(:artist).try(:name), length: 25) %>
+                  <%= truncate(tr.try(:album).try(:name), length: 15) %>
+                <div class="track_duration">
+                  <%= tr.try(:track_duration) %>
+                </div>
+              </li>
+            <% end %>
+          </ul>      
       </div>
 
 </section>

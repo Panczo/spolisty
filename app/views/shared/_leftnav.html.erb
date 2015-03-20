@@ -6,7 +6,10 @@
 
   <ul class="menu nav me-nav">
     <li class="active">
-      <a href="<%= root_path %>" class="standard-menu-item"><i class="fa fa-user"></i> <span class="nav-text">Home</span></a>
+      <%= link_to root_path, class: 'standard-menu-item', data: { no_turbolink: true } do %>
+        <i class="fa fa-user"></i> <span class="nav-text">Home</span>
+      <% end %>
+
     </li>
 
     <li>
