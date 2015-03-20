@@ -29,6 +29,7 @@ gem 'gibbon'
 gem 'stuff-classifier', :git => 'git@github.com:JoaquinSantana/stuff-classifier.git'
 gem 'bullet'
 gem 'will_paginate-bootstrap'
+gem 'faker', :git => 'git@github.com:stympy/faker.git'
 
 group :development do
   gem 'web-console'

@@ -850,3 +850,66 @@ header {
 .pill-content > .active {
     height: auto !important;       /* let the content decide it  */
 } /* bootstrap hack end */
+
+
+.users_wrapper {
+  h2 {
+    text-align: center;
+    padding: 60px 0px;
+  }
+
+  .user {
+    padding: 25px;
+    margin: 25px;
+    background-color: (rgba(38,38,38, 0.25%));
+    @include transition(1s);
+    
+
+    .user_info {
+      color: $body-bg-light;
+      padding: 10px 0px;
+      margin-bottom: 10px;
+      margin-top: 30px;
+      text-align: center;
+      background-color: $body-bg-dark;
+      @include transition(1s);
+
+      a {
+        text-decoration: none;
+        color: white;
+        @include transition(1s);
+
+        &:hover {
+          @include transition(1s);
+          color: $body-bg-light;
+        }
+      }
+    }
+
+    .img-circle {
+      background-color: (rgba(119,55,126, 0.25%));
+    }
+
+    &:hover {
+      @include box-shadow(0px 0px 10px 10px rgba($body-bg-dark,1));
+      @include transition(1s);
+
+      .img-circle {
+        background-color: $brand-light;
+        @include transition(1s);
+      }
+
+      .user_info {
+        @include box-shadow(0px 0px 10px 4px rgba($body-bg-dark,1));
+        background-color: darken($body-bg-dark, 5%);
+        @include transition(1s);
+        color: $text-color;
+      }
+
+      a {
+          @include transition(1s);
+          color: $body-bg-light;
+      }
+    }
+  }
+}
