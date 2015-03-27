@@ -14,8 +14,9 @@
     <i class="fa fa-user"></i> Messages</a>
   </li>
   
-  <li role="presentation" class="col-md-3 col-sm-3 col-xs-3 settings">
-    <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
-    <i class="fa fa-user"></i> Settings</a>
+  <li class="<%= is_active?(edit_user_registration_path(user)) %> col-md-3 col-sm-3 col-xs-3 playlist">
+    <%= link_to edit_user_registration_path(user) do %>
+       <i class="fa fa-user"></i> Settings</a>
+    <% end %>
   </li>
 </ul>

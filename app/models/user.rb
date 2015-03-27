@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   serialize :spotify_hash
 
   devise :database_authenticatable,
-        :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:spotify]
+        :recoverable, :registerable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:spotify]
   
   attr_accessor :login
 
