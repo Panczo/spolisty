@@ -1,10 +1,10 @@
 <div class="users_wrapper">
-  <h2 class="heading">Below we are present all our user</h2>
+  <h2 class="heading">Below we are present all our users</h2>
   <div class="row">
     <% @users.each do |user| %>
       <div class="col-md-3 col-sm-6">
         <div class="user">
-          <p class="text-center"><%= foto(user) %></p>
+          <p class="text-center"><%= link_to foto(user), user, data: { no_turbolink: true } %></p>
           <p class="user_info">
             <%= link_to user.nick, user, data: { no_turbolink: true } %>
             <br />
