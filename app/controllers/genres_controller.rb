@@ -3,9 +3,9 @@ class GenresController < ApplicationController
 
 
   def show
-    user = User.find(params[:user])
+    user = User.find(params[:user]) if params[:user]
     @genre = Genre.find(params[:id])
-    @genre_tracks = @genre.tracks.where(user: user)
+    @genre_tracks = @genre.tracks.where(user: user) if params[:user]
   end
 
 end

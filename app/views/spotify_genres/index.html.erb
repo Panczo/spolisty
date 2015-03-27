@@ -1,8 +1,6 @@
-<h1>SpotifyGenres#index</h1>
-<p>Find me in app/views/spotify_genres/index.html.erb</p>
-<ul>
-  <% SpotifyGenre.select(:name, :created_at).uniq.each do |genre| %>
- 
-    <li><%= genre.name %> </li><%= genre.try(:created_at).inspect %></li>
-  <% end %>
-</ul>
+
+<h2>Spolisty Music Genre </h2>
+
+<% Genre.all.each do |sg| %>
+	<li><%= link_to sg.name, sg %></li>
+<% end %>

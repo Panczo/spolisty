@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <p><%= @genre %></p>  
+    <p><%= @genre.name %></p>  
     <% if @genre_tracks %>
       <p><% @genre_tracks.each do |tr| %></p>
       <p><%= tr.name %></p>
