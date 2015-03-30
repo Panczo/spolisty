@@ -7,7 +7,7 @@
     <div class="col-md-8">
       <p>PLAYLIST</p>
       <div class="playlist_name">
-        <%= @playlist.name %>
+        <%= link_to @playlist.name, [@playlist.user, @playlist] %>
       </div>
     </div>
   </div>

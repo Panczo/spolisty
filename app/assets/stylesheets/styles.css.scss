@@ -451,7 +451,7 @@ header {
       margin-bottom: 100px;
       height: 100%;
 
-      p {
+      p.welcome_body {
         color: $body-bg-light;
         margin-bottom: 30px;
       }
@@ -674,6 +674,14 @@ header {
 
   .playlist_name {
     font-size: 60px;
+    a {
+      color: $text-color;
+
+      &:hover {
+        text-decoration: none;
+        color: $brand-light;
+      }
+    }
   }
 
   .createdby {
