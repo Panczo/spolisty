@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
 
 
   def sorted_tracks
-    sorted_genre = []
+    sorted_genre ||= []
     genres.uniq.each do |g|
       counted_tracks = tracks.where(genre: g).size
       gs = []
@@ -99,6 +99,7 @@ class User < ActiveRecord::Base
   def generateChart
     g = GenreClassifier.new(tracks_with_artist)
     g.run
+    classify_rank
   end
 
   def tracks_with_artist
@@ -124,10 +125,21 @@ class User < ActiveRecord::Base
     end
   end
 
+  def rank_explorer
+    unless rank.blank?
+      rank = self.rank.capitalize + " Explorer"
+    end
+  end
+
 
   devise authentication_keys: [:login]
 
   private
+
+  def classify_rank
+    new_rank = sorted_tracks.first[0]
+    update_attribute(:rank, new_rank)
+  end
 
   def nick_from_email
     email.split("@").first
