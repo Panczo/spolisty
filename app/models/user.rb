@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   def sorted_tracks
     sorted_genre = []
     genres.uniq.each do |g|
-      counted_tracks = tracks.where(genre: g).count
+      counted_tracks = tracks.where(genre: g).size
       gs = []
       gs << g.name << counted_tracks
       sorted_genre << gs

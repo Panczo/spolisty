@@ -7,4 +7,19 @@
       <p class="traveler text-center"><span>Trance Explorer</span></p>
       <p><%= link_to "Follow", '#', class: 'btn btn-primary btn-small btn-block' %></p>
     </div>
+    <div class="row">
+      <div class="col-md-12">
+      </br>
+      About yourself:
+        <blockquote>
+          <% if user.about.nil? %>
+            <p class="lead">This user didn't say anything about yourself</p>
+          <% else %>
+            <p class="lead">
+              <%= user.about %>
+            </p>
+          <% end %>
+        </blockquote>
+      </div>
+    </div>
 </div>

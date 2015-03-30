@@ -124,7 +124,7 @@ $(document).on('page:load', ready);
         <div class="filer-tracks">
           <ul id="portfolio-filter" class="nav nav-pills nav-justified">
             <% @user.genres.uniq.each do |genre| %>
-              <li><a href="#<%= genre.name %>"><%= genre.name %></a><li>
+              <li><a href="#<%= genre.name %>"><%= genre.name %></a></li>
             <% end %>
           </ul>
 

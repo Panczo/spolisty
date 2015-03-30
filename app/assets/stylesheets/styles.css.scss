@@ -369,6 +369,17 @@ header {
     }
     .main_user {
       padding: $padding-standard 0;
+  
+      blockquote {
+        color: $body-bg-light;
+        margin-bottom: 0;
+        background-color: $body-bg-dark;
+        border-left: 5px solid $brand-light;
+        .lead {
+          font-size: 16px;
+        }
+      }
+
       /* border-bottom: 1px solid $brand-light; */
       .fa {
         font-size: 125px;
@@ -781,6 +792,7 @@ header {
 }
 
 .signupwraper {
+  background-color: (rgba(38,38,38, 0.7%));
   border: 5px solid #230E2F;
   margin: 120px;
   h2 {
@@ -930,6 +942,10 @@ header {
       padding: 25px 0px;
       color: red;
       font-size: 19px;
+    }
+
+    .btn-danger {
+      padding: 10px;
     }
   }
 }

@@ -19,13 +19,8 @@
                 <div class="form-group">
                   <%= f.input :about, autofocus: true, input_html: { class: "form-control", rows: 6 }, hint: "tell us something about yourself" %></br>
                   <%= f.input :email, input_html: { class: "form-control" } %></br>
-
-                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                    <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-                  <% end %>
-
                   <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, input_html: { class: "form-control" } %></br>
-                  <%= f.input :password_confirmation, required: false, input_html: { class: "form-control" } %></br>
+                  <%= f.input :password_confirmation, required: false, input_html: { class: "form-control" } %></br></br>
 
                   <div class="form-actions">
                     <%= f.button :submit, "Update", class: 'btn btn-primary btn-block' %>
@@ -40,7 +35,7 @@
           <div class="col-md-10 col-md-offset-1 cancel_account">
             <h3>Unhappy? </h3>
 
-            <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-primary btn-block' %></p>
+            <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn-danger btn-block' %></p>
           </div>
         </div>
     </div>
