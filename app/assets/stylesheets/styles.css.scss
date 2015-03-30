@@ -880,6 +880,12 @@ header {
     margin: 25px;
     background-color: (rgba(38,38,38, 0.25%));
     @include transition(1s);
+
+    i {
+      font-size: 127px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
     
 
     .user_info {
