@@ -364,9 +364,18 @@ header {
   color: $text-color;
   
   .user_profile {
+
     .row {
       margin: 0;
     }
+
+    .welcome {
+      margin: 20px;
+      padding-top: 41px;
+      font-size: 30px;
+      color: lighten($brand-light, 10%) !important;
+    }
+
     .main_user {
       padding: $padding-standard 0;
   
@@ -441,6 +450,11 @@ header {
       padding-top: 0;
       margin-bottom: 100px;
       height: 100%;
+
+      p {
+        color: $body-bg-light;
+        margin-bottom: 30px;
+      }
       .nav {
           border: none;
         ul {
@@ -883,8 +897,8 @@ header {
 
     i {
       font-size: 127px;
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-left: 45px;
+      padding-right: 45px;
     }
     
 

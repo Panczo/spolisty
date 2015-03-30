@@ -8,7 +8,7 @@
           <p class="user_info">
             <%= link_to user.nick, user, data: { no_turbolink: true } %>
             <br />
-            Trance Explorer
+            <%= user.rank_explorer ? user.rank_explorer : 'Still searching...' %>
           </p>
         </div>
       </div>

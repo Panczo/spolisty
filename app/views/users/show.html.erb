@@ -52,11 +52,26 @@ $(document).on('page:load', ready);
     <%= render partial: 'shared/user_heading', locals: { user: @user } %>
 
     <div class="genre-profile col-md-8 col-md-offset-2 text-center">
+    
+    <% if current_user.sign_in_count == 1 && @user.playlists.blank? %>
+      <p class="welcome">
+        Welcome to the Spolisty App.
+      </p>
+      <p>
+         I want invide you to download your playlists from spotify account. 
+      </p>
+    <% end %>
+
+
       <% if current_user == @user && @user.playlists.blank? %>
-        <%= link_to "Import your playlists from spotify", 
-            import_user_playlists_path(current_user), 
-            class: 'btn btn-primary btn-block btn-lg' 
-        %>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            <%= link_to "Import your playlists from spotify", 
+                import_user_playlists_path(current_user), 
+                class: 'btn btn-primary btn-block btn-lg' 
+            %>
+          </div>
+        </div>
       <% else %>
 
         <div class="clearfix visible-sm-block visible-xs-block"></div>
@@ -65,7 +80,19 @@ $(document).on('page:load', ready);
 
 
         <% if current_user.charts.empty? %>
-          <%= link_to "Generate Music Chart", user_charts_path([current_user, current_user.charts.build]), method: :post %>
+
+          <p class="welcome">
+            The Last Step
+          </p>
+          <p>
+             Generate your chart based on your playlists. 
+          </p>
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+              <%= link_to "Generate Music Chart", user_charts_path([current_user, current_user.charts.build]), method: :post, 
+                class: 'btn btn-primary btn-block btn-lg' %>
+            </div>
+          </div>
         <% else %>
           <h3 class="musicchart_heading"><%= @user.nick %> music chart</h3>
           <div id="genrechart" style="width:100%; height:400px;"></div>
