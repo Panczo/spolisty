@@ -918,3 +918,18 @@ header {
     }
   }
 }
+
+.edit_account {
+  h2 {
+    padding: 40px 0px;
+  }
+
+  .cancel_account {
+    padding: 0px;
+    h3 {
+      padding: 25px 0px;
+      color: red;
+      font-size: 19px;
+    }
+  }
+}
