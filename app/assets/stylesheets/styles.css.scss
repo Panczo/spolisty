@@ -378,6 +378,24 @@ header {
 
     .main_user {
       padding: $padding-standard 0;
+
+      .stats {
+        color: $body-bg-light;
+        font-size: 15px;
+        text-decoration: none;
+
+        a {
+          color: lighten($brand-light, 20%);
+          text-decoration: none;
+        }
+        #following {
+          display: inline-block;
+        }
+
+        #followers {
+          display: inline-block;
+        }
+      }
   
       blockquote {
         color: $body-bg-light;

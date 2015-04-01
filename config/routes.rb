@@ -23,9 +23,13 @@ Rails.application.routes.draw do
         post 'addtrack'
       end
     end
+    member do 
+      get :following, :followers
+    end
     resources :charts
   end
 
+  resources :relationships, only: [:create, :destroy]
   resources :genres, only: [:show]
   resources :subscribes, only: [:create]
   resources :pages, only: [:index]

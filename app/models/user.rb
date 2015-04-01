@@ -37,9 +37,27 @@ class User < ActiveRecord::Base
   has_many :tracks, through: :playlists
   has_many :charts
   has_many :genres, through: :tracks
+  has_many :active_relationships, 
+            class_name: "Relationship",
+            foreign_key: "follower_id",
+            dependent: :destroy
+  has_many :passive_relationships, 
+            class_name: "Relationship",
+            foreign_key: "followed_id",
+            dependent: :destroy
+
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships
 
   validates :provider, :uid, presence: true
+  validates :follower_id, presence: true
+  validates :followed_id, presence: true
 
+  devise authentication_keys: [:login]
+
+  def current_user?(user)
+    current_user == user
+  end
 
   def sorted_tracks
     sorted_genre ||= []
@@ -131,8 +149,17 @@ class User < ActiveRecord::Base
     end
   end
 
+  def follow(other_user)
+    active_relationships.create(followed_id: other_user.id)
+  end
 
-  devise authentication_keys: [:login]
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  def following?(other_user)
+    following.include?(other_user)
+  end
 
   private
 
