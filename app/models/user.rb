@@ -26,17 +26,23 @@
 #
 
 class User < ActiveRecord::Base
-  serialize :spotify_hash
 
-  devise :database_authenticatable,
-        :recoverable, :registerable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:spotify]
-  
   attr_accessor :login
+  
+  devise  :database_authenticatable,
+          :recoverable,
+          :registerable,
+          :rememberable,
+          :trackable,
+          :validatable,
+          :omniauthable,
+          :omniauth_providers => [:spotify]
 
   has_many :playlists, dependent: :destroy
   has_many :tracks, through: :playlists
   has_many :charts
   has_many :genres, through: :tracks
+  
   has_many :active_relationships, 
             class_name: "Relationship",
             foreign_key: "follower_id",
@@ -53,11 +59,9 @@ class User < ActiveRecord::Base
   validates :follower_id, presence: true
   validates :followed_id, presence: true
 
+  serialize :spotify_hash
+  
   devise authentication_keys: [:login]
-
-  def current_user?(user)
-    current_user == user
-  end
 
   def sorted_tracks
     sorted_genre ||= []

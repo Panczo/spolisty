@@ -379,6 +379,10 @@ header {
     .main_user {
       padding: $padding-standard 0;
 
+      .col-md-8 {
+        padding: 0 0;
+      }
+
       .stats {
         color: $body-bg-light;
         font-size: 15px;
