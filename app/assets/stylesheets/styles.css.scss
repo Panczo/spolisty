@@ -1002,3 +1002,45 @@ header {
     }
   }
 }
+
+.user_wrapper {
+  padding: 16px 0px !important;
+  margin-bottom: 16px;
+  border-bottom: 1px solid $brand-light;
+
+  .user_image {
+    float: left;
+    padding-left: 25px;
+    .img-circle {
+      max-width: 30%;
+      max-height: 30%;
+      background: $body-bg-dark;
+      border: 1px solid $brand-light;
+    } 
+  }
+
+  .user_content {
+    float: left;
+    padding-top: 14px;
+    width: 60%;
+    text-align: left;
+    .user_heading {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+    }
+    p {
+      color: $body-bg-light;
+    }
+  }
+
+  .user_delete {
+    float: left;
+    padding-top: 14px;
+    padding-left: 50px;
+    a {
+      color: $body-bg-dark;
+      
+    }
+  }
+}
