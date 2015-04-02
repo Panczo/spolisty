@@ -6,7 +6,7 @@
       <div class="clearfix visible-sm-block visible-xs-block"></div>
       <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
 
-      <h2><%= @user.nick %> Following </h2>
+      <h2 class="follow_heading"><%= @user.nick + ' ' + @title %></h2>
       <div class="users follow row">
         <%= render @users %>
       </div>
