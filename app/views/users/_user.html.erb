@@ -8,16 +8,4 @@
 
     <%#= truncate(user.about, length: 70) %>
   </div>
-  <div class="user_delete">
-
-    <% unless current_user?(user) %>
-      <% if current_user.following?(user) %>
-
-        <%= render 'shared/unfollow', :user => user %>
-      <% else %>
-        <%= render 'shared/follow' %>
-      <% end %>
-    <% end %>
-
-  </div>
 </div>
