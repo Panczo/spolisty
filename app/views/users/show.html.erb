@@ -98,13 +98,13 @@ $(document).on('page:load', ready);
           <h3 class="lead">Sorry, We cant classified any of your tracks.</h3>
 
         <% else %>
-          <h3 class="musicchart_heading"><%= @user.nick %> music chart</h3>
+          <h2 class="follow_heading"><%= @user.nick %> music chart</h2>
           <div id="genrechart" style="width:100%; height:400px;"></div>
         <% end %>
       <% end %>
        <% if current_user?(@user) %>
         <div class="unclassify tracks">
-          <h2>Your classified tracks</h2>
+          <h2 class="follow_heading">Your classified tracks</h2>
 
           <table class="table">
             <thead>
@@ -126,7 +126,7 @@ $(document).on('page:load', ready);
             </tbody>
           </table>              
 
-          <h2>Your tracks without genre</h2>
+          <h2 class="follow_heading">Your tracks without genre</h2>
         <%= form_tag edit_multiple_user_tracks_path(@user), method: :get do %>
           <table class="table">
             <thead>

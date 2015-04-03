@@ -1,10 +1,8 @@
-
-
-
 <div class="user_profile">
   <%= render partial: 'shared/user_heading', locals: { user: @user } %>
 <div class="genre-profile col-md-8 col-md-offset-2 text-center">
   <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
+        <h2 class="follow_heading"><%= @user.name %> playlists</h2>
   <div class="userplaylists">
     <ul class="row">
       <%= div_for(@user.playlists.includes(:tracks)) do |p| %>
