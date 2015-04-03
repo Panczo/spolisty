@@ -1,0 +1,11 @@
+<%= form_tag update_multiple_user_tracks_path, method: :patch do %>
+  <% @tracks.each do |track| %>
+    <h2><%= track.name %></h2>
+    <%= fields_for "tracks[]", track do |f| %>
+      <div class="filed">
+        <%= f.collection_select :genre_id, Genre.order("name"), :id, :name %>
+      </div>
+    <% end %>
+  <% end %>
+  <%= submit_tag "Update", class: "btn" %>
+<% end %>

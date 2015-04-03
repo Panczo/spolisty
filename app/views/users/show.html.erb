@@ -93,7 +93,7 @@ $(document).on('page:load', ready);
                 class: 'btn btn-primary btn-block btn-lg' %>
             </div>
           </div>
-        <% elsif current_user.tracks.includes(:genre).map(&:genre).any?{|n| n.nil?} && current_user?(@user) %>
+        <% elsif !current_user.tracks.includes(:genre).map(&:genre).any?{|n| !n.nil?} && current_user?(@user) %>
 
           <h3 class="lead">Sorry, We cant classified any of your tracks.</h3>
 
@@ -108,7 +108,7 @@ $(document).on('page:load', ready);
 
           <table class="table">
             <thead>
-              <tr>w
+              <tr>
                 <th>Track name</th>
                 <th>Category</th>
                 <th>spotify Category</th>
@@ -127,10 +127,11 @@ $(document).on('page:load', ready);
           </table>              
 
           <h2>Your tracks without genre</h2>
-
+        <%= form_tag edit_multiple_user_tracks_path(@user), method: :get do %>
           <table class="table">
             <thead>
-              <tr>w
+              <tr>
+                <th></th>
                 <th>Track name</th>
                 <th>Category</th>
                 <th>spotify category</th>
@@ -138,8 +139,9 @@ $(document).on('page:load', ready);
             </thead>
 
             <tbody>
-              <% current_user.tracks.select{|tr| tr.genre.nil? }.each do |tr| %>
+              <% current_user.tracks.select{|tr| tr.genre.nil? }.last(5).each do |tr| %>
                 <tr>
+                  <td><%= check_box_tag "track_ids[]", tr.id %></td>
                   <td><%= tr.name %></td>
                   <td>Brak kategorii</td>
                   <td><%= tr.try(:spotify_genre) %></td>
@@ -147,6 +149,8 @@ $(document).on('page:load', ready);
               <% end %>
             </tbody>
           </table>
+          <%= submit_tag "Edit Checked", class: 'btn' %>
+        <% end %>
 
         </div><!-- /unclassify tracks -->
       <% end %><!-- /if current_user?(@user) -->

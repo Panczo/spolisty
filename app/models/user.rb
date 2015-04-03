@@ -147,7 +147,9 @@ class User < ActiveRecord::Base
   end
 
   def rank_explorer
-    unless rank.blank? || rank == 'not enough data'
+    if rank.blank? || rank == 'not enough data'
+      rank = 'not enough data'
+    else 
       rank = self.rank.capitalize + " Explorer"
     end
   end
@@ -167,7 +169,7 @@ class User < ActiveRecord::Base
   private
 
   def classify_rank
-    new_rank = sorted_tracks.nil? ? sorted_tracks.first[0] : 'not enough data'
+    new_rank = sorted_tracks.nil? ? 'not enough data' : sorted_tracks.first[0]
     update_attribute(:rank, new_rank)
   end
 

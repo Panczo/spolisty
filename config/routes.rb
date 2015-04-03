@@ -22,6 +22,10 @@ Rails.application.routes.draw do
       member do
         post 'addtrack'
       end
+      collection do
+        get :edit_multiple
+        patch :update_multiple
+      end
     end
     member do 
       get :following, :followers

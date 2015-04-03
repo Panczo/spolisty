@@ -35,6 +35,21 @@ class TracksController < ApplicationController
     end
   end
 
+  def edit_multiple
+    @tracks = Track.find(params[:track_ids])
+  end
+
+  def update_multiple
+    user = User.find(params[:user_id])
+    @tracks = Track.update(params[:tracks].keys, params[:tracks].values)
+    @tracks.reject! { |t| t.errors.empty? }
+    if @tracks.empty?
+      redirect_to user
+    else
+      render "edit_multiple"
+    end
+  end
+
   private
 
   def find_track
