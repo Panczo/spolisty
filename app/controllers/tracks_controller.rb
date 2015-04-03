@@ -36,13 +36,14 @@ class TracksController < ApplicationController
   end
 
   def edit_multiple
-    @tracks = Track.find(params[:track_ids])
+    @tracks = Track.includes(:artist).find(params[:track_ids])
   end
 
   def update_multiple
     user = User.find(params[:user_id])
     @tracks = Track.update(params[:tracks].keys, params[:tracks].values)
     @tracks.reject! { |t| t.errors.empty? }
+    user.classify_rank
     if @tracks.empty?
       redirect_to user
     else

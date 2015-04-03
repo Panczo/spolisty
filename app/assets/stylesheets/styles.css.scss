@@ -1070,3 +1070,50 @@ header {
 .edit_relationship {
   text-align: center;
 }
+
+.selectpicker {
+  .glyphicon.glyphicon-ok.check-mark {
+    display: none !important;   
+  }
+}
+
+.multiple_track_wrapper {
+  padding: 16px 0px !important;
+  margin-bottom: 16px;
+  border-bottom: 1px solid $brand-light;
+  color: $body-bg-light;
+  .track_name {
+    float: left;
+    width: 40%;
+    margin: 0;
+    padding: 10px 0 0 0;
+  }
+
+  .track_artist {
+    float: left;
+    width: 40%;
+    margin: 0;
+    padding: 10px 0 0 0;
+  }
+
+  .track_genre {
+    float: left;
+    width: 20%;
+    .dropdown-toggle {
+      &:focus {
+        color: white;
+      }
+      &:hover {
+        color: white;
+      }
+    }
+    .caret {
+      margin-left: 80px;
+    }
+    .dropdown-menu.open {
+      background: $body-bg;
+      border: none;
+    }
+  }
+
+}

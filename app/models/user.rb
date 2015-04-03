@@ -166,12 +166,12 @@ class User < ActiveRecord::Base
     following.include?(other_user)
   end
 
-  private
-
   def classify_rank
-    new_rank = sorted_tracks.nil? ? 'not enough data' : sorted_tracks.first[0]
+    new_rank = sorted_tracks.empty? ? 'not enough data' : sorted_tracks.first[0]
     update_attribute(:rank, new_rank)
   end
+  
+  private
 
   def nick_from_email
     email.split("@").first

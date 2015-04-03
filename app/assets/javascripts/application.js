@@ -4,6 +4,7 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require filterable
+//= require bootstrap-select
 //= require_tree .
 
 
@@ -71,7 +72,10 @@ $(document).ready(function(){
   /* Filer track by genre on user show page */
   $("#portfolio-list").filterable();
 
-
+  $('.selectpicker').selectpicker({
+    style: 'btn btn-block',
+    size: '20'
+  });
 });
 
 

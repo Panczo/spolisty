@@ -1,11 +1,46 @@
-<%= form_tag update_multiple_user_tracks_path, method: :patch do %>
-  <% @tracks.each do |track| %>
-    <h2><%= track.name %></h2>
-    <%= fields_for "tracks[]", track do |f| %>
-      <div class="filed">
-        <%= f.collection_select :genre_id, Genre.order("name"), :id, :name %>
-      </div>
-    <% end %>
-  <% end %>
-  <%= submit_tag "Update", class: "btn" %>
-<% end %>
+
+
+<section class="user_profile edit_account">
+  <div class="row">
+    <%= render partial: 'shared/user_heading', locals: { user: current_user } %>
+
+    <div class="genre-profile col-md-8 col-md-offset-2 text-center">
+        <div class="clearfix visible-sm-block visible-xs-block"></div>
+        <%= render partial: 'shared/user_navbar', locals: { user: current_user } %>
+
+        <h2 class="follow_heading">Classify your tracks</h2>
+
+        <div class="row text-left">
+          <div class="col-md-10 col-md-offset-1">
+
+            <%= form_tag update_multiple_user_tracks_path, method: :patch do %>
+
+              <% @tracks.each do |track| %>
+                <div class="multiple_track_wrapper clearfix">
+                  <div class="row">
+                    <div class="track_name">
+                      <p><%= track.name %></p>
+                    </div>
+                    <div class="track_artist">
+                      <p><%= track.artist.name %></p>
+                    </div>
+                    <div class="track_genre">
+                      <%= fields_for "tracks[]", track do |f| %>
+                        <div class="filed">
+                          <%= f.collection_select :genre_id, Genre.order("name"), :id, :name, {}, { class: 'selectpicker show-tick', "data-width" => "100%" } %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <%= submit_tag "Update", class: "btn btn-primary" %>
+            <% end %>
+
+
+          </div>
+        </div>
+    </div>
+</section>
+
+
