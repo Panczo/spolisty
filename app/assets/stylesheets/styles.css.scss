@@ -1015,8 +1015,19 @@ header {
       max-width: 30%;
       max-height: 30%;
       background: $body-bg-dark;
-      border: 1px solid $brand-light;
     } 
+
+    a {
+      .fa-user:before {
+        color: $body-bg-light;
+        font-size: 25px;
+      }
+      i {
+        margin-left: 50px;
+        margin-right: 60px;
+        padding: 13px 39px 13px 21px !important;
+      }
+    }
   }
 
   .user_content {

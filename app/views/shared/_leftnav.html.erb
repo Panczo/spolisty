@@ -6,7 +6,7 @@
 
   <ul class="menu nav me-nav">
     <li class="active">
-      <%= link_to root_path, class: 'standard-menu-item', data: { no_turbolink: true } do %>
+      <%= link_to current_user, class: 'standard-menu-item', data: { no_turbolink: true } do %>
         <i class="fa fa-user"></i> <span class="nav-text">Home</span>
       <% end %>
 

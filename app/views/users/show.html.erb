@@ -53,7 +53,7 @@ $(document).on('page:load', ready);
 
     <div class="genre-profile col-md-8 col-md-offset-2 text-center">
     
-    <% if current_user.sign_in_count == 1 && @user.playlists.blank? %>
+    <% if current_user.sign_in_count == 1 && @user.playlists.blank?  && current_page?(user_path(current_user)) %>
       <p class="welcome">
         Welcome to the Spolisty App.
       </p>
@@ -79,7 +79,7 @@ $(document).on('page:load', ready);
         <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
 
 
-        <% if current_user.charts.empty? %>
+        <% if current_user.charts.empty? && current_page?(user_path(current_user)) %>
 
           <p class="welcome">
             The Last Step

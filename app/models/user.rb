@@ -56,8 +56,7 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships
 
   validates :provider, :uid, presence: true
-  validates :follower_id, presence: true
-  validates :followed_id, presence: true
+
 
   serialize :spotify_hash
   
@@ -148,7 +147,7 @@ class User < ActiveRecord::Base
   end
 
   def rank_explorer
-    unless rank.blank?
+    unless rank.blank? || rank == 'not enough data'
       rank = self.rank.capitalize + " Explorer"
     end
   end
@@ -168,7 +167,7 @@ class User < ActiveRecord::Base
   private
 
   def classify_rank
-    new_rank = sorted_tracks.first[0]
+    new_rank = sorted_tracks.nil? ? sorted_tracks.first[0] : 'not enough data'
     update_attribute(:rank, new_rank)
   end
 

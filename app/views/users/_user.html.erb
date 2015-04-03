@@ -1,6 +1,6 @@
 <div class="col-md-12 user_wrapper clearfix">
   <div class="user_image">
-    <%= link_to image_tag(user.image, class: 'img-circle'), user, data: { no_turbolink: true } %>
+    <%= link_to foto(user), user, data: { no_turbolink: true } %>
   </div>
   <div class="user_content">
     <h2 class="user_heading"><%= user.nick %></h2>
@@ -13,14 +13,11 @@
     <% unless current_user?(user) %>
       <% if current_user.following?(user) %>
 
-        <%= render 'unfollow', :user => user %>
+        <%= render 'shared/unfollow', :user => user %>
       <% else %>
-        <%= render 'follow' %>
+        <%= render 'shared/follow' %>
       <% end %>
     <% end %>
 
-<!--     <%#= link_to '#' do %>
-  Unfollow <i class="fa fa-trash-o"></i>
-<%# end %> -->
   </div>
 </div>
