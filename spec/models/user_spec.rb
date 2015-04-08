@@ -23,6 +23,8 @@
 #  spotify_id             :string
 #  chartgeneratecount     :integer          default("0")
 #  chartgeneratetime      :datetime
+#  about                  :text
+#  rank                   :string
 #
 
 require 'rails_helper'

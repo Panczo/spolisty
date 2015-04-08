@@ -23,6 +23,8 @@
 #  spotify_id             :string
 #  chartgeneratecount     :integer          default("0")
 #  chartgeneratetime      :datetime
+#  about                  :text
+#  rank                   :string
 #
 
 class User < ActiveRecord::Base
@@ -197,8 +199,10 @@ class User < ActiveRecord::Base
   def parse_album(track, spotify_track)
     album = Album.find_or_create_by(name: spotify_track.album.name)
     if track.album.blank?
+      album.image = spotify_track.album.images.first["url"]
+      album.save!
       track.album = album
-      track.save
+      track.save!
     end
   end
 end

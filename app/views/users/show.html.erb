@@ -43,8 +43,6 @@ ready = function() {
 $(document).ready(ready);
 $(document).on('page:load', ready);
 
-
-  
 </script>
 
 <section class="user_profile">
@@ -53,129 +51,144 @@ $(document).on('page:load', ready);
 
     <div class="genre-profile col-md-8 col-md-offset-2 text-center">
     
-    <% if current_user.sign_in_count == 1 && @user.playlists.blank?  && current_page?(user_path(current_user)) %>
-      <p class="welcome">
-        Welcome to the Spolisty App.
-      </p>
-      <p class="welcome_body">
-         I want invide you to download your playlists from spotify account. 
-      </p>
-    <% end %>
+      <% if current_user.sign_in_count == 1 && @user.playlists.blank?  && current_page?(user_path(current_user)) %>
+        <p class="welcome">
+          Welcome to the Spolisty App.
+        </p>
+        <p class="welcome_body">
+           I want invide you to download your playlists from spotify account. 
+        </p>
+      <% end %>
 
 
-      <% if current_user == @user && @user.playlists.blank? %>
-        <div class="row">
-          <div class="col-md-4 col-md-offset-4">
-            <%= link_to "Import your playlists from spotify", 
-                import_user_playlists_path(current_user), 
-                class: 'btn btn-primary btn-block btn-lg' 
-            %>
-          </div>
-        </div>
-      <% else %>
-
-        <div class="clearfix visible-sm-block visible-xs-block"></div>
-
-        <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
-
-
-        <% if current_user.charts.empty? && current_page?(user_path(current_user)) %>
-
-          <p class="welcome">
-            The Last Step
-          </p>
-          <p class="welcome_body">
-             Generate your chart based on your playlists. 
-          </p>
+        <% if current_user == @user && @user.playlists.blank? %>
           <div class="row">
             <div class="col-md-4 col-md-offset-4">
-              <%= link_to "Generate Music Chart", user_charts_path([current_user, current_user.charts.build]), method: :post, 
-                class: 'btn btn-primary btn-block btn-lg' %>
+              <%= link_to "Import your playlists from spotify", 
+                  import_user_playlists_path(current_user), 
+                  class: 'btn btn-primary btn-block btn-lg' 
+              %>
             </div>
           </div>
-        <% elsif !current_user.tracks.includes(:genre).map(&:genre).any?{|n| !n.nil?} && current_user?(@user) %>
-
-          <h3 class="lead">Sorry, We cant classified any of your tracks.</h3>
-
         <% else %>
-          <h2 class="follow_heading"><%= @user.nick %> music chart</h2>
-          <div id="genrechart" style="width:100%; height:400px;"></div>
-        <% end %>
-      <% end %>
-       <% if current_user?(@user) %>
-        <div class="unclassify tracks">
-          <h2 class="follow_heading">You have <%= current_user.tracks.classified.count %> classified  tracks</h2>
-          <% current_user.tracks.classified.last(5).each do |tr| %>
-            <div class="col-md-12 user_wrapper clearfix">
-              <div class="user_image">
-                <%= tr.name %>
-              </div>
-              <div class="user_content">
-                <h2 class="user_heading"><%= tr.spotify_genre %></h2>
-                <p><%= tr.genre.name %></p>
 
-                <%#= truncate(user.about, length: 70) %>
+          <div class="clearfix visible-sm-block visible-xs-block"></div>
+
+          <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
+
+
+          <% if current_user.charts.empty? && current_page?(user_path(current_user)) %>
+
+            <p class="welcome">
+              The Last Step
+            </p>
+            <p class="welcome_body">
+               Generate your chart based on your playlists. 
+            </p>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4">
+                <%= link_to "Generate Music Chart", user_charts_path([current_user, current_user.charts.build]), method: :post, 
+                  class: 'btn btn-primary btn-block btn-lg' %>
               </div>
             </div>
+          <% elsif !current_user.tracks.includes(:genre).map(&:genre).any?{|n| !n.nil?} && current_user?(@user) %>
+
+            <h3 class="lead">Sorry, We cant classified any of your tracks.</h3>
+
+          <% else %>
+            <h2 class="follow_heading"><%= @user.nick %> music chart</h2>
+            <div id="genrechart" style="width:100%; height:400px;"></div>
           <% end %>
-
-         
-          <h2 class="follow_heading">You have (<%= current_user.tracks.unclassified.count %>) tracks without genre</h2>
-        <%= form_tag edit_multiple_user_tracks_path(@user), method: :get do %>
-          <table class="table">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Track name</th>
-                <th>Category</th>
-                <th>spotify category</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <% current_user.tracks.unclassified.last(5).each do |tr| %>
-                <tr>
-                  <td><%= check_box_tag "track_ids[]", tr.id %></td>
-                  <td><%= tr.name %></td>
-                  <td>Brak kategorii</td>
-                  <td><%= tr.try(:spotify_genre) %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-          <%= submit_tag "Edit Checked", class: 'btn' %>
         <% end %>
 
-        </div><!-- /unclassify tracks -->
-      <% end %><!-- /if current_user?(@user) -->
+        <% if current_user?(@user) %>
 
-        <div class="filer-tracks">
-          <ul id="portfolio-filter" class="nav nav-pills nav-justified">
-            <% @user.genres.uniq.each do |genre| %>
-              <li><a href="#<%= genre.name %>"><%= genre.name %></a></li>
-            <% end %>
-          </ul>
+          <h2 class="follow_heading">
+            You have <%= current_user.tracks.classified.count %> classified  tracks
+          </h2>
 
-          <ul id="portfolio-list" class="row">
-            <% @tracks.each do |tr| %>
-              <li class="<%= tr.genre.name %> col-md-12">
-                <div class="track_name pull-left">
-                  <%= truncate(tr.name, length: 25) %>
-                  
+          <div class="row classify_tracks">
+            <% current_user.tracks.classified.last(5).each do |tr| %>
+              <div class="col-md-12 user_wrapper clearfix">
+                <div class="user_image" style="padding-left: 100px;">
+                  <%= image_tag(tr.album.image, size: '90x90') %>
                 </div>
-                <div class="track_info pull-left">
-                  <%= tr.try(:artist).try(:name) %>
-                  <%= tr.try(:album).try(:name) %>
+                <div class="user_content">
+                  <h2 class="user_heading">
+                    <%= tr.name %>
+                    <p><%= tr.album.name %></p>
+                  </h2>
+                  <p><%= tr.genre.name %></p>
                 </div>
-                <div class="track_duration pull-right">
-                  <%= link_to [@user, tr.playlist, track: tr], "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Listen this track on his playlist" do %>
-                    <i class="fa fa-play">  </i>    
-                  <% end %>
-                  <%= tr.try(:track_duration) %>
+                <div class="track_playlist">
+                  <%= tr.playlist.name %>
                 </div>
-              </li>
+              </div>
             <% end %>
-          </ul>      
+          </div>
+          <h2 class="follow_heading">
+            You have <%= current_user.tracks.unclassified.count %> unclassified  tracks
+          </h2>
+
+          <%= form_tag edit_multiple_user_tracks_path(@user), method: :get do %>
+            <div class="row classify_tracks">
+              <% current_user.tracks.classified.last(5).each do |tr| %>
+                <div class="col-md-12 user_wrapper clearfix">
+                  <div class="check_track">
+                    <%= check_box_tag "track_ids[]", tr.id %>
+                  </div>
+                  <div class="user_image">
+                    <%= image_tag(tr.album.image, size: '90x90') %>
+                  </div>
+                  <div class="user_content">
+                    <h2 class="user_heading">
+                      <%= tr.name %>
+                      <p><%= tr.album.name %></p>
+                    </h2>
+                    
+                    <p><%= tr.genre.name %></p>
+
+                    <%#= truncate(user.about, length: 70) %>
+                  </div>
+                  <div class="track_playlist">
+                    <%= tr.playlist.name %>
+                  </div>
+                </div>
+              <% end %>
+              <%= submit_tag "Edit Checked", class: 'btn' %>
+            </div>
+          <% end %><!-- /form -->   
+        <% end %><!-- /if current_user?(@user) -->
+
+      <div class="filer-tracks">
+        <ul id="portfolio-filter" class="nav nav-pills nav-justified">
+          <% @user.genres.uniq.each do |genre| %>
+            <li><a href="#<%= genre.name %>"><%= genre.name %></a></li>
+          <% end %>
+        </ul>
+
+        <ul id="portfolio-list" class="row">
+          <% @tracks.each do |tr| %>
+            <li class="<%= tr.genre.name %> col-md-12">
+              <div class="track_name pull-left">
+                <%= truncate(tr.name, length: 25) %>
+                
+              </div>
+              <div class="track_info pull-left">
+                <%= tr.try(:artist).try(:name) %>
+                <%= tr.try(:album).try(:name) %>
+              </div>
+              <div class="track_duration pull-right">
+                <%= link_to [@user, tr.playlist, track: tr], "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Listen this track on his playlist" do %>
+                  <i class="fa fa-play">  </i>    
+                <% end %>
+                <%= tr.try(:track_duration) %>
+              </div>
+            </li>
+          <% end %>
+        </ul> 
       </div>
 
+    </div>
+  </div>
 </section>

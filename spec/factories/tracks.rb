@@ -2,17 +2,18 @@
 #
 # Table name: tracks
 #
-#  id           :integer          not null, primary key
-#  name         :string
-#  playlist_id  :integer
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  track_number :string
-#  duration     :integer
-#  artist_id    :integer
-#  album_id     :integer
-#  genre_id     :integer
-#  user_id      :integer
+#  id            :integer          not null, primary key
+#  name          :string
+#  playlist_id   :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  track_number  :string
+#  duration      :integer
+#  artist_id     :integer
+#  album_id      :integer
+#  genre_id      :integer
+#  user_id       :integer
+#  spotify_genre :string
 #
 
 FactoryGirl.define do

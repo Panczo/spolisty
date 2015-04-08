@@ -1067,6 +1067,12 @@ header {
   border-top: 1px solid black;
 }
 
+h3 {
+  .follow_heading {
+    margin-bottom: 30px;
+  }
+}
+
 .edit_relationship {
   text-align: center;
 }
@@ -1115,5 +1121,28 @@ header {
       border: none;
     }
   }
+}
 
+.classify_tracks {
+  border: none;
+  .user_image {
+    padding-left: 25px;
+  }
+  .user_content {
+    padding-left: 40px;
+  }
+
+  .track_playlist {
+    float: left;
+  }
+
+  .check_track {
+    padding-left: 53px;
+    padding-top: 25px;
+    float: left;
+    input {
+      width:20px;
+      height:20px;
+    }
+  }
 }
