@@ -32,6 +32,7 @@ gem 'will_paginate-bootstrap'
 gem 'faker', :git => 'git@github.com:stympy/faker.git'
 
 group :development do
+  gem 'active_record_query_trace'
   gem 'web-console'
   gem 'spring'
   gem 'hirb'

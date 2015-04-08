@@ -18,6 +18,7 @@
 class Track < ActiveRecord::Base
   default_scope { order('updated_at DESC') }
   scope :classified, -> { includes(:genre, :artist, :album, :playlist).where("genre_id IS NOT NULL") }
+  scope :unclassified, -> { includes(:genre).where("genre_id IS NULL") }
 
   belongs_to :playlist, counter_cache: :count_of_tracks
   belongs_to :artist

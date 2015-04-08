@@ -26,8 +26,8 @@
 #
 
 class User < ActiveRecord::Base
-
   attr_accessor :login
+  serialize :spotify_hash
   
   devise  :database_authenticatable,
           :recoverable,
@@ -57,9 +57,6 @@ class User < ActiveRecord::Base
 
   validates :provider, :uid, presence: true
 
-
-  serialize :spotify_hash
-  
   devise authentication_keys: [:login]
 
   def sorted_tracks

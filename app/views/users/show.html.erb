@@ -104,29 +104,23 @@ $(document).on('page:load', ready);
       <% end %>
        <% if current_user?(@user) %>
         <div class="unclassify tracks">
-          <h2 class="follow_heading">Your classified tracks</h2>
+          <h2 class="follow_heading">You have <%= current_user.tracks.classified.count %> classified  tracks</h2>
+          <% current_user.tracks.classified.last(5).each do |tr| %>
+            <div class="col-md-12 user_wrapper clearfix">
+              <div class="user_image">
+                <%= tr.name %>
+              </div>
+              <div class="user_content">
+                <h2 class="user_heading"><%= tr.spotify_genre %></h2>
+                <p><%= tr.genre.name %></p>
 
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Track name</th>
-                <th>Category</th>
-                <th>spotify Category</th>
-              </tr>
-            </thead>
+                <%#= truncate(user.about, length: 70) %>
+              </div>
+            </div>
+          <% end %>
 
-            <tbody>
-              <% current_user.tracks.includes(:genre).select{|tr| !tr.genre.nil? }.each do |tr| %>
-                <tr>
-                  <td><%= tr.name %></td>
-                  <td><%= tr.genre.name %></td>
-                  <td><%= tr.spotify_genre %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>              
-
-          <h2 class="follow_heading">Your tracks without genre</h2>
+         
+          <h2 class="follow_heading">You have (<%= current_user.tracks.unclassified.count %>) tracks without genre</h2>
         <%= form_tag edit_multiple_user_tracks_path(@user), method: :get do %>
           <table class="table">
             <thead>
@@ -139,7 +133,7 @@ $(document).on('page:load', ready);
             </thead>
 
             <tbody>
-              <% current_user.tracks.select{|tr| tr.genre.nil? }.last(5).each do |tr| %>
+              <% current_user.tracks.unclassified.last(5).each do |tr| %>
                 <tr>
                   <td><%= check_box_tag "track_ids[]", tr.id %></td>
                   <td><%= tr.name %></td>
