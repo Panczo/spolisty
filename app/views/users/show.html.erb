@@ -104,11 +104,11 @@ $(document).on('page:load', ready);
         <% if current_user?(@user) %>
 
           <h2 class="follow_heading">
-            You have <%= current_user.tracks.classified.count %> classified  tracks
+            You have <%= @classified_tracks.count %> classified  tracks
           </h2>
 
           <div class="row classify_tracks">
-            <% current_user.tracks.classified.last(5).each do |tr| %>
+            <% @classified_tracks.sample(5).each do |tr| %>
               <div class="col-md-12 user_wrapper clearfix">
                 <div class="user_image" style="padding-left: 100px;">
                   <%= image_tag(tr.album.image, size: '90x90') %>
@@ -121,18 +121,25 @@ $(document).on('page:load', ready);
                   <p><%= tr.genre.name %></p>
                 </div>
                 <div class="track_playlist">
-                  <%= tr.playlist.name %>
+                  <%= link_to [current_user, tr.playlist] do %>
+                    <i class="fa fa-list"> <%= tr.playlist.name %></i>
+                  <% end %>
                 </div>
               </div>
             <% end %>
+
+            <div class="paginacja text-center" data-no-turbolink>
+              <%= will_paginate @classified_tracks, renderer: BootstrapPagination::Rails %>
+            </div>
+          
           </div>
           <h2 class="follow_heading">
-            You have <%= current_user.tracks.unclassified.count %> unclassified  tracks
+            You have <%= @unclassified_tracks.count %> unclassified  tracks
           </h2>
 
           <%= form_tag edit_multiple_user_tracks_path(@user), method: :get do %>
             <div class="row classify_tracks">
-              <% current_user.tracks.classified.last(5).each do |tr| %>
+              <% @unclassified_tracks.sample(5).each do |tr| %>
                 <div class="col-md-12 user_wrapper clearfix">
                   <div class="check_track">
                     <%= check_box_tag "track_ids[]", tr.id %>
@@ -145,19 +152,24 @@ $(document).on('page:load', ready);
                       <%= tr.name %>
                       <p><%= tr.album.name %></p>
                     </h2>
-                    
-                    <p><%= tr.genre.name %></p>
 
                     <%#= truncate(user.about, length: 70) %>
                   </div>
                   <div class="track_playlist">
-                    <%= tr.playlist.name %>
+                    <%= link_to [current_user, tr.playlist] do %>
+                      <i class="fa fa-list"> <%= tr.playlist.name %></i>
+                    <% end %>
                   </div>
                 </div>
               <% end %>
               <%= submit_tag "Edit Checked", class: 'btn' %>
             </div>
+
           <% end %><!-- /form -->   
+            <div class="paginacja text-center" data-no-turbolink>
+              <%= will_paginate @unclassified_tracks, renderer: BootstrapPagination::Rails %>
+            </div>
+
         <% end %><!-- /if current_user?(@user) -->
 
       <div class="filer-tracks">

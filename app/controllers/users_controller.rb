@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     else
       @user = current_user
     end
+    if current_user
+      @classified_tracks = current_user.tracks.classified.paginate(page: params[:page], per_page: 5)
+      @unclassified_tracks = current_user.tracks.unclassified.paginate(page: params[:page], per_page: 5)
+    end
     @tracks = @user.tracks.classified
     @chart = @user.charts.build
   end

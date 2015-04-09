@@ -1062,7 +1062,7 @@ header {
   margin-top: 80px;
   margin-bottom: 70px;
   padding: 10px 0px 10px 10% !important;
-  background: none;
+  background: $body-bg-dark;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
 }
@@ -1143,6 +1143,19 @@ h3 {
     input {
       width:20px;
       height:20px;
+    }
+  }
+}
+
+.track_playlist {
+  a {
+    color: $body-bg-light;
+    &:hover {
+      color: $brand-light;
+    }
+    i {
+      padding-top: 34px;
+      
     }
   }
 }
