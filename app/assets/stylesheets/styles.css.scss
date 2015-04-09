@@ -668,6 +668,13 @@ header {
 /*** PLAYLIST SHOW PAGE ***/
 
 .playlist_wrapper {
+
+  a {
+    i.fa-trash {
+      color: $body-bg-light;
+    }
+  }
+
   margin: 25px 0;
   margin-bottom: 100px;
   color: $text-color;
@@ -714,6 +721,13 @@ header {
     margin: 25px 0;
     border-top: solid $body-bg-dark 2px;
     border-bottom: solid $body-bg-dark 2px;
+    a {
+      color: $text-color;
+      &:hover {
+        color: lighten($brand-light, 20%);
+        text-decoration: none;
+      }
+    }
   }
 
   .container {
@@ -1125,6 +1139,10 @@ h3 {
 
 .classify_tracks {
   border: none;
+
+  .user_wrapper {
+    background-color: lighten($body-bg-dark, 6%);
+  }
   .user_image {
     padding-left: 25px;
   }
@@ -1151,7 +1169,7 @@ h3 {
   a {
     color: $body-bg-light;
     &:hover {
-      color: $brand-light;
+      color: lighten($brand-light, 20%);
     }
     i {
       padding-top: 34px;
