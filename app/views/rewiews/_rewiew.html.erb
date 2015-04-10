@@ -1,11 +1,12 @@
-<li>
-  <p>
-    <%= rewiew.rating %>
-  </p>
-  <p>
+<li class='col-md-12'>
+  <div class="rewiew_user">
+    <%= link_to foto(rewiew.user), rewiew.user, data: { no_turbolink: true } %>
+  </div>
+
+  <div class="rewiew_comment">
     <%= rewiew.comment %>
-  </p>
-  <p>
-    <%= rewiew.user.nick %>
-  </p>
+  </div>
+
+  <div class="rewiew_rating" data-score="<%= rewiew.rating %>">
+  </div>
 </li>

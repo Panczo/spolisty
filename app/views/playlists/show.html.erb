@@ -27,11 +27,21 @@
     <div class="col-xs-10 col-md-10 col-md-offset-1">
       <div class="playlist_info">
         <h3 class="createdby">
-          Playlist created by: <%= link_to @playlist.user.nick, @playlist.user, data: { no_turbolink: true } %> 
-          <i class="fa fa-music"></i>
-          <%= @playlist.tracks.any? ? pluralize(@playlist.tracks.size, "song") : 0 %>
-          <i class="fa fa-clock-o"></i>
-          <%= @playlist.total_tracks_duration %>
+          <div class="create_by">
+            Playlist created by: <%= link_to @playlist.user.nick, @playlist.user, data: { no_turbolink: true } %> 
+          </div>
+          <div class="tracks_size">
+            <i class="fa fa-music"></i>
+            <%= @playlist.tracks.any? ? pluralize(@playlist.tracks.size, "song") : 0 %>
+          </div>
+          <div class="time_duration">
+            <i class="fa fa-clock-o"></i>
+            <%= @playlist.total_tracks_duration %>
+          </div>
+          <div class="score_rating">
+            <div class="rewiew_rating top" data-score= <%= @average_rating %> ></div>
+            <%= "#{@rewiews.length}" %> rewiews
+          </div>
         </h3>
         <% if current_user == @playlist.user && @playlist.special? %>
           <p><%= link_to "Send your playlist to Spotify",  export_user_playlist_path(current_user, @playlist), class: 'btn btn-primary' %></p>
@@ -98,16 +108,24 @@
         <div class="rewiew_success">
         </div>
       <% else %>
-        <div class="rewiew_success">
-        </div>
-        <div class="rewiew_errors">
-          <ul></ul>
-        </div>
-        <%= render partial: 'rewiews/form', :locals => {:user => @playlist.user, :playlist => @playlist } %>
-        <div id="playlist_rewiews">
-          <ul>
-            <%= render @playlist.rewiews, :locals => { :rewiews => @playlist.rewiews } %>
-          </ul>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="rewiew_success">
+            </div>
+            <div class="rewiew_errors">
+              <ul></ul>
+            </div>
+            <%= render partial: 'rewiews/form', :locals => {:user => @playlist.user, :playlist => @playlist } %>
+          </div>
+          <div class="col-md-8">
+
+              <div id="playlist_rewiews">
+                <ul class="clearfix">
+                  <%= render @rewiews %>
+                </ul>
+              </div>              
+
+          </div>
         </div>
       <% end %>
 
@@ -115,7 +133,7 @@
         <%= link_to "Destroy", user_playlist_path, method: :delete, data: { confirm: "Do you want deleted this playlist? This action don't deleted this playlist from spotify app" }, class: 'btn btn-primary' %>
       <% end %>
 
-      <%= link_to "Back", :back, class: 'btn btn-primary', data: { no_turbolink: true } %>
+      <%= link_to "Back to playlists", user_playlists_path(@playlist.user), class: 'btn btn-primary', data: { no_turbolink: true } %>
 
     </div>
   </div>  

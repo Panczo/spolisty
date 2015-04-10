@@ -16,6 +16,13 @@ class PlaylistsController < ApplicationController
     else
       @tracks = @playlist.tracks.includes(:artist, :album).paginate(page: params[:page], per_page: 50)
     end
+    @rewiews = @playlist.rewiews.includes(:user)
+
+    if @rewiews.blank?
+      @average_rating = 0
+    else
+      @average_rating = @rewiews.average(:rating).round(2)
+    end
   end
 
   def destroy 

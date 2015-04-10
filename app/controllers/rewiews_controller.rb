@@ -21,6 +21,7 @@ class RewiewsController < ApplicationController
 
     respond_to do |format|
       if @rewiew.save
+        cookies[:saved_rewiew] = true
         format.html { redirect_to [@playlist.user, @playlist], notice: 'Rewiew was successfully created.' }
         format.js
       else

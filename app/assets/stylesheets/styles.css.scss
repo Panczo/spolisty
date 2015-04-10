@@ -717,7 +717,7 @@ header {
     color: $body-bg-light;
     font-size: 17px;
     font-weight: 100;
-    padding: 10px 0;
+    padding: 20px 0;
     margin: 25px 0;
     border-top: solid $body-bg-dark 2px;
     border-bottom: solid $body-bg-dark 2px;
@@ -727,6 +727,22 @@ header {
         color: lighten($brand-light, 20%);
         text-decoration: none;
       }
+    }
+    .create_by {
+      float: left;
+      padding-bottom: 10px;
+    }
+    .tracks_size {
+      float: left;
+      padding-bottom: 10px;
+    }
+    .time_duration {
+      float: left;
+      padding-bottom: 10px;
+    }
+    .score_rating {
+      float: left;
+      padding-bottom: 10px;
     }
   }
 
@@ -1201,4 +1217,32 @@ h3 {
   padding: 10px;
   margin: 0;
   border: 2px solid $brand-light;
+}
+
+#playlist_rewiews {
+  ul {
+    padding: 10px;
+    list-style-type: none;
+  }
+
+  .rewiew_rating {
+    float: left;
+    width: 25%;   
+    text-align: right; 
+  }
+
+  .rewiew_comment {
+    float: left;
+    width: 50%;
+  }
+
+  .rewiew_user {
+    float: left;
+    width: 25%;
+  }
+}
+
+.rewiew_rating.top {
+  max-width: 150px;
+  display: inline-block;
 }
