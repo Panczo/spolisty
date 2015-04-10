@@ -1,11 +1,9 @@
-<%= simple_form_for(@rewiew) do |f| %>
+<%= simple_form_for [@playlist.user, @playlist, Rewiew.new], remote: true do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :rating %>
-    <%= f.input :comment %>
-    <%= f.input :user_id %>
-    <%= f.input :playlist_id %>
+    <%= f.input :comment, placeholder: 'Write your opinion' %>
   </div>
 
   <div class="form-actions">

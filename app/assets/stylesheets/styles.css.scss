@@ -1177,3 +1177,20 @@ h3 {
     }
   }
 }
+
+#new_rewiew {
+  .controls {
+    color: black;
+  }
+}
+
+.rewiew_errors {
+  max-width: 25%;
+  display: none;
+  border: 2px solid $brand-light;
+  ul {
+    padding: 10px;
+    margin: 0;
+    list-style-type: none;
+  }
+}

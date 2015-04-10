@@ -1,0 +1,10 @@
+<% if @rewiew.errors.any? %>
+  $(".rewiew_errors ul").empty();
+  $(".rewiew_errors").show();
+  <% @rewiew.errors.each do |atr, error| %>
+    
+    $(".rewiew_errors ul").append("<li><%= atr %> - <%= error %></li>");
+  <% end %>
+<% else %>
+  alert("success");
+<% end %>

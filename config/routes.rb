@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :rewiews
-
   devise_for :users, controllers: {
       omniauth_callbacks: "users/omniauth_callbacks",
       registrations: "users/registrations"
@@ -19,7 +17,9 @@ Rails.application.routes.draw do
       member do
         get 'export'
       end
+      resources :rewiews, except: [:index, :show]
     end
+
     resources :tracks, only: [:destroy] do
       member do
         post 'addtrack'
@@ -29,11 +29,15 @@ Rails.application.routes.draw do
         patch :update_multiple
       end
     end
+
     member do 
       get :following, :followers
     end
+
     resources :charts
   end
+
+
 
   resources :relationships, only: [:create, :destroy]
   resources :genres, only: [:show]
