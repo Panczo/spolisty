@@ -1194,3 +1194,11 @@ h3 {
     list-style-type: none;
   }
 }
+
+.rewiew_success {
+  max-width: 25%;
+  display: none;
+  padding: 10px;
+  margin: 0;
+  border: 2px solid $brand-light;
+}

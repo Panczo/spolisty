@@ -95,13 +95,19 @@
         <div class="rewiew_errors">
           <ul></ul>
         </div>
+        <div class="rewiew_success">
+        </div>
       <% else %>
+        <div class="rewiew_success">
+        </div>
         <div class="rewiew_errors">
           <ul></ul>
         </div>
         <%= render partial: 'rewiews/form', :locals => {:user => @playlist.user, :playlist => @playlist } %>
         <div id="playlist_rewiews">
-          <%= render @playlist.rewiews, :locals => { :rewiews => @playlist.rewiews } %>
+          <ul>
+            <%= render @playlist.rewiews, :locals => { :rewiews => @playlist.rewiews } %>
+          </ul>
         </div>
       <% end %>
 
