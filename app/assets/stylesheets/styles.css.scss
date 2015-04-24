@@ -1205,7 +1205,7 @@ h3 {
 }
 
 .rewiew_errors {
-  max-width: 25%;
+  width: 100%;
   display: none;
   border: 2px solid $brand-light;
   ul {
@@ -1216,7 +1216,7 @@ h3 {
 }
 
 .rewiew_success {
-  max-width: 25%;
+  width: 100%;
   display: none;
   padding: 10px;
   margin: 0;
@@ -1229,24 +1229,46 @@ h3 {
     list-style-type: none;
   }
 
+  .single-rewiew {
+    padding: 20px 0;
+    border-bottom: 2px solid $brand-light;
+  }
+
   .rewiew_rating {
+    padding-top: 36px;
+    margin-left: 15px;
     float: left;
     width: 25%;   
     text-align: right; 
   }
 
   .rewiew_comment {
+    padding-top: 36px;
+    margin-left: 15px;
     float: left;
     width: 50%;
   }
 
   .rewiew_user {
     float: left;
-    width: 25%;
+    width: 90px;
+    height: 90px;
   }
 }
 
 .rewiew_rating.top {
   max-width: 150px;
   display: inline-block;
+}
+
+
+#star-rating {
+  margin-bottom: 20px;
+  img {
+    padding-left: 20px;
+  }
+}
+
+#rewiew_comment {
+  width: 100%;
 }
