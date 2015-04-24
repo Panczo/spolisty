@@ -42,6 +42,10 @@ body {
   }
 }
 
+.btn-show-playlist {
+  margin-top: 60px;
+}
+
 /* --- flash messages --- */
 
 .alert {
@@ -1271,4 +1275,16 @@ h3 {
 
 #rewiew_comment {
   width: 100%;
+  margin-bottom: 20px;
+  background-color: $body-bg-light;
+}
+
+.controls {
+  input, textarea {
+    background-color: $body-bg-light;
+  }
+}
+
+#new_rewiew {
+  margin-top: 31px;
 }

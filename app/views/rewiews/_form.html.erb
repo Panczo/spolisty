@@ -1,7 +1,7 @@
-<%= simple_form_for [@playlist.user, @playlist, Rewiew.new], remote: true do |f| %>
+<%= simple_form_for [@playlist.user, @playlist, Rewiew.new], remote: true, class: 'form-horizontal' do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-group">
     <div id="star-rating" class="text-center"></div>
     <%= f.input :comment, placeholder: 'Write your opinion', label: false, class: "form-control" %>
   </div>
