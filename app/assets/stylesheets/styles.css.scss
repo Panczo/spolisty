@@ -717,7 +717,7 @@ header {
     color: $body-bg-light;
     font-size: 17px;
     font-weight: 100;
-    padding: 20px 0;
+    padding: 10px 0px 30px 0px;
     margin: 25px 0;
     border-top: solid $body-bg-dark 2px;
     border-bottom: solid $body-bg-dark 2px;
@@ -731,17 +731,21 @@ header {
     .create_by {
       float: left;
       padding-bottom: 10px;
+      margin-right: 20px;
     }
     .tracks_size {
       float: left;
       padding-bottom: 10px;
+      margin-right: 20px;
     }
     .time_duration {
       float: left;
       padding-bottom: 10px;
+      margin-right: 20px;
     }
     .score_rating {
       float: left;
+      margin-right: 20px;
       padding-bottom: 10px;
     }
   }
