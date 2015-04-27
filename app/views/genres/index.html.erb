@@ -1,0 +1,15 @@
+<div class="users_wrapper genres_index">
+  <h2 class="heading">Spolisty Music Genre</h2>
+  <div class="row">
+    <% Genre.all.each do |sg| %>
+      <div class="col-md-3 col-sm-6">
+        <div id="<%= sg.name %>" class="user">
+          <p class="user_info">
+            <%= link_to sg.name, sg, data: { no_turbolink: true }, class: 'genre_link' %>
+            <br />
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

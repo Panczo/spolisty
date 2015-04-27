@@ -37,14 +37,10 @@ Rails.application.routes.draw do
     resources :charts
   end
 
-
-
   resources :relationships, only: [:create, :destroy]
-  resources :genres, only: [:show]
+  resources :genres, only: [:index, :show]
   resources :subscribes, only: [:create]
   resources :pages, only: [:index]
-
-  get 'spotify_genres/index'
 
   authenticated :user do
     root to: "users#show", :as => "profile", via: :get

@@ -1297,3 +1297,181 @@ h3 {
 #new_rewiew {
   margin-top: 31px;
 }
+
+
+.genres_index {
+  .user {
+    opacity: 0.4;
+    &:hover {
+      opacity: 1;
+    }
+    .genre_link {
+      color: lighten($body-bg-light, 10%) !important;
+      font-size: 20px;
+      text-transform: capitalize;
+      font-weight: 600;
+      letter-spacing: 1px;
+      
+    }
+    &:hover {
+      .genre_link {
+        color: $text-color !important;
+      }
+    }
+  }
+}
+
+#blues {
+  height: 200px;
+  background: image-url('genres/blues.png') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+
+  p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+#country {
+  height: 200px;
+  background: image-url('genres/country.jpeg') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+    p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+#classical {
+  height: 200px;
+  background: image-url('genres/classic.jpg') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+    p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+#electronic {
+  height: 200px;
+  background: image-url('genres/electronic.jpeg') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+    p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+#country {
+  height: 200px;
+  background: image-url('genres/country.jpeg') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+    p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+#hip-hop {
+  height: 200px;
+  background: image-url('genres/hip.jpeg') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+    p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+#international {
+  height: 200px;
+  background: image-url('genres/international.jpeg') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+    p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+#jazz {
+  height: 200px;
+  background: image-url('genres/jazz.jpeg') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+    p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+#latin {
+  height: 200px;
+  background: image-url('genres/latin.jpeg') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+    p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+#pop {
+  height: 200px;
+  background: image-url('genres/pop.jpeg') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+    p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+#reggae {
+  height: 200px;
+  background: image-url('genres/reggae.jpeg') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+    p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+#rock {
+  height: 200px;
+  background: image-url('genres/rock.jpeg') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+    p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+#soul {
+  height: 200px;
+  background: image-url('genres/soul.jpeg') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+    p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+#comedy {
+  height: 200px;
+  background: image-url('genres/comedy.jpeg') repeat scroll center top/cover transparent !important;
+  .user_info {
+    margin-top: 100px;
+  }
+    p {
+    background-color: (rgba(38,38,38, 0.5%));
+  }
+}
