@@ -1313,6 +1313,12 @@ h3 {
       -webkit-filter: grayscale(0%);
     }
 
+    .user_info {
+      &:hover {
+        @include box-shadow(0px 0px 4px 4px rgba($brand-light,1));
+      }
+    }
+
     .genre_link {
       color: lighten($body-bg-light, 10%) !important;
       font-size: 20px;
