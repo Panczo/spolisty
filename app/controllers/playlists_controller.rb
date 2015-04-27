@@ -50,6 +50,10 @@ class PlaylistsController < ApplicationController
     flash[:success] = "Successfully exported playlist to Spotify"
   end
 
+  def best
+    @playlists = Playlist.best_playlists
+  end
+
 
   private
 

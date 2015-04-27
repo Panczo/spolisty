@@ -25,6 +25,8 @@ class Playlist < ActiveRecord::Base
   validates :user, :name, :spotify_type, presence: true
   validates :spotify_type, acceptance: { accept: 'playlist', message: "wrong spotify type" }
 
+  scope :best_playlists, -> { joins(:rewiews).group("playlists.id").order("avg(rewiews.rating) desc") }
+
   def total_tracks_duration
     seconds = tracks.sum(:duration) / 1000
     Time.at(seconds).utc.strftime("%H:%M:%S")
