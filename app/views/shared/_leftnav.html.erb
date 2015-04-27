@@ -13,22 +13,22 @@
     </li>
 
     <li>
+      <%= link_to root_path, class: 'standard-menu-item' do %>
+       <i class="fa fa-desktop"></i> <span class="nav-text">Playlists</span>
+      <% end %>
+    </li> 
+
+    <li>
+      <%= link_to spotify_genres_index_path, "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Logout", class: 'standard-menu-item' do %>
+        <i class="fa fa-comment"></i> <span class="nav-text">Genres</span>
+      <% end %>
+    </li>
+
+    <li>
       <%= link_to users_path, class: 'standard-menu-item' do %>
         <i class='fa fa-pencil'></i> <span class="nav-text">Users</span>
       <% end %>
     </li>
-
-    <li>
-      <%= link_to spotify_genres_index_path, "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Logout", class: 'standard-menu-item' do %>
-        <i class="fa fa-comment"></i> <span class="nav-text">Spotify Genres</span>
-      <% end %>
-    </li>
-
-    <li>
-      <%= link_to root_path, class: 'standard-menu-item' do %>
-       <i class="fa fa-desktop"></i> <span class="nav-text">Imgur images</span>
-      <% end %>
-    </li> 
 
     <li>
       <%= link_to root_path, class: 'standard-menu-item' do %>
