@@ -1300,11 +1300,19 @@ h3 {
 
 
 .genres_index {
+
   .user {
     opacity: 0.4;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+
     &:hover {
       opacity: 1;
+      filter: grayscale(0%);
+      -webkit-filter: grayscale(0%);
     }
+
     .genre_link {
       color: lighten($body-bg-light, 10%) !important;
       font-size: 20px;
