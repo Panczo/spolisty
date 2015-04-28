@@ -1251,7 +1251,7 @@ h3 {
     padding-top: 36px;
     margin-left: 15px;
     float: left;
-    width: 25%;   
+    width: 33%;   
     text-align: right; 
   }
 
@@ -1270,7 +1270,7 @@ h3 {
 }
 
 .review_rating.top {
-  max-width: 150px;
+  max-width: 250px;
   display: inline-block;
 }
 
@@ -1278,7 +1278,7 @@ h3 {
 #star-rating {
   margin-bottom: 20px;
   img {
-    padding-left: 20px;
+    padding-left: 10px !important;
   }
 }
 

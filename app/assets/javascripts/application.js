@@ -79,6 +79,7 @@ ready = function() {
 
   $('.review_rating').raty({
     path: '/assets/',
+    number: 10,
     readOnly: true,
     score: function() {
       return $(this).attr('data-score');
@@ -86,6 +87,7 @@ ready = function() {
   });
 
   $('#star-rating').raty({
+    number: 10,
     path: '/assets/',
     scoreName: 'review[rating]'
   });
