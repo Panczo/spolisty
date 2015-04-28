@@ -171,8 +171,12 @@ $(document).on('page:load', ready);
             </div>
 
         <% end %><!-- /if current_user?(@user) -->
-
-      <div class="filer-tracks">
+      <div class="row">
+        <div class="col-md-12 ">
+          <%= link_to "Show #{@user.nick} tracks" , '#', id: 'show_user_tracks', class: "pull-left" %>
+        </div>
+      </div>
+      <div class="filter-tracks">
         <ul id="portfolio-filter" class="nav nav-pills nav-justified">
           <% @user.genres.uniq.each do |genre| %>
             <li><a href="#<%= genre.name %>"><%= genre.name %></a></li>

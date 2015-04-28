@@ -4,6 +4,9 @@ $(document).ready(function(){
 	
 
 	/*** SHOW NAVBAR ***/
-
+  $('#show_user_tracks').click(function(e){
+    e.preventDefault();
+    $('.filter-tracks').fadeToggle();
+  });
 
 });

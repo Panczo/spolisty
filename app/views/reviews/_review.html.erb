@@ -1,10 +1,12 @@
 <li class='col-md-12 single-review'>
   <div class="review_user">
     <%= link_to foto(review.user), review.user, data: { no_turbolink: true } %>
+    <p><%= review.user.nick %></p>
   </div>
 
   <div class="review_comment">
     <%= review.comment %>
+    <p><%= time_ago_in_words(review.created_at) %> ago</p>
   </div>
 
   <div class="review_rating" data-score="<%= review.rating %>">

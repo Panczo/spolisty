@@ -99,34 +99,36 @@
         <%= will_paginate @tracks, renderer: BootstrapPagination::Rails %>
       </div>
 
-      <% if @playlist.reviews.blank? %>
-        <h4 class='lead'>Be the first to add your opinion to this playlist</h4>
-        <%= render partial: 'reviews/form', :locals => {:user => @playlist.user, :playlist => @playlist } %>
-        <div class="review_errors">
-          <ul></ul>
-        </div>
-        <div class="review_success">
-        </div>
-      <% else %>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="review_success">
-            </div>
-            <div class="review_errors">
-              <ul></ul>
-            </div>
-            <%= render partial: 'reviews/form', :locals => {:user => @playlist.user, :playlist => @playlist } %>
+      <% unless @playlist.special? %>
+        <% if @playlist.reviews.blank? %>
+          <h4 class='lead'>Be the first to add your opinion to this playlist</h4>
+          <%= render partial: 'reviews/form', :locals => {:user => @playlist.user, :playlist => @playlist } %>
+          <div class="review_errors">
+            <ul></ul>
           </div>
-          <div class="col-md-8">
-
-              <div id="playlist_reviews">
-                <ul class="clearfix">
-                  <%= render @reviews %>
-                </ul>
-              </div>              
-
+          <div class="review_success">
           </div>
-        </div>
+        <% else %>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="review_success">
+              </div>
+              <div class="review_errors">
+                <ul></ul>
+              </div>
+              <%= render partial: 'reviews/form', :locals => {:user => @playlist.user, :playlist => @playlist } %>
+            </div>
+            <div class="col-md-8">
+
+                <div id="playlist_reviews">
+                  <ul class="clearfix">
+                    <%= render @reviews %>
+                  </ul>
+                </div>              
+
+            </div>
+          </div>
+        <% end %>
       <% end %>
 
       <% if current_user == @playlist.user %>

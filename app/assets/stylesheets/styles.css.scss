@@ -474,6 +474,7 @@ header {
       background-color: $body-bg;
       padding: $padding-standard 0;
       padding-top: 0;
+      padding-bottom: 34px;
       margin-bottom: 100px;
       height: 100%;
 
@@ -827,7 +828,8 @@ header {
   }
 }
 
-.filer-tracks{
+.filter-tracks {
+  display: none;
   #portfolio-filter {
     margin: 70px 0px;
     background: $body-bg-dark;
@@ -1234,7 +1236,7 @@ h3 {
   }
 
   .single-review {
-    padding: 20px 0;
+    padding: 10px 0;
     border-bottom: 2px solid $brand-light;
 
     .fa {
@@ -1248,7 +1250,7 @@ h3 {
   }
 
   .review_rating {
-    padding-top: 36px;
+    padding-top: 40px;
     margin-left: 15px;
     float: left;
     width: 33%;   
@@ -1256,16 +1258,28 @@ h3 {
   }
 
   .review_comment {
-    padding-top: 36px;
+    padding-top: 15px;
     margin-left: 15px;
     float: left;
     width: 50%;
+    font-size: 18px;
+    p {
+      padding-top: 13px;
+      margin-bottom: 0px;
+      font-size: 14px;
+      color: $body-bg-light;
+    }
   }
 
   .review_user {
+    margin-top: -25px;
     float: left;
     width: 90px;
     height: 90px;
+    p {
+      font-size: 14px;
+      color: $body-bg-light;
+    }
   }
 }
 
@@ -1540,4 +1554,13 @@ h3 {
       }
     }
   }
+}
+
+#show_user_tracks {
+  text-decoration: none;
+  color: $text-color;
+  margin-left: 26px;
+  margin-top: 17px;
+  background: $body-bg-dark;
+  padding: 5px;
 }

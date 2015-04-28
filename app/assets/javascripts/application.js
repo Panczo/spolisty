@@ -92,6 +92,8 @@ ready = function() {
     scoreName: 'review[rating]'
   });
 
+
+
 };
 
 $(document).ready(ready);
