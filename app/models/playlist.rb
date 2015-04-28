@@ -20,12 +20,12 @@
 class Playlist < ActiveRecord::Base
   belongs_to :user
   has_many :tracks, dependent: :destroy
-  has_many :rewiews, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   validates :user, :name, :spotify_type, presence: true
   validates :spotify_type, acceptance: { accept: 'playlist', message: "wrong spotify type" }
 
-  scope :best_playlists, -> { joins(:rewiews).group("playlists.id").order("avg(rewiews.rating) desc") }
+  scope :best_playlists, -> { includes(:user).joins(:reviews).group("playlists.id").order("avg(reviews.rating) desc") }
 
   def total_tracks_duration
     seconds = tracks.sum(:duration) / 1000

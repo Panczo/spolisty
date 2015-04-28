@@ -1202,13 +1202,13 @@ h3 {
   }
 }
 
-#new_rewiew {
+#new_review {
   .controls {
     color: black;
   }
 }
 
-.rewiew_errors {
+.review_errors {
   width: 100%;
   display: none;
   border: 2px solid $brand-light;
@@ -1219,7 +1219,7 @@ h3 {
   }
 }
 
-.rewiew_success {
+.review_success {
   width: 100%;
   display: none;
   padding: 10px;
@@ -1227,13 +1227,13 @@ h3 {
   border: 2px solid $brand-light;
 }
 
-#playlist_rewiews {
+#playlist_reviews {
   ul {
     padding: 10px;
     list-style-type: none;
   }
 
-  .single-rewiew {
+  .single-review {
     padding: 20px 0;
     border-bottom: 2px solid $brand-light;
 
@@ -1247,7 +1247,7 @@ h3 {
     }
   }
 
-  .rewiew_rating {
+  .review_rating {
     padding-top: 36px;
     margin-left: 15px;
     float: left;
@@ -1255,21 +1255,21 @@ h3 {
     text-align: right; 
   }
 
-  .rewiew_comment {
+  .review_comment {
     padding-top: 36px;
     margin-left: 15px;
     float: left;
     width: 50%;
   }
 
-  .rewiew_user {
+  .review_user {
     float: left;
     width: 90px;
     height: 90px;
   }
 }
 
-.rewiew_rating.top {
+.review_rating.top {
   max-width: 150px;
   display: inline-block;
 }
@@ -1282,7 +1282,7 @@ h3 {
   }
 }
 
-#rewiew_comment {
+#review_comment {
   width: 100%;
   margin-bottom: 20px;
   background-color: $body-bg-light;
@@ -1294,7 +1294,7 @@ h3 {
   }
 }
 
-#new_rewiew {
+#new_review {
   margin-top: 31px;
 }
 
@@ -1474,7 +1474,7 @@ h3 {
   .user_info {
     margin-top: 100px;
   }
-    p {
+  p {
     background-color: (rgba(38,38,38, 0.5%));
   }
 }
@@ -1487,5 +1487,57 @@ h3 {
   }
     p {
     background-color: (rgba(38,38,38, 0.5%));
+  }
+}
+
+
+.best_playlists {
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .user {
+    margin: 0;
+    padding: 25px 0;
+  }
+  .user_info {
+    height: 110px;
+    margin: 0 !important;
+  }
+
+  .playlist_position {
+    float: left;
+    width: 5%;
+    font-size: 34px;
+    font-weight: 600;
+    padding-top: 23px;
+    padding-left: 49px;
+  }
+  .playlist_image {
+    float: left;
+    width: 15%;
+  }
+  .playlist_name {
+    padding-top: 35px;
+    float: left;
+    width: 30%;
+  }
+  .playlist_owner {
+    padding-top: 35px;
+    float: left;
+    width: 30%;
+  }
+  .playlist_rating {
+    padding-top: 21px;
+    float: left;
+    width: 20%;    
+    .score {
+      font-size: 25px;
+      font-weight: 600;
+      p {
+        font-size: 11px;
+        font-weight: 200;
+      }
+    }
   }
 }

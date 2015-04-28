@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       member do
         get 'export'
       end
-      resources :rewiews, except: [:index, :show]
+      resources :reviews, except: [:index, :show]
     end
 
     resources :tracks, only: [:destroy] do

@@ -1,20 +1,35 @@
-<div class="users_wrapper genres_index">
+<div class="users_wrapper best_playlists">
   <h2 class="heading">Spolisty Best Playlists</h2>
-  <div class="row">
-    <% @playlists.each do |p| %>
-      <div class="col-md-3 col-sm-6">
-        <div id="<%= p.name %>" class="user">
-          <p class="user_info">
-            <%= p.name %>
-            <%= p.id %>
-            <%= p.user.name %>
-            <%#= link_to p.name, p, class: 'genre_link' %>
-            <br />
-            <%= p.rewiews.average(:rating).round(2) %>
-            Based on <%= p.rewiews.count %> rewiews
-          </p>
+  <% @playlists.each_with_index do |p, index| %>
+    <%= link_to user_playlist_path(p.user, p) do %>
+      <div class="row">
+        <div class="col-md-12 col-sm-6">
+          <div id="<%= p.name %>" class="user">
+            <div class="user_info">
+              <div class="playlist_position">
+                <%= index + 1  %>
+              </div>
+              <div class="playlist_image">
+                <%= image_tag p.image, size: "90" %>
+              </div>
+              <div class="playlist_name">
+                <%= p.name %>
+              </div>
+              <div class="playlist_owner">
+                <%= p.user.nick %>
+              </div>
+              <div class="playlist_rating">
+                <div class="score">
+                  <%= p.reviews.average(:rating).round(2) %>
+                  <p>Based on <%= pluralize(p.reviews.count, 'review') %></p>
+                </div>
+              </div>
+              <%#= link_to p.name, p, class: 'genre_link' %>
+              <br />
+            </div>
+          </div>
         </div>
-      </div>
+      </div><!-- /row playlist -->
     <% end %>
-  </div>
+  <% end %>
 </div>

@@ -1,0 +1,17 @@
+<% if @review.errors.any? %>
+  $(".review_errors ul").empty();
+  $(".review_errors").show();
+  
+  <% @review.errors.each do |atr, error| %>
+    $(".review_errors ul").append("<li><%= atr %> - <%= error %></li>");
+  <% end %>
+
+<% else %>
+
+  $(".review_errors").hide();
+  $("#new_review").hide();
+  $(".review_success").show();
+  $(".review_success").html("Thanks for your review!");
+  $("#playlist_reviews ul").append("<%= j render(:partial => 'reviews/review', :locals => { :review => @review } ) %>");
+
+<% end %>

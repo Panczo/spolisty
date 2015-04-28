@@ -1,0 +1,12 @@
+<li class='col-md-12 single-review'>
+  <div class="review_user">
+    <%= link_to foto(review.user), review.user, data: { no_turbolink: true } %>
+  </div>
+
+  <div class="review_comment">
+    <%= review.comment %>
+  </div>
+
+  <div class="review_rating" data-score="<%= review.rating %>">
+  </div>
+</li>

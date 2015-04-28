@@ -77,7 +77,7 @@ ready = function() {
     size: '20'
   });
 
-  $('.rewiew_rating').raty({
+  $('.review_rating').raty({
     path: '/assets/',
     readOnly: true,
     score: function() {
@@ -87,7 +87,7 @@ ready = function() {
 
   $('#star-rating').raty({
     path: '/assets/',
-    scoreName: 'rewiew[rating]'
+    scoreName: 'review[rating]'
   });
 
 };

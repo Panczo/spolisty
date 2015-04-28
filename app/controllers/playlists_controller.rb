@@ -16,12 +16,12 @@ class PlaylistsController < ApplicationController
     else
       @tracks = @playlist.tracks.includes(:artist, :album).paginate(page: params[:page], per_page: 50)
     end
-    @rewiews = @playlist.rewiews.includes(:user)
+    @reviews = @playlist.reviews.includes(:user)
 
-    if @rewiews.blank?
+    if @reviews.blank?
       @average_rating = 0
     else
-      @average_rating = @rewiews.average(:rating).round(2)
+      @average_rating = @reviews.average(:rating).round(2)
     end
   end
 
@@ -51,7 +51,7 @@ class PlaylistsController < ApplicationController
   end
 
   def best
-    @playlists = Playlist.best_playlists
+    @playlists = Playlist.best_playlists.limit(20)
   end
 
 

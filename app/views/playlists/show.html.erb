@@ -39,8 +39,8 @@
             <%= @playlist.total_tracks_duration %>
           </div>
           <div class="score_rating">
-            <div class="rewiew_rating top" data-score= <%= @average_rating %> ></div>
-            <%= "#{@rewiews.length}" %> rewiews
+            <div class="review_rating top" data-score= <%= @average_rating %> ></div>
+            <%= "#{@reviews.length}" %> reviews
           </div>
         </h3>
         <% if current_user == @playlist.user && @playlist.special? %>
@@ -99,29 +99,29 @@
         <%= will_paginate @tracks, renderer: BootstrapPagination::Rails %>
       </div>
 
-      <% if @playlist.rewiews.blank? %>
+      <% if @playlist.reviews.blank? %>
         <h4 class='lead'>Be the first to add your opinion to this playlist</h4>
-        <%= render partial: 'rewiews/form', :locals => {:user => @playlist.user, :playlist => @playlist } %>
-        <div class="rewiew_errors">
+        <%= render partial: 'reviews/form', :locals => {:user => @playlist.user, :playlist => @playlist } %>
+        <div class="review_errors">
           <ul></ul>
         </div>
-        <div class="rewiew_success">
+        <div class="review_success">
         </div>
       <% else %>
         <div class="row">
           <div class="col-md-4">
-            <div class="rewiew_success">
+            <div class="review_success">
             </div>
-            <div class="rewiew_errors">
+            <div class="review_errors">
               <ul></ul>
             </div>
-            <%= render partial: 'rewiews/form', :locals => {:user => @playlist.user, :playlist => @playlist } %>
+            <%= render partial: 'reviews/form', :locals => {:user => @playlist.user, :playlist => @playlist } %>
           </div>
           <div class="col-md-8">
 
-              <div id="playlist_rewiews">
+              <div id="playlist_reviews">
                 <ul class="clearfix">
-                  <%= render @rewiews %>
+                  <%= render @reviews %>
                 </ul>
               </div>              
 

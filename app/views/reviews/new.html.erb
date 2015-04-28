@@ -1,0 +1,25 @@
+<h1>New review</h1>
+
+<%= simple_form_for [@playlist.user, @playlist, Review.new], :remote => true do |f| %>
+  <% if f.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize( f.errors.count, "error") %> prohibited this seat from being saved:</h2>
+
+      <ul>
+      <% f.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :rating %>
+    <%= f.input :comment, placeholder: 'Write your opinion' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

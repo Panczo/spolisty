@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
 
   has_many :playlists, dependent: :destroy
   has_many :tracks, through: :playlists
-  has_many :rewiews, through: :playlists, dependent: :destroy
+  has_many :reviews, through: :playlists, dependent: :destroy
   has_many :charts
   has_many :genres, through: :tracks
   
