@@ -31,7 +31,7 @@
       About yourself:
       <blockquote>
         <% if user.about.nil? && user == current_user %>
-          <p class="lead">Tell us something about yourself. Go to the settings site.</p>
+          <p class="lead">Tell us something about yourself. Go to the <%= link_to "settings site.", edit_user_registration_path(user) %></p>
         <% elsif user.about.nil? %>
           <p class="lead">This user didn't say anything about yourself</p>
         <% else %>

@@ -138,6 +138,7 @@ body {
 
 #features {
   padding: $padding-standard;
+  padding-top: 76px;
   font-family: $main-font;
   background-color: $body-bg;
   
@@ -168,6 +169,7 @@ body {
 
 
 #description {
+  background: image-url('description.png') no-repeat center 0;
   padding: $padding-standard;
   font-family: $main-font;
   background-color: $text-color;
@@ -184,8 +186,7 @@ body {
 }
 
 #cta2 {
-  background: image-url('bg12.png') repeat scroll center top/cover transparent;
-  background-repeat: repeat-y;
+  background-color: $body-bg;
   padding: $padding-standard;
   font-family: $main-font;
 
@@ -198,6 +199,8 @@ body {
     border-style: solid;
     border-width: 2px;
     padding: 20px 50px 20px 50px;
+    margin-top: 30px;
+    margin-bottom: 28px;
   }
 }
 
@@ -1235,6 +1238,22 @@ h3 {
     list-style-type: none;
   }
 
+  .user_link {
+    width: 52px;
+    height: 52px;
+    margin-left: 10px;
+  }
+
+  p {
+    width: 100px;
+  }
+
+  a {
+    i {
+      margin-top: 0px !important;
+    }
+  }
+
   .single-review {
     padding: 10px 0;
     border-bottom: 2px solid $brand-light;
@@ -1259,7 +1278,7 @@ h3 {
 
   .review_comment {
     padding-top: 15px;
-    margin-left: 15px;
+    margin-left: 40px;
     float: left;
     width: 50%;
     font-size: 18px;
@@ -1272,10 +1291,10 @@ h3 {
   }
 
   .review_user {
-    margin-top: -25px;
     float: left;
-    width: 90px;
-    height: 90px;
+    width: 52px;
+    height: 52px;
+    margin: 10px;
     p {
       font-size: 14px;
       color: $body-bg-light;
