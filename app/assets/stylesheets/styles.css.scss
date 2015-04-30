@@ -45,7 +45,9 @@ body {
 .btn-show-playlist {
   margin-top: 60px;
 }
-
+a, a:visited, a:focus, a:active, a:hover{
+    outline:0 none !important;
+}
 /* --- flash messages --- */
 
 .alert {
