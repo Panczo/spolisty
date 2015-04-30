@@ -1,14 +1,19 @@
-<ul class='row ulliststyle'>
-  <% p.tracks.each do |tr| %>
-    <li class='col-md-12'>
-      <div class="row">
-          <span class="col-md-5 play_track">
-            <iframe src="https://embed.spotify.com/?uri=spotify:track:<%= tr.track_number %>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
-          </span>
-          <span class="col-md-7">
-            <%= tr.name %>
-          </span>
-      </div>
-    </li>
-  <% end %>
-</ul>
+<li class="<%= track.genre.name %> col-md-12">
+  <div class="track_name pull-left">
+    <%= truncate(track.name, length: 25) %>
+    
+  </div>
+  <div class="track_info pull-left">
+    <%= track.try(:artist).try(:name) %>
+    <%= track.try(:album).try(:name) %>
+  </div>
+  <div class="track_duration pull-right">
+    <%= link_to [track.playlist.user, track.playlist, track: track],
+      "data-toggle" => "tooltip",
+      "data-placement" => "top",
+      "title" => "Listen this track on his playlist" do %>
+      <i class="fa fa-play">  </i>    
+    <% end %>
+    <%= track.try(:track_duration) %>
+  </div>
+</li>

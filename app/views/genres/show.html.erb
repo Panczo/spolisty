@@ -1,13 +1,9 @@
 <div class="users_wrapper">
   <h2 class="heading"><%= @genre.name.capitalize %></h2>
     <div class="row">
-      <div class="col-md-12">
-        <% if @genre.tracks.any? %>
-          <% @genre.tracks.each do |tr| %>
-            <p><%= tr.name %></p>
-          <% end %>
-        <% end %>
-      </div>
+      <% if @genre.tracks.any? %>
+        <%= render @tracks %>
+      <% end %>
     </div>
   </div>
 </div>
