@@ -1,9 +1,12 @@
 <li class="<%= track.genre.name %> col-md-12">
+  <div class="track_image pull-left">
+    <%= image_tag(track.album.image, size: '100x100') %>
+  </div>
   <div class="track_name pull-left">
-    <%= truncate(track.name, length: 25) %>
+    <%= truncate(track.name, length: 45) %>
     
   </div>
-  <div class="track_info pull-left">
+  <div class="track_info">
     <%= track.try(:artist).try(:name) %>
     <%= track.try(:album).try(:name) %>
   </div>

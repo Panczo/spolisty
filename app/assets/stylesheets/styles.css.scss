@@ -848,33 +848,41 @@ header {
   #portfolio-list {
     padding: 0px 25px;
       
-    li {
-      margin-top: 15px;
-      padding-bottom: 5px;
-      list-style-type: none;
-      color: $text-color;
-      border-bottom: 1px solid $body-bg-dark;
-      
-      .track_name {
-        width: 200px;
-        display: inline-block;
-        text-align: left;
-      }
-      .track_info {
-        display: inline-block;
-      }
-      .track_duration {
-        display: inline-block;
-        a {
-          color: $text-color;
-          margin-right: 20px;
-          &:hover {
-            @include transition(0.9s);
-            color: $brand-primary-dark;
-          }
+  li {
+    margin-top: 15px;
+    padding-bottom: 5px;
+    list-style-type: none;
+    color: $body-bg-light;
+    border-bottom: 1px solid $body-bg-dark;
+    
+    .track_name {
+      padding-left: 20px;
+      padding-top: 35px;
+      width: 20%;
+      display: inline-block;
+      text-align: left;
+    }
+    .track_info {
+      padding-left: 20px;
+      padding-top: 35px;
+      width: 50%;
+      display: inline-block;
+    }
+    .track_duration {
+      padding-left: 20px;
+      padding-top: 35px;
+      width: 10%;
+      display: inline-block;
+      a {
+        color: $text-color;
+        margin-right: 20px;
+        &:hover {
+          @include transition(0.9s);
+          color: $brand-primary-dark;
         }
       }
     }
+  }
   }
 }
 
@@ -1582,4 +1590,45 @@ h3 {
   margin-top: 17px;
   background: $body-bg-dark;
   padding: 5px;
+}
+
+#genre_tracks {
+ padding: 0px 25px;
+    
+  li {
+    margin-top: 15px;
+    padding-bottom: 5px;
+    list-style-type: none;
+    color: $body-bg-light;
+    border-bottom: 1px solid $body-bg-dark;
+    
+    .track_name {
+      padding-left: 20px;
+      padding-top: 35px;
+      width: 30%;
+      display: inline-block;
+      text-align: left;
+    }
+    .track_info {
+      padding-left: 20px;
+      padding-top: 35px;
+      width: 50%;
+      display: inline-block;
+    }
+    .track_duration {
+      padding-left: 20px;
+      padding-top: 35px;
+      width: 10%;
+      display: inline-block;
+      a {
+        color: $text-color;
+        margin-right: 20px;
+        &:hover {
+          @include transition(0.9s);
+          color: $brand-primary-dark;
+        }
+      }
+    }
+  }
+
 }
