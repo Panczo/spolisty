@@ -16,7 +16,7 @@ class PlaylistsController < ApplicationController
     else
       @tracks = @playlist.tracks.includes(:artist, :album).paginate(page: params[:page], per_page: 50)
     end
-    @reviews = @playlist.reviews.includes(:user)
+    @reviews = @playlist.reviews.includes(:user).order("created_at DESC")
 
     if @reviews.blank?
       @average_rating = 0
