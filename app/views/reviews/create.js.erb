@@ -12,6 +12,6 @@
   $("#new_review").hide();
   $(".review_success").show();
   $(".review_success").html("Thanks for your review!");
-  $("#playlist_reviews ul").append("<%= j render(:partial => 'reviews/review', :locals => { :review => @review } ) %>");
+  $("#playlist_reviews ul").prepend("<%= j render(:partial => 'reviews/review', :locals => { :review => @review } ) %>");
 
 <% end %>
