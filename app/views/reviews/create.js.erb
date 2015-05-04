@@ -13,9 +13,9 @@
   $(".review_success").show();
   $(".review_success").html("Thanks for your review!");
   $("#playlist_reviews ul").prepend("<%= j render(:partial => 'reviews/review', :locals => { :review => @review } ) %>");
-  var stars = $('.review_rating').data("score");
-  for (var n = 0; n < Math.round(stars); ++ n) {
-    $('.single-review .review_rating').eq(0).append("<img src='/assets/star-on.png' title='good'>");
+  var stars = $('.single-review .review_rating').eq(0).data("score");
+  for (var n = 0; n < stars; ++ n) {
+    $('.single-review .review_rating').eq(0).append("<img src='/assets/star-on.png'>");
   }
 
   var badstars = 10 - Math.round(stars);
@@ -23,5 +23,5 @@
     $('.single-review .review_rating').eq(0).append("<img src='/assets/star-off.png'>");
   }
   $('.single-review .review_rating').eq(0).find("img").css( "margin-right", "5px" );
-  
+
 <% end %>
