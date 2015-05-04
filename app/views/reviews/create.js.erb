@@ -1,4 +1,5 @@
 <% if @review.errors.any? %>
+
   $(".review_errors ul").empty();
   $(".review_errors").show();
   
@@ -13,13 +14,14 @@
   $(".review_success").show();
   $(".review_success").html("Thanks for your review!");
   $("#playlist_reviews ul").prepend("<%= j render(:partial => 'reviews/review', :locals => { :review => @review } ) %>");
+  
   var stars = $('.single-review .review_rating').eq(0).data("score");
   for (var n = 0; n < stars; ++ n) {
     $('.single-review .review_rating').eq(0).append("<img src='/assets/star-on.png'>");
   }
 
-  var badstars = 10 - Math.round(stars);
-  for (var n = 0; n < Math.round(badstars); ++ n) {
+  var badstars = 10 - stars;
+  for (var n = 0; n < badstars; ++ n) {
     $('.single-review .review_rating').eq(0).append("<img src='/assets/star-off.png'>");
   }
   $('.single-review .review_rating').eq(0).find("img").css( "margin-right", "5px" );

@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       @classified_tracks = current_user.tracks.classified.paginate(page: params[:page], per_page: 5)
       @unclassified_tracks = current_user.tracks.unclassified.paginate(page: params[:page], per_page: 5)
     end
-    @tracks = @user.tracks.classified
+    @tracks = @user.tracks.classified.limit(100)
     @chart = @user.charts.build
   end
 
