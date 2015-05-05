@@ -4,11 +4,26 @@
     <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
     <h2 class="follow_heading">Conversations</h2>
     <div class="userplaylists">
-      <% if current_user == @user %>
-        <ul class="list-group">
-          <%= render partial: 'conversations/conversation', collection: @conversations, locals: { user: @user } %>
-        </ul>
-        <%= will_paginate %>
+
+      <% if current_user == @user %>  
+        <div class="row">
+          <div class="col-sm-3">
+            <ul class="nav nav-pills nav-stacked">
+              <%= mailbox_section 'inbox', @box %>
+              <%= mailbox_section 'sent', @box %>
+              <%= mailbox_section 'trash', @box %>
+            </ul>
+          </div>
+         
+          <div class="col-sm-9">
+            <ul class="list-group">
+              <%= render partial: 'conversations/conversation', collection: @conversations, locals: { user: @user } %>
+            </ul>
+           
+            <%= will_paginate %>
+          </div>
+        </div>
+
       <% else %>
         <h2>Start conversation with <%= @user.nick %></h2>
         <p><%= link_to 'Start conversation', new_user_message_path(@user), class: 'btn btn-lg btn-primary' %></p>
