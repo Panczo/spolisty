@@ -10,10 +10,6 @@ class ApplicationController < ActionController::Base
     flash[:warning] = 'Resource not found.'
     redirect_back_or root_path
   end
- 
-  def redirect_back_or(path)
-    redirect_to request.referer || path
-  end
 
   protected
 
@@ -26,6 +22,10 @@ class ApplicationController < ActionController::Base
 
 
   private
+
+  def redirect_back_or(path)
+    redirect_to request.referer || path
+  end
   
   #-> Prelang (user_login:devise)
   def require_user_signed_in

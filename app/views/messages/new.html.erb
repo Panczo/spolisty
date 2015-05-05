@@ -1,0 +1,24 @@
+<div class="user_profile">
+  <%= render partial: 'shared/user_heading', locals: { user: @user } %>
+  <div class="genre-profile col-md-8 col-md-offset-2 text-center">
+    <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
+    <h2 class="follow_heading">New message</h2>
+
+
+      <%= form_tag user_messages_path(@user), method: :post do %>
+        <div class="form-group">
+          <%= label_tag 'message[subject]', 'Subject' %>
+          <%= text_field_tag 'message[subject]', nil, class: 'form-control', required: true %>
+        </div>
+       
+        <div class="form-group">
+          <%= label_tag 'message[body]', 'Message' %>
+          <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
+        </div>
+       
+        <%= submit_tag 'Send', class: 'btn btn-primary' %>
+      <% end %> 
+
+
+  </div>
+</div>

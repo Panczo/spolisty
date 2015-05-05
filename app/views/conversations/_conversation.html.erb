@@ -1,3 +1,5 @@
 <li class="list-group-item clearfix">
-  <%= link_to conversation.subject, user_conversation_path(conversation) %>
+  <%= link_to conversation.subject, user_conversation_path(current_user, :id => conversation.id) %>
+  <p><%= conversation.last_message.body %>
+  <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
 </li>

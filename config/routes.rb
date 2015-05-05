@@ -35,7 +35,14 @@ Rails.application.routes.draw do
     end
 
     resources :charts
-    resources :conversations, only: [:index, :show, :destroy]
+
+    resources :conversations, only: [:index, :show, :destroy] do
+      member do
+        post :reply
+      end
+    end
+    
+    resources :messages, only: [:new, :create]
   end
 
 
@@ -43,6 +50,7 @@ Rails.application.routes.draw do
   resources :genres, only: [:index, :show]
   resources :subscribes, only: [:create]
   resources :pages, only: [:index]
+
 
   get 'best_playlists', to: 'playlists#best'
   

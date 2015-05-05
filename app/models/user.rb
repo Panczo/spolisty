@@ -172,6 +172,12 @@ class User < ActiveRecord::Base
     new_rank = sorted_tracks.empty? ? 'not enough data' : sorted_tracks.first[0]
     update_attribute(:rank, new_rank)
   end
+
+
+  def mailboxer_email(user)
+    self.email
+  end
+
   
   private
 

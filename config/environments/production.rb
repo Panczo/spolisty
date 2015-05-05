@@ -82,6 +82,6 @@ Rails.application.configure do
 
   #->Prelang
   GA.tracker = "UA-54815650-2"
-
+  config.action_mailer.default_url_options = { :host => 'localhost' }
 end
 
