@@ -42,12 +42,17 @@
           <div class="form-group">
             <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
           </div>
-          <%= submit_tag "Send Message", class: 'btn btn-primary' %>
+          <div class="row">
+            <div class="pull-left">
+              <%= link_to "Back to your conversations", user_conversations_path(current_user), class: 'btn btn-primary' %>
+            </div>
+            <div class="pull-right">
+              <%= submit_tag "Send Message", class: 'btn btn-primary' %>
+            </div>            
+          </div>
         <% end %>
 
       </div>
-
-  <%= link_to "Back to your conversations", user_conversations_path(current_user) %>
 
   </div>
 </div>

@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :show] do
-  	resources :playlists do
+    member do 
+      get :following, :followers
+    end
+
+    resources :playlists do
       collection do
         get 'import'
       end
@@ -30,19 +34,20 @@ Rails.application.routes.draw do
       end
     end
 
-    member do 
-      get :following, :followers
-    end
-
-    resources :charts
-
     resources :conversations, only: [:index, :show, :destroy] do
       member do
         post :reply
       end
+      member do
+        post :restore
+      end
+      collection do
+        delete :empty_trash
+      end
     end
-    
+
     resources :messages, only: [:new, :create]
+    resources :charts
   end
 
 

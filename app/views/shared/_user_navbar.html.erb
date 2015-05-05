@@ -10,7 +10,7 @@
     <% end %>
   </li>
 
-  <li class="<%= is_active?(user_playlists_path(user)) %> col-md-3 col-sm-3 col-xs-3 playlist">
+  <li class="<%= is_active?(user_conversations_path(user)) %> col-md-3 col-sm-3 col-xs-3 playlist">
     <%= link_to user_conversations_path(user) do %>
        <i class="fa fa-user"></i> Messages</a>
     <% end %>
