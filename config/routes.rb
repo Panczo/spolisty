@@ -35,8 +35,8 @@ Rails.application.routes.draw do
     end
 
     resources :charts
+    resources :conversations, only: [:index, :show, :destroy]
   end
-
 
 
   resources :relationships, only: [:create, :destroy]

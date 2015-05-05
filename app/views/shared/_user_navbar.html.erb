@@ -9,14 +9,17 @@
        <i class="fa fa-user"></i> Playlists</a>
     <% end %>
   </li>
-  <li role="presentation" class="col-md-3 col-sm-3 col-xs-3 messages">
-    <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
-    <i class="fa fa-user"></i> Messages</a>
+
+  <li class="<%= is_active?(user_playlists_path(user)) %> col-md-3 col-sm-3 col-xs-3 playlist">
+    <%= link_to user_conversations_path(user) do %>
+       <i class="fa fa-user"></i> Messages</a>
+    <% end %>
   </li>
-  
+
   <li class="<%= is_active?(edit_user_registration_path(user)) %> col-md-3 col-sm-3 col-xs-3 playlist">
     <%= link_to edit_user_registration_path(user) do %>
        <i class="fa fa-user"></i> Your Settings</a>
     <% end %>
   </li>
+
 </ul>

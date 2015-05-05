@@ -30,6 +30,7 @@ gem 'stuff-classifier', :git => 'git@github.com:JoaquinSantana/stuff-classifier.
 gem 'bullet'
 gem 'will_paginate-bootstrap'
 gem 'faker', :git => 'git@github.com:stympy/faker.git'
+gem 'mailboxer', :git => 'git://github.com/div/mailboxer.git', :branch => 'rails42-foreigner'
 
 group :development do
   gem 'web-console'

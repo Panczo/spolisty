@@ -31,8 +31,13 @@
     </li>
 
     <li>
-      <%= link_to root_path, class: 'standard-menu-item' do %>
-        <i class="fa fa-phone"></i> <span class="nav-text">Kontakt</span>
+      <%= link_to user_conversations_path(current_user), class: 'standard-menu-item' do %>
+        <i class="fa fa-phone"></i> <span class="nav-text">Messages</span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to '#', class: 'standard-menu-item' do %>
+        <i class="fa fa-phone"></i> <span class="nav-text">Quide</span>
       <% end %>
     </li>
     <li>

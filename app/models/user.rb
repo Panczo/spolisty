@@ -60,6 +60,8 @@ class User < ActiveRecord::Base
 
   validates :provider, :uid, presence: true
 
+  acts_as_messageable
+
   devise authentication_keys: [:login]
 
   def sorted_tracks

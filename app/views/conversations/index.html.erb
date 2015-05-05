@@ -1,0 +1,14 @@
+<div class="user_profile">
+  <%= render partial: 'shared/user_heading', locals: { user: @user } %>
+  <div class="genre-profile col-md-8 col-md-offset-2 text-center">
+    <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
+    <h2 class="follow_heading">Conversations</h2>
+    <div class="userplaylists">
+      <ul class="list-group">
+        <%= render partial: 'conversations/conversation', collection: @conversations, locals: { user: @user } %>
+      </ul>
+       
+      <%= will_paginate %>
+    </div>  
+  </div>
+</div>
