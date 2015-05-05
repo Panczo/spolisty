@@ -30,8 +30,16 @@
 
       <% else %>
         <h2>Start conversation with <%= @user.nick %></h2>
-        <p><%= link_to 'Start conversation', new_user_message_path(@user), class: 'btn btn-lg btn-primary' %></p>
+        <p><%= link_to 'Start conversation', '#', class: 'btn btn-lg btn-primary', id: 'show_message_form' %></p>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div id="message_form">
+              <%= render partial: 'messages/new', id: 'message_form' %>
+            </div>
+          </div>
+        </div>
       <% end %>
+      
     </div>  
   </div>
 </div>

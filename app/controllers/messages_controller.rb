@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
     conversation = current_user.send_message(@user, params[:message][:body], params[:message][:subject]).conversation
     flash[:success] = "Message has been sent!"
     #redirect_to user_conversation_path([current_user, conversation])
-    redirect_to user_conversations_path(current_user)
+    redirect_to user_conversations_path(@user)
   end
 
   private
