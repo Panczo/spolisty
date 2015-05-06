@@ -10,13 +10,13 @@
     </div>
 
     <div class="convers_body">
-      <p><%= truncate(conversation.last_message.body, length: 40) %>
+      <p><%= truncate(conversation.last_message.body, length: 32) %>
     </div>
 
     <div class="convers_date">
       <%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
     </div>
-    
+
     <div class="btn-group-vertical pull-right">
       <% if conversation.is_trashed?(current_user) %>
         <%= link_to restore_user_conversation_path(current_user, :id => conversation.id), 

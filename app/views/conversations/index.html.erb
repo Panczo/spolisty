@@ -18,7 +18,7 @@
            
             <div class="col-sm-9">
               <% if @box == 'trash' %>
-                <p><%= link_to 'Empty trash', empty_trash_user_conversations_path, class: 'btn btn-danger', method: :delete,
+                <p><%= link_to 'Empty trash', empty_trash_user_conversations_path, class: 'btn btn-danger btn-block', method: :delete,
                                data: {confirm: 'Are you sure?'} %></p>
               <% end %>
               <ul class="list-group">
