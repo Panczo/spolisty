@@ -1,16 +1,35 @@
-<li class="list-group-item clearfix">
-  <%= link_to conversation.subject, user_conversation_path(current_user, :id => conversation.id) %>
+<div class="conversation">
+  <li class="list-group-item clearfix">
 
+    <div class="convers_from">
+      <%= conversation.last_message.sender.nick %>
+    </div>
 
-  <div class="btn-group-vertical pull-right">
-    <% if conversation.is_trashed?(current_user) %>
-      <%= link_to 'Restore', restore_user_conversation_path(current_user, :id => conversation.id), class: 'btn btn-xs btn-info', method: :post %>
-    <% else %>
-      <%= link_to 'Move to trash', user_conversation_path(current_user, :id => conversation.id), class: 'btn btn-xs btn-danger', method: :delete,
-                  data: {confirm: 'Are you sure?'} %>
-    <% end %>
-  </div>
+    <div class="convers_subject">
+      <%= link_to truncate(conversation.subject, length: 20), user_conversation_path(current_user, :id => conversation.id) %>
+    </div>
 
-  <p><%= conversation.last_message.body %>
-  <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
-</li>
+    <div class="convers_body">
+      <p><%= truncate(conversation.last_message.body, length: 40) %>
+    </div>
+
+    <div class="convers_date">
+      <%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
+    </div>
+    
+    <div class="btn-group-vertical pull-right">
+      <% if conversation.is_trashed?(current_user) %>
+        <%= link_to restore_user_conversation_path(current_user, :id => conversation.id), 
+          class: 'btn btn-xs btn-info', method: :post  do %>
+            <i class="fa fa-backward"></i> Restore
+        <% end %>
+      <% else %>
+        <%= link_to user_conversation_path(current_user, :id => conversation.id), 
+          class: 'btn btn-xs btn-danger', method: :delete,
+          data: {confirm: 'Are you sure?'} do %>
+            <i class="fa fa-trash"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </li>
+</div>

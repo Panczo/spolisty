@@ -1651,3 +1651,71 @@ h3 {
 #message_form {
   display: none;
 }
+
+
+#mailbox {
+  a {
+    border-radius: 0px !important;
+  }
+  .col-sm-3 {
+    background-color: $body-bg-dark;
+    padding: 0px !important;
+    ul {
+      padding-right: 0px !important;
+    }
+  }
+
+  .col-sm-9 {
+    padding: 0px;
+    ul {
+      padding-right: 0px;
+      border-radius: 0px !important;
+    }
+
+    li {
+      border: none;
+      border-radius: 0px !important;
+    }
+  }
+
+  .conversation {
+    li {
+      text-align: left;
+      background-color: lighten($body-bg-dark, 5%) !important;
+      &:hover {
+        background-color: $body-bg-dark !important;
+        .fa {
+          color: $text-color;
+        }
+      }
+
+      .convers_from {
+        float: left;
+        width: 20%;
+        padding-left: 5px;
+      }
+
+      .convers_subject {
+        float: left;
+        width: 20%;
+      }
+
+      .convers_body {
+        float: left;
+        width: 30%;
+      }
+
+      .convers_date {
+        float: left;
+        width: 20%;
+        padding-right: 5px;
+
+      }
+
+      .fa {
+        color: $body-bg-light;
+
+      }
+    }
+  }
+}

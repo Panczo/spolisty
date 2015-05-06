@@ -2,44 +2,45 @@
   <%= render partial: 'shared/user_heading', locals: { user: @user } %>
   <div class="genre-profile col-md-8 col-md-offset-2 text-center">
     <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
-    <h2 class="follow_heading">Conversations</h2>
+    <h2 class="follow_heading">Your mailbox</h2>
     <div class="userplaylists">
-
-      <% if current_user == @user %>  
-        <div class="row">
-          <div class="col-sm-3">
-            <ul class="nav nav-pills nav-stacked">
-              <%= mailbox_section 'inbox', @box %>
-              <%= mailbox_section 'sent', @box %>
-              <%= mailbox_section 'trash', @box %>
-            </ul>
-          </div>
-         
-          <div class="col-sm-9">
-            <% if @box == 'trash' %>
-              <p><%= link_to 'Empty trash', empty_trash_user_conversations_path, class: 'btn btn-danger', method: :delete,
-                             data: {confirm: 'Are you sure?'} %></p>
-            <% end %>
-            <ul class="list-group">
-              <%= render partial: 'conversations/conversation', collection: @conversations, locals: { user: @user } %>
-            </ul>
+      
+      <div id="mailbox">
+        <% if current_user == @user %>  
+          <div class="row">
+            <div class="col-sm-3">
+              <ul class="nav nav-pills nav-stacked">
+                <%= mailbox_section 'inbox', @box %>
+                <%= mailbox_section 'sent', @box %>
+                <%= mailbox_section 'trash', @box %>
+              </ul>
+            </div>
            
-            <%= will_paginate %>
-          </div>
-        </div>
-
-      <% else %>
-        <h2>Start conversation with <%= @user.nick %></h2>
-        <p><%= link_to 'Start conversation', '#', class: 'btn btn-lg btn-primary', id: 'show_message_form' %></p>
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <div id="message_form">
-              <%= render partial: 'messages/new', id: 'message_form' %>
+            <div class="col-sm-9">
+              <% if @box == 'trash' %>
+                <p><%= link_to 'Empty trash', empty_trash_user_conversations_path, class: 'btn btn-danger', method: :delete,
+                               data: {confirm: 'Are you sure?'} %></p>
+              <% end %>
+              <ul class="list-group">
+                <%= render partial: 'conversations/conversation', collection: @conversations, locals: { user: @user } %>
+              </ul>
+             
+              <%= will_paginate %>
             </div>
           </div>
-        </div>
-      <% end %>
-      
+
+        <% else %>
+          <h2>Start conversation with <%= @user.nick %></h2>
+          <p><%= link_to 'Start conversation', '#', class: 'btn btn-lg btn-primary', id: 'show_message_form' %></p>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div id="message_form">
+                <%= render partial: 'messages/new', id: 'message_form' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>  
   </div>
 </div>
