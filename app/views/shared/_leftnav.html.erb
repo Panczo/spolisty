@@ -38,7 +38,7 @@
         <span clss="profile-img"><%= foto(current_user) %></span>
       <% end %>
       <%= link_to destroy_user_session_path, id: 'logout', "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Logout", method: :delete do %>
-        <i class="fa glyphicon glyphicon-log-out"></i>
+        <i class="fa fa-power-off"></i>
       <% end %>
     </li>
   </ul>
