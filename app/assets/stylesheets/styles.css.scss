@@ -1644,8 +1644,48 @@ h3 {
 /** Conversations **/
 
 
-#conversations {
+#single_conversation {
+  margin-top: 75px;
   color: $body-bg-light;
+
+  .panel {
+    border: none;
+  }
+  .panel-heading {
+    border: none;
+    color: $body-bg-light;
+    background-color: $body-bg-dark;
+  }
+  .panel-body {
+    border: 5px solid $body-bg-dark;
+    background-color: lighten($body-bg-dark, 5%) !important;
+    .media-left {
+      img {
+        width: 80px;
+        height: 80px;
+      }
+      i {
+        width: 80px;
+        height: 80px;
+        font-size: 50px;
+      }      
+    }
+  }
+  .media-heading {
+    padding-left: 10px;
+    padding-top: 30px;
+    text-align: left;
+    float: left;
+    width: 30%;   
+  }
+
+  .message_body {
+    padding-left: 10px;
+    padding-top: 30px;
+    text-align: left;
+    float: left;
+    width: 70%;
+  }
 }
 
 #message_form {
@@ -1716,6 +1756,37 @@ h3 {
         color: $body-bg-light;
 
       }
+    }
+
+  }
+
+}
+#single_conversation_form {
+  margin-top: 45px;
+  textarea {
+    background-color: darken($body-bg-light, 40%);
+    border-color: $body-bg-dark;
+    color: $text-color;
+    @include transition(0.6s);
+    &:focus {
+      @include transition(0.6s);
+      background-color: darken($body-bg-light, 20%);
+    }
+  }
+}
+
+#action_buttons {
+  a {
+    color: $body-bg-light;
+    &:hover {
+      color: $text-color;
+    }
+  }
+
+  .btn-primary {
+    color: $body-bg-light;
+    &:hover {
+      color: $text-color;
     }
   }
 }

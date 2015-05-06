@@ -2,21 +2,17 @@
   <%= render partial: 'shared/user_heading', locals: { user: @user } %>
   <div class="genre-profile col-md-8 col-md-offset-2 text-center">
     <%= render partial: 'shared/user_navbar', locals: { user: @user } %>
-    <h2 class="follow_heading">Conversations</h2>
+  
 
-
-      <div id="conversations">
-        <p>Chatting with
+      <div id="single_conversation">
+              
+        <div class="panel panel-default">
+          <div class="panel-heading">Chatting with
           <% @conversation.participants.each do |participant| %>
             <% unless participant == current_user %>
-              <p><%= participant.nick %></p> 
+              <%= participant.nick %>
             <% end %>
-          <% end %>
-        </p>
-         
-         
-        <div class="panel panel-default">
-          <div class="panel-heading"><%= @conversation.subject %></div>
+          <% end %> <%= @conversation.subject %></div>
          
           <div class="panel-body">
             <div class="messages">
@@ -28,30 +24,32 @@
                   </div>
          
                   <div class="media-body">
-                    <h6 class="media-heading"><%= @message.sender.name %>
+                    <h6 class="media-heading"><%= @message.sender.nick %>
                       says at <%= @message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
-                    <%= @message.body %>
+                    <div class="message_body">
+                      <%= @message.body %>
+                    </div>
                   </div>
                 </div>
               <% end %>
             </div>
+
+
+             <%= form_tag reply_user_conversation_path(@message.sender, :id => @conversation.id), method: :post, :id => "single_conversation_form" do %>
+                <div class="form-group">
+                  <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
+                </div>
+                <div class="row" id="action_buttons">
+                  <div class="pull-left">
+                    <%= link_to "Back to your mailbox", user_conversations_path(current_user), class: 'btn btn-primary' %>
+                  </div>
+                  <div class="pull-right">
+                    <%= submit_tag "Send Message", class: 'btn btn-primary' %>
+                  </div>            
+                </div>
+              <% end %>
           </div>
         </div>
-
-        <%= form_tag reply_user_conversation_path(@message.sender, :id => @conversation.id), method: :post do %>
-          <div class="form-group">
-            <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
-          </div>
-          <div class="row">
-            <div class="pull-left">
-              <%= link_to "Back to your conversations", user_conversations_path(current_user), class: 'btn btn-primary' %>
-            </div>
-            <div class="pull-right">
-              <%= submit_tag "Send Message", class: 'btn btn-primary' %>
-            </div>            
-          </div>
-        <% end %>
-
       </div>
 
   </div>
