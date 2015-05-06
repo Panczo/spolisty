@@ -17,14 +17,15 @@
             </div>
            
             <div class="col-sm-9">
-              <% if @box == 'trash' %>
-                <p><%= link_to 'Empty trash', empty_trash_user_conversations_path, class: 'btn btn-danger btn-block', method: :delete,
-                               data: {confirm: 'Are you sure?'} %></p>
-              <% end %>
               <ul class="list-group">
                 <%= render partial: 'conversations/conversation', collection: @conversations, locals: { user: @user } %>
               </ul>
-             
+              <% if @box == 'trash' && @conversations.any? %>
+                <p><%= link_to 'Empty trash', empty_trash_user_conversations_path, class: 'btn btn-danger btn-block', method: :delete,
+                               data: {confirm: 'Are you sure?'} %></p>
+              <% elsif @box == 'trash'%>
+                <h4>Your trash is curently empty</h4>
+              <% end %>
               <%= will_paginate %>
             </div>
           </div>

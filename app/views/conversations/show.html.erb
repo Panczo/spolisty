@@ -41,10 +41,10 @@
                 </div>
                 <div class="row" id="action_buttons">
                   <div class="pull-left">
-                    <%= link_to "Back to your mailbox", user_conversations_path(current_user), class: 'btn btn-primary' %>
+                    <%= submit_tag "Send Message", class: 'btn btn-primary' %>
                   </div>
                   <div class="pull-right">
-                    <%= submit_tag "Send Message", class: 'btn btn-primary' %>
+                    <%= link_to "Back to your mailbox", user_conversations_path(current_user), class: 'btn btn-primary' %>
                   </div>            
                 </div>
               <% end %>
