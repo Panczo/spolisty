@@ -1,17 +1,10 @@
 <header id="nav-content" class="vertical-nav nav-black">
 
   <div class="my-logo">
-    <a href="<%= root_path %>">SPOLISTY</a>
+    <%= link_to "SPOLISTY", root_url, data: { no_turbolink: true } %>
   </div>
 
   <ul class="menu nav me-nav">
-    <li class="active">
-      <%= link_to current_user, class: 'standard-menu-item', data: { no_turbolink: true } do %>
-        <i class="fa fa-user"></i> <span class="nav-text">Home</span>
-      <% end %>
-
-    </li>
-
     <li>
       <%= link_to best_playlists_path, class: 'standard-menu-item' do %>
        <i class="fa fa-desktop"></i> <span class="nav-text">Playlists</span>
@@ -19,7 +12,7 @@
     </li> 
 
     <li>
-      <%= link_to genres_path, "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Logout", class: 'standard-menu-item' do %>
+      <%= link_to genres_path, class: 'standard-menu-item' do %>
         <i class="fa fa-comment"></i> <span class="nav-text">Genres</span>
       <% end %>
     </li>
@@ -37,7 +30,7 @@
     </li>
     <li>
       <%= link_to '#', class: 'standard-menu-item' do %>
-        <i class="fa fa-phone"></i> <span class="nav-text">Quide</span>
+        <i class="fa fa-phone"></i> <span class="nav-text">How This Work</span>
       <% end %>
     </li>
     <li>
