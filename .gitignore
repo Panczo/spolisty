@@ -22,3 +22,6 @@ coverage/
 
 # Ignore application configuration
 #/config/application.yml
+
+#ignore gitignore
+.gitignore
