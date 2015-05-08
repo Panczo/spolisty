@@ -1,0 +1,7 @@
+MAILCHIMP: your_id
+MAILCHIMP_LIST: your_list_id
+SPOTIFY_CLIENT_ID: your_client_id
+SPOTIFY_CLIENT_SECRET: your_client_secret
+PG_PASS: user
+PG_USER: password
+DEVISE_SECRET_KEY: your_secret_key
