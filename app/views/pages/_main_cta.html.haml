@@ -1,0 +1,10 @@
+
+<!-- Call to action -->
+%section#cta
+  .container
+    .row
+      .join
+        .col-md-6.col-sm-12
+          %p.lead Explore your music with friends
+        .col-md-6.col-sm-12
+          = link_to "CONNECT WITH SPOTIFY", user_omniauth_authorize_path(:spotify), class: "btn btn-primary btn-cta"

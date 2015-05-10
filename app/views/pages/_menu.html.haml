@@ -1,0 +1,21 @@
+%section#menu
+  %nav.navbar.navbar-default.navbar-fixed-top{ :role => "navigation" }
+    .container
+      <!-- Brand and toggle get grouped for better mobile display -->
+      .navbar-header
+        %button.navbar-toggle.collapsed{:type=>"button", "data-toggle" => "collapse", "data-target" => "#bs-example-navbar-collapse-1"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = link_to "SPOLISTY", root_path, class: 'navbar-brand'
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      .collapse.navbar-collapse#menu-navbar
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a{:href => "#cta"} Sign in
+          %li
+            %a{:href => "#features"} Features
+          %li
+            %a{:href => "#sub"} Newsletter

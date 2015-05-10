@@ -1,0 +1,14 @@
+%section#sub
+  .container
+    .row
+      .col-md-12
+        %div#success-sub.text-center
+    .row
+      .col-md-6.col-sm-12.text-center
+        %h2 Join our newsletter.
+        %p Be the first to hear about new product features
+      .col-md-6.col-sm-12
+        = form_for(@subscribe, id: "subscribe", remote: true) do |f|
+          .form-group
+            = f.email_field(:email, { id: "email", placeholder: "Write your email", class: 'form-control', required: true})
+            = f.button "SUBSCRIBE", class: "btn btn-primary btn-block btn-cta", data: { disable_with: "Writing to list..." }
