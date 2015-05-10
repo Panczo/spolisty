@@ -31,6 +31,7 @@ gem 'bullet'
 gem 'will_paginate-bootstrap'
 gem 'faker', :git => 'git@github.com:stympy/faker.git'
 gem 'mailboxer', github: 'lacco/mailboxer'
+gem 'haml'
 
 
 group :development do
