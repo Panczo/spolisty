@@ -1,0 +1,8 @@
+<!-- CALL TO ACTION Center -->
+%section{:id => "cta2"}
+  .container
+    .row
+      .col-md-12
+        .text-center
+          %h2 Explore your music
+          = link_to "CONNECT WITH SPOTIFY", user_omniauth_authorize_path(:spotify), class: "btn btn-primary btn-cta"
