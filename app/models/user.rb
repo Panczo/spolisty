@@ -32,7 +32,6 @@ class User < ActiveRecord::Base
   serialize :spotify_hash
   
   devise  :database_authenticatable,
-          :recoverable,
           :registerable,
           :rememberable,
           :trackable,

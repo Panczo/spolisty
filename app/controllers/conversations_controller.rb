@@ -1,4 +1,4 @@
-class ConversationsController < ApplicationController
+ class ConversationsController < ApplicationController
   before_action :authenticate_user!
   before_action :get_mailbox
   before_action :find_user
@@ -18,12 +18,24 @@ class ConversationsController < ApplicationController
   end
 
   def show
+    @receipts = @conversation.receipts_for(current_user).last(5)
   end
 
   def reply
-    current_user.reply_to_conversation(@conversation, params[:body])
-    flash[:success] = 'Reply sent'
-    redirect_to user_conversation_path(current_user, :id => @conversation)
+    respond_to do |format|
+      @receipt = current_user.reply_to_conversation(@conversation, params[:body])
+      if @receipt
+        format.html do 
+          flash[:success] = 'Reply sent'
+          redirect_to user_conversation_path(current_user, :id => @conversation)
+        end
+        format.js
+      else
+        format.html {redirect_to user_conversation_path(current_user, :id => @conversation)}
+        fotmat.js {render nothing: true}
+      end
+
+    end
   end
 
   def destroy

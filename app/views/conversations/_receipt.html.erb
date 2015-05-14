@@ -1,0 +1,14 @@
+<div class="media">
+  <% @message = receipt.message %>
+  <div class="media-left">
+    <%= foto(@message.sender) %>
+  </div>
+
+  <div class="media-body">
+    <h6 class="media-heading"><%= @message.sender.nick %>
+      says at <%= @message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
+    <div class="message_body">
+      <%= @message.body %>
+    </div>
+  </div>
+</div>

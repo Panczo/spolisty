@@ -16,26 +16,11 @@
          
           <div class="panel-body">
             <div class="messages">
-              <% @conversation.receipts_for(current_user).each do |receipt| %>
-                <div class="media">
-                  <% @message = receipt.message %>
-                  <div class="media-left">
-                    <%= foto(@message.sender) %>
-                  </div>
-         
-                  <div class="media-body">
-                    <h6 class="media-heading"><%= @message.sender.nick %>
-                      says at <%= @message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
-                    <div class="message_body">
-                      <%= @message.body %>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
+              <%= render partial: 'conversations/receipt', collection: @receipts %>
             </div>
 
 
-             <%= form_tag reply_user_conversation_path(@message.sender, :id => @conversation.id), method: :post, :id => "single_conversation_form" do %>
+             <%= form_tag reply_user_conversation_path(@message.sender, :id => @conversation.id), method: :post, :id => "single_conversation_form", remote: true do %>
                 <div class="form-group">
                   <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
                 </div>
