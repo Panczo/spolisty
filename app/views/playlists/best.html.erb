@@ -3,7 +3,7 @@
   <% @playlists.each_with_index do |p, index| %>
     <%= link_to user_playlist_path(p.user, p) do %>
       <div class="row">
-        <div class="col-md-12 col-sm-6">
+        <div class="col-md-12">
           <div id="<%= p.name %>" class="user">
             <div class="user_info">
               <div class="playlist_position">

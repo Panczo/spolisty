@@ -6,6 +6,7 @@
 //= require filterable
 //= require bootstrap-select
 //= require jquery.raty
+//= require polling
 //= require_tree .
 
 
