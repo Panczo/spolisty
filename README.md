@@ -7,10 +7,10 @@ Meet new people through your Spotify playlists
 
 ## Built With
 
-..* Ruby on Rails 
-..* PostgreSQL
-..* RSpec
-..* Bootstrap
+* Ruby on Rails 4.2.0
+* PostgreSQL
+* RSpec
+* Bootstrap 3
 
 
 
