@@ -1,0 +1,18 @@
+<% if @conversation.new_record? %>
+  alert('Your comment cannot be saved.');
+<% else %>
+  $('#single_conversation').find('.messages').append("<%= j render partial: 'conversations/receipt', locals: { receipt: @receipt } %>");
+  $('.media').first().remove();
+  $('textarea#body').val('');
+<% end %>
+
+
+<% if @conversation.new_record? %>
+  alert('Your comment cannot be saved.');
+<% else %>
+  <% publish_to user_conversation_path(current_user, :id => @conversation) do %>
+    $('#single_conversation').find('.messages').append("<%= j render partial: 'conversations/receipt', locals: { receipt: @receipt } %>");
+    $('.media').first().remove();
+    $('textarea#body').val('');
+  <% end %>
+<% end %>
