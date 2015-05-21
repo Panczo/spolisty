@@ -51,14 +51,14 @@ $(document).on('page:load', ready);
 
     <div class="genre-profile col-md-8 col-md-offset-2 text-center">
     
-      <% if current_user.sign_in_count == 1 && @user.playlists.blank?  && current_page?(user_path(current_user)) %>
+      <% if current_user.sign_in_count == 1 && @user.last_download_playlists.blank?  && current_page?(user_path(current_user)) %>
         <p class="welcome">
           Welcome to the Spolisty App.
         </p>
       <% end %>
 
 
-        <% if current_user == @user && @user.playlists.blank? %>
+        <% if current_user == @user && @user.last_download_playlists.blank? %>
           <div class="row">
             <div class="col-md-8 col-md-offset-2">
               <%= link_to "Download your playlists from spotify account", 

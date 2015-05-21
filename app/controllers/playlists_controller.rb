@@ -37,6 +37,7 @@ class PlaylistsController < ApplicationController
 
   def import
     current_user.import_playlist
+    current_user.update_column(last_download_playlists = Time.now)
     flash[:success] = "Successfully imported playlists"
     redirect_to current_user
   end
