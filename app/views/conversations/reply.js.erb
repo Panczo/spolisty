@@ -2,6 +2,9 @@
   alert('Your comment cannot be saved.');
 <% else %>
   $('#single_conversation').find('.messages').append("<%= j render partial: 'conversations/receipt', locals: { receipt: @receipt } %>");
-  $('.media').first().remove();
+  var n = $('.media').length;
+  if (n > 5) {
+    $('.media').first().remove();
+  }
   $('textarea#body').val('');
 <% end %>

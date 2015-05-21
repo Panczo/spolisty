@@ -178,6 +178,7 @@ a, a:visited, a:focus, a:active, a:hover{
   padding: 90px 0px;
   font-family: $main-font;
   background-color: $text-color;
+
   h2 {
     font-family: $main-font;
     padding-bottom: 15px;
@@ -384,8 +385,9 @@ header {
     .welcome {
       margin: 20px;
       padding-top: 41px;
+      padding-bottom: 21px;
       font-size: 30px;
-      color: lighten($brand-light, 10%) !important;
+      color: $body-bg-light;
     }
 
     .main_user {
@@ -1386,7 +1388,7 @@ h3 {
 
 #blues {
   height: 200px;
-  background: image-url('genres/blues.png') repeat scroll center top/cover transparent !important;
+    
   .user_info {
     margin-top: 100px;
   }
@@ -1788,4 +1790,16 @@ h3 {
       color: $text-color;
     }
   }
+}
+
+.ranked_users {
+  text-align: center;
+  .col-md-2 {
+    margin-left: 30px !important;
+  }
+}
+
+.read_about_spolisty {
+  padding-top: 40px;
+  color: $body-bg-light;
 }
