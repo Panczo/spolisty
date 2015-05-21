@@ -28,6 +28,7 @@
 #
 
 class User < ActiveRecord::Base
+  after_create :create_spolisty_list
   attr_accessor :login
   serialize :spotify_hash
   
@@ -179,6 +180,10 @@ class User < ActiveRecord::Base
 
   
   private
+
+  def create_spolisty_list
+    playlists.create(name: 'spolisty', special: true, spotify_type: 'playlist')
+  end
 
   def nick_from_email
     email.split("@").first
