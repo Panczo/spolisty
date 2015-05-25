@@ -63,3 +63,19 @@ en:
       p_title: "Be the first to hear about new product features"
       button: "SUBSCRIBE"
       email: "Your email"
+    leftnav:
+      playlist: "Playlists"
+      genres: "Genres"
+      users: "Users"
+      msg: "Messages"
+      htw: "How this work?"
+    usr_heading:
+      about_head: "About yourself:"
+      about: "Tell us something about yourself. Go to the"
+      about_nil: "This user didn't say anything about yourself"
+      about_site: "settings site."
+    usr_navbar:
+      user: "User"
+      playlists: "Playlists"
+      msg: "Messages"
+      settings: "Your settings"

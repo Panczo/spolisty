@@ -42,3 +42,19 @@ pl:
       p_title: "Dołącz do listy aby być powiadamianym o nowościach"
       button: "ZAPISZ SIĘ"
       email: "Twój email"
+    leftnav:
+      playlist: "Playlisty"
+      genres: "Gatunki"
+      users: "Użytkownicy"
+      msg: "Wiadomości"
+      htw: "O co chodzi?"
+    usr_heading:
+      about_head: "O sobie:"
+      about: "Powiedź nam coś o sobie na stronie "
+      about_nil: "Ten użytkownik nie powiedział jeszcze nic o sobie"
+      about_site: "ustawień"
+    usr_navbar:
+      user: "Użytkownik"
+      playlists: "Playlisty"
+      msg: "Wiadomości"
+      settings: "Twoje ustawienia"

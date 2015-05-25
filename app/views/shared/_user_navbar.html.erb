@@ -1,24 +1,24 @@
 <ul class="nav nav-tabs usernav" role="tablist">
   <li role="presentation" class="<%= is_active?(user_path(user)) %> col-md-3 col-sm-3 col-xs-3 genre">
     <%= link_to user_path(user), data: { no_turbolink: true } do %>
-       <i class="fa fa-user"></i> User</a>
+       <i class="fa fa-user"></i> <%= t('main_site.usr_navbar.user') %></a>
     <% end %>
   </li>
   <li class="<%= is_active?(user_playlists_path(user)) %> col-md-3 col-sm-3 col-xs-3 playlist">
     <%= link_to user_playlists_path(user) do %>
-       <i class="fa fa-headphones"></i> Playlists</a>
+       <i class="fa fa-headphones"></i> <%= t('main_site.usr_navbar.playlists') %></a>
     <% end %>
   </li>
 
   <li class="<%= is_active?(user_conversations_path(user)) %> col-md-3 col-sm-3 col-xs-3 playlist">
     <%= link_to user_conversations_path(user) do %>
-       <i class="fa fa-comments-o"></i> Messages</a>
+       <i class="fa fa-comments-o"></i> <%= t('main_site.usr_navbar.msg') %></a>
     <% end %>
   </li>
 
   <li class="<%= is_active?(edit_user_registration_path(user)) %> col-md-3 col-sm-3 col-xs-3 playlist">
     <%= link_to edit_user_registration_path(user) do %>
-      <i class="fa fa-cogs"></i> Your Settings</a>
+      <i class="fa fa-cogs"></i> <%= t('main_site.usr_navbar.settings') %></a>
     <% end %>
   </li>
 

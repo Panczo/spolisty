@@ -28,12 +28,12 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       </br>
-      About yourself:
+      <%= t('main_site.usr_heading.about_head') %>
       <blockquote>
         <% if user.about.nil? && user == current_user %>
-          <p class="lead">Tell us something about yourself. Go to the <%= link_to "settings site.", edit_user_registration_path(user) %></p>
+          <p class="lead"><%= t('main_site.usr_heading.about') %><%= link_to t('main_site.usr_heading.about_site'), edit_user_registration_path(user) %></p>
         <% elsif user.about.nil? %>
-          <p class="lead">This user didn't say anything about yourself</p>
+          <p class="lead"><%= t('main_site.usr_heading.about_nil') %></p>
         <% else %>
           <p class="lead">
             <%= user.about %>
