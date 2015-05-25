@@ -1,5 +1,5 @@
 <div class="users_wrapper best_playlists">
-  <h2 class="heading">Spolisty Best Playlists</h2>
+  <h2 class="heading"><%= t('main_site.playlists.title') %></h2>
   <% @playlists.each_with_index do |p, index| %>
     <%= link_to user_playlist_path(p.user, p) do %>
       <div class="row">

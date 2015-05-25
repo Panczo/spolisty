@@ -73,3 +73,5 @@ pl:
       unclassified_music: "piosenek bez określonego gatunku"
       edit_check: "Klasyfikuj zaznaczone"
       show_tracks: "Pokaż utwory"
+    playlists:
+      title: "Najlepsze Playlisty na Spolisty"
