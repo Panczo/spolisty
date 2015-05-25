@@ -20,4 +20,46 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      article:
+        title: "Title"
+        body: "Body"
+  forms:
+    messages:
+      success: "Operation succeeded!"
+    buttons:
+      edit: "Edit"
+      submit: "Submit"
+  menu:
+    new_article: "Add an article"
+  articles:
+    index:
+      title: "List of articles"
+    edit:
+      title: "Add article"
+    new:
+      title: "New article"
+  main_site:
+    header:
+      sign_in: "Sign in"
+      features: "Features"
+      newslatter: "Newslatter"
+    cta:
+      title: "Discover favorite music"
+      button: "CONNECT WITH SPOTIFY"
+    features:
+      first: "Listen music"
+      second: "Analyze genres of listen music"
+      third: "Discover new music"
+      fourth: "Meet people who listen the same music like you."
+    description:
+      title: "What do you like to listen?"
+      p1: "Spolisty analyzes your playlists from Spotify."
+      p2: "Collected data are introduced by chart."
+      p3: "Thanks to Spolisty you can meet people who listen the same music like you."
+    newslatter:
+      title: "Join our newsletter."
+      p_title: "Be the first to hear about new product features"
+      button: "SUBSCRIBE"
+      email: "Your email"

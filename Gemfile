@@ -32,6 +32,7 @@ gem 'will_paginate-bootstrap'
 gem 'faker', :git => 'git@github.com:stympy/faker.git'
 gem 'mailboxer', github: 'lacco/mailboxer'
 gem 'haml'
+gem 'rails-i18n', '~> 4.0.0'
 
 
 group :development do

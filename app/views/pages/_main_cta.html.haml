@@ -5,6 +5,7 @@
     .row
       .join
         .col-md-6.col-sm-12
-          %p.lead Explore your music with friends
+          %p.lead 
+            = t('main_site.cta.title')
         .col-md-6.col-sm-12
-          = link_to "CONNECT WITH SPOTIFY", user_omniauth_authorize_path(:spotify), class: "btn btn-primary btn-cta"
+          = link_to t('main_site.cta.button'), user_omniauth_authorize_path(:spotify), class: "btn btn-primary btn-cta"

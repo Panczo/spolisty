@@ -10,12 +10,14 @@
           %span.icon-bar
         = link_to "SPOLISTY", root_path, class: 'navbar-brand'
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
       .collapse.navbar-collapse#menu-navbar
         %ul.nav.navbar-nav.navbar-right
           %li
-            %a{:href => "#cta"} Sign in
+            %a{:href => "#cta"} 
+              = t('main_site.header.sign_in')
           %li
-            %a{:href => "#features"} Features
+            %a{:href => "#features"} 
+              = t('main_site.header.features')
           %li
-            %a{:href => "#sub"} Newsletter
+            %a{:href => "#sub"} 
+              = t('main_site.header.newslatter')

@@ -1,0 +1,44 @@
+pl:
+  activerecord:
+    attributes:
+      article:
+        title: "Title"
+        body: "Body"
+  forms:
+    messages:
+      success: "Operation succeeded!"
+    buttons:
+      edit: "Edit"
+      submit: "Submit"
+  menu:
+    new_article: "Add an article"
+  articles:
+    index:
+      title: "List of articles"
+    edit:
+      title: "Add article"
+    new:
+      title: "New article"
+  main_site:
+    header:
+      sign_in: "Zaloguj"
+      features: "Co zyskujesz"
+      newslatter: "Powiadomienia"
+    cta:
+      title: "Odkrywaj ulubioną muzykę"
+      button: "POŁĄCZ ZE SPOTIFY"
+    features:
+      first: "Słuchaj Muzyki"
+      second: "Analizuj rodzaj słuchanej muzyki"
+      third: "Odkrywaj nową muzykę"
+      fourth: "Poznawaj ludzi o zbliżonym guście muzycznym"
+    description:
+      title: "Co Ci w duszy gra?"
+      p1: "Spolisty analizuje Twoje playlisty pod kątem słuchanej muzyki."
+      p2: "Zebrane dane przedstawione są za pomocą grafu, obrazującego ilość piosenek z Twoich playlist z danego gatunku muzycznego."
+      p3: "Dzięki Spolisty możesz poznawać ludzi z podobną do Ciebie duszą muzyczną oraz dzielić się z nimi odkrytą muzyką."
+    newslatter:
+      title: "Dołącz do nas"
+      p_title: "Dołącz do listy aby być powiadamianym o nowościach"
+      button: "ZAPISZ SIĘ"
+      email: "Twój email"

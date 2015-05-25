@@ -5,10 +5,12 @@
         %div#success-sub.text-center
     .row
       .col-md-6.col-sm-12.text-center
-        %h2 Join our newsletter.
-        %p Be the first to hear about new product features
+        %h2 
+          = t('main_site.newslatter.title')
+        %p 
+          = t('main_site.newslatter.p_title')
       .col-md-6.col-sm-12
         = form_for(@subscribe, id: "subscribe", remote: true) do |f|
           .form-group
-            = f.email_field(:email, { id: "email", placeholder: "Write your email", class: 'form-control', required: true})
-            = f.button "SUBSCRIBE", class: "btn btn-primary btn-block btn-cta", data: { disable_with: "Writing to list..." }
+            = f.email_field(:email, { id: "email", placeholder: t('main_site.newslatter.email'), class: 'form-control', required: true})
+            = f.button t('main_site.newslatter.button'), class: "btn btn-primary btn-block btn-cta", data: { disable_with: "Writing to list..." }
