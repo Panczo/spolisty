@@ -9,7 +9,7 @@ $body-bg-dark: #262626; //ciemno szary
 $body-bg-light: #8F8F8F; //jasno szary
 $text-color: #F1F1F1;
 
-$main-font: 'Maven Pro', sans-serif;
+$main-font: 'Open Sans', sans-serif;
 
 $padding-standard: 75px;
 
@@ -17,8 +17,7 @@ $input-border-focus: $brand-light;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url(http://fonts.googleapis.com/css?family=Maven+Pro);
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
 
 @mixin background-transparent($color1, $color2, $opacity1, $opacity2) {
     background: -webkit-linear-gradient(90deg, rgba($color1, $opacity1) 10%, rgba($color2, $opacity2) 90%); /* Chrome 10+, Saf5.1+ */
