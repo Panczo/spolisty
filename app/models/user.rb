@@ -212,7 +212,7 @@ class User < ActiveRecord::Base
   def parse_album(track, spotify_track)
     album = Album.find_or_create_by(name: spotify_track.album.name)
     if track.album.blank?
-      album.image = spotify_track.album.images.first["url"]
+      album.image = spotify_track.album.images.first["url"] if spotify_track.album.images
       album.save!
       track.album = album
       track.save!
