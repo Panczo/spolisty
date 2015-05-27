@@ -100,6 +100,7 @@ class User < ActiveRecord::Base
         @finaltracks.each do |tr|
           #Ommit track when is on playlist
           next if play.tracks.include? tr
+          next if tr.id.blank?
           #create playlist tracks
           track = play.tracks.create(name: tr.name, 
                              track_number: tr.id, 
@@ -212,7 +213,11 @@ class User < ActiveRecord::Base
   def parse_album(track, spotify_track)
     album = Album.find_or_create_by(name: spotify_track.album.name)
     if track.album.blank?
-      album.image = spotify_track.album.images.first["url"] unless spotify_track.album.images.empty?
+      if spotify_track.album.images.empty?
+        album.image = "Not defined"
+      else
+        album.image = spotify_track.album.images.first["url"]
+      end
       album.save!
       track.album = album
       track.save!
