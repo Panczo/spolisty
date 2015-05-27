@@ -1,9 +1,10 @@
+# Load DSL and Setup Up Stages
 require 'capistrano/setup'
+
+# Includes default deployment tasks
 require 'capistrano/deploy'
 require 'capistrano/bundler'
 require 'capistrano/rails'
-require 'capistrano/rvm'
-
 
 # Includes tasks from other gems included in your Gemfile
 #
@@ -15,9 +16,10 @@ require 'capistrano/rvm'
 #   https://github.com/capistrano/bundler
 #   https://github.com/capistrano/rails
 #
-set :rvm_type, :user
-set :rvm_ruby_version, '2.2.0p0'
+require 'capistrano/rvm'
 
+set :rvm_type, :user
+set :rvm_ruby_version, '2.1.3p242'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
 # require 'capistrano/bundler'

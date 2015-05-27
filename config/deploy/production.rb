@@ -4,6 +4,8 @@
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
+set :stage, :production
+
 role :app, %w{panczo@46.101.142.231}
 role :web, %w{panczo@46.101.142.231}
 role :db,  %w{panczo@46.101.142.231}
@@ -15,7 +17,6 @@ role :db,  %w{panczo@46.101.142.231}
 # something that quacks like a hash can be used to set
 # extended properties on the server.
 server '46.101.142.231', user: 'panczo', roles: %w{web app}, my_property: :my_value
-#set :server_name, "www.spolisty.com spolisty.com"
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
