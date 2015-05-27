@@ -11,7 +11,7 @@
 class Subscribe < ActiveRecord::Base
   validates :email, presence: true
 
-  validates :email, :email_format => { :message => 'incorrect email format'}
+  #validates :email, :email_format => { :message => 'incorrect email format'}
 
   after_create :join_to_newsletter
 
