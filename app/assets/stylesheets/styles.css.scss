@@ -1353,6 +1353,10 @@ h3 {
 
 .genres_index {
 
+  .row {
+    margin: 0 !important;
+  }
+
   .user {
     opacity: 0.4;
     filter: grayscale(100%);
@@ -1389,7 +1393,7 @@ h3 {
 
 #blues {
   height: 200px;
-    
+  background: image-url('genres/blues.png') repeat scroll center top/cover transparent !important; 
   .user_info {
     margin-top: 100px;
   }
