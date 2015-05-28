@@ -28,9 +28,9 @@ class PlaylistsController < ApplicationController
   def destroy 
     if current_user == @playlist.user
       @playlist.destroy
-      flash[:success] = "Playlist deleted"
+      flash[:success] = t('main_site.playlists.destroy')
     else
-      flash[:error] = "You can't delete this playlist" 
+      flash[:error] = t('main_site.playlists.cantdestory') 
     end
     redirect_to @user
   end
@@ -38,7 +38,7 @@ class PlaylistsController < ApplicationController
   def import
     current_user.import_playlist
     current_user.update_columns(last_download_playlists: Time.now)
-    flash[:success] = "Successfully imported playlists"
+    flash[:success] = t('main_site.playlists.import')
     redirect_to current_user
   end
 
@@ -48,7 +48,7 @@ class PlaylistsController < ApplicationController
       playlist.upload_tracks
     end
     redirect_to :back
-    flash[:success] = "Successfully exported playlist to Spotify"
+    flash[:success] = t('main_site.playlists.export')
   end
 
   def best

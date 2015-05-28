@@ -26,7 +26,7 @@
       @receipt = current_user.reply_to_conversation(@conversation, params[:body])
       if @receipt
         format.html do 
-          flash[:success] = 'Reply sent'
+          flash[:success] = t('main_site.conversation.send')
           redirect_to user_conversation_path(current_user, :id => @conversation)
         end
         format.js
@@ -40,13 +40,13 @@
 
   def destroy
     @conversation.move_to_trash(current_user)
-    flash[:success] = 'The conversation was moved to trash.'
+    flash[:success] = t('main_site.conversation.trash')
     redirect_to :back
   end
  
   def restore
     @conversation.untrash(current_user)
-    flash[:success] = 'The conversation was restored.'
+    flash[:success] = t('main_site.conversation.restore')
     redirect_to user_conversation_path(current_user, :id => @conversation)
   end
 
@@ -55,7 +55,7 @@
     @mailbox.trash.each do |conversation|
       conversation.receipts_for(current_user).update_all(deleted: true)
     end
-    flash[:success] = 'Your trash was cleaned!'
+    flash[:success] = t('main_site.conversation.empty')
     redirect_to user_conversations_path(current_user)
   end
 

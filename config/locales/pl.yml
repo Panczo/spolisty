@@ -75,3 +75,20 @@ pl:
       show_tracks: "Pokaż utwory"
     playlists:
       title: "Najlepsze Playlisty na Spolisty"
+      destroy: "Playlista została usunięta"
+      cantdestroy: "Nie możesz usunąć tej playlisty"
+      import: "Playlisty zostały zaimportowane"
+      export: "Playlista została wysłana do Spotify"
+    conersation: 
+      send: 'Wiadomość została wysłana'
+      trash: "Wiadomość została usunięta do kosza"
+      restore: "Wiadomość została przywrócona"
+      empty: "Kosz został opróżniony"
+    msg:
+      send: "Wiadomość została wysłana"
+    relationship:
+      follow: "Wspierasz użytkownika %{user}"
+      unfollow: "Od teraz nie będziesz otrzymywał powiadomień od %{user}"
+    review:
+      create: "Dodałeś swoją opinię"
+      destroy: "Opinia została usunięta"
