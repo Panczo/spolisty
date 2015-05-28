@@ -18,9 +18,10 @@ class TracksController < ApplicationController
         @playlist.tracks << track
         @playlist.save
         flash[:success] = "Successfully added track - #{track.name} to playlist - #{@playlist.name}"
+        flash[:success] = I18n.t('main_site.track.add', track: track.name, playlist: @playlist.name)
         redirect_to :back
       else
-        flash[:error] = "You have this song already in playlist"
+        flash[:error] = I18n.t('main_site.track.allready')
         redirect_to :back
       end
     end
@@ -30,7 +31,7 @@ class TracksController < ApplicationController
     playlist = @track.playlist
     if current_user == @track.playlist.user
       @track.destroy
-      flash[:success] = "Your track was deleted"
+      flash[:success] = I18n.t('main_site.track.destroy')
       redirect_to [current_user, playlist]
     end
   end

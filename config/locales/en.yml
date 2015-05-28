@@ -90,5 +90,9 @@ en:
       follow: "Now you follow %{user}"
       unfollow: "You unfollow %{user}"
     review:
-      create: "Dodałeś swoją opinię"
-      destroy: "Opinia została usunięta"
+      create: 'Review was successfully created.'
+      destroy: 'Review was successfully destroyed.'
+    track:
+      add: "Successfully added track - %{track} to playlist - %{playlist}"
+      allrady: "You have this song already in playlist"
+      destroy: "Your track was deleted"

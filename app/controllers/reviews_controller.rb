@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       if @review.save
         cookies[:saved_review] = true
-        format.html { redirect_to [@playlist.user, @playlist], notice: 'Review was successfully created.' }
+        format.html { redirect_to [@playlist.user, @playlist], notice: I18n.t('main_site.review.create') }
         format.js
       else
         format.html { redirect_to [@playlist.user, @playlist], notice: 'Errors' }
@@ -50,7 +50,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     respond_to do |format|
-      format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
+      format.html { redirect_to reviews_url, notice: I18n.t('main_site.review.destroy') }
       format.json { head :no_content }
     end
   end

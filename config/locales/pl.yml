@@ -92,3 +92,7 @@ pl:
     review:
       create: "Dodałeś swoją opinię"
       destroy: "Opinia została usunięta"
+    track:
+      add: "Dodałeś utwór - %{track} do playlisty - %{playlist}"
+      alrady: "Ten utór znajduje się się na Twojej playliście"
+      destroy: "Utwór został usunięty"
