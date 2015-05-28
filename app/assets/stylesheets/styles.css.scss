@@ -1554,6 +1554,17 @@ h3 {
 
 
 .best_playlists {
+  a {
+    color: $body-bg-light;
+  }
+
+    .etet {
+      &:hover {
+        background-color: $body-bg-dark;
+        color: $text-color;
+      }
+    }
+
   .row {
     margin-left: 0px;
     margin-right: 0px;
@@ -1568,8 +1579,6 @@ h3 {
   }
 
   .playlist_position {
-    float: left;
-    width: 5%;
     font-size: 34px;
     font-weight: 600;
     padding-top: 23px;
@@ -1581,18 +1590,16 @@ h3 {
   }
   .playlist_name {
     padding-top: 35px;
-    float: left;
-    width: 30%;
   }
   .playlist_owner {
     padding-top: 35px;
-    float: left;
-    width: 30%;
+  }
+
+  .playlist_rat {
+    padding-top: 21px;
   }
   .playlist_rating {
-    padding-top: 21px;
-    float: left;
-    width: 20%;    
+    padding-top: 21px;  
     .score {
       font-size: 25px;
       font-weight: 600;

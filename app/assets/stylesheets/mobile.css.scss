@@ -40,6 +40,6 @@ $screen-md-max:              ($screen-lg-min - 1) !default;
 
 @media (min-width: 0) and (max-width: $screen-xs) { 
   body {
-    background: red !important;
+   /*  background: red !important; */
   }
 } 
