@@ -2,7 +2,7 @@
   <li class="list-group-item clearfix">
 
     <div class="convers_from">
-      <%= conversation.last_message.sender.nick %>
+      <%= conversation.last_message.sender.present? ? conversation.last_message.sender.nick : 'User deleted account' %>
     </div>
 
     <div class="convers_subject">

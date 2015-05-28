@@ -44,7 +44,7 @@
           </div>
         </h3>
         <% if current_user == @playlist.user && @playlist.special? %>
-          <p><%= link_to "Send your playlist to Spotify",  export_user_playlist_path(current_user, @playlist), class: 'btn btn-primary' %></p>
+          <p><%= link_to t('main_page.playlists.send'),  export_user_playlist_path(current_user, @playlist), class: 'btn btn-primary' %></p>
         <% end %>
       </div>
 
@@ -135,7 +135,7 @@
         <%= link_to "Destroy", user_playlist_path, method: :delete, data: { confirm: "Do you want deleted this playlist? This action don't deleted this playlist from spotify app" }, class: 'btn btn-primary btn-show-playlist' %>
       <% end %>
 
-      <%= link_to "Back", :back, class: 'btn btn-primary btn-show-playlist', data: { no_turbolink: true } %>
+      <%= link_to t('main_page.playlists.delete'), :back, class: 'btn btn-primary btn-show-playlist', data: { no_turbolink: true } %>
 
     </div>
   </div>  

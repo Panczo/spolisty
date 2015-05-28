@@ -1,5 +1,5 @@
 <div class="users_wrapper">
-  <h2 class="heading">Below we are present all our users</h2>
+  <h2 class="heading"><%= t('main_site.users.title') %></h2>
   <div class="row">
     <% @users.each do |user| %>
       <div class="col-md-3 col-sm-6">
@@ -8,7 +8,7 @@
           <p class="user_info">
             <%= link_to user.nick, user, data: { no_turbolink: true } %>
             <br />
-            <%= user.rank_explorer ? user.rank_explorer : 'Still searching...' %>
+            <%= user.rank_explorer ? user.rank_explorer : t('main_site.users.search') %>
           </p>
         </div>
       </div>

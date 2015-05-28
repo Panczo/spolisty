@@ -8,7 +8,7 @@
 //= require jquery.raty
 //= require_tree .
 
-Turbolinks.ProgressBar.enable();
+
 
 var ready;
 ready = function() {

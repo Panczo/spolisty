@@ -23,7 +23,7 @@ pl:
     header:
       sign_in: "Zaloguj"
       features: "Co zyskujesz"
-      newslatter: "Powiadomienia"
+      newslatter: "Wiadomości"
     cta:
       title: "Odkrywaj ulubioną muzykę"
       button: "POŁĄCZ ZE SPOTIFY"
@@ -79,6 +79,8 @@ pl:
       cantdestroy: "Nie możesz usunąć tej playlisty"
       import: "Playlisty zostały zaimportowane"
       export: "Playlista została wysłana do Spotify"
+      send: "Wyślij playlistę do Spotify"
+      delete: "Usuń playlistę"
     conersation: 
       send: 'Wiadomość została wysłana'
       trash: "Wiadomość została usunięta do kosza"
@@ -92,7 +94,15 @@ pl:
     review:
       create: "Dodałeś swoją opinię"
       destroy: "Opinia została usunięta"
+      opinion: 'Napisz co myślisz o playliście'
     track:
       add: "Dodałeś utwór - %{track} do playlisty - %{playlist}"
       alrady: "Ten utór znajduje się się na Twojej playliście"
       destroy: "Utwór został usunięty"
+    genre:
+      title: "Gatunki muzyki"
+    users:
+      title: "Nasi użytkownicy"
+      search: "wciąż szuka..."
+    subscribe:
+      succ: "Dziękujemy za zapisanie się do newslettera"

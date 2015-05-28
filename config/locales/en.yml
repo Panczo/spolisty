@@ -79,6 +79,8 @@ en:
       cantdestroy: "You can't delete this playlist"
       import: "Successfully imported playlists"
       export: "Successfully exported playlist to Spotify"
+      send: "Send your playlist to Spotify"
+      delete: "Delete playlist"
     conersation: 
       send: 'Reply sent'
       trash: 'The conversation was moved to trash.'
@@ -92,7 +94,15 @@ en:
     review:
       create: 'Review was successfully created.'
       destroy: 'Review was successfully destroyed.'
+      opinion: 'Write you opinion'
     track:
       add: "Successfully added track - %{track} to playlist - %{playlist}"
       allrady: "You have this song already in playlist"
       destroy: "Your track was deleted"
+    genre:
+      title: "Spolisty Music Genres"
+    users:
+      title: "Our users"
+      serach: 'Still searching...'
+    subscribe:
+      succ: "Successfully added to our mailing list."
