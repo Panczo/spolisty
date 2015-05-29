@@ -1,0 +1,9 @@
+.users_wrapper.genres_index
+  %h2.heading= t('main_site.genre.title')
+  .row
+    - Genre.all.each do |sg|
+      = link_to sg, class: 'genre_link' do
+        .col-md-3.col-sm-6
+          %div{:id => sg.name, :class => "user"}
+            %p.user_info
+              = sg.name
