@@ -14,21 +14,25 @@ var ready;
 ready = function() {
 
   /****  NAVBAR SHOW AFTER scroll  ****/
-  $('#menu').hide();
-  $(document).scroll(function(){
-    var y = $(this).scrollTop();
-    if (y > 640) {
-      $('#menu').fadeIn();
-    } else {
-      $('#menu').fadeOut();
-    }
-  });
+  var pathname = window.location.pathname;
+  if (pathname === "/") {
+    $('#menu').hide();
+    $(document).scroll(function(){
+      var y = $(this).scrollTop();
+      if (y > 640) {
+        $('#menu').fadeIn();
+      } else {
+        $('#menu').fadeOut();
+      }
+    });
+  }
+
 
   /**** smooth section moves ****/
   var $root = $('html, body');
   $('a').click(function() {
       $root.animate({
-          scrollTop: $( $.attr(this, 'href') ).offset().top - 75
+          scrollTop: $( $.attr(this, 'href') ).offset().top - 350
       }, 800);
       return false;
   });

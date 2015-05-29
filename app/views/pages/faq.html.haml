@@ -1,0 +1,48 @@
+%section#faq
+  %nav.navbar.navbar-default.navbar-fixed-top{ :role => "navigation" }
+    .container
+      .navbar-header
+        %button.navbar-toggle.collapsed{:type=>"button", "data-toggle" => "collapse", "data-target" => "#bs-example-navbar-collapse-1"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = link_to "SPOLISTY", root_path, class: 'navbar-brand'
+
+      .collapse.navbar-collapse#menu-navbar
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to "FAQ", faqs_path
+          %li
+            = link_to t('main_site.header.features'), root_path(:anchor => "features")
+          %li
+            = link_to t('main_site.header.newslatter'), root_path(:anchor => "sub")
+          %li
+            = link_to t('main_site.header.sign_in'), root_path(:anchor => "cta")
+
+  .container.question
+    .row.title
+      .col-md-12.text-center
+        %h2 Frequently Asked Questions
+        %hr
+    .row.answers
+      .col-md-12
+        %ul
+          %li
+            %h3 What exactly is a Spolisty?
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora atque doloremque libero veniam, recusandae dolores quasi distinctio molestias nesciunt nemo!
+          %li
+            %h3 Do i need account in Spotify?
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora atque doloremque libero veniam, recusandae dolores quasi distinctio molestias nesciunt nemo!
+          %li
+            %h3 How can i create new playlist in Spolisty?
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora atque doloremque libero veniam, recusandae dolores quasi distinctio molestias nesciunt nemo!
+          %li
+            %h3 How can i send my new playlist to Spotify?
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora atque doloremque libero veniam, recusandae dolores quasi distinctio molestias nesciunt nemo!
+          %li
+            %h3 Who are you?
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora atque doloremque libero veniam, recusandae dolores quasi distinctio molestias nesciunt nemo!
+          %li
+            %h3 How much does Spolisty cost?
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora atque doloremque libero veniam, recusandae dolores quasi distinctio molestias nesciunt nemo!

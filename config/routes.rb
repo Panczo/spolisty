@@ -58,6 +58,7 @@ Rails.application.routes.draw do
 
 
   get 'best_playlists', to: 'playlists#best'
+  get 'faqs', to: 'pages#faq'
   
   authenticated :user do
     root to: "users#show", :as => "profile", via: :get

@@ -1821,3 +1821,73 @@ h3 {
   padding-top: 40px;
   color: $body-bg-light;
 }
+
+#faq {
+  display: true;
+  .navbar {
+    padding: 15px 0;
+    border: none;
+
+    @include background-transparent($brand-primary-dark, $brand-light, 0.8, 0.8);
+    
+    #menu-navbar {
+      a {
+        padding-bottom: 10px;
+        color: $text-color;
+        font-weight: 600;
+        &:hover {
+          border-bottom: 2px solid $brand-primary-dark;
+          margin-bottom: -2px;
+        }
+      }
+    }
+
+    .navbar-brand {
+      color: $text-color;
+      font-weight: 600;
+      @include transition(1s);
+      &:hover {
+        @include transition(1s);
+        color: lighten($brand-light, 40%);
+      }
+    }
+  }
+
+  .question {
+    margin-top: 150px;
+  }  
+  .title {
+    margin-bottom: 50px;
+    h2 {
+      font-weight: 800;
+    }
+
+    hr {
+      -moz-border-bottom-colors: none;
+      -moz-border-left-colors: none;
+      -moz-border-right-colors: none;
+      -moz-border-top-colors: none;
+      border-color: $brand-light -moz-use-text-color -moz-use-text-color;
+      border-image: none;
+      border-right: 0 none;
+      border-style: solid none none;
+      border-width: 4px 0 0;
+      display: block;
+      height: 1px;
+      margin: 3rem auto;
+      max-width: 100px;
+      padding: 0;
+      width: 30%;
+    }
+  }
+
+  .answers {
+    li {
+      margin-bottom: 4.5rem;
+      p {
+        margin-bottom: 3rem;
+        color: lighten($body-bg-light, 10%);
+      }
+    }
+  }
+}
