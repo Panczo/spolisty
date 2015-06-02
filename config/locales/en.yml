@@ -22,6 +22,7 @@ en:
   main_site:
     header:
       sign_in: "Sign in"
+      sign_out: "Sign out"
       features: "Features"
       newslatter: "Newslatter"
     cta:

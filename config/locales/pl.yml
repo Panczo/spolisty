@@ -22,6 +22,7 @@ pl:
   main_site:
     header:
       sign_in: "Zaloguj"
+      sign_out: "Wyloguj"
       features: "Co zyskujesz"
       newslatter: "Wiadomości"
     cta:

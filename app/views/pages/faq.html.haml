@@ -13,12 +13,9 @@
         %ul.nav.navbar-nav.navbar-right
           %li
             = link_to "FAQ", faqs_path
-          %li
-            = link_to t('main_site.header.features'), root_path(:anchor => "features")
-          %li
-            = link_to t('main_site.header.newslatter'), root_path(:anchor => "sub")
-          %li
-            = link_to t('main_site.header.sign_in'), root_path(:anchor => "cta")
+          - if user_signed_in?  
+            %li
+              = link_to t('main_site.header.sign_out'), destroy_user_session_path, method: :delete
 
   .container.question
     .row.title
