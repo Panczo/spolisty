@@ -13,7 +13,9 @@ class PlaylistsController < ApplicationController
   def show
     if params[:track]
       @tracks = @playlist.tracks.includes(:artist, :album).where(id: params[:track]).paginate(page: params[:page], per_page: 50)
+      session[:back_to_playlist] = true
     else
+      session[:back_to_playlist] = false if session[:back_to_playlist]
       @tracks = @playlist.tracks.includes(:artist, :album).paginate(page: params[:page], per_page: 50)
     end
     @reviews = @playlist.reviews.includes(:user).order("created_at DESC")

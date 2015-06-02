@@ -46,6 +46,9 @@
         <% if current_user == @playlist.user && @playlist.special? %>
           <p><%= link_to t('main_page.playlists.send'),  export_user_playlist_path(current_user, @playlist), class: 'btn btn-primary' %></p>
         <% end %>
+        <% if session[:back_to_playlist] %>
+          <%= link_to "Show me all tracks from playlist", user_playlist_path(@playlist.user, id: @playlist.id ), class: 'btn btn-primary' %>
+        <% end %>
       </div>
 
       <table class="table table-hover">
