@@ -114,9 +114,10 @@ $(document).on('page:load', ready);
           </h2>
           <div class="row ranked_users">
             <% @ranked_users.each do |u| %>
-              <div class="col-md-2 col-sm-2 col-xs-2">
-                <%= link_to u, data: { no_turbolink: true }, "data-toggle" => "tooltip", "data-placement" => "top", "title" => u.nick do %>
-                  <%= image_tag(u.image, class: 'img-responsive') %>
+              <div id="u.id" class="col-md-2 col-sm-2 col-xs-2">
+                <%= link_to u, data: { no_turbolink: true }, "data-toggle" => "tooltip", "data-placement" => "top", "title" => u.nick, "data-viewport" => ".ranked_users" do %>
+                  <%= foto(u) %>
+                  <%#= image_tag(u.image, class: 'img-responsive') %>
                 <% end %>
               </div>
             <% end %>
