@@ -172,6 +172,7 @@ GEM
       thor (~> 0.14)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
+    geocoder (1.2.8)
     gibbon (1.1.5)
       httparty
       multi_json (>= 1.9.0)
@@ -398,6 +399,7 @@ DEPENDENCIES
   faker!
   figaro
   font-awesome-rails
+  geocoder
   gibbon
   google-analytics-rails
   haml

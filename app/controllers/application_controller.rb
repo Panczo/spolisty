@@ -4,11 +4,24 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
-
+  before_action :set_locale
 
   rescue_from ActiveRecord::RecordNotFound do
     flash[:warning] = 'Resource not found.'
     redirect_back_or root_path
+  end
+
+  def set_locale
+    country_code = request.location.country_code
+    if country_code
+      country_code = country_code.downcase.to_sym
+      # use russian for CIS countries, english for others
+      country_code == :pl ? l = :pl : l = :en
+    else
+      l = I18n.default_locale # use default locale if cannot retrieve this info
+    end
+
+    I18n.locale = l
   end
 
   protected
@@ -19,6 +32,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_in)        { |u| u.permit(:login, :username, :email, :password, :remember_me) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :about, :password, :password_confirmation, :current_password) }
   end
+
 
 
   private
