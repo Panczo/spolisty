@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
           :omniauth_providers => [:spotify]
 
   has_many :playlists, dependent: :destroy
-  has_many :tracks, through: :playlists
+  has_many :tracks, through: :playlists, dependent: :destroy
   has_many :reviews, through: :playlists, dependent: :destroy
   has_many :charts
   has_many :genres, through: :tracks
@@ -99,8 +99,7 @@ class User < ActiveRecord::Base
 
         @finaltracks.each do |tr|
           #Ommit track when is on playlist
-          next if play.tracks.include? tr
-          next if tr.id.blank?
+          next if play.tracks.include? tr || tr.id.blank?
           #create playlist tracks
           track = play.tracks.create(name: tr.name, 
                              track_number: tr.id, 

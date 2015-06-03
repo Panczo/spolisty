@@ -82,6 +82,7 @@ en:
       export: "Successfully exported playlist to Spotify"
       send: "Send your playlist to Spotify"
       delete: "Delete playlist"
+      back: "Back"
     conersation: 
       send: 'Reply sent'
       trash: 'The conversation was moved to trash.'

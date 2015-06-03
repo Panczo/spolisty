@@ -28,11 +28,11 @@ class PlaylistsController < ApplicationController
   end
 
   def destroy 
-    if current_user == @playlist.user
+    if current_user == @playlist.user && !@playlist.special
       @playlist.destroy
       flash[:success] = t('main_site.playlists.destroy')
     else
-      flash[:error] = t('main_site.playlists.cantdestory') 
+      flash[:error] = t('main_site.playlists.cantdestroy') 
     end
     redirect_to @user
   end

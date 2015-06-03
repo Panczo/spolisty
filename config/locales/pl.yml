@@ -82,6 +82,7 @@ pl:
       export: "Playlista została wysłana do Spotify"
       send: "Wyślij playlistę do Spotify"
       delete: "Usuń playlistę"
+      back: "Wstecz"
     conersation: 
       send: 'Wiadomość została wysłana'
       trash: "Wiadomość została usunięta do kosza"
