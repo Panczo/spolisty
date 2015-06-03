@@ -80,7 +80,7 @@ pl:
       cantdestroy: "Nie możesz usunąć tej playlisty"
       import: "Playlisty zostały zaimportowane"
       export: "Playlista została wysłana do Spotify"
-      send: "Wyślij playlistę do Spotify"
+      sendplaylist: "Wyślij playlistę do Spotify"
       delete: "Usuń playlistę"
       back: "Wstecz"
     conersation: 

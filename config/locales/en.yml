@@ -80,7 +80,7 @@ en:
       cantdestroy: "You can't delete this playlist"
       import: "Successfully imported playlists"
       export: "Successfully exported playlist to Spotify"
-      send: "Send your playlist to Spotify"
+      sendplaylist: "Send your playlist to Spotify"
       delete: "Delete playlist"
       back: "Back"
     conersation: 

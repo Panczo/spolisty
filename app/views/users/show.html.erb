@@ -63,7 +63,8 @@ $(document).on('page:load', ready);
             <div class="col-md-8 col-md-offset-2">
               <%= link_to t('main_site.users_show.download'), 
                   import_user_playlists_path(current_user), 
-                  class: 'btn btn-primary btn-block btn-lg' 
+                  class: 'btn btn-primary btn-block btn-lg', 
+                  data: {disable_with: raw("<i class='fa fa-spinner fa-spin'></i> Downloading...")}
               %>
             </div>
           </div>
@@ -89,8 +90,11 @@ $(document).on('page:load', ready);
             </p>
             <div class="row">
               <div class="col-md-4 col-md-offset-4">
-                <%= link_to t('main_site.users_show.last_step_generate_button'), user_charts_path([current_user, current_user.charts.build]), method: :post, 
-                  class: 'btn btn-primary btn-block btn-lg' %>
+                <%= link_to t('main_site.users_show.last_step_generate_button'),
+                  user_charts_path([current_user, current_user.charts.build]),
+                  method: :post, 
+                  class: 'btn btn-primary btn-block btn-lg',
+                  data: { disable_with: raw("<i class='fa fa-spinner fa-spin'></i> Generating...")} %>
               </div>
             </div>
           <% elsif !current_user.tracks.includes(:genre).map(&:genre).any?{|n| !n.nil?} && current_user?(@user) %>
