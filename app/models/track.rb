@@ -27,7 +27,7 @@ class Track < ActiveRecord::Base
   belongs_to :genre
   belongs_to :user
 
-  validates :playlist, :name, :track_number, presence: true
+  validates :playlist, :name, presence: true
 
   def track_duration
     seconds = duration / 1000

@@ -12,7 +12,7 @@ class GenreClassifier
     #Download artists from spotify 
     all_spotify_artsits = Array.new
     artist_spotify_ids.each_slice(40) do |artists_ids|
-        art = RSpotify::Artist.find(artists_ids)
+      art = RSpotify::Artist.find(artists_ids)
       all_spotify_artsits << art
     end
     all_spotify_artsits
