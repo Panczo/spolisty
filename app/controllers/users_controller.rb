@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     end
     @tracks = @user.tracks.classified.limit(100)
     @chart = @user.charts.build
-    @ranked_users = User.where(rank: @user.rank).limit(5)
+    @ranked_users = User.ranked_users(@user)
   end
 
   def following

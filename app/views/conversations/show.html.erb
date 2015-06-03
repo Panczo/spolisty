@@ -10,7 +10,7 @@
           <div class="panel-heading">Chatting with
           <% @conversation.participants.each do |participant| %>
             <% unless participant == current_user %>
-              <%= participant.nick %>
+              <%= link_to participant.nick, user_path(participant), data: { no_turbolink: true } %>
             <% end %>
           <% end %> <%= @conversation.subject %></div>
          

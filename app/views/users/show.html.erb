@@ -95,7 +95,7 @@ $(document).on('page:load', ready);
             </div>
           <% elsif !current_user.tracks.includes(:genre).map(&:genre).any?{|n| !n.nil?} && current_user?(@user) %>
 
-            <h3 class="lead"><%= t('main_site.users_show.cant_classify') %></h3>
+            <h2 class="lead" style="margin-top: 70px;"><%= t('main_site.users_show.cant_classify') %></h3>
 
           <% else %>
             <h2 class="follow_heading"><%= t('main_site.users_show.music_chart') %></h2>
@@ -113,57 +113,32 @@ $(document).on('page:load', ready);
             <% end %>
           </h2>
           <div class="row ranked_users">
-            <% @ranked_users.each do |u| %>
-              <div id="u.id" class="col-md-2 col-sm-2 col-xs-2">
-                <%= link_to u, data: { no_turbolink: true }, "data-toggle" => "tooltip", "data-placement" => "top", "title" => u.nick, "data-viewport" => ".ranked_users" do %>
-                  <%= foto(u) %>
-                  <%#= image_tag(u.image, class: 'img-responsive') %>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-          <h2 class="follow_heading">
-            <%= @classified_tracks.count %> <%= t('main_site.users_show.classified_music') %>
-          </h2>
-
-          <div class="row classify_tracks">
-            <% @classified_tracks.sample(5).each do |tr| %>
-              <div class="col-md-12 user_wrapper clearfix">
-                <div class="user_image" style="padding-left: 100px;">
-                  <%= image_tag(tr.album.image, size: '90x90') %>
-                </div>
-                <div class="user_content">
-                  <h2 class="user_heading">
-                    <%= tr.name %>
-                    <p><%= tr.album.name %></p>
-                  </h2>
-                  <p><%= tr.genre.name %></p>
-                </div>
-                <div class="track_playlist">
-                  <%= link_to [current_user, tr.playlist] do %>
-                    <i class="fa fa-list"> <%= tr.playlist.name %></i>
+            <% if @ranked_users.blank? && @user.tracks.blank? %>
+              <h2 class="lead">Add tracks to your playlist and classify your tracks to see people who listen the same music</h2>
+            <% elsif @ranked_users.blank? && @classified_tracks.any?%>
+              <h2 class="lead">Looks that anybody listen the same music like you</h2>
+            <% elsif @ranked_users.blank?  %>
+              <h2 class="lead">Classify your tracks to see people who listen the same music</h2>
+            <% else %>
+              <% @ranked_users.each do |u| %>
+                <div id="u.id" class="col-md-2 col-sm-2 col-xs-2">
+                  <%= link_to u, data: { no_turbolink: true }, "data-toggle" => "tooltip", "data-placement" => "top", "title" => u.nick, "data-viewport" => ".ranked_users" do %>
+                    <%= foto(u) %>
+                    <%#= image_tag(u.image, class: 'img-responsive') %>
                   <% end %>
                 </div>
-              </div>
+              <% end %>
             <% end %>
-
-            <div class="paginacja text-center" data-no-turbolink>
-              <%= will_paginate @classified_tracks, renderer: BootstrapPagination::Rails %>
-            </div>
-          
           </div>
-          <h2 class="follow_heading">
-            <%= @unclassified_tracks.count %> <%= t('main_site.users_show.unclassified_music') %> 
-          </h2>
+          <% if @classified_tracks.any? %>
+            <h2 class="follow_heading">
+              <%= @classified_tracks.count %> <%= t('main_site.users_show.classified_music') %>
+            </h2>
 
-          <%= form_tag edit_multiple_user_tracks_path(@user), method: :get do %>
             <div class="row classify_tracks">
-              <% @unclassified_tracks.sample(5).each do |tr| %>
+              <% @classified_tracks.sample(5).each do |tr| %>
                 <div class="col-md-12 user_wrapper clearfix">
-                  <div class="check_track">
-                    <%= check_box_tag "track_ids[]", tr.id %>
-                  </div>
-                  <div class="user_image">
+                  <div class="user_image" style="padding-left: 100px;">
                     <%= image_tag(tr.album.image, size: '90x90') %>
                   </div>
                   <div class="user_content">
@@ -171,8 +146,7 @@ $(document).on('page:load', ready);
                       <%= tr.name %>
                       <p><%= tr.album.name %></p>
                     </h2>
-
-                    <%#= truncate(user.about, length: 70) %>
+                    <p><%= tr.genre.name %></p>
                   </div>
                   <div class="track_playlist">
                     <%= link_to [current_user, tr.playlist] do %>
@@ -181,32 +155,72 @@ $(document).on('page:load', ready);
                   </div>
                 </div>
               <% end %>
-              <%= submit_tag t('main_site.users_show.edit_check'), class: 'btn' %>
-            </div>
 
-          <% end %><!-- /form -->   
+              <div class="paginacja text-center" data-no-turbolink>
+                <%= will_paginate @classified_tracks, renderer: BootstrapPagination::Rails %>
+              </div>
+            
+            </div>
+          <% end %>
+
+          <% if @unclassified_tracks.any? %>
+            <h2 class="follow_heading">
+              <%= @unclassified_tracks.count %> <%= t('main_site.users_show.unclassified_music') %> 
+            </h2>
+
+            <%= form_tag edit_multiple_user_tracks_path(@user), method: :get do %>
+              <div class="row classify_tracks">
+                <% @unclassified_tracks.sample(5).each do |tr| %>
+                  <div class="col-md-12 user_wrapper clearfix">
+                    <div class="check_track">
+                      <%= check_box_tag "track_ids[]", tr.id %>
+                    </div>
+                    <div class="user_image">
+                      <%= image_tag(tr.album.image, size: '90x90') %>
+                    </div>
+                    <div class="user_content">
+                      <h2 class="user_heading">
+                        <%= tr.name %>
+                        <p><%= tr.album.name %></p>
+                      </h2>
+
+                      <%#= truncate(user.about, length: 70) %>
+                    </div>
+                    <div class="track_playlist">
+                      <%= link_to [current_user, tr.playlist] do %>
+                        <i class="fa fa-list"> <%= tr.playlist.name %></i>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+                <%= submit_tag t('main_site.users_show.edit_check'), class: 'btn' %>
+              </div>
+
+            <% end %><!-- /form -->   
             <div class="paginacja text-center" data-no-turbolink>
               <%= will_paginate @unclassified_tracks, renderer: BootstrapPagination::Rails %>
             </div>
-
+          <% end %>          
         <% end %><!-- /if current_user?(@user) -->
-      <div class="row">
-        <div class="col-md-12 ">
-          <%= link_to t('main_site.users_show.show_tracks') , '#', id: 'show_user_tracks', class: "pull-left" %>
-        </div>
-      </div>
-      <div class="filter-tracks">
-        <ul id="portfolio-filter" class="nav nav-pills nav-justified">
-          <% @user.genres.uniq.each do |genre| %>
-            <li><a href="#<%= genre.name %>"><%= genre.name %></a></li>
-          <% end %>
-        </ul>
 
-        <ul id="portfolio-list" class="row">
-          <%= render @tracks %>
-        </ul> 
-      </div>
+        <% if @tracks.any? %>
+          <div class="row">
+            <div class="col-md-12 ">
+              <%= link_to t('main_site.users_show.show_tracks') , '#', id: 'show_user_tracks', class: "pull-left" %>
+            </div>
+          </div>
+          <div class="filter-tracks">
+            <ul id="portfolio-filter" class="nav nav-pills nav-justified">
+              <% @user.genres.uniq.each do |genre| %>
+                <li><a href="#<%= genre.name %>"><%= genre.name %></a></li>
+              <% end %>
+            </ul>
 
+            <ul id="portfolio-list" class="row">
+              <%= render @tracks %>
+            </ul> 
+          </div>
+        <% end %>
     </div>
   </div>
 </section>

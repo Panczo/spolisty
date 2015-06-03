@@ -60,6 +60,8 @@ class User < ActiveRecord::Base
 
   validates :provider, :uid, presence: true
 
+  scope :ranked_users, -> (user) { User.where(rank: user.rank).where.not(id: user.id).limit(5) }
+
   acts_as_messageable
 
   devise authentication_keys: [:login]
