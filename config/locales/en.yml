@@ -61,7 +61,7 @@ en:
       settings: "Your settings"
     users_show:
       welcome: "Welcome to the Spolisty App."
-      download: "Download your playlists from spotify account"
+      download: "Download your playlists."
       p: "or read how work Spolity.com"
       last_step_p: "The Last Step"
       last_step_generate: "Generate your chart based on your playlists. "

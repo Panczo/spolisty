@@ -61,7 +61,7 @@ pl:
       settings: "Twoje ustawienia"
     users_show:
       welcome: "Witamy w aplikacji Spolisty"
-      download: "Pobierz swoje playlisty z Spotify"
+      download: "Pobierz swoje playlisty."
       p: "lub przeczytaj jak działa Spolisty"
       last_step_p: "Ostatni etap"
       last_step_generate: "Utwórz graf na bazie twoich playlist"

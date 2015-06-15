@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
           :omniauth_providers => [:spotify]
 
   has_many :playlists, dependent: :destroy
-  has_many :tracks, through: :playlists, dependent: :destroy
+  has_many :tracks, through: :playlists
   has_many :reviews, through: :playlists, dependent: :destroy
   has_many :charts
   has_many :genres, through: :tracks
@@ -86,6 +86,8 @@ class User < ActiveRecord::Base
   end
 
   def import_playlist
+    playlists.destroy_all if playlists.any?
+    
     spotify_user = RSpotify::User.new(spotify_hash)
     #Import playlists through RSpotify
     spotify_playlists = spotify_user.playlists

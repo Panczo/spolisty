@@ -11,6 +11,26 @@
 
         <h2 class="follow_heading">Your settings</h2>
 
+        <div class="row action_button">
+          <div class="col-md-10 col-md-offset-1">
+              <div class="col-md-6">
+                <%= link_to t('main_site.users_show.download'), 
+                    import_user_playlists_path(current_user), 
+                    class: 'btn btn-primary btn-block btn-lg', 
+                    data: {disable_with: raw("<i class='fa fa-spinner fa-spin'></i> Downloading...")}
+                %>        
+              </div>
+              <div class="col-md-6">
+                <%= link_to t('main_site.users_show.last_step_generate_button'),
+                  user_charts_path([current_user, current_user.charts.build]),
+                  method: :post, 
+                  class: 'btn btn-primary btn-block btn-lg',
+                  data: { disable_with: raw("<i class='fa fa-spinner fa-spin'></i> Generating...")}
+                %>
+              </div>
+          </div>
+        </div>
+
         <div class="row text-left">
           <div class="col-md-10 col-md-offset-1">
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal' }) do |f| %>
