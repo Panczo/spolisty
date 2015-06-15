@@ -6,4 +6,4 @@
         .text-center
           %h2 
             = t('main_site.cta.title')
-          = link_to t('main_site.cta.button'), user_omniauth_authorize_path(:spotify), class: "btn btn-primary btn-cta"
+          = link_to t('main_site.cta.button'), user_omniauth_authorize_path(:spotify), class: "btn btn-primary btn-cta", data: { disable_with: raw("<i class='fa fa-spinner fa-spin'></i> CONNECTING...") }
