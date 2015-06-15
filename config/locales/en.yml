@@ -20,6 +20,20 @@ en:
     new:
       title: "New article"
   main_site:
+    faq:
+      head: "Frequently Asked Questions"
+      firstq: "What exactly is a Spolisty?"
+      firsta: "Spolisty is a web application where you can meet people who listen the same music like you."
+      secondq: "Do i need account in Spotify?"
+      seconda: "Yes. In order to use Spolisty you need to have account on Spotify."
+      thirdq: "How can i create new playlist in Spolisty?"
+      thirda: "Playlist 'spolisty' will have created after you add your first track to this playlist"
+      fourthq: "How can i send my new playlist to Spotify?"
+      fourtha: "It is simply! Just click on 'send playlist to spotify' button on playlist show page. Remember you can only send 'spolisty' playlist"
+      fifthq: "Who are you?"
+      fiftha: "My name is Tomek. I am fascinated and curious about Ruby on Rails and this project is created in my spare time."
+      sixq: "How much does Spolisty cost?"
+      sixa: "Nope. It is completely free :)"
     header:
       sign_in: "Sign in"
       sign_out: "Sign out"

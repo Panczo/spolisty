@@ -20,6 +20,20 @@ pl:
     new:
       title: "New article"
   main_site:
+    faq:
+      head: "Często zadawane pytania"
+      firstq: "Do czego służy Spolisty?"
+      firsta: "Spolisty jest aplikacją webową stworzoną z myślą o tym abyś mógł poznać ludzi słuchających takiej samej jak Ty muzyki."
+      secondq: "Czy potrzebuję konta w Spotify?"
+      seconda: "Tak. Aby korzystać z Spolisty musisz posiadać konto w Spotify"
+      thirdq: "Jak mogę utowrzyć nową playlistę w Spolisty?"
+      thirda: "Nowa playlista (spolisty) zostanie utworzona automatycznie podczas pierwszego dodania utworu do listy"
+      fourthq: "Jak wysłać moją playlistę do Spotify?"
+      fourtha: "To proste! Wystarczy że klikniesz przycisk 'wyślij do Spotify' na stronie playlisty 'spolisty'. Pamiętaj jednak, na tą chwilę możesz wysyłać do Spotify tylko playlistę 'spolisty'"
+      fifthq: "Kto stoi za spolisty.com"
+      fiftha: "Tomek z tej strony. Jestem zafascynowany oraz ciekawy wykorzystywania technologii Ruby on Rails a strona ta powstaje w moim wolnym czasie"
+      sixq: "Czy Spolisty coś kosztuje"
+      sixa: "Tomek z tej strony. Jestem zafascynowany oraz ciekawy wykorzystywania technologii Ruby on Rails a strona ta powstaje w moim wolnym czasie"
     header:
       sign_in: "Zaloguj"
       sign_out: "Wyloguj"
