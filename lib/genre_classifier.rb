@@ -5,7 +5,7 @@ class GenreClassifier
   end
 
   def artist_spotify_ids
-     @tracks.map {|tr| tr.artist.spotify_id}
+     @tracks.map {|tr| tr.artist.spotify_id}.compact
   end
 
   def spotify_artists

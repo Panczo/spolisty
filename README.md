@@ -22,6 +22,7 @@ All this app is one huge place to improve.
 * Improve GenreClassifier 
 * Write more spec
 * Convert erb to haml
+* Add cron jobs for download playlist
 
 
 
