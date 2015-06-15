@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    country_code = request.location.country_code
-    if country_code
+    
+    if country_code = request.location.country_code
       country_code = country_code.downcase.to_sym
       # use russian for CIS countries, english for others
       country_code == :pl ? l = :pl : l = :en
