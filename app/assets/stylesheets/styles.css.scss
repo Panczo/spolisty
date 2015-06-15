@@ -149,13 +149,15 @@ a, a:visited, a:focus, a:active, a:hover{
 }
 
 #features {
-  padding: $padding-standard;
   padding-top: 76px;
+  padding-bottom: 76px;
   font-family: $main-font;
   background-color: $body-bg;
   
   .feature {
     color: $body-bg-light;
+    padding-top: 50px;
+    padding-bottom: 50px;
     &:hover {
       @include transition(0.6s);
       color: $text-color;
@@ -191,6 +193,15 @@ a, a:visited, a:focus, a:active, a:hover{
     padding-bottom: 15px;
   }
 
+  .container {
+    padding-left: 0px;
+    padding-right: 0px;
+    .row {
+      margin-right: 0px; 
+      margin-left: 0px;
+    }
+  }
+
   .description-text {
     p {
       font-size: 15px;
@@ -200,7 +211,7 @@ a, a:visited, a:focus, a:active, a:hover{
 
 #cta2 {
   background-color: $body-bg;
-  padding: $padding-standard;
+  padding: $padding-standard 0;
   font-family: $main-font;
 
   h2 {
@@ -220,11 +231,20 @@ a, a:visited, a:focus, a:active, a:hover{
 #sub {
   color: $text-color;
   background-color: $body-bg-dark;
-  padding: $padding-standard;
+  padding: $padding-standard 0;
   font-family: $main-font;
 
   #email {
     margin: 10px 0;
+  }
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
 
   .form-control {
