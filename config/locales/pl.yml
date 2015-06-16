@@ -32,8 +32,8 @@ pl:
       fourtha: "To proste! Wystarczy że klikniesz przycisk 'wyślij do Spotify' na stronie playlisty 'spolisty'. Pamiętaj jednak, na tą chwilę możesz wysyłać do Spotify tylko playlistę 'spolisty'"
       fifthq: "Kto stoi za spolisty.com"
       fiftha: "Tomek z tej strony. Jestem zafascynowany oraz ciekawy wykorzystywania technologii Ruby on Rails a strona ta powstaje w moim wolnym czasie"
-      sixq: "Czy Spolisty coś kosztuje"
-      sixa: "Tomek z tej strony. Jestem zafascynowany oraz ciekawy wykorzystywania technologii Ruby on Rails a strona ta powstaje w moim wolnym czasie"
+      sixq: "Czy Spolisty coś kosztuje?"
+      sixa: "Nie. Ta strona jest całkowicie darmowa :)."
     header:
       sign_in: "Zaloguj"
       sign_out: "Wyloguj"
