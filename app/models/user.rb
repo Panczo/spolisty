@@ -31,6 +31,9 @@ class User < ActiveRecord::Base
   after_create :create_spolisty_list
   attr_accessor :login
   serialize :spotify_hash
+
+  extend FriendlyId
+  friendly_id :nick, :use => :slugged
   
   devise  :database_authenticatable,
           :registerable,

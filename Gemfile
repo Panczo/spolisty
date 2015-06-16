@@ -34,6 +34,7 @@ gem 'mailboxer', github: 'lacco/mailboxer'
 gem 'haml'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'geocoder'
+gem 'friendly_id'
 
 
 group :development do
