@@ -35,6 +35,8 @@ gem 'haml'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'geocoder'
 gem 'friendly_id'
+gem 'html5shiv-rails'
+
 
 
 group :development do

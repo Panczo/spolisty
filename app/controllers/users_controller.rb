@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     if params[:id]
-      @user = User.friendly.find(params[:id])
+      @user = User.find(params[:id])
     else
       @user = current_user
     end
@@ -22,14 +22,14 @@ class UsersController < ApplicationController
 
   def following
     @title = 'following'
-    @user = User.friendly.find(params[:id])
+    @user = User.find(params[:id])
     @users = @user.following
     render 'show_follow'
   end
 
   def followers
     @title = 'followers'
-    @user = User.friendly.find(params[:id])
+    @user = User.find(params[:id])
     @users = @user.followers
     render 'show_follow'
   end
