@@ -7,7 +7,7 @@ set :repo_url, 'git@github.com:JoaquinSantana/spolisty.git'
 
 set :deploy_to, '/home/panczo/spolisty'
 
-set :linked_files, %w{config/database.yml config/application.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/application.yml config/secrets.yml app/assets/star-half.png app/assets/star-off.png app/assets/star-on.png}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
