@@ -64,5 +64,7 @@ Rails.application.routes.draw do
     root to: "users#show", :as => "profile", via: :get
   end
   
+
+  match '*path', via: :all, to: 'pages#error_404'
   root 'pages#index'
 end

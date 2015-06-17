@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     redirect_back_or root_path
   end
 
+  rescue_from ActionController::RoutingError do
+    raise :test
+    render_404
+  end
+
   def set_locale
     country_code = request.try(:location).try(:country_code) || "en"
 
