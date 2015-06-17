@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
@@ -12,14 +10,13 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    country_code = request.location.country_code || "en"
+    country_code = request.try(:location).try(:country_code) || "en"
 
     if country_code
       country_code = country_code.downcase.to_sym
-      # use russian for CIS countries, english for others
       country_code == :pl ? l = :pl : l = :en
     else
-      l = I18n.default_locale # use default locale if cannot retrieve this info
+      l = I18n.default_locale
     end
 
     I18n.locale = l
@@ -27,14 +24,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  #->Prelang (user_login:devise)
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up)        { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
     devise_parameter_sanitizer.for(:sign_in)        { |u| u.permit(:login, :username, :email, :password, :remember_me) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :about, :password, :password_confirmation, :current_password) }
   end
-
-
 
   private
 
@@ -42,7 +36,6 @@ class ApplicationController < ActionController::Base
     redirect_to request.referer || path
   end
   
-  #-> Prelang (user_login:devise)
   def require_user_signed_in
     unless user_signed_in?
 
