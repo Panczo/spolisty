@@ -36,7 +36,7 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'geocoder'
 gem 'friendly_id'
 gem 'html5shiv-rails'
-
+gem 'newrelic_rpm'
 
 
 group :development do
