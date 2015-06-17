@@ -4,9 +4,9 @@
     <% @users.each do |user| %>
       <div class="col-md-3 col-sm-6">
         <div class="user">
-          <p class="text-center"><%= link_to foto(user), user_path(user.friendly_id), data: { no_turbolink: true } %></p>
+          <p class="text-center"><%= link_to foto(user), user_path(user), data: { no_turbolink: true } %></p>
           <p class="user_info">
-            <%= link_to user.nick, user_path(user.friendly_id), data: { no_turbolink: true } %>
+            <%= link_to user.nick, user_path(user), data: { no_turbolink: true } %>
             <br />
             <%= user.rank_explorer ? user.rank_explorer : t('main_site.users.search') %>
           </p>
