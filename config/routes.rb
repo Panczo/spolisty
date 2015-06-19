@@ -65,6 +65,6 @@ Rails.application.routes.draw do
   end
   
 
-  match '*path', via: :all, to: 'pages#error_404'
+  #match '*path', via: :all, to: 'pages#error_404'
   root 'pages#index'
 end

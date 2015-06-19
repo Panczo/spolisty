@@ -16,7 +16,7 @@
   <script src="http://code.highcharts.com/highcharts.js"></script>
   <script src="http://code.highcharts.com/highcharts-more.js"></script>
   <script src="http://code.highcharts.com/modules/exporting.js"></script>
-  <%= analytics_init if Rails.env.production? or Rails.env.development? %>
+  <%#= analytics_init if Rails.env.production? or Rails.env.development? %>
 
   <!--[if lt IE 9]>
     <%= javascript_include_tag 'html5shiv-printshiv' %>
@@ -25,6 +25,7 @@
 <body>
 
   <% if user_signed_in? %>
+  <%= render partial: "shared/analytics" %>
     <%= render partial: "shared/leftnav" %>
     <div class="row main-field">
       <div class="col-md-12">
@@ -34,6 +35,7 @@
     </div>
   <% else %>
     <div class="container">
+    <%= render partial: "shared/analytics" %>
       <%= bootstrap_flash %>
       <%= yield %>
     </div>
