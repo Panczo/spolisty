@@ -20,9 +20,12 @@
 
     <%= analytics_init if Rails.env.production? or Rails.env.development? %></head>
 <body>
-<%= bootstrap_flash %>
 
-<%= yield %>
+  <%= render partial: "shared/analytics" %>
+
+  <%= bootstrap_flash %>
+
+  <%= yield %>
 
 </body>
 </html>

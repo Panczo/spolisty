@@ -38,6 +38,8 @@ gem 'friendly_id'
 gem 'html5shiv-rails'
 gem 'newrelic_rpm'
 
+gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
+
 
 group :development do
   gem 'web-console'

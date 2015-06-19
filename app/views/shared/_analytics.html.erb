@@ -1,0 +1,55 @@
+<script type="text/javascript">
+  // Create a queue to push events, and stub all methods
+  window.analytics || (window.analytics = []);
+  window.analytics.methods = ['identify', 'track', 'trackLink', 'trackForm', 'trackClick', 'trackSubmit', 'page', 'pageview', 'ab', 'alias', 'ready', 'group', 'on', 'once', 'off'];
+  window.analytics.factory = function (method) {
+    return function () {
+      var args = Array.prototype.slice.call(arguments);
+      args.unshift(method);
+      window.analytics.push(args);
+      return window.analytics;
+    };
+  };
+for (var i = 0; i < window.analytics.methods.length; i++) {
+  var method = window.analytics.methods[i];
+  window.analytics[method] = window.analytics.factory(method);
+}
+
+// Set up a way to async load Analytics.js after everything else
+analytics.load = function(callback) {
+  var script = document.createElement('script');
+  script.async = true;
+  script.type = 'text/javascript';
+  // If using rails, use the asset_path helper
+  // Don't forget to add analytics.js to config.assets.precompile!
+  script.src = '<%= asset_path('analytics.js') %>';
+  script.addEventListener('load', function (e) {
+    if(typeof callback == 'function') {
+      callback(e);
+    }
+  }, false);
+  var firstScript = document.getElementsByTagName('script')[0];
+  firstScript.parentNode.insertBefore(script, firstScript);
+
+
+};
+
+analytics.load(function () {
+  analytics.initialize({
+    'Google Analytics': {
+       trackingId: '<%= ENV["GOOGLE_ID"] %>'
+     }
+  });
+});
+
+// if a current user is logged in, identify them to analytics.js
+<% if current_user %>
+analytics.identify('<%= current_user.id %>',{
+  created: '<%= current_user.created_at %>',
+  email: '<%= current_user.email %>'
+});
+<% end %>
+
+// track the page view
+analytics.page();
+</script>
