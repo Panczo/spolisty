@@ -26,7 +26,6 @@ analytics.load = function(callback) {
   script.id = 'analytics-js';
   script.type = 'text/javascript';
   script.src = '<%= asset_path('analytics.js') %>';
-  alert(script.src);
   script.addEventListener('load', function(e) {
     if (typeof callback === 'function') {
       callback(e);
