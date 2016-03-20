@@ -11,10 +11,10 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  user_id         :integer
-#  count_of_tracks :integer          default("0"), not null
+#  count_of_tracks :integer          default(0), not null
 #  ownerlist       :string
 #  image           :string
-#  special         :boolean          default("false")
+#  special         :boolean          default(FALSE)
 #
 
 FactoryGirl.define do
