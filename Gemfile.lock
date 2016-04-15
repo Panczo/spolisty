@@ -1,10 +1,4 @@
 GIT
-  remote: git://github.com/alexpeattie/heroku_secrets.git
-  revision: 717af8e0acf399bc88d2c8c1a7e230023942af0f
-  specs:
-    heroku_secrets (0.0.2)
-
-GIT
   remote: git://github.com/lacco/mailboxer.git
   revision: d4f0e9c70e29fcc5c2b4b7c87379e1830d45a367
   specs:
@@ -379,7 +373,6 @@ DEPENDENCIES
   gibbon
   google-analytics-rails
   haml
-  heroku_secrets!
   hirb
   html5shiv-rails
   jbuilder (~> 2.0)
