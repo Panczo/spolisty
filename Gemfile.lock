@@ -19,7 +19,7 @@ GIT
       warden (~> 1.2.3)
 
 GIT
-  remote: git@github.com:Panczo/stuff-classifier.git
+  remote: https://github.com/Panczo/stuff-classifier.git
   revision: adbc852d20660955b541fe7e13f7b7709b25676a
   specs:
     stuff-classifier (0.5)
