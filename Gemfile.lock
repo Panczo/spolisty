@@ -388,7 +388,7 @@ DEPENDENCIES
   pry-byebug
   rails (= 4.2.0)
   rails-i18n (~> 4.0.0)
-  rails_12factor (= 0.0.2)
+  rails_12factor
   rspec-rails
   rspotify
   sass-rails (>= 3.2)
