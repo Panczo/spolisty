@@ -37,7 +37,7 @@ gem 'geocoder'
 gem 'friendly_id'
 gem 'html5shiv-rails'
 gem 'newrelic_rpm'
-
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
 
 
