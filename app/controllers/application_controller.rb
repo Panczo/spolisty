@@ -15,7 +15,13 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    country_code = request.try(:location).try(:country_code) || "en"
+    begin
+      country_code = request.try(:location).try(:country_code) || "en"
+    rescue => e
+      # handle the error here
+      logger.debug "http://freegeoip.net must be down!"
+      logger.debug e.message
+    end
 
     if country_code
       country_code = country_code.downcase.to_sym
