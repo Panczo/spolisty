@@ -23,7 +23,7 @@ module Spolisty
 
     I18n.available_locales = [:en, :pl]
     config.i18n.default_locale = :en
-    RSpotify::authenticate(Figaro.env.spotify_client_id, Figaro.env.spotify_client_secret)
+    
   end
 end
   
