@@ -92,7 +92,6 @@ class User < ActiveRecord::Base
     spotify_user = RSpotify::User.new(spotify_hash)
     #Import playlists through RSpotify
     spotify_playlists = spotify_user.playlists
-    raise :test
     spotify_playlists.each do |p|
       #create Playlist
       play = playlists.create(name: p.name, id_spotify: p.id, spotify_type: p.type, ownerlist: p.owner.display_name)
