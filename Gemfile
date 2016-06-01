@@ -38,6 +38,7 @@ gem 'friendly_id'
 gem 'html5shiv-rails'
 gem 'newrelic_rpm'
 gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
+  gem 'better_errors'
 
 
 group :development do
@@ -52,7 +53,6 @@ group :development, :test do
   gem 'capybara'
   gem 'capybara-webkit'        
   gem 'capybara-screenshot', '~> 1.0.3'             
-  gem 'better_errors'
   gem 'pry'
   gem 'pry-byebug'
   gem 'validates_email_format_of'
