@@ -1,50 +1,3 @@
-<script>
-
-var ready;
-ready = function() {
-
-  $('#genrechart').highcharts({
-      chart: {
-          type: 'column'
-      },
-      title: {
-          text: ' '
-      },
-      xAxis: {
-          type: 'category'
-      },
-
-      legend: {
-        enabled: false
-      },
-      plotOptions: {
-          series: {
-              groupPadding: 0,
-              borderWidth: 0,
-              dataLabels: {
-                  enabled: true
-              }
-          }
-      },
-      series: [{ 
-          name: 'Total track',
-          colorByPoint: true,
-          data: <%= raw @user.sorted_tracks %>
-      }],
-      labels: {
-        style: {
-          color: '#111111'
-        }
-      }
-  });
-
-};
-
-$(document).ready(ready);
-$(document).on('page:load', ready);
-
-</script>
-
 <section class="user_profile">
   <div class="row">
     <%= render partial: 'shared/user_heading', locals: { user: @user } %>
@@ -235,3 +188,49 @@ $(document).on('page:load', ready);
     </div>
   </div>
 </section>
+<script>
+
+var ready;
+ready = function() {
+
+  $('#genrechart').highcharts({
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: ' '
+      },
+      xAxis: {
+          type: 'category'
+      },
+
+      legend: {
+        enabled: false
+      },
+      plotOptions: {
+          series: {
+              groupPadding: 0,
+              borderWidth: 0,
+              dataLabels: {
+                  enabled: true
+              }
+          }
+      },
+      series: [{ 
+          name: 'Total track',
+          colorByPoint: true,
+          data: <%= raw @user.sorted_tracks %>
+      }],
+      labels: {
+        style: {
+          color: '#111111'
+        }
+      }
+  });
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
+</script>

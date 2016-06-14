@@ -66,7 +66,7 @@ en:
     usr_heading:
       about_head: "About yourself:"
       about: "Tell us something about yourself. Go to the"
-      about_nil: "This user didn't say anything about yourself"
+      about_nil: "This user didn't say anything"
       about_site: "settings site."
     usr_navbar:
       user: "User"
@@ -80,9 +80,9 @@ en:
       last_step_p: "The Last Step"
       last_step_generate: "Generate your chart based on your playlists. "
       last_step_generate_button: "Generate Music Chart"
-      cant_classify: "Sorry, We cant classified any of your tracks."
+      cant_classify: "Sorry, We can't classified any of your tracks."
       music_chart: "Music chart"
-      people_like_you: "People like you without classified music"
+      people_like_you: "Similar people"
       people_like_you_with: "People who listen the same music like you."
       classified_music: "classified  tracks"
       unclassified_music: "unclassified tracks"
