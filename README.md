@@ -5,7 +5,7 @@ Meet new people through your Spotify playlists
 
 
 
-## Built With
+## Powered by
 
 * Ruby on Rails 4.2.0
 * PostgreSQL
@@ -16,9 +16,7 @@ Meet new people through your Spotify playlists
 
 ## Things to do
 
-All this app is one huge place to improve. 
-
-* Improve performance parsing playlists. 
+* Improve performance: parsing playlists. 
 * Improve GenreClassifier 
 * Write more spec
 * Convert erb to haml
